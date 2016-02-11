@@ -36,6 +36,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.puzzle.appname.ExerciseMenuActivity" />
         </activity>
+        <activity
+            android:name=".CreditsActivity"
+            android:label="@string/title_activity_credits"
+            android:parentActivityName=".LessonSelectActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.appname.LessonSelectActivity" />
+        </activity>
     </application>
 
 </manifest>
