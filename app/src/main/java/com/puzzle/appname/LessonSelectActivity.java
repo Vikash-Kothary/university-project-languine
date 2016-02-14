@@ -75,6 +75,14 @@ public class LessonSelectActivity extends AppCompatActivity
                 startActivity(new Intent(v.getContext(), LoginActivity.class));
             }
         });
+
+        Button button5 = (Button) findViewById(R.id.button5);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), MultipleChoice.class));
+            }
+        });
     }
 
     @Override
