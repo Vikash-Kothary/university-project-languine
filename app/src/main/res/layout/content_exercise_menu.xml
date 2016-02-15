@@ -12,4 +12,29 @@
     tools:context="com.puzzle.appname.ExerciseMenuActivity"
     tools:showIn="@layout/activity_exercise_menu">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/observe"
+        android:id="@+id/observeButton"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/reflect"
+        android:id="@+id/reflectButton"
+        android:layout_below="@+id/observeButton"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/experiment"
+        android:id="@+id/experimentButton"
+        android:layout_alignParentStart="false"
+        android:layout_below="@+id/reflectButton"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="false" />
 </RelativeLayout>
