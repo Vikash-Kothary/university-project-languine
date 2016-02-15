@@ -41,46 +41,6 @@ public class LessonSelectActivity extends AppCompatActivity
 
     }
 
-<<<<<<< HEAD
-    public void dummyNavigation(){
-        Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), ExerciseMenuActivity.class));
-            }
-        });
-        Button button2 = (Button) findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), ExerciseActivity.class));
-            }
-        });
-        Button button3 = (Button) findViewById(R.id.button3);
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), CreditsActivity.class));
-            }
-        });
-        Button button4 = (Button) findViewById(R.id.button4);
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), LoginActivity.class));
-            }
-        });
-
-        Button button5 = (Button) findViewById(R.id.button5);
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), MultipleChoice.class));
-            }
-        });
-=======
-
     public void setupRecyclerView(){
         RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);
         cardList.setHasFixedSize(true);
@@ -96,7 +56,6 @@ public class LessonSelectActivity extends AppCompatActivity
 
         MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);
->>>>>>> refs/remotes/origin/lesson-select
     }
 
 
@@ -150,6 +109,26 @@ public class LessonSelectActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
+        }
+        Intent i=null;
+        switch (item.getItemId()){
+            case R.id.nav_lock_screen:
+                i = new Intent(this, LoginActivity.class);
+                break;
+            case R.id.nav_credits:
+                i = new Intent(this, CreditsActivity.class);
+                break;
+            case R.id.nav_exersice_menus:
+                i = new Intent(this, ExerciseMenuActivity.class);
+                break;
+            case R.id.nav_text_questions:
+                i = new Intent(this, ExerciseActivity.class);
+                //i.putExtra();
+                break;
+        }
+        if(i!=null){
+            startActivity(i);
+            i=null;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

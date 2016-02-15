@@ -15,18 +15,6 @@
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-<<<<<<< HEAD
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/button4" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Multiple Choice"
-        android:id="@+id/button5" />
-
-=======
         android:layout_height="match_parent"
         android:id="@+id/card_list"
         android:scrollbars="vertical" />
