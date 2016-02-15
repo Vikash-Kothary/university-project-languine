@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,14 +27,6 @@ public class LessonSelectActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -43,9 +37,11 @@ public class LessonSelectActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        dummyNavigation();
+        setupRecyclerView();
+
     }
 
+<<<<<<< HEAD
     public void dummyNavigation(){
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -83,7 +79,26 @@ public class LessonSelectActivity extends AppCompatActivity
                 startActivity(new Intent(v.getContext(), MultipleChoice.class));
             }
         });
+=======
+
+    public void setupRecyclerView(){
+        RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);
+        cardList.setHasFixedSize(true);
+
+        // use a linear layout manager
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
+        cardList.setLayoutManager(mLayoutManager);
+
+        // specify an adapter (see also next example)
+
+        Lessons[] myDataset  = {new Lessons(R.mipmap.ic_launcher, "1. Greetings",100),
+                new Lessons(R.mipmap.ic_launcher, "2. Swearing",0)};
+
+        MyAdapter mAdapter = new MyAdapter(myDataset);
+        cardList.setAdapter(mAdapter);
+>>>>>>> refs/remotes/origin/lesson-select
     }
+
 
     @Override
     public void onBackPressed() {
