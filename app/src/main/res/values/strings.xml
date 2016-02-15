@@ -114,4 +114,6 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="multipleChoiceTitle">Multiple choice</string>
+    <string name="Question">Question</string>
 </resources>
