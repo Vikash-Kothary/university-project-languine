@@ -53,7 +53,9 @@ public class LessonSelectActivity extends AppCompatActivity
         // specify an adapter (see also next example)
 
         Lessons[] myDataset  = {new Lessons(R.mipmap.ic_launcher, "1. Greetings",100),
-                new Lessons(R.mipmap.ic_launcher, "2. Swearing",0)};
+                new Lessons(R.mipmap.ic_launcher, "2. Swearing",0),
+        new Lessons(R.mipmap.ic_launcher, "3. Food and drinks", 5),
+                new Lessons(R.mipmap.ic_launcher, "4. Travel", 10)};
 
         MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);
