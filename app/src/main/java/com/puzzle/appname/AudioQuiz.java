@@ -9,7 +9,7 @@ import android.view.View;
 
 public class AudioQuiz extends AppCompatActivity {
 
-
+    Sounds sound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,13 @@ public class AudioQuiz extends AppCompatActivity {
     }
 
     public void playSound(View view){
-        Sounds.mySound.start();
+        sound = new Sounds(this);
+        sound.mySound.start();
+    }
+
+    public void pauseSound(View view){
+        sound = new Sounds(this);
+        sound.mySound.stop();
     }
 
 }
