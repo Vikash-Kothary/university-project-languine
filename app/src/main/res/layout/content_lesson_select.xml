@@ -13,42 +13,10 @@
     tools:context="com.puzzle.appname.LessonSelectActivity"
     tools:showIn="@layout/app_bar_lesson_select">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Delete after implementing navigation"
-        android:id="@+id/textView2" />
-
-    <Button
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Exercise Menu"
-        android:id="@+id/button"
-        android:layout_below="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Exercises"
-        android:id="@+id/button2"
-        android:layout_below="@+id/button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Credits"
-        android:id="@+id/button3"
-        android:layout_below="@+id/button2"
-        android:layout_alignRight="@+id/button2"
-        android:layout_alignEnd="@+id/button2" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/button4" />
+        android:layout_height="match_parent"
+        android:id="@+id/card_list"
+        android:scrollbars="vertical" />
+>>>>>>> refs/remotes/origin/lesson-select
 </LinearLayout>

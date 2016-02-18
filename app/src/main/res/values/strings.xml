@@ -48,8 +48,11 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="multipleChoiceTitle">Multiple choice</string>
+    <string name="Question">Question</string>
 
     <string name="observe">Observe</string>
     <string name="reflect">Reflect</string>
     <string name="experiment">Experiment</string>
+>>>>>>> origin/master
 </resources>

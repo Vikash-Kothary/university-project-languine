@@ -58,6 +58,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.puzzle.appname.LessonSelectActivity" />
         </activity>
+        <activity
+            android:name=".MultipleChoice"
+            android:parentActivityName=".LessonSelectActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
