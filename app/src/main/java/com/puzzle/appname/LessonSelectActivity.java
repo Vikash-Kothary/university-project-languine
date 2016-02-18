@@ -125,6 +125,9 @@ public class LessonSelectActivity extends AppCompatActivity
                 i = new Intent(this, ExerciseActivity.class);
                 //i.putExtra();
                 break;
+            case R.id.nav_quiz_intro:
+                i = new Intent(this, QuizActivity.class);
+                break;
         }
         if(i!=null){
             startActivity(i);
