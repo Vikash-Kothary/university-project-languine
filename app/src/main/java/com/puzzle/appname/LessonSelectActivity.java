@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -17,8 +18,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class LessonSelectActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public static final String LESSON_TITLE = "TITLE";
+    ArrayList<String> lessonNames = new ArrayList<String>(
+            Arrays.asList("Greetings","Checking in","Sightseeing","Directions","Eating","Likes","Planning","Shopping","Dating")
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,15 +61,28 @@ public class LessonSelectActivity extends AppCompatActivity
 
         // specify an adapter (see also next example)
 
-        Lessons[] myDataset  = {new Lessons(R.mipmap.ic_launcher, "1. Greetings",100),
-                new Lessons(R.mipmap.ic_launcher, "2. Swearing",0),
-        new Lessons(R.mipmap.ic_launcher, "3. Food and drinks", 5),
-                new Lessons(R.mipmap.ic_launcher, "4. Travel", 10)};
+        ArrayList<Lessons> myDataset  = new ArrayList<Lessons>();
+        for(int i = 0; i < lessonNames.size(); ++i)
+        {
+            myDataset.add(new Lessons(R.mipmap.ic_launcher, i+1 + ". " + lessonNames.get(i),0));
+        }
 
         MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);
-    }
 
+        cardList.addOnItemTouchListener(
+            new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener()
+            {
+                @Override
+                public void onItemClick(View view, int position)
+                {
+                    Intent intent = new Intent(getBaseContext(), ExerciseMenuActivity.class);
+                    intent.putExtra(LESSON_TITLE, lessonNames.get(position));
+                    startActivity(intent);
+                }
+            })
+        );
+    }
 
     @Override
     public void onBackPressed() {
