@@ -54,5 +54,5 @@
     <string name="observe">Observe</string>
     <string name="reflect">Reflect</string>
     <string name="experiment">Experiment</string>
->>>>>>> origin/master
+    <string name="title_activity_quiz">QuizActivity</string>
 </resources>
