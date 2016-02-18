@@ -54,5 +54,6 @@
     <string name="observe">Observe</string>
     <string name="reflect">Reflect</string>
     <string name="experiment">Experiment</string>
+    <string name="title_activity_video">VideoActivity</string>
 >>>>>>> origin/master
 </resources>
