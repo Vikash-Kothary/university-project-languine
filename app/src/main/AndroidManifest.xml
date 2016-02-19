@@ -61,10 +61,18 @@
         <activity
             android:name=".MultipleChoice"
             android:parentActivityName=".LessonSelectActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AudioQuiz"
             android:label="@string/title_activity_content_audio_quiz"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Glossary"
+            android:label="@string/title_activity_glossary"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MediaPlayer"
+            android:label="@string/title_activity_media_player"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
