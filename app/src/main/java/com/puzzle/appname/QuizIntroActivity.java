@@ -14,12 +14,13 @@ public class QuizIntroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz_intro);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
     public void nextButtonClicked(View view){
         Intent i = new Intent(this, ResultActivity.class);
         startActivity(i);
     }
+
 }
