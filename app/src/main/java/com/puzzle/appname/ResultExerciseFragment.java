@@ -38,26 +38,6 @@ public class ResultExerciseFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public void reviewButtonClicked(View v) {
-        //TODO: check if the fragment to ReviewExerciseFragment works properly
-        Fragment reviewFragment = new ReviewExerciseFragment();
-
-        final FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        //check if the device is landscape or portrait
-        Configuration configuration = getActivity().getResources().getConfiguration();
-        int ori = configuration.orientation;
-
-        fragmentTransaction.replace(R.id.fragment, reviewFragment);
-
-        if(ori == configuration.ORIENTATION_PORTRAIT){
-            fragmentTransaction.addToBackStack(null);
-        }
-
-        fragmentTransaction.commit();
-    }
-
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.

@@ -27,7 +27,7 @@ public class QuizActivity extends AppCompatActivity {
         });
     }
 
-    private void nextButtonClicked(){
+    private void nextButtonClicked(View view){
         Intent i = new Intent(this, ResultActivity.class);
     }
 
