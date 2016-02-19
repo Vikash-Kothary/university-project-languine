@@ -9,8 +9,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.puzzle.appname.QuizActivity"
-    tools:showIn="@layout/activity_quiz">
+    tools:context=".QuizIntroActivity"
+    tools:showIn="@layout/activity_quiz_intro">
 
     <ImageView
         android:layout_width="wrap_content"
