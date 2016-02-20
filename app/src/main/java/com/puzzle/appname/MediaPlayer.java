@@ -8,11 +8,32 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.MediaController.MediaPlayerControl;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import android.net.Uri;
+import android.content.ContentResolver;
+import android.database.Cursor;
+import android.widget.ListView;
+import android.os.IBinder;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.view.MenuItem;
+import android.view.View;
+import com.puzzle.appname.MusicService.MusicBinder;
+
 
 public class MediaPlayer extends Activity implements MediaPlayerControl
 {
 
-   private MusicController controller;
+    private MusicController controller;
+    private ArrayList<Sounds> songList;
+    private ListView songView;
+    private MusicService musicSrv;
+    private Intent playIntent;
+    private boolean musicBound=false;
 
 
     @Override
@@ -22,13 +43,43 @@ public class MediaPlayer extends Activity implements MediaPlayerControl
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 
+
+
         setController();
 
 
     }
 
+    private ServiceConnection musicConnection = new ServiceConnection(){
 
-    private void setController(){
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            MusicBinder binder = (MusicBinder)service;
+            //get service
+            musicSrv = binder.getService();
+            //pass list
+            //musicSrv.setList(songList);
+            musicBound = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            musicBound = false;
+        }
+    };
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(playIntent==null){
+            playIntent = new Intent(this, MusicService.class);
+            bindService(playIntent, musicConnection, Context.BIND_AUTO_CREATE);
+            startService(playIntent);
+        }
+    }
+
+
+    private void setController() {
         controller = new MusicController(this);
 
         controller.setPrevNextListeners(new View.OnClickListener() {
@@ -50,33 +101,54 @@ public class MediaPlayer extends Activity implements MediaPlayerControl
 //        controller.setAnchorView(findViewById(R.id.song_list));
     }
 
+
+
+    public void songPicked(View view){
+        musicSrv.setSong(Integer.parseInt(view.getTag().toString()));
+        musicSrv.playSong();
+    }
+
     @Override
     public void start() {
-
+//        MusicService.go();
     }
 
     @Override
     public void pause() {
+//        MusicService.pausePlayer;
+    }
 
+
+    @Override
+    public void seekTo(int pos) {
+//        MusicService.seekTo(pos);
     }
 
     @Override
     public int getDuration() {
+
+//        if(musicSrv!=null &amp;&amp; musicBound &amp;&amp; musicSrv.isPng())
+//        return musicSrv.getDur();
+//        else
         return 0;
     }
 
     @Override
     public int getCurrentPosition() {
+
+//        if(MusicService!=null &amp;&amp; musicBound &amp;&amp; MusicService.isPng())
+//        return MusicService.getPosn();
+//        else
         return 0;
     }
 
-    @Override
-    public void seekTo(int pos) {
 
-    }
 
     @Override
     public boolean isPlaying() {
+
+//        if(MusicService!=null &amp;&amp; musicBound)
+//        return MusicService.isPng();
         return false;
     }
 
@@ -87,21 +159,36 @@ public class MediaPlayer extends Activity implements MediaPlayerControl
 
     @Override
     public boolean canPause() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean canSeekBackward() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean canSeekForward() {
-        return false;
+        return true;
     }
 
     @Override
     public int getAudioSessionId() {
         return 0;
+    }
+
+    //play next
+
+    private void playNext(){
+        //MusicService.playNext();
+        controller.show(0);
+    }
+
+    private void playPrev(){
+        //MusicService.playPrev();
+        controller.show(0);
+    }
+
+    public interface OnPreparedListener {
     }
 }
