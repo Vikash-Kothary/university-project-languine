@@ -33,7 +33,7 @@ public class MusicService extends Service implements
     //media player
     private MediaPlayer player;
     //song list
-    private ArrayList<Song> songs;
+    private ArrayList<Sounds> sounds;
     //current position
     private int songPosn;
 
@@ -66,8 +66,8 @@ public class MusicService extends Service implements
         player.setOnErrorListener(this);
     }
 
-    public void setList(ArrayList<Song> theSongs){
-        songs=theSongs;
+    public void setList(ArrayList<Sounds> theSounds){
+        sounds=theSounds;
     }
 
     public class MusicBinder extends Binder {
@@ -91,7 +91,7 @@ public class MusicService extends Service implements
     public void playSong(){
         player.reset();
         //get song
-        Song playSong = songs.get(songPosn);
+        Sounds playSong = sounds.get(songPosn);
         //get id
         long currSong = playSong.getID();
         //set uri

@@ -8,10 +8,24 @@ import android.media.MediaPlayer;
  */
 public class Sounds {
 
-    static MediaPlayer mySound;
+    static MediaPlayer mySound = new MediaPlayer();
 
-    Sounds(Context myContext){
-        mySound = MediaPlayer.create(myContext, R.raw.background);
+    private long id;
+    private String title;
+    private String artist;
+
+    public Sounds(long songID, String songTitle, String songArtist) {
+        id=songID;
+        title=songTitle;
+        artist=songArtist;
     }
 
+    public long getID(){return id;}
+    public String getTitle(){return title;}
+    public String getArtist(){return artist;}
+
+    Sounds(Context myContext)
+    {
+        //mySound = MediaPlayer.create(myContext, R.raw.background);
+    }
 }

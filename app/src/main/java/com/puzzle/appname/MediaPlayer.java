@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.MediaController.MediaPlayerControl;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,12 +23,13 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.SeekBar;
+
 import com.puzzle.appname.MusicService.MusicBinder;
 
 
 public class MediaPlayer extends Activity implements MediaPlayerControl
 {
-
     private MusicController controller;
     private ArrayList<Sounds> songList;
     private ListView songView;
@@ -43,12 +45,22 @@ public class MediaPlayer extends Activity implements MediaPlayerControl
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 
-
+        Button play = (Button) findViewById(R.id.play);
+        Button pause = (Button) findViewById(R.id.pause);
+        Button shuffle = (Button) findViewById(R.id.shuffle);
+        Button stop = (Button) findViewById(R.id.stop);
+        SeekBar duration = (SeekBar) findViewById(R.id.seekBar);
 
         setController();
 
-
     }
+
+    /*private void playClip(View view)
+    {
+        Sounds.mySound.start();
+    }
+
+    private */
 
     private ServiceConnection musicConnection = new ServiceConnection(){
 
