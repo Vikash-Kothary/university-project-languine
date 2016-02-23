@@ -7,47 +7,49 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.SeekBar;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class AudioQuiz extends AppCompatActivity {
 
-    //Sounds sound;
-
-    private boolean playing = false;
+    Sounds sounds;
+    SeekBar seekBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        sounds = new Sounds(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_content_audio_quiz);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        seekBar = (SeekBar) findViewById(R.id.seekBar);
+        initiateBar();
     }
 
     public void playSound(View view)
     {
-        try
+        Log.e("SOUND", "Sound is playing? " + sounds.mySound.isPlaying());
+        if(!sounds.mySound.isPlaying())
         {
-            Sounds.mySound.setDataSource("/Users/WSH/Google Drive/ProjectRun/Puzzle/app/src/main/res/raw/background.wav");
-        }
-        catch(IOException e)
-        {
-            e.printStackTrace();
-        }
-        Log.e("SOUND", "Sound is playing? " + Sounds.mySound.isPlaying());
-        if(!Sounds.mySound.isPlaying())
-        {
-            Sounds.mySound.start();
-            playing = true;
-            Log.e("SOUND", "Sound is playing? " + playing);
+            sounds.mySound.start();
+            Log.e("SOUND", "Sound is playing? " + sounds.mySound.isPlaying());
         }
     }
 
     public void pauseSound(View view)
     {
-        //sound = new Sounds(this);
-        Sounds.mySound.pause();
+        sounds.mySound.pause();
+    }
+
+    public void initiateBar()
+    {
+        seekBar.setMax(sounds.mySound.getDuration());
+        while(sounds.mySound.isPlaying())
+        {
+            seekBar.setProgress(sounds.mySound.getCurrentPosition());
+        }
     }
 
 }

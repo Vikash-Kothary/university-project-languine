@@ -33,14 +33,14 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <ProgressBar
-        android:layout_width="wrap_content"
+    <SeekBar
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/duration"
-        android:layout_above="@+id/button"
-        android:layout_toRightOf="@+id/button"
-        android:layout_toLeftOf="@+id/pause_button"
-        android:layout_toStartOf="@+id/pause_button"
+        android:id="@+id/seekBar"
+        android:layout_below="@+id/stop"
+        android:layout_toRightOf="@+id/shuffle"
+        android:layout_toEndOf="@+id/shuffle"
+        android:layout_marginTop="43dp"
         android:indeterminate="false" />
 
     <RadioButton
