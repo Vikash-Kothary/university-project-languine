@@ -66,7 +66,7 @@
 
             <item android:id="@+id/nav_language_select"
                 android:icon="@mipmap/ic_launcher"
-                android:title="Language Select" />
+                android:title="Select a Language" />
         </menu>
     </item>
 </menu>
