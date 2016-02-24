@@ -128,6 +128,9 @@ public class LessonSelectActivity extends AppCompatActivity
             case R.id.nav_quiz_intro:
                 i = new Intent(this, QuizIntroActivity.class);
                 break;
+            case R.id.nav_language_select:
+                i = new Intent(this, LanguageSelectActivity.class);
+                break;
         }
         if(i!=null){
             startActivity(i);
