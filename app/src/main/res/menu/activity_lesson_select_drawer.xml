@@ -59,6 +59,10 @@
             <item android:id="@+id/nav_audio_quiz"
                 android:icon="@mipmap/ic_launcher"
                 android:title="Audio Quiz" />
+
+            <item android:id="@+id/nav_quiz_intro"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Quiz Introduction" />
         </menu>
     </item>
 </menu>

@@ -55,5 +55,6 @@
     <string name="reflect">Reflect</string>
     <string name="experiment">Experiment</string>
     <string name="title_activity_content_audio_quiz">content_audio_quiz</string>
-    >>>>>>> origin/master
+    <string name="title_activity_quiz">QuizActivity</string>
+    <string name="title_activity_review">ReviewActivity</string>
 </resources>
