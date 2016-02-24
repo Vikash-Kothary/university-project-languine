@@ -331,5 +331,7 @@
     <string name="title_activity_content_audio_quiz">content_audio_quiz</string>
     <string name="title_activity_glossary">Glossary</string>
     <string name="title_activity_media_player">MediaPlayer</string>
+    <string name="title_activity_get_started">GetStarted</string>
+    <string name="title_activity_exercises">Exercises</string>
     >>>>>>> origin/master
 </resources>

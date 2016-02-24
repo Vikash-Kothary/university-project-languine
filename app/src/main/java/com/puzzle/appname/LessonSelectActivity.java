@@ -124,6 +124,9 @@ public class LessonSelectActivity extends AppCompatActivity
             case R.id.nav_audio_quiz:
                 i = new Intent(this, AudioQuiz.class);
                 break;
+            case R.id.nav_getStarted:
+                i= new Intent(this, GetStarted.class);
+                break;
             case R.id.nav_glossary:
                 i = new Intent(this, Glossary.class);
                 break;

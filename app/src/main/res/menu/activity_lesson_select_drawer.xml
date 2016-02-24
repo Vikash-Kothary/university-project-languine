@@ -64,6 +64,10 @@
             android:icon="@mipmap/ic_launcher"
             android:title="Glossary" />
 
+            <item android:id="@+id/nav_getStarted"
+                android:icon="@mipmap/ic_launcher"
+                android:title="GetStarted" />
+
 
 
         </menu>

@@ -74,8 +74,18 @@
         <activity
             android:name=".MediaPlayer"
             android:label="@string/title_activity_media_player"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service android:name=".MusicService" />
+
+        <activity
+            android:name=".GetStarted"
+            android:label="@string/title_activity_get_started"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Exercises"
+            android:label="@string/title_activity_exercises"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <service android:name="com.puzzle.appname.MusicService" />
     </application>
 
 </manifest>
