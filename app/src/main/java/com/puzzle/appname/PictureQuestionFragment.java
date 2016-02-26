@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 
 /**
@@ -17,7 +18,7 @@ import android.view.ViewGroup;
  * Use the {@link PictureQuestionFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PictureQuestionFragment extends Fragment {
+public class PictureQuestionFragment extends Fragment  implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -28,6 +29,7 @@ public class PictureQuestionFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
 
     public PictureQuestionFragment() {
         // Required empty public constructor
@@ -54,6 +56,22 @@ public class PictureQuestionFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ImageView imgView1 = (ImageView) getActivity().findViewById(R.id.imageView2);
+        ImageView imgView2 = (ImageView) getActivity().findViewById(R.id.imageView3);
+        ImageView imgView3 = (ImageView) getActivity().findViewById(R.id.imageView4);
+        ImageView imgView4 = (ImageView) getActivity().findViewById(R.id.imageView5);
+        ImageView imgView5 = (ImageView) getActivity().findViewById(R.id.imageView6);
+        ImageView imgView6 = (ImageView) getActivity().findViewById(R.id.imageView7);
+
+        imgView1.setOnClickListener(this);
+        imgView2.setOnClickListener(this);
+        imgView3.setOnClickListener(this);
+        imgView4.setOnClickListener(this);
+        imgView5.setOnClickListener(this);
+        imgView6.setOnClickListener(this);
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -89,6 +107,11 @@ public class PictureQuestionFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 
     /**

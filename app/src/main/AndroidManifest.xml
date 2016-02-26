@@ -61,6 +61,11 @@
         <activity
             android:name=".MultipleChoice"
             android:parentActivityName=".LessonSelectActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".AudioQuiz"
+            android:label="@string/title_activity_content_audio_quiz"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
