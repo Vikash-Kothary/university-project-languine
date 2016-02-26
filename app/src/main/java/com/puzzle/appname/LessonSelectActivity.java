@@ -20,6 +20,7 @@ import android.widget.Button;
 public class LessonSelectActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    public static final String QUESTION_TYPE = "QuestionType";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -124,6 +125,10 @@ public class LessonSelectActivity extends AppCompatActivity
             case R.id.nav_text_questions:
                 i = new Intent(this, ExerciseActivity.class);
                 //i.putExtra();
+                break;
+            case R.id.nav_picture_questions:
+                i = new Intent(this, ExerciseActivity.class);
+                i.putExtra(QUESTION_TYPE, QuestionType.PICTURE);
                 break;
         }
         if(i!=null){
