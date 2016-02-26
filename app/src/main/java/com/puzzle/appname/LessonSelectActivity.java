@@ -2,12 +2,9 @@ package com.puzzle.appname;
 
 import android.content.Intent;
 import android.os.Bundle;
-<<<<<<< HEAD
-=======
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
->>>>>>> refs/remotes/origin/lesson-select
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.design.widget.NavigationView;
@@ -18,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,15 +23,12 @@ import java.util.Arrays;
 public class LessonSelectActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-<<<<<<< HEAD
     public static final String QUESTION_TYPE = "QuestionType";
-=======
     public static final String LESSON_TITLE = "TITLE";
     ArrayList<String> lessonNames = new ArrayList<String>(
             Arrays.asList("Greetings","Checking in","Sightseeing","Directions","Eating","Likes","Planning","Shopping","Dating")
     );
 
->>>>>>> refs/remotes/origin/lesson-select
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -158,14 +153,11 @@ public class LessonSelectActivity extends AppCompatActivity
                 i = new Intent(this, ExerciseActivity.class);
                 //i.putExtra();
                 break;
-<<<<<<< HEAD
             case R.id.nav_picture_questions:
                 i = new Intent(this, ExerciseActivity.class);
                 i.putExtra(QUESTION_TYPE, QuestionType.PICTURE);
-=======
             case R.id.nav_quiz_intro:
                 i = new Intent(this, QuizIntroActivity.class);
->>>>>>> origin/master
                 break;
         }
         if(i!=null){
