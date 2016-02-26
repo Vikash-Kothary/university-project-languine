@@ -7,18 +7,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link PictureQuestionFragment.OnFragmentInteractionListener} interface
+ * {@link ReviewExerciseFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link PictureQuestionFragment#newInstance} factory method to
+ * Use the {@link ReviewExerciseFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PictureQuestionFragment extends Fragment  implements View.OnClickListener {
+public class ReviewExerciseFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,8 +29,7 @@ public class PictureQuestionFragment extends Fragment  implements View.OnClickLi
 
     private OnFragmentInteractionListener mListener;
 
-
-    public PictureQuestionFragment() {
+    public ReviewExerciseFragment() {
         // Required empty public constructor
     }
 
@@ -41,11 +39,11 @@ public class PictureQuestionFragment extends Fragment  implements View.OnClickLi
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment PictureQuestionFragment.
+     * @return A new instance of fragment ReviewExerciseFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static PictureQuestionFragment newInstance(String param1, String param2) {
-        PictureQuestionFragment fragment = new PictureQuestionFragment();
+    public static ReviewExerciseFragment newInstance(String param1, String param2) {
+        ReviewExerciseFragment fragment = new ReviewExerciseFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -56,22 +54,6 @@ public class PictureQuestionFragment extends Fragment  implements View.OnClickLi
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        ImageView imgView1 = (ImageView) getActivity().findViewById(R.id.imageView2);
-        ImageView imgView2 = (ImageView) getActivity().findViewById(R.id.imageView3);
-        ImageView imgView3 = (ImageView) getActivity().findViewById(R.id.imageView4);
-        ImageView imgView4 = (ImageView) getActivity().findViewById(R.id.imageView5);
-        ImageView imgView5 = (ImageView) getActivity().findViewById(R.id.imageView6);
-        ImageView imgView6 = (ImageView) getActivity().findViewById(R.id.imageView7);
-
-        imgView1.setOnClickListener(this);
-        imgView2.setOnClickListener(this);
-        imgView3.setOnClickListener(this);
-        imgView4.setOnClickListener(this);
-        imgView5.setOnClickListener(this);
-        imgView6.setOnClickListener(this);
-
-
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -82,7 +64,7 @@ public class PictureQuestionFragment extends Fragment  implements View.OnClickLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_picture_question, container, false);
+        return inflater.inflate(R.layout.fragment_review_exercise, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -107,11 +89,6 @@ public class PictureQuestionFragment extends Fragment  implements View.OnClickLi
     public void onDetach() {
         super.onDetach();
         mListener = null;
-    }
-
-    @Override
-    public void onClick(View v) {
-
     }
 
     /**

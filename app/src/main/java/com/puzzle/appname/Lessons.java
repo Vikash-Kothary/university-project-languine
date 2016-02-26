@@ -11,41 +11,41 @@ public class Lessons {
     private String lessonName;
     private int progress;
 
-    public Lessons(){
+    public Lessons(){}
 
+    public Lessons(int imageID, String lessonName, int progress)
+    {
+        this.imageID = imageID;
+        this.lessonName = lessonName;
+        this.progress = progress;
     }
-
-    public Lessons(int imageId, String lessonName, int progress){
-
-    }
-
 
     public int getImageID(){
         return imageID;
     }
 
-    public void setImageID(){
-
+    public void setImageID(int imageID)
+    {
+        this.imageID = imageID;
     }
 
     public String getLessonName() {
         return lessonName;
     }
 
-    public void setLessonName(){
-
+    public void setLessonName(String lessonName)
+    {
+        this.lessonName = lessonName;
     }
 
     public int getProgress(){
         return progress;
     }
 
-    public void setProgress(){
-
+    public void setProgress(int progress)
+    {
+        this.progress = progress;
     }
-
-
-
 }
 
 
