@@ -66,8 +66,30 @@
                 android:icon="@mipmap/ic_launcher"
                 android:title="Audio Quiz" />
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <item android:id="@+id/nav_quiz_intro"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Quiz Introduction" />
+
+            <item android:id="@+id/nav_language_select"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Select a Language" />
+=======
+            <item android:id="@+id/nav_glossary"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Glossary" />
+
+            <item android:id="@+id/nav_getStarted"
+=======
             <item
                 android:id="@+id/nav_glossary"
+>>>>>>> Menu-New-Structure
+=======
+            <item
+                android:id="@+id/nav_glossary"
+>>>>>>> Menu-New-Structure
                 android:icon="@mipmap/ic_launcher"
                 android:title="Glossary" />
 
@@ -76,9 +98,19 @@
                 android:icon="@mipmap/ic_launcher"
                 android:title="Get Started" />
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/Menu-New-Structure
+=======
             <item android:id="@+id/nav_exercises"
                 android:icon="@mipmap/ic_launcher"
                 android:title="Exercises" />
+>>>>>>> Menu-New-Structure
+=======
+            <item android:id="@+id/nav_exercises"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Exercises" />
+>>>>>>> Menu-New-Structure
         </menu>
     </item>
 </menu>
