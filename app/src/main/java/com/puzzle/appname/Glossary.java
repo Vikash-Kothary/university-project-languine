@@ -1,29 +1,23 @@
 package com.puzzle.appname;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
-public class ExerciseMenuActivity extends AppCompatActivity {
-    String[] menu = {"Observe", "Reflect", "Experiment"};
-
-
+public class Glossary extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exercise_menu);
+        setContentView(R.layout.activity_glossary);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(getIntent().getStringExtra(LessonSelectActivity.LESSON_TITLE));
         setSupportActionBar(toolbar);
-
-        createButtons();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -33,20 +27,27 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
+
     }
 
-    private void createButtons() {
-        LinearLayout rl = (LinearLayout) findViewById(R.id.content_exercise_menu);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT);
 
-        for (int i = 0; i < menu.length; i++) {
-            Button b = new Button(this);
-            b.setLayoutParams(params);
-            b.setText(menu[i]);
-            rl.addView(b);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_glossary, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.action_search:
+                break;
         }
-    }
 
+
+        return super.onOptionsItemSelected(item);
+    }
 }
