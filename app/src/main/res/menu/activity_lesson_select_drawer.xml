@@ -33,4 +33,36 @@
         </menu>
     </item>
 
+
+    <item android:title="Pages">
+        <menu>
+            <item android:id="@+id/nav_lock_screen"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Lock Screen" />
+
+            <item android:id="@+id/nav_exersice_menus"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Exercise Menu" />
+
+            <item android:id="@+id/nav_text_questions"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Text Questions" />
+
+            <item android:id="@+id/nav_picture_questions"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Picture Questions" />
+
+            <item android:id="@+id/nav_credits"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Credits" />
+
+            <item android:id="@+id/nav_audio_quiz"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Audio Quiz" />
+
+            <item android:id="@+id/nav_quiz_intro"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Quiz Introduction" />
+        </menu>
+    </item>
 </menu>

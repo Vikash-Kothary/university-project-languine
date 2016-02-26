@@ -21,7 +21,8 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_exercise_menu" />
+    <include layout="@layout/content_exercise_menu"
+        android:id="@+id/content_exercise_menu" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

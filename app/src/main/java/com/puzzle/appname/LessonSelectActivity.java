@@ -2,9 +2,8 @@ package com.puzzle.appname;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 
 public class LessonSelectActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -25,14 +23,6 @@ public class LessonSelectActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -43,39 +33,27 @@ public class LessonSelectActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        dummyNavigation();
+        setupRecyclerView();
+
     }
 
-    public void dummyNavigation(){
-        Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), ExerciseMenuActivity.class));
-            }
-        });
-        Button button2 = (Button) findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), ExerciseActivity.class));
-            }
-        });
-        Button button3 = (Button) findViewById(R.id.button3);
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), CreditsActivity.class));
-            }
-        });
-        Button button4 = (Button) findViewById(R.id.button4);
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), LoginActivity.class));
-            }
-        });
+    public void setupRecyclerView(){
+        RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);
+        cardList.setHasFixedSize(true);
+
+        // use a linear layout manager
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
+        cardList.setLayoutManager(mLayoutManager);
+
+        // specify an adapter (see also next example)
+
+        Lessons[] myDataset  = {new Lessons(R.mipmap.ic_launcher, "1. Greetings",100),
+                new Lessons(R.mipmap.ic_launcher, "2. Swearing",0)};
+
+        MyAdapter mAdapter = new MyAdapter(myDataset);
+        cardList.setAdapter(mAdapter);
     }
+
 
     @Override
     public void onBackPressed() {
@@ -127,6 +105,33 @@ public class LessonSelectActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
+        }
+        Intent i=null;
+        switch (item.getItemId()){
+            case R.id.nav_lock_screen:
+                i = new Intent(this, LoginActivity.class);
+                break;
+            case R.id.nav_credits:
+                i = new Intent(this, CreditsActivity.class);
+                break;
+            case R.id.nav_exersice_menus:
+                i = new Intent(this, ExerciseMenuActivity.class);
+                break;
+            case R.id.nav_audio_quiz:
+                i = new Intent(this, AudioQuiz.class);
+                break;
+            case R.id.nav_text_questions:
+
+                i = new Intent(this, ExerciseActivity.class);
+                //i.putExtra();
+                break;
+            case R.id.nav_quiz_intro:
+                i = new Intent(this, QuizIntroActivity.class);
+                break;
+        }
+        if(i!=null){
+            startActivity(i);
+            i=null;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
