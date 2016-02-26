@@ -2,6 +2,14 @@ package com.puzzle.appname;
 
 import android.content.Intent;
 import android.os.Bundle;
+<<<<<<< HEAD
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+=======
+>>>>>>> origin/video-question-interface
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,9 +20,22 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+<<<<<<< HEAD
+import android.view.View;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+=======
+>>>>>>> origin/video-question-interface
 
 public class LessonSelectActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public static final String QUESTION_TYPE = "QuestionType";
+    public static final String LESSON_TITLE = "TITLE";
+    ArrayList<String> lessonNames = new ArrayList<String>(
+            Arrays.asList("Greetings","Checking in","Sightseeing","Directions","Eating","Likes","Planning","Shopping","Dating")
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +68,28 @@ public class LessonSelectActivity extends AppCompatActivity
 
         // specify an adapter (see also next example)
 
-        Lessons[] myDataset  = {new Lessons(R.mipmap.ic_launcher, "1. Greetings",100),
-                new Lessons(R.mipmap.ic_launcher, "2. Swearing",0)};
+        ArrayList<Lessons> myDataset  = new ArrayList<Lessons>();
+        for(int i = 0; i < lessonNames.size(); ++i)
+        {
+            myDataset.add(new Lessons(R.mipmap.ic_launcher, i+1 + ". " + lessonNames.get(i),0));
+        }
 
         MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);
-    }
 
+        cardList.addOnItemTouchListener(
+            new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener()
+            {
+                @Override
+                public void onItemClick(View view, int position)
+                {
+                    Intent intent = new Intent(getBaseContext(), ExerciseMenuActivity.class);
+                    intent.putExtra(LESSON_TITLE, lessonNames.get(position));
+                    startActivity(intent);
+                }
+            })
+        );
+    }
 
     @Override
     public void onBackPressed() {
@@ -117,9 +153,29 @@ public class LessonSelectActivity extends AppCompatActivity
             case R.id.nav_exersice_menus:
                 i = new Intent(this, ExerciseMenuActivity.class);
                 break;
+            case R.id.nav_audio_quiz:
+                i = new Intent(this, AudioQuiz.class);
+                break;
+            case R.id.nav_getStarted:
+                i= new Intent(this, GetStarted.class);
+                break;
+            case R.id.nav_exercises:
+                i = new Intent(this, Exercises.class);
+                break;
+            case R.id.nav_glossary:
+                i = new Intent(this, Glossary.class);
+                break;
             case R.id.nav_text_questions:
                 i = new Intent(this, ExerciseActivity.class);
-                //i.putExtra();
+                break;
+            case R.id.nav_picture_questions:
+                i = new Intent(this, ExerciseActivity.class);
+                i.putExtra(QUESTION_TYPE, QuestionType.PICTURE);
+            case R.id.nav_quiz_intro:
+                i = new Intent(this, QuizIntroActivity.class);
+                break;
+            case R.id.nav_language_select:
+                i = new Intent(this, LanguageSelectActivity.class);
                 break;
             case R.id.nav_Video:
                 i = new Intent(this, VideoActivity.class);
