@@ -7,28 +7,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class AudioQuiz extends AppCompatActivity {
-
-    Sounds sound;
+public class LanguageSelectActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_content_audio_quiz);
+        setContentView(R.layout.activity_language_select);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        
-    }
-
-    public void playSound(View view){
-        sound = new Sounds(this);
-        sound.mySound.start();
-    }
-
-    public void pauseSound(View view){
-        sound = new Sounds(this);
-        sound.mySound.stop();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 }
