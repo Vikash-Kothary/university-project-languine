@@ -5,5 +5,8 @@ package com.puzzle.appname;
  */
 public class GlossaryController
 {
+    public GlossaryController()
+    {
 
+    }
 }

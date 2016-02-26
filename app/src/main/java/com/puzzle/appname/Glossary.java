@@ -27,10 +27,6 @@ public class Glossary extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-
-
-
     }
 
 
