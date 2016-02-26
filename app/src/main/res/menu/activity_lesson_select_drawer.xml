@@ -36,40 +36,49 @@
 
     <item android:title="Pages">
         <menu>
-            <item android:id="@+id/nav_lock_screen"
+            <item
+                android:id="@+id/nav_lock_screen"
                 android:icon="@mipmap/ic_launcher"
                 android:title="Lock Screen" />
 
-            <item android:id="@+id/nav_exersice_menus"
+            <item
+                android:id="@+id/nav_exersice_menus"
                 android:icon="@mipmap/ic_launcher"
                 android:title="Exercise Menu" />
 
-            <item android:id="@+id/nav_text_questions"
+            <item
+                android:id="@+id/nav_text_questions"
                 android:icon="@mipmap/ic_launcher"
                 android:title="Text Questions" />
 
-            <item android:id="@+id/nav_picture_questions"
+            <item
+                android:id="@+id/nav_picture_questions"
                 android:icon="@mipmap/ic_launcher"
                 android:title="Picture Questions" />
 
-            <item android:id="@+id/nav_credits"
+            <item
+                android:id="@+id/nav_credits"
                 android:icon="@mipmap/ic_launcher"
                 android:title="Credits" />
 
-            <item android:id="@+id/nav_audio_quiz"
+            <item
+                android:id="@+id/nav_audio_quiz"
                 android:icon="@mipmap/ic_launcher"
                 android:title="Audio Quiz" />
 
-            <item android:id="@+id/nav_glossary"
-            android:icon="@mipmap/ic_launcher"
-            android:title="Glossary" />
-
-            <item android:id="@+id/nav_getStarted"
+            <item
+                android:id="@+id/nav_glossary"
                 android:icon="@mipmap/ic_launcher"
-                android:title="GetStarted" />
+                android:title="Glossary" />
 
+            <item
+                android:id="@+id/nav_getStarted"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Get Started" />
 
-
+            <item android:id="@+id/nav_exercises"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Exercises" />
         </menu>
     </item>
 </menu>
