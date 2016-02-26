@@ -1,5 +1,6 @@
 package com.puzzle.appname;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,11 +13,14 @@ import android.widget.LinearLayout;
 public class ExerciseMenuActivity extends AppCompatActivity {
     String[] menu = {"Observe", "Reflect", "Experiment"};
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(getIntent().getStringExtra(LessonSelectActivity.LESSON_TITLE));
         setSupportActionBar(toolbar);
 
         createButtons();
