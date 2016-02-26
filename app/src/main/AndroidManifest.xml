@@ -61,27 +61,35 @@
         <activity
             android:name=".MultipleChoice"
             android:parentActivityName=".LessonSelectActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AudioQuiz"
             android:label="@string/title_activity_content_audio_quiz"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
             android:theme="@style/AppTheme.NoActionBar" />
-
+        android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".QuizIntroActivity"
             android:label="@string/title_activity_quiz"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".LessonSelectActivity">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.puzzle.appname.LessonSelectActivity" />
+            android:parentActivityName=".LessonSelectActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.appname.LessonSelectActivity" />
         </activity>
         <activity
             android:name=".ResultActivity"
             android:label="@string/title_activity_review"
             android:theme="@style/AppTheme.NoActionBar">
             android:parentActivityName=".LessonSelectActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.appname.LessonSelectActivity" />
+        </activity>
+        <activity
+            android:name=".LanguageSelectActivity"
+            android:label="@string/title_activity_language_select"
+            android:parentActivityName=".LessonSelectActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.puzzle.appname.LessonSelectActivity" />

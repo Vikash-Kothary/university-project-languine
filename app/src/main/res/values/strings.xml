@@ -55,6 +55,7 @@
     <string name="reflect">Reflect</string>
     <string name="experiment">Experiment</string>
     <string name="title_activity_content_audio_quiz">content_audio_quiz</string>
-    <string name="title_activity_quiz">QuizActivity</string>
-    <string name="title_activity_review">ReviewActivity</string>
+    <string name="title_activity_quiz">Introduction</string>
+    <string name="title_activity_review">Review</string>
+    <string name="title_activity_language_select">Select a Language</string>
 </resources>
