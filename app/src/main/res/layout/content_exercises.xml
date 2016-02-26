@@ -12,20 +12,9 @@
     tools:context="com.puzzle.appname.Exercises"
     tools:showIn="@layout/activity_exercises">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Revision Videos"
-        android:id="@+id/rev_videos"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Exercises"
-        android:id="@+id/exercises"
-        android:layout_below="@+id/rev_videos"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp" />
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/card_list"
+        android:scrollbars="vertical" />
 </RelativeLayout>
