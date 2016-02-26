@@ -60,6 +60,7 @@
                 android:id="@+id/nav_credits"
                 android:icon="@mipmap/ic_launcher"
                 android:title="Credits" />
+<<<<<<< HEAD
 
             <item
                 android:id="@+id/nav_audio_quiz"
@@ -111,6 +112,11 @@
                 android:icon="@mipmap/ic_launcher"
                 android:title="Exercises" />
 >>>>>>> Menu-New-Structure
+=======
+            <item android:id="@+id/nav_Video"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Video Question" />
+>>>>>>> origin/video-question-interface
         </menu>
     </item>
 </menu>

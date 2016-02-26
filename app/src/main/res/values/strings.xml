@@ -328,6 +328,7 @@
     <string name="observe">Observe</string>
     <string name="reflect">Reflect</string>
     <string name="experiment">Experiment</string>
+<<<<<<< HEAD
     <string name="title_activity_content_audio_quiz">content_audio_quiz</string>
 <<<<<<< HEAD
     <string name="title_activity_quiz">Introduction</string>
@@ -340,4 +341,8 @@
     <string name="title_activity_exercises">Exercises</string>
     >>>>>>> origin/master
 >>>>>>> refs/remotes/origin/Menu-New-Structure
+=======
+    <string name="title_activity_video">VideoActivity</string>
+>>>>>>> origin/master
+>>>>>>> origin/video-question-interface
 </resources>
