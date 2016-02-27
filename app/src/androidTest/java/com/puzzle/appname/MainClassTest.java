@@ -5,6 +5,7 @@ import android.support.test.runner.AndroidJUnit4;
 
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.experimental.theories.suppliers.TestedOn;
 import org.junit.runner.RunWith;
 
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
@@ -25,8 +26,7 @@ public class MainClassTest {
     public final ActivityRule<LessonSelectActivity> main = new ActivityRule<>(LessonSelectActivity.class);
 
     @Test
-    public void Button1() {
-
+    public void LockScreen() {
         onView(withId(R.id.card_list)).check(ViewAssertions.matches(isDisplayed()));
         openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
         onView(withText("Settings")).perform(click());
@@ -41,28 +41,6 @@ public class MainClassTest {
         onView(withId(R.id.email_sign_in_button)).perform(click());
     }
 
-
-//    @Test
-//    public void Button2(){
-//        onView(withId(R.id.button2)).check(ViewAssertions.matches(isDisplayed()));
-//        onView(withId(R.id.button2)).perform(click());
-//    }
-//    @Test
-//    public void Button3(){
-//        onView(withId(R.id.button3)).check(ViewAssertions.matches(isDisplayed()));
-//        onView(withId(R.id.button3)).perform(click());
-//    }
-//    @Test
-//    public void Button4(){
-//        onView(withId(R.id.button4)).check(ViewAssertions.matches(isDisplayed()));
-//        onView(withId(R.id.button4)).perform(click());
-//        onView(withId(R.id.login_form)).check(ViewAssertions.matches(isDisplayed()));
-//        onView(withId(R.id.email_login_form)).check(ViewAssertions.matches(isDisplayed()));
-//        onView(withId(R.id.email)).check(ViewAssertions.matches(isDisplayed()));
-//        onView(withId(R.id.email)).perform(typeText("cake"), closeSoftKeyboard());
-//        onView(withId(R.id.password)).check(ViewAssertions.matches(isDisplayed()));
-//        onView(withId(R.id.password)).perform(typeText("bake"), closeSoftKeyboard());
-//        onView(withId(R.id.email_sign_in_button)).check(ViewAssertions.matches(isDisplayed()));
-//        onView(withId(R.id.email_sign_in_button)).perform(click());
-//    }
+    @Test
+    public void 
 }
