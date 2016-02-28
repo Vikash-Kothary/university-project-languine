@@ -1,39 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
-    </group>
-
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
-
-
     <item android:title="Pages">
         <menu>
             <item
@@ -60,16 +27,12 @@
                 android:id="@+id/nav_credits"
                 android:icon="@mipmap/ic_launcher"
                 android:title="Credits" />
-<<<<<<< HEAD
 
             <item
                 android:id="@+id/nav_audio_quiz"
                 android:icon="@mipmap/ic_launcher"
                 android:title="Audio Quiz" />
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             <item android:id="@+id/nav_quiz_intro"
                 android:icon="@mipmap/ic_launcher"
                 android:title="Quiz Introduction" />
@@ -77,20 +40,13 @@
             <item android:id="@+id/nav_language_select"
                 android:icon="@mipmap/ic_launcher"
                 android:title="Select a Language" />
-=======
-            <item android:id="@+id/nav_glossary"
-            android:icon="@mipmap/ic_launcher"
-            android:title="Glossary" />
 
-            <item android:id="@+id/nav_getStarted"
-=======
+            <item android:id="@+id/nav_glossary"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Glossary" />
+
             <item
                 android:id="@+id/nav_glossary"
->>>>>>> Menu-New-Structure
-=======
-            <item
-                android:id="@+id/nav_glossary"
->>>>>>> Menu-New-Structure
                 android:icon="@mipmap/ic_launcher"
                 android:title="Glossary" />
 
@@ -99,24 +55,18 @@
                 android:icon="@mipmap/ic_launcher"
                 android:title="Get Started" />
 
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> refs/remotes/origin/Menu-New-Structure
-=======
             <item android:id="@+id/nav_exercises"
                 android:icon="@mipmap/ic_launcher"
                 android:title="Exercises" />
->>>>>>> Menu-New-Structure
-=======
+
             <item android:id="@+id/nav_exercises"
                 android:icon="@mipmap/ic_launcher"
                 android:title="Exercises" />
->>>>>>> Menu-New-Structure
-=======
+
             <item android:id="@+id/nav_Video"
                 android:icon="@mipmap/ic_launcher"
                 android:title="Video Question" />
->>>>>>> origin/video-question-interface
+
         </menu>
     </item>
 </menu>

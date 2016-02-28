@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class Exercises extends AppCompatActivity {
 
     @Override
@@ -17,16 +19,6 @@ public class Exercises extends AppCompatActivity {
         setContentView(R.layout.activity_exercises);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);
         cardList.setHasFixedSize(true);
 
@@ -36,10 +28,9 @@ public class Exercises extends AppCompatActivity {
 
         // specify an adapter (see also next example)
 
-        Lessons[] myDataset  = {new Lessons(R.mipmap.ic_launcher, "Revision Videos",100),
-        new Lessons(R.mipmap.ic_launcher, "Exercises", 100)};
+        ArrayList<Lessons> mDataset  = new ArrayList<>();
 
-        MyAdapter mAdapter = new MyAdapter(myDataset);
+        MyAdapter mAdapter = new MyAdapter(mDataset);
         cardList.setAdapter(mAdapter);
     }
 

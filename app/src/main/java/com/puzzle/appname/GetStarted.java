@@ -10,6 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.VideoView;
 
+import java.util.ArrayList;
+
 public class GetStarted extends AppCompatActivity {
 
     @Override
@@ -38,8 +40,8 @@ public class GetStarted extends AppCompatActivity {
 
         // specify an adapter (see also next example)
 
-        Lessons[] myDataset  = {new Lessons(R.mipmap.ic_launcher, "Get Started",100)};
-
+        ArrayList<Lessons> myDataset = new ArrayList<>();
+        myDataset.add(new Lessons());
         MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);
 

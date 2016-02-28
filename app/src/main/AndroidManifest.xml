@@ -60,16 +60,9 @@
                 android:value="com.puzzle.appname.LessonSelectActivity" />
         </activity>
         <activity
-<<<<<<< HEAD
-            android:name=".MultipleChoice"
-            android:parentActivityName=".LessonSelectActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".AudioQuiz"
             android:label="@string/title_activity_content_audio_quiz"
             android:theme="@style/AppTheme.NoActionBar" />
-<<<<<<< HEAD
-        android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".QuizIntroActivity"
             android:label="@string/title_activity_quiz"
@@ -82,7 +75,7 @@
         <activity
             android:name=".ResultActivity"
             android:label="@string/title_activity_review"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".LessonSelectActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -96,24 +89,16 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.puzzle.appname.LessonSelectActivity" />
-=======
+        </activity>
+        <activity
             android:name=".VideoActivity"
             android:label="@string/title_activity_video"
             android:theme="@style/AppTheme.NoActionBar" >
->>>>>>> origin/video-question-interface
         </activity>
-=======
         <activity
             android:name=".Glossary"
             android:label="@string/title_activity_glossary"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".MediaPlayer"
-            android:label="@string/title_activity_media_player"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <service android:name=".MusicService" />
-
         <activity
             android:name=".GetStarted"
             android:label="@string/title_activity_get_started"
@@ -122,7 +107,7 @@
             android:name=".Exercises"
             android:label="@string/title_activity_exercises"
             android:theme="@style/AppTheme.NoActionBar"></activity>
->>>>>>> refs/remotes/origin/Menu-New-Structure
+
     </application>
 
 </manifest>
