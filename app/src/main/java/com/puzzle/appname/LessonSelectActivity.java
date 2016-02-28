@@ -77,7 +77,7 @@ public class LessonSelectActivity extends AppCompatActivity
                 @Override
                 public void onItemClick(View view, int position)
                 {
-                    Intent intent = new Intent(getBaseContext(), ExerciseMenuActivity.class);
+                    Intent intent = new Intent(getBaseContext(), GetStarted.class);
                     intent.putExtra(LESSON_TITLE, lessonNames.get(position));
                     startActivity(intent);
                 }

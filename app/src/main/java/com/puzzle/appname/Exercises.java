@@ -28,9 +28,10 @@ public class Exercises extends AppCompatActivity {
 
         // specify an adapter (see also next example)
 
-        ArrayList<Lessons> mDataset  = new ArrayList<>();
-
-        MyAdapter mAdapter = new MyAdapter(mDataset);
+        ArrayList<Lessons> myDataset = new ArrayList<>();
+        myDataset.add(new Lessons(R.mipmap.ic_launcher,"Revision Videos",59));
+        myDataset.add(new Lessons(R.mipmap.ic_launcher, "Exercises", 79));
+        MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);
     }
 
