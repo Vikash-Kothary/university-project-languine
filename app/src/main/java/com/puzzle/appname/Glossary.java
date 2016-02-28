@@ -48,7 +48,7 @@ public class Glossary extends AppCompatActivity {
         // specify an adapter (see also next example)
         GlossaryController gc = new GlossaryController();
         String glossaryText = getResources().getString(R.string.glossary_text);
-        ArrayList<String> translations = gc.getTranslations(glossaryText);
+        ArrayList<Translation> translations = gc.getTranslations(glossaryText);
 
         GlossaryAdapter gAdapter = new GlossaryAdapter(translations);
         translationList.setAdapter(gAdapter);

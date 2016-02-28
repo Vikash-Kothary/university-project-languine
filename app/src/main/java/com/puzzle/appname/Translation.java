@@ -5,12 +5,22 @@ package com.puzzle.appname;
  */
 public class Translation
 {
-    String english;
-    String spanish;
+    private String english;
+    private String spanish;
 
     public Translation(String eng, String spa)
     {
         english = eng;
         spanish = spa;
+    }
+
+    public String getEnglishWord()
+    {
+        return english;
+    }
+
+    public String getSpanishWord()
+    {
+        return spanish;
     }
 }

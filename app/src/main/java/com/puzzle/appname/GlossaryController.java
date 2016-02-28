@@ -15,9 +15,9 @@ public class GlossaryController
         transMode = false;
     }
 
-    public ArrayList<String> getTranslations(String glossaryText)
+    public ArrayList<Translation> getTranslations(String glossaryText)
     {
-        String[] translationStrings = glossaryText.split(",");
+        String[] translationStrings = glossaryText.split(", ");
         String[] spanishWords = new String[translationStrings.length];
         String[] englishWords = new String[translationStrings.length];
         ArrayList<Translation> translations = new ArrayList<Translation>();
@@ -27,16 +27,22 @@ public class GlossaryController
             String[] twoWords = translationStrings[i].split(": ");
             spanishWords[i] = twoWords[0];
             englishWords[i] = twoWords[1];
+            if(i > 0)
+            {
+                String prevSpanishWord = spanishWords[i-1];
+                String prevEnglishWord = englishWords[i-1];
+
+                if(prevSpanishWord.charAt(0) != spanishWords[i].charAt(0))
+                {
+                    for(int j = 0; j < 3; ++j)
+                    {
+                        translations.add(new Translation("",""));
+                    }
+                }
+            }
             translations.add(new Translation(twoWords[1],twoWords[0]));
         }
 
-        ArrayList<String> trans = new ArrayList<String>();
-
-        for (String s : translationStrings)
-        {
-            trans.add(s);
-        }
-
-        return trans;
+        return translations;
     }
 }
