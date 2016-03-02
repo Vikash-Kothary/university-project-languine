@@ -12,7 +12,9 @@
         android:layout_marginLeft="6dp"
         android:layout_marginBottom="6dp"
         android:textSize="30dp"
-        android:text="Question to go here"/>
+        android:text="Question to go here"
+        android:textAlignment="center"
+        android:id="@+id/textView"/>
 
     <ImageView
         android:layout_width="150dp"
