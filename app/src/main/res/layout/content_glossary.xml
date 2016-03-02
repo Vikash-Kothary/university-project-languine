@@ -40,5 +40,22 @@
         android:id="@+id/translation_list"
         android:scrollbars="vertical" />
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/engspa"
+        android:layout_toEndOf="@+id/engspa"
+        android:layout_marginLeft="134dp"
+        android:layout_marginStart="134dp"
+        android:background="#ff0000">
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/alphabet"
+            android:layout_weight="1" />
+    </LinearLayout>
+
 
 </RelativeLayout>
