@@ -33,10 +33,10 @@ public class Experiment extends AppCompatActivity {
         String exerciseNames = getIntent().getStringExtra(Exercises.EXERCISE_NAMES);
         String[] exerciseNamesArray = exerciseNames.split(", ");
 
-        ArrayList<Lessons> myDataset = new ArrayList<>();
+        ArrayList<Lesson> myDataset = new ArrayList<>();
         for(int i = 2; i < exerciseNamesArray.length; ++i)
         {
-            myDataset.add(new Lessons(R.mipmap.ic_launcher,exerciseNamesArray[i],59));
+            myDataset.add(new Lesson(R.mipmap.ic_launcher,exerciseNamesArray[i],59));
         }
         MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);
