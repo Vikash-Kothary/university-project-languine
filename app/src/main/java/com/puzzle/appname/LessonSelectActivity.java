@@ -2,14 +2,11 @@ package com.puzzle.appname;
 
 import android.content.Intent;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-=======
->>>>>>> origin/video-question-interface
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -20,13 +17,10 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-<<<<<<< HEAD
 import android.view.View;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-=======
->>>>>>> origin/video-question-interface
 
 public class LessonSelectActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -50,10 +44,8 @@ public class LessonSelectActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
         setupRecyclerView();
 
     }
@@ -68,10 +60,10 @@ public class LessonSelectActivity extends AppCompatActivity
 
         // specify an adapter (see also next example)
 
-        ArrayList<Lessons> myDataset  = new ArrayList<Lessons>();
+        ArrayList<Lesson> myDataset  = new ArrayList<Lesson>();
         for(int i = 0; i < lessonNames.size(); ++i)
         {
-            myDataset.add(new Lessons(R.mipmap.ic_launcher, i+1 + ". " + lessonNames.get(i),0));
+            myDataset.add(new Lesson(R.mipmap.ic_launcher, i+1 + ". " + lessonNames.get(i),0));
         }
 
         MyAdapter mAdapter = new MyAdapter(myDataset);
@@ -83,7 +75,7 @@ public class LessonSelectActivity extends AppCompatActivity
                 @Override
                 public void onItemClick(View view, int position)
                 {
-                    Intent intent = new Intent(getBaseContext(), ExerciseMenuActivity.class);
+                    Intent intent = new Intent(getBaseContext(), GetStarted.class);
                     intent.putExtra(LESSON_TITLE, lessonNames.get(position));
                     startActivity(intent);
                 }
@@ -117,6 +109,8 @@ public class LessonSelectActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.openDrawer(GravityCompat.START);
             return true;
         }
 
@@ -128,20 +122,6 @@ public class LessonSelectActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
         Intent i=null;
         switch (item.getItemId()){
             case R.id.nav_lock_screen:

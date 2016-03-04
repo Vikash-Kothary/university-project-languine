@@ -9,17 +9,14 @@ import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class VideoFragment extends Fragment {
+    View view;
     public VideoFragment() {
         // Required empty public constructor
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_video, container, false);
-
+    public void runVideo(int whichVideo){
         VideoView videoView = (VideoView)view.findViewById(R.id.videoView);
-        videoView.setVideoPath("android.resource://" +this.getContext().getPackageName() + "/" + R.raw.ttt);
+        videoView.setVideoPath("android.resource://" +this.getContext().getPackageName() + "/" + whichVideo);
         videoView.setMinimumWidth(720);
         videoView.start();
 
@@ -28,7 +25,12 @@ public class VideoFragment extends Fragment {
         controller.setMediaPlayer(videoView);
 
         videoView.setMediaController(controller);
+    }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_video, container, false);
         return view;
     }
 

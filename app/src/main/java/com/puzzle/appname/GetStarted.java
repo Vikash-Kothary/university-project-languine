@@ -1,5 +1,6 @@
 package com.puzzle.appname;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,15 +9,22 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.VideoView;
+
+import java.util.ArrayList;
 
 public class GetStarted extends AppCompatActivity {
+
+
+//    VideoFragment video = new VideoFragment();
+
+    public static final String LESSON_TITLE = "TITLE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_started);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(getIntent().getStringExtra(LessonSelectActivity.LESSON_TITLE));
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -38,12 +46,27 @@ public class GetStarted extends AppCompatActivity {
 
         // specify an adapter (see also next example)
 
-        Lessons[] myDataset  = {new Lessons(R.mipmap.ic_launcher, "Get Started",100)};
+        ArrayList<Lesson> myDataset = new ArrayList<>();
+        myDataset.add(new Lesson(R.mipmap.ic_launcher, "Get Started", 100));
 
         MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);
 
-        VideoView intro = (VideoView) findViewById(R.id.introVid);
+
+        cardList.addOnItemTouchListener(
+                new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(getBaseContext(), Exercises.class);
+                        intent.putExtra(LESSON_TITLE, toolbar.getTitle());
+                        startActivity(intent);
+                    }
+                })
+        );
+        View frag = findViewById(R.id.fragment3);
+        frag.setMinimumHeight(200);
+        VideoFragment fragment = (VideoFragment)getSupportFragmentManager().findFragmentById(R.id.fragment3);
+        fragment.runVideo(R.raw.ttt);
     }
 
 }
