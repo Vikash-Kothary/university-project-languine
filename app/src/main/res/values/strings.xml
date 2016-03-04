@@ -310,6 +310,75 @@
 
     </string>
 
+    <!--Strings related to the names of quizzes -->
+     <string name="lesson_names">
+       Greetings,
+       At the train station,
+       pronombres,
+       see y estar,
+       llamarse,
+       las letras,
+       vacabulario,
+       comprension auditiva:
+       Checking in,
+       At the hotel,
+        articulo indeterminado,
+        articulo determinado,
+        numeros,
+        nacionalidades,
+        vacabulario,
+        comprension auditiva:
+        Sightseeing,
+        At the tourist office,
+        prepociones,
+        hay que y Tener que,
+        verbo estar,
+        vacabulario,
+        comprension auditiva:
+        Directions,
+        At the park,
+        imperativo 1,
+        imperativo 2,
+        tú o used,
+        vacabulario,
+        comprension auditiva:
+        Eating,
+        At the restaurant,
+        verbs want and think - verbos querer y pensar,
+        word power - Verbo Poder,
+        Verb Play - Verbo Jugar,
+        vocab - vacabulario,
+        audio comprehension - comprension auditiva:
+        Likes,
+        At the museum,
+        El Verbo Gustar,
+        los pronombres,
+        gustos,
+        vacabulario,
+        comprension auditiva:
+        Planning,
+        At the centre of madrid,
+        futuro con li,
+        El Verbo Doler,
+        time practice - práctica la Hora,
+        vacabulario,
+        comprension auditiva:
+        Shopping,
+        At the shopping centre,
+        los adjetivos,
+        objeto directo,
+        quisiera,
+        vacabulario,
+        comprension auditiva:
+        Dating,
+        At the cafeteria,
+        interrogativos,
+        pronombres posesivos,
+        adjetivos posesivos,
+        vacabulario,
+        comprension auditiva
+    </string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
@@ -337,4 +406,6 @@
     <string name="title_activity_get_started">GetStarted</string>
     <string name="title_activity_exercises">Exercises</string>
     <string name="title_activity_video">VideoActivity</string>
+    <string name="title_activity_experiment">Experiment</string>
+    <string name="title_activity_vocabulario">Vocabulario</string>
 </resources>

@@ -19,11 +19,13 @@ public class GetStarted extends AppCompatActivity {
 
 //    VideoFragment video = new VideoFragment();
 
+    public static final String LESSON_TITLE = "TITLE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_started);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(getIntent().getStringExtra(LessonSelectActivity.LESSON_TITLE));
         setSupportActionBar(toolbar);
 
@@ -59,7 +61,7 @@ public class GetStarted extends AppCompatActivity {
                     @Override
                     public void onItemClick(View view, int position) {
                         Intent intent = new Intent(getBaseContext(), Exercises.class);
-
+                        intent.putExtra(LESSON_TITLE, toolbar.getTitle());
                         startActivity(intent);
                     }
                 })
