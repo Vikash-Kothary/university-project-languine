@@ -41,10 +41,6 @@
                 android:icon="@mipmap/ic_launcher"
                 android:title="Select a Language" />
 
-            <item android:id="@+id/nav_glossary"
-                android:icon="@mipmap/ic_launcher"
-                android:title="Glossary" />
-
             <item
                 android:id="@+id/nav_glossary"
                 android:icon="@mipmap/ic_launcher"
@@ -54,10 +50,6 @@
                 android:id="@+id/nav_getStarted"
                 android:icon="@mipmap/ic_launcher"
                 android:title="Get Started" />
-
-            <item android:id="@+id/nav_exercises"
-                android:icon="@mipmap/ic_launcher"
-                android:title="Exercises" />
 
             <item android:id="@+id/nav_exercises"
                 android:icon="@mipmap/ic_launcher"

@@ -19,7 +19,7 @@ public class VideoFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_video, container, false);
 
         VideoView videoView = (VideoView)view.findViewById(R.id.videoView);
-        videoView.setVideoPath("android.resource://" +this.getContext().getPackageName() + "/" + R.raw.ttt);
+
         videoView.setMinimumWidth(720);
         videoView.start();
 

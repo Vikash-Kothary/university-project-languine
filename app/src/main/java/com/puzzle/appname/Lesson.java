@@ -6,14 +6,14 @@ package com.puzzle.appname;
 
 
 
-public class Lessons {
+public class Lesson {
     private int imageID;
     private String lessonName;
     private int progress;
 
-    public Lessons(){}
+    public Lesson(){}
 
-    public Lessons(int imageID, String lessonName, int progress)
+    public Lesson(int imageID, String lessonName, int progress)
     {
         this.imageID = imageID;
         this.lessonName = lessonName;
