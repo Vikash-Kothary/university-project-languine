@@ -9,8 +9,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.MediaController;
-import android.widget.VideoView;
 
 import java.util.ArrayList;
 
@@ -49,7 +47,7 @@ public class GetStarted extends AppCompatActivity {
         // specify an adapter (see also next example)
 
         ArrayList<Lesson> myDataset = new ArrayList<>();
-        myDataset.add(new Lesson(R.mipmap.ic_launcher, "Get Started",100));
+        myDataset.add(new Lesson(R.mipmap.ic_launcher, "Get Started", 100));
 
         MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);
@@ -65,22 +63,10 @@ public class GetStarted extends AppCompatActivity {
                     }
                 })
         );
-
-
-
-
-
-        VideoView intro = (VideoView) findViewById(R.id.introVid);
-
-        intro.setVideoPath("android.resource://" +this.getPackageName() + "/" + R.raw.ttt);
-        intro.setMinimumWidth(720);
-        intro.start();
-
-        MediaController controller = new MediaController(this);
-        controller.setAnchorView(intro);
-        controller.setMediaPlayer(intro);
-
-        intro.setMediaController(controller);
+        View frag = findViewById(R.id.fragment3);
+        frag.setMinimumHeight(200);
+        VideoFragment fragment = (VideoFragment)getSupportFragmentManager().findFragmentById(R.id.fragment3);
+        fragment.runVideo(R.raw.ttt);
     }
 
 }
