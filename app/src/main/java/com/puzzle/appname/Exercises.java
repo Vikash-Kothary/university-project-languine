@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class Exercises extends AppCompatActivity {
 
     @Override
@@ -36,8 +38,10 @@ public class Exercises extends AppCompatActivity {
 
         // specify an adapter (see also next example)
 
-        Lessons[] myDataset  = {new Lessons(R.mipmap.ic_launcher, "Revision Videos",100),
-        new Lessons(R.mipmap.ic_launcher, "Exercises", 100)};
+        ArrayList<Lesson> myDataset = new ArrayList<>();
+        myDataset.add(new Lesson(R.mipmap.ic_launcher, "Revision Videos",100));
+        myDataset.add(new Lesson(R.mipmap.ic_launcher, "Exercises", 100));
+
 
         MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);

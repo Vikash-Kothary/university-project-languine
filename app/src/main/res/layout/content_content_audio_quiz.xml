@@ -18,19 +18,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-<<<<<<< HEAD
         android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pause"
-        android:onClick="pauseSound"
-        android:id="@+id/pause_button"
-        android:layout_marginTop="96dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
     <SeekBar
         android:layout_width="match_parent"
@@ -50,8 +38,6 @@
         android:layout_alignBottom="@+id/button"
         android:layout_centerHorizontal="true"
         android:checked="false" />
-<<<<<<< HEAD
-=======
         android:layout_alignParentStart="true"
         android:layout_marginBottom="63dp">
 
@@ -132,11 +118,6 @@
 
         </RelativeLayout>
 
-    </RelativeLayout>
-
->>>>>>> refs/remotes/origin/audio-mcq
-=======
-
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -182,5 +163,4 @@
         android:layout_below="@+id/radioButton4"
         android:layout_alignRight="@+id/radioButton3"
         android:layout_alignEnd="@+id/radioButton3" />
->>>>>>> refs/remotes/origin/Menu-New-Structure
 </RelativeLayout>

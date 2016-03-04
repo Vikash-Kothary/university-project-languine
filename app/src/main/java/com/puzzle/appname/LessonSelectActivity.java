@@ -2,14 +2,6 @@ package com.puzzle.appname;
 
 import android.content.Intent;
 import android.os.Bundle;
-<<<<<<< HEAD
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-=======
->>>>>>> origin/video-question-interface
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -20,13 +12,10 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-<<<<<<< HEAD
 import android.view.View;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-=======
->>>>>>> origin/video-question-interface
 
 public class LessonSelectActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -68,26 +57,24 @@ public class LessonSelectActivity extends AppCompatActivity
 
         // specify an adapter (see also next example)
 
-        ArrayList<Lessons> myDataset  = new ArrayList<Lessons>();
+        ArrayList<Lesson> myDataset  = new ArrayList<Lesson>();
         for(int i = 0; i < lessonNames.size(); ++i)
         {
-            myDataset.add(new Lessons(R.mipmap.ic_launcher, i+1 + ". " + lessonNames.get(i),0));
+            myDataset.add(new Lesson(R.mipmap.ic_launcher, i+1 + ". " + lessonNames.get(i),0));
         }
 
         MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);
 
         cardList.addOnItemTouchListener(
-            new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener()
-            {
-                @Override
-                public void onItemClick(View view, int position)
-                {
-                    Intent intent = new Intent(getBaseContext(), ExerciseMenuActivity.class);
-                    intent.putExtra(LESSON_TITLE, lessonNames.get(position));
-                    startActivity(intent);
-                }
-            })
+                new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(getBaseContext(), ExerciseMenuActivity.class);
+                        intent.putExtra(LESSON_TITLE, lessonNames.get(position));
+                        startActivity(intent);
+                    }
+                })
         );
     }
 
