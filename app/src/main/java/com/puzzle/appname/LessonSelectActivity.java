@@ -62,10 +62,10 @@ public class LessonSelectActivity extends AppCompatActivity
 
         // specify an adapter (see also next example)
 
-        ArrayList<Lessons> myDataset  = new ArrayList<Lessons>();
+        ArrayList<Lesson> myDataset  = new ArrayList<Lesson>();
         for(int i = 0; i < lessonNames.size(); ++i)
         {
-            myDataset.add(new Lessons(R.mipmap.ic_launcher, i+1 + ". " + lessonNames.get(i),0));
+            myDataset.add(new Lesson(R.mipmap.ic_launcher, i+1 + ". " + lessonNames.get(i),0));
         }
 
         MyAdapter mAdapter = new MyAdapter(myDataset);
@@ -121,6 +121,7 @@ public class LessonSelectActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        int id = item.getItemId();
         Intent i=null;
         switch (item.getItemId()){
             case R.id.nav_lock_screen:

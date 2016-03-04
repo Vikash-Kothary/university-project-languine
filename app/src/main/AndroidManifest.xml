@@ -63,6 +63,7 @@
             android:name=".AudioQuiz"
             android:label="@string/title_activity_content_audio_quiz"
             android:theme="@style/AppTheme.NoActionBar" />
+        android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".QuizIntroActivity"
             android:label="@string/title_activity_quiz"
@@ -75,8 +76,8 @@
         <activity
             android:name=".ResultActivity"
             android:label="@string/title_activity_review"
-            android:parentActivityName=".LessonSelectActivity"
             android:theme="@style/AppTheme.NoActionBar">
+            android:parentActivityName=".LessonSelectActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.puzzle.appname.LessonSelectActivity" />
@@ -89,11 +90,10 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.puzzle.appname.LessonSelectActivity" />
-        </activity>
-        <activity
             android:name=".VideoActivity"
             android:label="@string/title_activity_video"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
         <activity
             android:name=".Glossary"
             android:label="@string/title_activity_glossary"
