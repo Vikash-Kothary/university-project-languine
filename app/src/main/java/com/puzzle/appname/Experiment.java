@@ -1,5 +1,6 @@
 package com.puzzle.appname;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,22 +22,24 @@ public class Experiment extends AppCompatActivity {
         toolbar.setTitle(getIntent().getStringExtra(Exercises.EXERCISE_TITLE));
         setSupportActionBar(toolbar);
 
-        /*RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);
-        //cardList.setHasFixedSize(true);
+        RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);
+        cardList.setHasFixedSize(true);
 
+        //use a linear layout manager
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         cardList.setLayoutManager(mLayoutManager);
 
-
+        // specify an adapter (see also next example)
+        String exerciseNames = getIntent().getStringExtra(Exercises.EXERCISE_NAMES);
+        String[] exerciseNamesArray = exerciseNames.split(", ");
 
         ArrayList<Lessons> myDataset = new ArrayList<>();
-
-
-
-        myDataset.add(new Lessons(R.mipmap.ic_launcher, "Revision Videos", 59));
-        myDataset.add(new Lessons(R.mipmap.ic_launcher, "Exercises", 79));
+        for(int i = 2; i < exerciseNamesArray.length; ++i)
+        {
+            myDataset.add(new Lessons(R.mipmap.ic_launcher,exerciseNamesArray[i],59));
+        }
         MyAdapter mAdapter = new MyAdapter(myDataset);
-        cardList.setAdapter(mAdapter);*/
+        cardList.setAdapter(mAdapter);
     }
 
 }

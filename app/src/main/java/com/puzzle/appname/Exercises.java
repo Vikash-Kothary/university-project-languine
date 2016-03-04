@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class Exercises extends AppCompatActivity {
 
     public static final String EXERCISE_TITLE = "TITLE";
+    public static final String EXERCISE_NAMES = "NAMES";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +40,12 @@ public class Exercises extends AppCompatActivity {
         cardList.setAdapter(mAdapter);
 
         //get the string of all exercises for all lessons
-        String exerciseNames = getResources().getString(R.string.lesson_names);
+        String allExerciseNames = getResources().getString(R.string.lesson_names);
         //split that string for each lesson
-        String[] exercisesPerLesson = exerciseNames.split("; ");
+        String[] exercisesPerLesson = allExerciseNames.split(": ");
 
         String titlePlaceHolder = "";
+        String namesPlaceHolder = "";
 
         for(int i = 0; i < exercisesPerLesson.length; ++i)
         {
@@ -51,13 +53,15 @@ public class Exercises extends AppCompatActivity {
             if(exercisesPerLesson[i].startsWith(toolbar.getTitle().toString()))
             {
                 //split that lesson's string into the exercise names
-                String[] buttonTitles = exercisesPerLesson[i].split(", ");
+                namesPlaceHolder = exercisesPerLesson[i];
+                String[] buttonTitles = namesPlaceHolder.split(", ");
                 //get the name of the page title for next activity
                 titlePlaceHolder = buttonTitles[1];
             }
         }
 
         final String exercisePageTitle = titlePlaceHolder;
+        final String exerciseNames = namesPlaceHolder;
 
         cardList.addOnItemTouchListener(
                 new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
@@ -65,6 +69,7 @@ public class Exercises extends AppCompatActivity {
                     public void onItemClick(View view, int position) {
                         Intent intent = new Intent(getBaseContext(), Experiment.class);
                         intent.putExtra(EXERCISE_TITLE, exercisePageTitle);
+                        intent.putExtra(EXERCISE_NAMES, exerciseNames);
                         startActivity(intent);
                     }
                 })
