@@ -1,0 +1,34 @@
+Elige el artículo determinado correcto para cada palabra.
+Choose the correct determinate article determinate article per each word.
+single
+10
+_ escuela
+la
+el,la
+_ bar
+el
+el,la
+_ supermercado
+el
+el,la
+_ hotel
+el
+el,la
+_ carnicería
+la
+el,la
+_ florería
+la
+el,la
+_ panadería
+la
+el,la
+_ universidad
+la
+el,la
+_ banco
+el
+el,la
+_ tienda
+la
+el,la

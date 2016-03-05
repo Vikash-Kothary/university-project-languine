@@ -1,0 +1,34 @@
+Selecciona el artículo interminado correcto de estos lugares de trabajo.
+Choose the right indefinite article for these work places.
+single
+10
+_ escuela
+una
+un,una
+_ bar
+un
+un,una
+_ supermercado
+un
+un,una
+_ carnicería
+una
+un,una
+_ florería
+una
+un,una
+_ panadería
+una
+un,una
+_ universidad
+una
+un,una
+_ banco
+un
+un,una
+_ tienda
+una
+un,una
+_ restaurante
+un
+un,una

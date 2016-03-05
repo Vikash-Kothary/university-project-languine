@@ -1,6 +1,7 @@
 package com.puzzle.appname.Backend;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by Tamara on 04/03/2016.
@@ -16,12 +17,14 @@ public class UnitQuestion {
         correctAnswers = new ArrayList<>();
     }
 
-    public void addPossibleAnswer(String answer) {
-        possibleAnswers.add(answer);
+    public void addPossibleAnswers(String answers) {
+        ArrayList<String> lines = new ArrayList<>(Arrays.asList(answers.split(",")));
+        possibleAnswers = lines;
     }
 
-    public void addCorrectAnswer(String answer) {
-        correctAnswers.add(answer);
+    public void addCorrectAnswers(String answers) {
+        ArrayList<String> lines = new ArrayList<>(Arrays.asList(answers.split(",")));
+        correctAnswers = lines;
     }
 
     public void setQuestionText(String text) {
@@ -39,5 +42,4 @@ public class UnitQuestion {
             return true;
         return false;
     }
-
 }

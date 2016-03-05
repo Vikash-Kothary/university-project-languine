@@ -1,0 +1,25 @@
+Elige la foto que corresponde a cada palabra.
+Choose the correct picture to match each word.
+pictures
+7
+zapatos
+U07P2
+U07P1,U07P2,U07P3,U07P4,U07P5,U07P6
+escaleras mecánicas
+U07P6
+U07P1,U07P2,U07P3,U07P4,U07P5,U07P6
+centro comercial
+U07P1
+U07P1,U07P2,U07P3,U07P4,U07P5,U07P6
+quiosco
+U07P5
+U07P1,U07P2,U07P3,U07P4,U07P5,U07P6
+sandalias
+MISSING_PICTURE
+U07P1,U07P2,U07P3,U07P4,MISSING_PICTURE,U07P6
+zapatería
+U07P3
+U07P1,U07P2,U07P3,U07P4,U07P5,U07P6
+supermercado
+U07P4
+U07P1,U07P2,U07P3,U07P4,U07P5,U07P6

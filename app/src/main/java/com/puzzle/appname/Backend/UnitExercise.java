@@ -13,11 +13,6 @@ public class UnitExercise {
     private ArrayList<UnitQuestion> questionsArr;
     private String type;
 
-    public UnitExercise() {
-        questionsArr = new ArrayList<>();
-        numQuestions = 0;
-    }
-
     public UnitExercise(String spanishDescription, String englishDescription,
                         int numQuestions, String type) {
         questionsArr = new ArrayList<>();
@@ -27,24 +22,8 @@ public class UnitExercise {
         this.spanishDescription = spanishDescription;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setSpanishDescription(String description) {
-        spanishDescription = description;
-    }
-
-    public void setEnglishDescription(String description) {
-        englishDescription = description;
-    }
-
     public void addQuestion(UnitQuestion question) {
         questionsArr.add(question);
-    }
-
-    public void setNumQuestions(String numQuestions) {
-        this.numQuestions = Integer.parseInt(numQuestions);
     }
 
     public ArrayList<UnitQuestion> getAllQuestions() {

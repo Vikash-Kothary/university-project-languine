@@ -1,0 +1,34 @@
+Elige el verbo correcto para cada oración.
+Choose the correct verb for each sentence.
+single
+10
+¿Tú _ Coca Cola?
+quieres
+quiero,quieres,quiere,queremos,queréis,quieren
+¿Ustedes _ ir al cinema?
+quieren
+quiero,quieres,quiere,queremos,queréis,quieren
+Marta _ un café
+quiere
+quiero,quieres,quiere,queremos,queréis,quieren
+Yo no _ postre
+quiero
+quiero,quieres,quiere,queremos,queréis,quieren
+¿Vosotros _ una cerveza?
+queréis
+quiero,quieres,quiere,queremos,queréis,quieren
+Vosotros _ demasiado
+pensáis
+piensas,piensa,pienso,pensamos,pensáis,piensan
+Yo _ comprar un coche
+pienso
+piensas,piensa,pienso,pensamos,pensáis,piensan
+Nosotros _ ir a México
+pensamos
+piensas,piensa,pienso,pensamos,pensáis,piensan
+¿Tú _ ir al cine?
+piensas
+piensas,piensa,pienso,pensamos,pensáis,piensan
+Ellos _ café
+piden
+pides,pido,pide,pedís,pedimos,piden

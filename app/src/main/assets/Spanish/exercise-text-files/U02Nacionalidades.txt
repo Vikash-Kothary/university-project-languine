@@ -1,0 +1,28 @@
+Seleciona la nacionalidad correcta para cada país.
+Choose the right nationality for each country.
+single
+8
+Marruecos
+marroquí
+argentino/argentina,brasileño/brasileña,marroquí,canadiense
+Brasil
+brasileño/brasileña
+argentino/argentina,brasileño/brasileña,marroquí,canadiense
+Canadá
+canadiense
+argentino/argentina,brasileño/brasileña,marroquí,canadiense
+Argentina
+argentino/argentina
+argentino/argentina,brasileño/brasileña,marroquí,canadiense
+México
+mexicano/mexicana
+mexicano/mexicana,español/española,escocés/escocesa,irlandés/irlandesa
+Escocia
+escocés/escocesa
+mexicano/mexicana,español/española,escocés/escocesa,irlandés/irlandesa
+España
+español/española
+mexicano/mexicana,español/española,escocés/escocesa,irlandés/irlandesa
+Irlanda
+irlandés/irlandesa
+mexicano/mexicana,español/española,escocés/escocesa,irlandés/irlandesa

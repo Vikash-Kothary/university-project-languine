@@ -1,0 +1,22 @@
+Elige la foto que corresponde a cada palabra.
+Choose the correct picture to match each word.
+pictures
+6
+café
+U09P1
+U09P1,U09P2,U09P3,U09P4,U09P5,U09P7
+zumo de naranja
+U09P5
+U09P1,U09P2,U09P3,U09P4,U09P5,U09P7
+pastel
+U09P4
+U09P1,U09P2,U09P3,U09P4,U09P5,U09P6
+hielos
+U09P3
+U09P1,U09P2,U09P3,U09P4,U09P5,U09P7
+galleta
+U09P2
+U09P1,U09P2,U09P3,U09P4,U09P5,U09P6
+refresco
+U09P7
+U09P1,U09P2,U09P3,U09P4,U09P5,U09P7

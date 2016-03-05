@@ -1,0 +1,34 @@
+Elije la palabra que se deletrea en cada audio.
+Choose the name spelt in each audio.
+single
+10
+U01E06Q1
+Julio
+Junio,Julia,Julio
+U01E06Q2
+Lucy
+Lucy,Luca,Luz
+U01E06Q3
+Gema
+Gema,Henna,Goma
+U01E06Q4
+Yolanda
+Holanda,Fernanda,Yolanda
+U01E06Q5
+Juan
+Juan,Juana,Iguana
+U01E06Q6
+Maga
+Majo,Maja,Maga
+U01E06Q7
+Greta
+Grito,Greta,Grata
+U01E06Q8
+Gerónimo
+Gerónimo,Jerónimo,Geranio
+U01E06Q9
+Miguel
+Miguel,Micaela,Malena
+U01E06Q10
+Camila
+Camila,Camino,Camilo
