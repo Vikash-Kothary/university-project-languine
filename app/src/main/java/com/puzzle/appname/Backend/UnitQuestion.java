@@ -42,4 +42,16 @@ public class UnitQuestion {
             return true;
         return false;
     }
+
+    public String toString(){
+        String result = questionText + "\n";
+        for(String answer: possibleAnswers){
+            result += answer + "\n";
+        }
+        return result;
+    }
+
+    public ArrayList<String> getPossibleAnswers() {
+        return possibleAnswers;
+    }
 }

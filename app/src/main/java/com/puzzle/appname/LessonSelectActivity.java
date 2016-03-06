@@ -26,7 +26,8 @@ public class LessonSelectActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public static final String LESSON_TITLE = "TITLE";
-    ArrayList<String> lessonNames = new ArrayList<String>(
+    public static final String LESSON_NUMBER = "NUMBER";
+    ArrayList<String> lessonNames = new ArrayList<>(
             Arrays.asList("Greetings","Checking in","Sightseeing","Directions","Eating","Likes","Planning","Shopping","Dating")
     );
 
@@ -76,6 +77,7 @@ public class LessonSelectActivity extends AppCompatActivity
                 {
                     Intent intent = new Intent(getBaseContext(), GetStarted.class);
                     intent.putExtra(LESSON_TITLE, lessonNames.get(position));
+                    intent.putExtra(LESSON_NUMBER, (position + 1) + "");
                     startActivity(intent);
                 }
             })

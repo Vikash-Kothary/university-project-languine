@@ -16,6 +16,8 @@ public class Experiment extends AppCompatActivity {
 
     public static final String QUIZ_TITLE = "TITLE";
     public static final String UNIT_NUMBER = "UNIT";
+    public static final String LESSON_NUMBER = "NUMBER";
+    private String lessonNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,7 @@ public class Experiment extends AppCompatActivity {
         setContentView(R.layout.activity_experiment);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(getIntent().getStringExtra(Exercises.EXERCISE_TITLE));
+        lessonNumber = (getIntent().getStringExtra(Exercises.LESSON_NUMBER));
         setSupportActionBar(toolbar);
 
         RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);
@@ -51,6 +54,7 @@ public class Experiment extends AppCompatActivity {
                         Intent intent = new Intent(getBaseContext(), QuizIntroActivity.class);
                         intent.putExtra(QUIZ_TITLE, exerciseNamesArray[position+3]);
                         intent.putExtra(UNIT_NUMBER, exerciseNamesArray[1]);
+                        intent.putExtra(LESSON_NUMBER, lessonNumber);
                         startActivity(intent);
                     }
                 })

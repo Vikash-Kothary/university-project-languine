@@ -14,6 +14,8 @@ public class QuizIntroActivity extends AppCompatActivity {
 
     public static final String QUIZ_TYPE = "QUIZ_TYPE";
     public static final String QUIZ_TITLE = "QUIZ_TITLE";
+    public static final String LESSON_NUMBER = "NUMBER";
+    private String lessonNumber;
 
     private String quizType;
     private String quizTitle;
@@ -29,6 +31,7 @@ public class QuizIntroActivity extends AppCompatActivity {
 
         String unitNumber = getIntent().getStringExtra(Experiment.UNIT_NUMBER);
         quizTitle = getIntent().getStringExtra(Experiment.QUIZ_TITLE);
+        lessonNumber = (getIntent().getStringExtra(Experiment.LESSON_NUMBER));
         toolbar.setTitle(quizTitle);
 
         UnitExercise exercise = Data.getExercise(unitNumber, quizTitle, this);
@@ -47,6 +50,7 @@ public class QuizIntroActivity extends AppCompatActivity {
         Intent i = new Intent(this, ExerciseActivity.class);
         i.putExtra(QUIZ_TYPE, quizType);
         i.putExtra(QUIZ_TITLE, quizTitle);
+        i.putExtra(LESSON_NUMBER, lessonNumber);
         startActivity(i);
     }
 

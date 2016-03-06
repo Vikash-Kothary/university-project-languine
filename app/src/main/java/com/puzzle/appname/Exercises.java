@@ -16,6 +16,8 @@ public class Exercises extends AppCompatActivity {
 
     public static final String EXERCISE_TITLE = "TITLE";
     public static final String EXERCISE_NAMES = "NAMES";
+    public static final String LESSON_NUMBER = "NUMBER";
+    private String lessonNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,8 @@ public class Exercises extends AppCompatActivity {
         setContentView(R.layout.activity_exercises);
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle((getIntent().getStringExtra(GetStarted.LESSON_TITLE)));
+        lessonNumber = (getIntent().getStringExtra(GetStarted.LESSON_NUMBER));
+
         setSupportActionBar(toolbar);
         RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);
         cardList.setHasFixedSize(true);
@@ -72,6 +76,7 @@ public class Exercises extends AppCompatActivity {
                         Intent intent = new Intent(getBaseContext(), Experiment.class);
                         intent.putExtra(EXERCISE_TITLE, exercisePageTitle);
                         intent.putExtra(EXERCISE_NAMES, exerciseNames);
+                        intent.putExtra(LESSON_NUMBER, lessonNumber);
                         startActivity(intent);
                     }
                 })

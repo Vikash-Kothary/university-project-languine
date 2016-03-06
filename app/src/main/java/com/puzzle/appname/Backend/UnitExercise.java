@@ -46,4 +46,17 @@ public class UnitExercise {
     {
         return type;
     }
+
+    public String toString(){
+        String result = englishDescription + "\n" + spanishDescription + "\n" +
+                "Number of questions: " + numQuestions + "\n" + "Type: " + type;
+        for(UnitQuestion q: questionsArr){
+            result += q;
+        }
+        return result;
+    }
+
+    public int getQuestionsNumber(){
+        return numQuestions;
+    }
 }

@@ -17,7 +17,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="89dp"
-        android:id="@+id/radioGroup">
+        android:id="@+id/possible_answers">
 
     </RadioGroup>
 
@@ -26,17 +26,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
-        android:id="@+id/titleText"
+        android:id="@+id/question"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textb"
-        android:layout_below="@+id/titleText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:textAlignment="center" />
 
 </RelativeLayout>
