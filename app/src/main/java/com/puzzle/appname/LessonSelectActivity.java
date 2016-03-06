@@ -27,6 +27,9 @@ public class LessonSelectActivity extends AppCompatActivity
 
     public static final String QUESTION_TYPE = "QuestionType";
     public static final String LESSON_TITLE = "TITLE";
+    ArrayList<Integer> lessonImages = new ArrayList<Integer>(Arrays.asList(R.drawable.greetings, R.drawable.checkingin,
+            R.drawable.sightseeing, R.drawable.directions, R.drawable.eating, R.drawable.likes, R.drawable.planning,
+            R.drawable.shopping,R.drawable.dating ));
     ArrayList<String> lessonNames = new ArrayList<String>(
             Arrays.asList("Greetings","Checking in","Sightseeing","Directions","Eating","Likes","Planning","Shopping","Dating")
     );
@@ -63,7 +66,7 @@ public class LessonSelectActivity extends AppCompatActivity
         ArrayList<Lesson> myDataset  = new ArrayList<Lesson>();
         for(int i = 0; i < lessonNames.size(); ++i)
         {
-            myDataset.add(new Lesson(R.mipmap.ic_launcher, i+1 + ". " + lessonNames.get(i),0));
+            myDataset.add(new Lesson(lessonImages.get(i), i+1 + ". " + lessonNames.get(i),0));
         }
 
         MyAdapter mAdapter = new MyAdapter(myDataset);
