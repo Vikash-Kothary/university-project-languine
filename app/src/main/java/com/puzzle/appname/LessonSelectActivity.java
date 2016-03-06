@@ -25,7 +25,6 @@ import java.util.Arrays;
 public class LessonSelectActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    public static final String QUESTION_TYPE = "QuestionType";
     public static final String LESSON_TITLE = "TITLE";
     ArrayList<String> lessonNames = new ArrayList<String>(
             Arrays.asList("Greetings","Checking in","Sightseeing","Directions","Eating","Likes","Planning","Shopping","Dating")
@@ -150,7 +149,6 @@ public class LessonSelectActivity extends AppCompatActivity
                 break;
             case R.id.nav_picture_questions:
                 i = new Intent(this, ExerciseActivity.class);
-                i.putExtra(QUESTION_TYPE, QuestionType.PICTURE);
             case R.id.nav_quiz_intro:
                 i = new Intent(this, QuizIntroActivity.class);
                 break;

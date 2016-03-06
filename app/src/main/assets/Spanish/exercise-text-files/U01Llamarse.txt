@@ -1,22 +1,22 @@
-Elige la forma correcta dev vorbo llamarse que corresponde a cada pronombre.
+Elige la forma correcta del verbo llamarse que corresponde a cada pronombre.
 Drag and drop the correct form of verb llamarse to match each pronoun.
 single
 6
-Tú
+Tï¿½
 te llamas
 me llamo,te llamas,se llama,nos llamamos
-Él/ella/usted
+ï¿½l/ella/usted
 se llama
-me llamo,te llamas,se llama,os llamáis
+me llamo,te llamas,se llama,os llamï¿½is
 Ellos/ellas ustedes
 se llaman
-me llamo,se llaman,se llama,os llamáis
+me llamo,se llaman,se llama,os llamï¿½is
 Vosotros
-os llamáis
-me llamo,te llamas,se llama,os llamáis
+os llamï¿½is
+me llamo,te llamas,se llama,os llamï¿½is
 Nosotros
 nos llamamos
-me llamo,te llamas,se llama,os llamáis
+me llamo,te llamas,se llama,os llamï¿½is
 Yo
 me llamo
-me llamo,te llamas,se llama,os llamáis
+me llamo,te llamas,se llama,os llamï¿½is

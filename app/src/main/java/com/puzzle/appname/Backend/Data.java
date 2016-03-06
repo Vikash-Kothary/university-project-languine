@@ -1,5 +1,6 @@
 package com.puzzle.appname.Backend;
 
+import android.content.Context;
 import android.content.res.AssetManager;
 
 import java.io.BufferedReader;
@@ -21,17 +22,22 @@ public class Data {
     /**
      * Retrieves the data for a given exercise stored in assets
      */
-    public static UnitExercise getExercise(String unitNumber, String exerciseName) {
+    public static UnitExercise getExercise(String unitNumber, String exerciseName, Context context) {
         try {
             /* replacing á,é,í,ó,ú because of gradle build error
             if file names in assets contain those letters */
             exerciseName = replaceSpanishLetters(exerciseName);
 
-            InputStream inputStream = assetManager.open("U" + unitNumber + exerciseName + ".txt");  //e.g. U01Pronombres.txt
-            String text = convertStreamToString(inputStream);   //the text from the .txt file
-            assetManager.close();
-            inputStream.close();
+            /*removing spaces and capitalising the first letter of
+            each word so it fully matches the naming used for the
+            .txt files*/
+            exerciseName = removeSpacesAndCapitalise(exerciseName);
 
+            assetManager = context.getAssets(); //without this a NullPointerException occurred when trying to read the file
+            InputStream inputStream = assetManager.open("Spanish/exercise-text-files/U" + unitNumber + exerciseName + ".txt");  //e.g. U01Pronombres.txt
+            String text = convertStreamToString(inputStream);   //the text from the .txt file
+            //assetManager.close(); //this would cause an error when trying to change activity, though not sure why??
+            inputStream.close();
             setUpExercise(text);    //fill static field 'exercise' with questions
 
         } catch (IOException e) {
@@ -81,6 +87,19 @@ public class Data {
             string = string.replaceAll("ú", "u");
         }
         return string;
+    }
+
+    private static String removeSpacesAndCapitalise(String string)
+    {
+        String[] subWords = string.split(" ");
+        String changedWord = subWords[0];
+
+        for(int i = 1; i < subWords.length; ++i)
+        {
+            subWords[i] = subWords[i].substring(0,1).toUpperCase() + subWords[i].substring(1);
+            changedWord += subWords[i];
+        }
+        return changedWord;
     }
 
     /**

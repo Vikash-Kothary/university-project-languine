@@ -41,4 +41,9 @@ public class UnitExercise {
     public String getEnglishDescription() {
         return englishDescription;
     }
+
+    public String getType()
+    {
+        return type;
+    }
 }

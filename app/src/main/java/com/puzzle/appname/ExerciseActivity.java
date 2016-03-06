@@ -13,7 +13,16 @@ public class ExerciseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        switch(getIntent().getIntExtra(LessonSelectActivity.QUESTION_TYPE, -1)){
+        chooseFragment();
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        /*Something weird is going on with the toolbar, when trying to use the fragment, 'toolbar' is
+        somehow null and the activity therefore crashes...*/
+        //toolbar.setTitle(getIntent().getStringExtra(QuizIntroActivity.QUIZ_TITLE));
+        //setSupportActionBar(toolbar);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        /*switch(getIntent().getIntExtra(LessonSelectActivity.QUESTION_TYPE, -1)){
             case -1:
                 break;
             case QuestionType.TEXT:
@@ -23,21 +32,31 @@ public class ExerciseActivity extends AppCompatActivity {
                 setContentView(R.layout.fragment_picture_question);
                 break;
 
+        }*/
+    }
+
+    private void chooseFragment()
+    {
+        String quizType = getIntent().getStringExtra(QuizIntroActivity.QUIZ_TYPE);
+
+        switch (quizType)
+        {
+            case "single":
+                setContentView(R.layout.fragment_text_question);
+                break;
+            case "multiple":
+                setContentView(R.layout.activity_content_audio_quiz);
+                break;
+            case "pictures":
+                setContentView(R.layout.fragment_picture_question);
+                break;
+            case "audio":
+                //start ??? New fragment just like textQuestionFragment with an audio as well
+                break;
+            default:
+                //nothing
+                break;
         }
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
     }
 
 }

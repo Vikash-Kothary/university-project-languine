@@ -302,6 +302,7 @@
     <!--Strings related to the names of quizzes -->
      <string name="lesson_names">
        Greetings,
+         01,
        At the train station,
        Pronombres,
        Ser y estar,
@@ -310,6 +311,7 @@
        Vocabulario,
        Comprensión auditiva:
        Checking in,
+         02,
        At the hotel,
          Artículo indeterminado,
         Artículo determinado,
@@ -318,6 +320,7 @@
          Vocabulario,
         Comprensión auditiva:
         Sightseeing,
+         03,
         At the tourist office,
         Preposiciones,
         Hay que y Tener que,
@@ -325,6 +328,7 @@
         Vocabulario,
         Comprensión auditiva:
         Directions,
+         04,
         At the park,
         Imperativo 1,
         Imperativo 2,
@@ -332,6 +336,7 @@
         Vocabulario,
         Comprensión auditiva:
         Eating,
+         05,
         At the restaurant,
         Verbos Querer y Pensar,
         Verbo Poder,
@@ -339,6 +344,7 @@
         Vocabulario,
         Comprensión auditiva:
         Likes,
+         06,
         At the museum,
         El Verbo Gustar,
         Los Pronombres,
@@ -346,6 +352,7 @@
         Vocabulario,
         Comprensión auditiva:
         Planning,
+         07,
         At the centre of madrid,
         Futuro con ir,
         El Verbo Doler,
@@ -353,6 +360,7 @@
         Vocabulario,
         Comprensión auditiva:
         Shopping,
+         08,
         At the shopping centre,
         Los Adjetivos,
         Objeto Directo,
@@ -360,6 +368,7 @@
         Vocabulario,
         Comprensión auditiva:
         Dating,
+         09,
         At the cafeteria,
         Interrogativos,
         Pronombres Posesivos,

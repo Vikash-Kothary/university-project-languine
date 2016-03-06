@@ -1,4 +1,4 @@
-Elije la palabra que se deletrea en cada audio.
+Elige la palabra que se deletrea en cada audio.
 Choose the name spelt in each audio.
 single
 10
@@ -24,8 +24,8 @@ U01E06Q7
 Greta
 Grito,Greta,Grata
 U01E06Q8
-Gerónimo
-Gerónimo,Jerónimo,Geranio
+Gerï¿½nimo
+Gerï¿½nimo,Jerï¿½nimo,Geranio
 U01E06Q9
 Miguel
 Miguel,Micaela,Malena

@@ -14,6 +14,9 @@ import java.util.ArrayList;
 
 public class Experiment extends AppCompatActivity {
 
+    public static final String QUIZ_TITLE = "TITLE";
+    public static final String UNIT_NUMBER = "UNIT";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,15 +34,27 @@ public class Experiment extends AppCompatActivity {
 
         // specify an adapter (see also next example)
         String exerciseNames = getIntent().getStringExtra(Exercises.EXERCISE_NAMES);
-        String[] exerciseNamesArray = exerciseNames.split(", ");
+        final String[] exerciseNamesArray = exerciseNames.split(", ");
 
         ArrayList<Lesson> myDataset = new ArrayList<>();
-        for(int i = 2; i < exerciseNamesArray.length; ++i)
+        for(int i = 3; i < exerciseNamesArray.length; ++i)
         {
-            myDataset.add(new Lesson(R.mipmap.ic_launcher,exerciseNamesArray[i],59));
+            myDataset.add(new Lesson(R.mipmap.ic_launcher,exerciseNamesArray[i],0));
         }
         MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);
+
+        cardList.addOnItemTouchListener(
+                new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(getBaseContext(), QuizIntroActivity.class);
+                        intent.putExtra(QUIZ_TITLE, exerciseNamesArray[position+3]);
+                        intent.putExtra(UNIT_NUMBER, exerciseNamesArray[1]);
+                        startActivity(intent);
+                    }
+                })
+        );
     }
 
 }

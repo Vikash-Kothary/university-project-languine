@@ -58,7 +58,7 @@ public class Exercises extends AppCompatActivity {
                 namesPlaceHolder = exercisesPerLesson[i];
                 String[] buttonTitles = namesPlaceHolder.split(", ");
                 //get the name of the page title for next activity
-                titlePlaceHolder = buttonTitles[1];
+                titlePlaceHolder = buttonTitles[2];
             }
         }
 
