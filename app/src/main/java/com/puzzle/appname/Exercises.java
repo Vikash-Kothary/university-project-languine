@@ -102,6 +102,7 @@ public class Exercises extends AppCompatActivity {
                             Intent intent = new Intent(getBaseContext(), RevisionVideos.class);
                             intent.putExtra(EXERCISE_VIDEO_TITLE, videoPageTitle);
                             intent.putExtra(EXERCISE_VIDEO_NAMES, videoNames);
+                            intent.putExtra("FirstVideo",getIntent().getIntExtra("FirstVideo",-1));
                             startActivity(intent);
                         }
                         else

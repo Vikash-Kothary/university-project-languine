@@ -421,6 +421,63 @@
         Vocabulario
     </string>
 
+    <string name="video_file_names">
+       Greetings,
+        u01,
+        u0101grapronombres,
+        u0102grallamarse,
+        u0103graserestar,
+        u0104vocabmdetransporte:
+        Checking in,
+        u02,
+        u0201granacionalidades,
+        u0202graregulares,
+        u0203grairregularesgo,
+        u0204grasustantivosarticulos.mp4:
+        Sightseeing,
+        u03,
+        u0301grahayquetenerque,
+        u0302grapreposiciones,
+        u0303graverboestar,
+        u03vocabenlaoficina:
+        Directions,
+        u04,
+        u0401graimperativo,
+        u0401graimperativo2,
+        u0402gratuusted,
+        u0403graverboIr,
+        u0403graverboIr2,
+        u04vocabenelparque:
+        Eating,
+        u05,
+        u0501graverboscambios,
+        u0502gracomida,
+        u0503gramercado:
+        Likes,
+        u06,
+        u0601gragustos,
+        u0602gragustos,
+        u0603enelmuseovocab:
+        Planning,
+        u07,
+        u0701grafuturo,
+        u0702gradoler,
+        u07vocab:
+        Shopping,
+        u08,
+        u0801graadjetivos,
+        u0802graod,
+        u08vocab:
+        Dating,
+        u09,
+        u0901grainterrogativosold,
+        u0901interrogativos,
+        u0902graposesivos,
+        u0903vocab.mp4
+    </string>
+
+
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
@@ -451,4 +508,5 @@
     <string name="title_activity_experiment">Experiment</string>
     <string name="title_activity_vocabulario">Vocabulario</string>
     <string name="title_activity_revision_videos">RevisionVideos</string>
+    <string name="title_activity_revision_video_view">RevisionVideoView</string>
 </resources>

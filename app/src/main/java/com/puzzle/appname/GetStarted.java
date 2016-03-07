@@ -59,6 +59,7 @@ public class GetStarted extends AppCompatActivity {
                     public void onItemClick(View view, int position) {
                         Intent intent = new Intent(getBaseContext(), Exercises.class);
                         intent.putExtra(LESSON_TITLE, toolbar.getTitle());
+                        intent.putExtra("FirstVideo",getIntent().getIntExtra("WhichVideo",-1));
                         startActivity(intent);
                     }
                 })
