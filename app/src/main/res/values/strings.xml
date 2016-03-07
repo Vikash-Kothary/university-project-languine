@@ -368,6 +368,59 @@
         Comprensión auditiva
     </string>
 
+
+      <string name="video_names">
+          Greetings,
+          Greetings - Revision Videos,
+        Pronombres,
+        Llamarse,
+        Ser y Estar,
+        Vocabulario:
+          Checking in,
+        Checking in - Revision Videos,
+        Nationalidades,
+        Verbos Regulares,
+        Verbs “go”,
+        Vocabulario:
+          Sightseeing,
+        Sightseeing - Revision Videos,
+        Hay que y Tener que,
+        Las Preposiciones,
+        El Verbo Estar,
+        Vocabulario:
+          Directions,
+        Directions - Revision Videos,
+        Imperativo,
+        Tú o Usted,
+        El Verbo lr,
+        Vocabulario:
+          Eating,
+        Eating - Revision Videos,
+        Verbos Irregulares,
+        Comida y Precios,
+        Vocabulario:
+          Likes,
+        Likes - Revision Videos,
+        Los Gustos,
+        El Verbo Gustos,
+        Vocabulario:
+          Planning,
+        Planning - Revision Videos,
+        El Futuro con lr,
+        El Verbo Doler,
+        Vocabulario:
+          Shopping,
+        Shopping - Revision Videos,
+        Adjetivos,
+        Objeto
+        Vocabulario:
+          Dating,
+        Dating - Revision Videos,
+        Interrogativos,
+        Posesivos,
+        Vocabulario
+    </string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
@@ -397,4 +450,5 @@
     <string name="title_activity_video">VideoActivity</string>
     <string name="title_activity_experiment">Experiment</string>
     <string name="title_activity_vocabulario">Vocabulario</string>
+    <string name="title_activity_revision_videos">RevisionVideos</string>
 </resources>

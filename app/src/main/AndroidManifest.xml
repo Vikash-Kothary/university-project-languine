@@ -113,6 +113,10 @@
         <activity
             android:name=".Vocabulario"
             android:label="@string/title_activity_vocabulario"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RevisionVideos"
+            android:label="@string/title_activity_revision_videos"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
