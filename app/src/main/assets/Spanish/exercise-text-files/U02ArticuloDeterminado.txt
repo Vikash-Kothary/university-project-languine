@@ -1,4 +1,4 @@
-Elige el artículo determinado correcto para cada palabra.
+Elige el artÃ­culo determinado correcto para cada palabra.
 Choose the correct determinate article determinate article per each word.
 single
 10
@@ -14,13 +14,13 @@ el,la
 _ hotel
 el
 el,la
-_ carnicería
+_ carnicerÃ­a
 la
 el,la
-_ florería
+_ florerÃ­a
 la
 el,la
-_ panadería
+_ panaderÃ­a
 la
 el,la
 _ universidad

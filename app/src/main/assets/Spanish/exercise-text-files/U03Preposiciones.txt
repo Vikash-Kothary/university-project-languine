@@ -1,14 +1,14 @@
-Elige la preposición correcta para cada oración.
+Elige la preposiciÃ³n correcta para cada oraciÃ³n.
 Choose the correct preposition for each sentence.
 single
 10
 Estoy _ mis amigos en Madrid
 con
 a,en,de,con
-Hay un libro _ toda la información
+Hay un libro _ toda la informaciÃ³n
 con
 a,en,de,con
-Mi número _ teléfono es el...
+Mi nÃºmero _ telÃ©fono es el...
 de
 a,en,de,con
 Marta y Julia estudian _ la facultad de arquitectura
@@ -23,12 +23,12 @@ a,en,de,con
 El parque abre _ 10:00 a 11:00
 de
 a,en,de,con
-Madrid está _ el centro de España
+Madrid estÃ¡ _ el centro de EspaÃ±a
 en
 a,en,de,con
 Soy _ Buenos Aires
 de
 a,en,de,con
-¿ _ qué hora abren los bancos?
+Â¿ _ quÃ© hora abren los bancos?
 a
 a,en,de,con

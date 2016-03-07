@@ -1,14 +1,14 @@
-Elige el adjetivo correcto para cada oración.
+Elige el adjetivo correcto para cada oraciÃ³n.
 Choose the correct adjective for each sentence.
 single
 8
-Una canción _
+Una canciÃ³n _
 nueva
 largas,nueva,nuevas,cortas
 Unas sandlias _
 bonitas
-cómoda,nuevos,fea,bonitas
-Un niño _
+cÃ³moda,nuevos,fea,bonitas
+Un niÃ±o _
 guapo
 llorona,inteligentes,guapo,bonita
 Un vestido _
@@ -19,10 +19,10 @@ moradas
 azul,rojos,verde,moradas
 Una amiga _
 inglesa
-mexicano,inglesa,irlandés,estadounidenses
+mexicano,inglesa,irlandÃ©s,estadounidenses
 Las tiendas son _
 grandes
-fea,pequeña,grandes,bonita
+fea,pequeÃ±a,grandes,bonita
 El abrigo es _
 blanco
 bonitas,grandes,negra,blanco

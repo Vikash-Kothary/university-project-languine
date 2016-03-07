@@ -1,4 +1,4 @@
-Selecciona el artículo interminado correcto de estos lugares de trabajo.
+Selecciona el artÃ­culo interminado correcto de estos lugares de trabajo.
 Choose the right indefinite article for these work places.
 single
 10
@@ -11,13 +11,13 @@ un,una
 _ supermercado
 un
 un,una
-_ carnicería
+_ carnicerÃ­a
 una
 un,una
-_ florería
+_ florerÃ­a
 una
 un,una
-_ panadería
+_ panaderÃ­a
 una
 un,una
 _ universidad

@@ -1,11 +1,11 @@
-Elige la forma correcta del verbo doler para cada oración.
+Elige la forma correcta del verbo doler para cada oraciÃ³n.
 Choose the right form of the verb doler for each sentence.
 single
 8
 Me _ los pies.
 duelen
 duelen,duele
-¿Te _ la cabeza?
+Â¿Te _ la cabeza?
 duele
 duelen,duele
 Nos _ el cuerpo.
@@ -14,13 +14,13 @@ duelen,duele
 A Peter no le _ nada.
 duele
 duelen,duele
-A Marta le _ el estómago.
+A Marta le _ el estÃ³mago.
 duele
 duelen,duele
 Nos _ las manos.
 duelen
 duelen,duele
-¿Os _ los brazos?
+Â¿Os _ los brazos?
 duelen
 duelen,duele
 A Diana le _ las piernas.

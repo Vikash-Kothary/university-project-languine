@@ -1,28 +1,28 @@
-Seleciona la nacionalidad correcta para cada país.
+Seleciona la nacionalidad correcta para cada paÃ­s.
 Choose the right nationality for each country.
 single
 8
 Marruecos
-marroquí
-argentino/argentina,brasileño/brasileña,marroquí,canadiense
+marroquÃ­
+argentino/argentina,brasileÃ±o/brasileÃ±a,marroquÃ­,canadiense
 Brasil
-brasileño/brasileña
-argentino/argentina,brasileño/brasileña,marroquí,canadiense
-Canadá
+brasileÃ±o/brasileÃ±a
+argentino/argentina,brasileÃ±o/brasileÃ±a,marroquÃ­,canadiense
+CanadÃ¡
 canadiense
-argentino/argentina,brasileño/brasileña,marroquí,canadiense
+argentino/argentina,brasileÃ±o/brasileÃ±a,marroquÃ­,canadiense
 Argentina
 argentino/argentina
-argentino/argentina,brasileño/brasileña,marroquí,canadiense
-México
+argentino/argentina,brasileÃ±o/brasileÃ±a,marroquÃ­,canadiense
+MÃ©xico
 mexicano/mexicana
-mexicano/mexicana,español/española,escocés/escocesa,irlandés/irlandesa
+mexicano/mexicana,espaÃ±ol/espaÃ±ola,escocÃ©s/escocesa,irlandÃ©s/irlandesa
 Escocia
-escocés/escocesa
-mexicano/mexicana,español/española,escocés/escocesa,irlandés/irlandesa
-España
-español/española
-mexicano/mexicana,español/española,escocés/escocesa,irlandés/irlandesa
+escocÃ©s/escocesa
+mexicano/mexicana,espaÃ±ol/espaÃ±ola,escocÃ©s/escocesa,irlandÃ©s/irlandesa
+EspaÃ±a
+espaÃ±ol/espaÃ±ola
+mexicano/mexicana,espaÃ±ol/espaÃ±ola,escocÃ©s/escocesa,irlandÃ©s/irlandesa
 Irlanda
-irlandés/irlandesa
-mexicano/mexicana,español/española,escocés/escocesa,irlandés/irlandesa
+irlandÃ©s/irlandesa
+mexicano/mexicana,espaÃ±ol/espaÃ±ola,escocÃ©s/escocesa,irlandÃ©s/irlandesa

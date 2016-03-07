@@ -1,4 +1,4 @@
-Elige el pronombre correcto para cada oración.
+Elige el pronombre correcto para cada oraciÃ³n.
 Choose the correct pronoun for each sentence.
 single
 10
@@ -11,10 +11,10 @@ lo,le,la
 Necesito comprar fruta _ necesito comprar antes de ir a casa.
 la
 les,la,los
-Quiero ver la película de Almodóvar _ quiero ver esta tarde.
+Quiero ver la pelÃ­cula de AlmodÃ³var _ quiero ver esta tarde.
 la
 los,la,las
-Me gusta ver la televisión, me gusta _ por la tarde.
+Me gusta ver la televisiÃ³n, me gusta _ por la tarde.
 verla
 verla,verlo,verle
 Quiero leer un libro, quiero _ en la biblioteca.
@@ -23,7 +23,7 @@ leerle,leerlo,leerla
 Ella necesita un vestido, _ necesita para ir a la disco.
 lo
 lo,la,los
-Nosotros vemos el fútbol todos los sábados, ¿_ quieres ver con nosotros?
+Nosotros vemos el fÃºtbol todos los sÃ¡bados, Â¿_ quieres ver con nosotros?
 lo
 nos,los,lo
 Quiero unos zapatos, _ quiero en talla 38.

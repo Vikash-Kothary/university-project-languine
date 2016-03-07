@@ -1,10 +1,10 @@
-Elige la forma correcta formal o informal del verbo para cada oración.
+Elige la forma correcta formal o informal del verbo para cada oraciÃ³n.
 Choose the right form of the verb for each sentence using formal or informal.
 10
 Ustedes _
 perdonen
 perdon,perdone,perdonamos,perdona,perdonen
-Tú _
+TÃº _
 perdona
 perdon,perdone,perdonamos,perdona,perdonen
 Vosotros _
@@ -16,13 +16,13 @@ sigan,siga,seguid,sigue,sigamos
 Usted _
 siga
 sigan,siga,seguid,sigue,sigamos
-Tú _
+TÃº _
 sigue
 sigan,siga,seguid,sigue,sigamos
 Usted _
 siga
 sigan,siga,seguid,sigue,sigamos
-Tú _
+TÃº _
 gira
 gira,giramos,giren,gire,girad
 Ustedes _

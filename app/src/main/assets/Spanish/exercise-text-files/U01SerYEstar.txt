@@ -4,16 +4,16 @@ single
 5
 Ella _ mi amiga Gema
 es
-está,es,soy,eres
-:¿Dónde _ Pedro?
-está
-es,eres,está,estás
+estÃ¡,es,soy,eres
+:Â¿DÃ³nde _ Pedro?
+estÃ¡
+es,eres,estÃ¡,estÃ¡s
 Yo _ Cecilia
 soy
-soy,estoy,eres,estás
-Él _ Miguel
+soy,estoy,eres,estÃ¡s
+Ã‰l _ Miguel
 es
-son,eres,está,es
+son,eres,estÃ¡,es
 Nosotras _ Marta y Julia
 somos
 somos,estamos,eres,son

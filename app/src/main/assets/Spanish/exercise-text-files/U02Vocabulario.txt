@@ -2,10 +2,10 @@ Elige la foto que corresponde a cada palabra.
 Choose the correct picture to match each word.
 pictures
 10
-tarjeta de crédito
+tarjeta de crÃ©dito
 U02P6
 U02P7,U02P1,U02P6,U02P10,U02P8,U02P5
-dirección
+direcciÃ³n
 U02P9
 U02P2,U02P3,U02P9,U02P4,U02P8,U02P7
 reserva
@@ -14,13 +14,13 @@ U02P10,U02P1,U02P5,U02P3,U02P7,U02P8
 bar
 U02P8
 U02P2,U02P5,U02P8,U02P6,U02P10,U02P1
-teléfono
+telÃ©fono
 U02P5
 U02P1,U02P5,U02P3,U02P7,U02P10,U02P8
 recepcionista
 U02P2
 U02P10,U02P9,U02P2,U02P8,U02P7,U02P6
-habitación
+habitaciÃ³n
 U02P7
 U02P2,U02P3,U02P4,U02P7,U02P5,U02P6
 pasaporte

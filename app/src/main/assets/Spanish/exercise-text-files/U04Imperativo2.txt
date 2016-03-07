@@ -13,6 +13,6 @@ vayamos,vayan,ve,vaya,id
 Usted _
 vaya
 vayamos,vayan,ve,vaya,id
-Tú _
+TÃº _
 ve
 vayamos,vayan,ve,vaya,id

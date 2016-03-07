@@ -1,34 +1,34 @@
-Llena los espacio vacíos con la forma correcta del verbo estar.
+Llena los espacio vacÃ­os con la forma correcta del verbo estar.
 Drag and drop the right form of the verb estar.
 single
 10
-Madrid _ en el centro de España
-está
-estoy,estás,está,estamos,estáis,están
+Madrid _ en el centro de EspaÃ±a
+estÃ¡
+estoy,estÃ¡s,estÃ¡,estamos,estÃ¡is,estÃ¡n
 Yo _ en un hotel de cuatro estrellas
 estoy
-estoy,estás,está,estamos,estáis,están
+estoy,estÃ¡s,estÃ¡,estamos,estÃ¡is,estÃ¡n
 Las farmacias _ cerradas los domingos
-están
-estoy,estás,está,estamos,estáis,están
-¿A que hora _ abierto el cine?
-está
-estoy,estás,está,estamos,estáis,están
-¿Vosotras _ en la Plaza Mayor?
-estáis
-estoy,estás,está,estamos,estáis,están
-¿Cómo _ ustedes?
-están
-estoy,estás,está,estamos,estáis,están
+estÃ¡n
+estoy,estÃ¡s,estÃ¡,estamos,estÃ¡is,estÃ¡n
+Â¿A que hora _ abierto el cine?
+estÃ¡
+estoy,estÃ¡s,estÃ¡,estamos,estÃ¡is,estÃ¡n
+Â¿Vosotras _ en la Plaza Mayor?
+estÃ¡is
+estoy,estÃ¡s,estÃ¡,estamos,estÃ¡is,estÃ¡n
+Â¿CÃ³mo _ ustedes?
+estÃ¡n
+estoy,estÃ¡s,estÃ¡,estamos,estÃ¡is,estÃ¡n
 Mi amiga y yo _ en el cine
 estamos
-estoy,estás,está,estamos,estáis,están
+estoy,estÃ¡s,estÃ¡,estamos,estÃ¡is,estÃ¡n
 Yo _ de vacaciones en Valencia
 estoy
-estoy,estás,está,estamos,estáis,están
+estoy,estÃ¡s,estÃ¡,estamos,estÃ¡is,estÃ¡n
 El parque de atracciones _ cerrado en invierno
-está
-estoy,estás,está,estamos,estáis,están
-¿Dónde _ el Parque del Retiro?
-está
-estoy,estás,está,estamos,estáis,están
+estÃ¡
+estoy,estÃ¡s,estÃ¡,estamos,estÃ¡is,estÃ¡n
+Â¿DÃ³nde _ el Parque del Retiro?
+estÃ¡
+estoy,estÃ¡s,estÃ¡,estamos,estÃ¡is,estÃ¡n

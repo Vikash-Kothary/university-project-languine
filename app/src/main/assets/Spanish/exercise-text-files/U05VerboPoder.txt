@@ -3,20 +3,20 @@ Choose the right form of the verb poder.
 single
 6
 Vosotros _
-podéis
-puedes,puede,podemos,podéis,puedo,pueden
+podÃ©is
+puedes,puede,podemos,podÃ©is,puedo,pueden
 Ellos, ellas, ustedes _
 pueden
-puedes,puede,podemos,podéis,puedo,pueden
-Él, ella, usted _
+puedes,puede,podemos,podÃ©is,puedo,pueden
+Ã‰l, ella, usted _
 puede
-puedes,puede,podemos,podéis,puedo,pueden
+puedes,puede,podemos,podÃ©is,puedo,pueden
 Yo _
 puedo
-puedes,puede,podemos,podéis,puedo,pueden
+puedes,puede,podemos,podÃ©is,puedo,pueden
 Nosotros _
 podemos
-puedes,puede,podemos,podéis,puedo,pueden
-Tú _
+puedes,puede,podemos,podÃ©is,puedo,pueden
+TÃº _
 puedes
-puedes,puede,podemos,podéis,puedo,pueden
+puedes,puede,podemos,podÃ©is,puedo,pueden
