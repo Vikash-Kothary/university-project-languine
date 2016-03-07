@@ -9,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
@@ -17,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.puzzle.appname.Backend.Data;
@@ -98,6 +100,32 @@ public class ExerciseActivity extends AppCompatActivity {
                     possibleAnswers.addView(button);
                 }
             }
+            if(quizType.equals("audio"))
+            {
+                TextView questionTextView = (TextView) findViewById(R.id.question);
+                String questionLine = (unitExercise.getQuestion(questionCounter-1).getQuestionText());
+                String[] questionArr = questionLine.split(",");
+                Log.i("Question Line: ", questionLine);
+                Log.i("Question Array: ", questionArr[0] + " , " + questionArr[1]);
+                if(questionArr.length > 1){ //set question text to be the second thing after the comma
+                    questionTextView.setText(questionArr[1]);
+                }
+                RadioGroup possibleAnswers = (RadioGroup) findViewById(R.id.possible_answers);
+
+                if(questionCounter == 1) {
+                    possibleAnswers.removeAllViews();
+                }
+
+                ArrayList<String> answers = unitExercise.getQuestion(questionCounter).getPossibleAnswers();
+
+                for(String answer: answers) {
+                    RadioButton button = new RadioButton(this);
+                    button.setText(answer);
+                    possibleAnswers.addView(button);
+                }
+                SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
+                seekBar.setVisibility(View.GONE);
+            }
             else if(quizType.equals("multiple"))
             {
                 //set the audio file to be played to the correct audio file
@@ -174,7 +202,7 @@ public class ExerciseActivity extends AppCompatActivity {
                 quizType="pictures";
                 break;
             case "audio":
-                //start ??? New fragment just like textQuestionFragment with an audio as well
+                setContentView(R.layout.activity_content_audio_quiz);
                 questionCounter = 1;
                 populateFragment("audio");
                 quizType="audio";

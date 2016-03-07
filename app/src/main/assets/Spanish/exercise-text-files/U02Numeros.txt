@@ -1,6 +1,6 @@
 Escucha el audio y elige el número que falta en cada oración.
 Listen to the audio and drag and drop the missing number to the blank top.
-single
+audio
 6
 U02E03Q1,La habitación de Peter es la número
 26
