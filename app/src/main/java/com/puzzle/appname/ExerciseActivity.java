@@ -91,16 +91,14 @@ public class ExerciseActivity extends AppCompatActivity {
             if(quizType.equals("audio"))
             {
                 TextView questionTextView = (TextView) findViewById(R.id.question);
-                String questionLine = (unitExercise.getQuestion(questionCounter-1).getQuestionText());
+                String questionLine = (unitExercise.getQuestion(questionCounter).getQuestionText());
                 String[] questionArr = questionLine.split(",");
-                Log.i("Question Line: ", questionLine);
-                Log.i("Question Array: ", questionArr[0] + " , " + questionArr[1]);
                 if(questionArr.length > 1){ //set question text to be the second thing after the comma
                     questionTextView.setText(questionArr[1]);
                 }
-                RadioGroup possibleAnswers = (RadioGroup) findViewById(R.id.possible_answers);
+                RadioGroup possibleAnswers = (RadioGroup) findViewById(R.id.radio_possible_answers);
 
-                if(questionCounter == 1) {
+                if(questionCounter == 0) {
                     possibleAnswers.removeAllViews();
                 }
 

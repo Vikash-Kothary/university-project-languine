@@ -73,7 +73,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="89dp"
-                android:id="@+id/possible_answers" />
+                android:id="@+id/radio_possible_answers" />
         </LinearLayout>
 
         <LinearLayout
