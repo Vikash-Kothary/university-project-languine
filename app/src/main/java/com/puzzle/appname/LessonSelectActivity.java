@@ -2,11 +2,6 @@ package com.puzzle.appname;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -71,7 +66,6 @@ public class LessonSelectActivity extends AppCompatActivity
 
         MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);
-
         cardList.addOnItemTouchListener(
             new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener()
             {
@@ -80,6 +74,7 @@ public class LessonSelectActivity extends AppCompatActivity
                 {
                     Intent intent = new Intent(getBaseContext(), GetStarted.class);
                     intent.putExtra(LESSON_TITLE, lessonNames.get(position));
+                    intent.putExtra("WhichVideo",position);
                     startActivity(intent);
                 }
             })

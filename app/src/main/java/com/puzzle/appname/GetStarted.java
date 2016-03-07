@@ -65,8 +65,38 @@ public class GetStarted extends AppCompatActivity {
         );
         View frag = findViewById(R.id.fragment3);
         frag.setMinimumHeight(200);
-        VideoFragment fragment = (VideoFragment)getSupportFragmentManager().findFragmentById(R.id.fragment3);
-        fragment.runVideo(R.raw.ttt);
+        VideoFragment fragment = (VideoFragment) getSupportFragmentManager().findFragmentById(R.id.fragment3);
+        switch (getIntent().getIntExtra("WhichVideo", 0)+1) {
+            case 1:
+                fragment.runVideo(R.raw.u01);
+                break;
+            case 2:
+                fragment.runVideo(R.raw.u02);
+                break;
+            case 3:
+                fragment.runVideo(R.raw.u03);
+                break;
+            case 4:
+                fragment.runVideo(R.raw.u04);
+                break;
+            case 5:
+                fragment.runVideo(R.raw.u05);
+                break;
+            case 6:
+                fragment.runVideo(R.raw.u06);
+                break;
+            case 7:
+                fragment.runVideo(R.raw.u07);
+                break;
+            case 8:
+                fragment.runVideo(R.raw.u08);
+                break;
+            case 9:
+                fragment.runVideo(R.raw.u09);
+                break;
+            default:
+                fragment.runVideo(R.raw.ttt);
+        }
     }
 
 }
