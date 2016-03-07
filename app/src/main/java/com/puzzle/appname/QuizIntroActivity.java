@@ -34,7 +34,7 @@ public class QuizIntroActivity extends AppCompatActivity {
         lessonNumber = (getIntent().getStringExtra(Experiment.LESSON_NUMBER));
         toolbar.setTitle(quizTitle);
 
-        UnitExercise exercise = Data.getExercise(unitNumber, quizTitle, this);
+        UnitExercise exercise = Data.getExercise(lessonNumber, quizTitle, this);
 
         spaInstructionView.setText(exercise.getSpanishDescription());
         engInstructionView.setText(exercise.getEnglishDescription());

@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -55,6 +56,7 @@ public class Experiment extends AppCompatActivity {
                         intent.putExtra(QUIZ_TITLE, exerciseNamesArray[position+3]);
                         intent.putExtra(UNIT_NUMBER, exerciseNamesArray[1]);
                         intent.putExtra(LESSON_NUMBER, lessonNumber);
+                        Log.e("NUMBERS", exerciseNamesArray[1] + " " + lessonNumber);
                         startActivity(intent);
                     }
                 })

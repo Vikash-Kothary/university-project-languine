@@ -47,15 +47,16 @@
             android:onClick="playSound"
             android:text="Play " />
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:id="@+id/multiple_possible_answers">
+            android:orientation="vertical"
+            android:id="@+id/multiple_possible_answers"
+            android:layout_below="@+id/pause_button">
 
-        </RelativeLayout>
+        </LinearLayout>
 
     </RelativeLayout>
 </RelativeLayout>

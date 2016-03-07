@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -100,8 +101,8 @@ public class ExerciseActivity extends AppCompatActivity {
             else if(quizType.equals("multiple"))
             {
                 //set the audio file to be played to the correct audio file
-                
-                RelativeLayout possibleAnswers = (RelativeLayout) findViewById(R.id.multiple_possible_answers);
+
+                LinearLayout possibleAnswers = (LinearLayout) findViewById(R.id.multiple_possible_answers);
 
                 if(questionCounter == 0) {
                     possibleAnswers.removeAllViews();

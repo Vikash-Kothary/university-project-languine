@@ -5,7 +5,7 @@ pictures
 naranjas
 U05P1
 U05P1,U05P2,U05P3,U05P4,U05P5,U05P6
-plátano
+plÃ¡tano
 U05P3
 U05P1,U05P2,U05P3,U05P4,U05P5,U05P6
 mandarinas

@@ -34,7 +34,7 @@ public class Data {
             exerciseName = removeSpacesAndCapitalise(exerciseName);
 
             assetManager = context.getAssets(); //without this a NullPointerException occurred when trying to read the file
-            InputStream inputStream = assetManager.open("Spanish/exercise-text-files/U" + unitNumber + exerciseName + ".txt");  //e.g. U01Pronombres.txt
+            InputStream inputStream = assetManager.open("Spanish/exercise-text-files/U0" + unitNumber + exerciseName + ".txt");  //e.g. U01Pronombres.txt
             String text = convertStreamToString(inputStream);   //the text from the .txt file
             //assetManager.close(); //this would cause an error when trying to change activity, though not sure why??
             inputStream.close();
