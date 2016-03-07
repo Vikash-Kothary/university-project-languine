@@ -16,6 +16,11 @@ public class Exercises extends AppCompatActivity {
 
     public static final String EXERCISE_TITLE = "TITLE";
     public static final String EXERCISE_NAMES = "NAMES";
+    public static final String EXERCISE_VIDEO_TITLE = "TITLE";
+    public static final String EXERCISE_VIDEO_NAMES = "NAMES";
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +51,17 @@ public class Exercises extends AppCompatActivity {
         //split that string for each lesson
         String[] exercisesPerLesson = allExerciseNames.split(": ");
 
+        //get the string for all the revision video names
+        String allVideoTopics = getResources().getString(R.string.video_names);
+        //split that string for each video topic
+        String[] videosPerLesson = allVideoTopics.split(": ");
+
         String titlePlaceHolder = "";
         String namesPlaceHolder = "";
+
+        String videoPlaceHolder = "";
+        String videoNamesPlaceHolder = "";
+
 
         for(int i = 0; i < exercisesPerLesson.length; ++i)
         {
@@ -62,17 +76,41 @@ public class Exercises extends AppCompatActivity {
             }
         }
 
+        for(int i = 0; i < videosPerLesson.length; ++i){
+            // if the name of the lesson matches the lesson the user selected
+            if (videosPerLesson[i].startsWith(toolbar.getTitle().toString())){
+                videoNamesPlaceHolder = videosPerLesson[i];
+                String[] videoButtonTitles = videoNamesPlaceHolder.split(", ");
+
+                videoPlaceHolder = videoButtonTitles[1];
+            }
+        }
+
         final String exercisePageTitle = titlePlaceHolder;
         final String exerciseNames = namesPlaceHolder;
+
+        final String videoPageTitle = videoPlaceHolder;
+        final String videoNames = videoNamesPlaceHolder;
 
         cardList.addOnItemTouchListener(
                 new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
-                    public void onItemClick(View view, int position) {
-                        Intent intent = new Intent(getBaseContext(), Experiment.class);
-                        intent.putExtra(EXERCISE_TITLE, exercisePageTitle);
-                        intent.putExtra(EXERCISE_NAMES, exerciseNames);
-                        startActivity(intent);
+                    public void onItemClick(View view, int position)
+                    {
+                        if(position == 0)
+                        {
+                            Intent intent = new Intent(getBaseContext(), RevisionVideos.class);
+                            intent.putExtra(EXERCISE_VIDEO_TITLE, videoPageTitle);
+                            intent.putExtra(EXERCISE_VIDEO_NAMES, videoNames);
+                            startActivity(intent);
+                        }
+                        else
+                        {
+                            Intent intent = new Intent(getBaseContext(), Experiment.class);
+                            intent.putExtra(EXERCISE_TITLE, exercisePageTitle);
+                            intent.putExtra(EXERCISE_NAMES, exerciseNames);
+                            startActivity(intent);
+                        }
                     }
                 })
         );
