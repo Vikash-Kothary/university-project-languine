@@ -26,6 +26,8 @@ public class GetStarted extends AppCompatActivity {
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(getIntent().getStringExtra(LessonSelectActivity.LESSON_TITLE));
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
 
         RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);

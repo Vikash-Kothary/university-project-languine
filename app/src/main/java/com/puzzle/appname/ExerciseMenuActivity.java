@@ -22,6 +22,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(getIntent().getStringExtra(LessonSelectActivity.LESSON_TITLE));
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         createButtons();
 

@@ -22,6 +22,7 @@ public class AudioQuiz extends AppCompatActivity {
         setContentView(R.layout.activity_content_audio_quiz);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         initiateBar();
     }

@@ -24,6 +24,8 @@ public class Exercises extends AppCompatActivity {
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle((getIntent().getStringExtra(GetStarted.LESSON_TITLE)));
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);
         cardList.setHasFixedSize(true);
 

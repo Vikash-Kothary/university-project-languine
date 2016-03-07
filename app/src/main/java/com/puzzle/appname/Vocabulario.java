@@ -15,6 +15,7 @@ public class Vocabulario extends AppCompatActivity {
         setContentView(R.layout.activity_vocabulario);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 

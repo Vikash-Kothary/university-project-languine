@@ -15,6 +15,8 @@ public class CreditsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_credits);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
