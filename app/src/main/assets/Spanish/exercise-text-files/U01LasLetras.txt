@@ -1,6 +1,6 @@
 Elije la palabra que se deletrea en cada audio.
 Choose the name spelt in each audio.
-single
+audio
 10
 U01E06Q1
 Julio

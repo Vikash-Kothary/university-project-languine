@@ -19,7 +19,17 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
-    <SeekBar
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/question"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:textAlignment="center" />
+
+        <SeekBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/seekBar"
@@ -56,6 +66,14 @@
             android:id="@+id/possible_answers"
             android:layout_below="@+id/pause_button">
 
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="89dp"
+                android:id="@+id/possible_answers" />
         </LinearLayout>
 
         <LinearLayout
