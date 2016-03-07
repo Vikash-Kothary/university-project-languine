@@ -5,7 +5,7 @@ single
 Ella _ mi amiga Gema
 es
 está,es,soy,eres
-:¿Dónde _ Pedro?
+¿Dónde _ Pedro?
 está
 es,eres,está,estás
 Yo _ Cecilia

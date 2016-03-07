@@ -53,9 +53,27 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:orientation="vertical"
-            android:id="@+id/multiple_possible_answers"
+            android:id="@+id/possible_answers"
             android:layout_below="@+id/pause_button">
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NEXT"
+                android:id="@+id/next_question"
+                android:onClick="nextQuestionButtonClicked"
+                android:layout_alignParentBottom="true"
+                android:layout_alignRight="@+id/fragment"
+                android:layout_alignEnd="@+id/fragment"
+                android:layout_marginRight="61dp"
+                android:layout_marginEnd="61dp"
+                android:layout_marginBottom="24dp" />
         </LinearLayout>
 
     </RelativeLayout>

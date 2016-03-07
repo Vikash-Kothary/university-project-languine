@@ -16,7 +16,7 @@ os llamáis
 me llamo,te llamas,se llama,os llamáis
 Nosotros
 nos llamamos
-me llamo,te llamas,se llama,os llamáis
+me llamo,te llamas,nos llamamos,os llamáis
 Yo
 me llamo
 me llamo,te llamas,se llama,os llamáis

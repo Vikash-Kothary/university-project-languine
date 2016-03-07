@@ -9,7 +9,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -45,7 +47,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
         chooseFragment();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        questionCounter = 1;
+        questionCounter = 0;
         //TODO increase questionCounter when the user clicks next (goes to the next question)
 
         /*Something weird is going on with the toolbar, when trying to use the fragment, 'toolbar' is
@@ -53,22 +55,6 @@ public class ExerciseActivity extends AppCompatActivity {
         //toolbar.setTitle(getIntent().getStringExtra(QuizIntroActivity.QUIZ_TITLE));
         //setSupportActionBar(toolbar);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        /*switch(getIntent().getIntExtra(LessonSelectActivity.QUESTION_TYPE, -1)){
-            case -1:
-                break;
-            case QuestionType.TEXT:
-                setContentView(R.layout.activity_exercise);
-                break;
-            case QuestionType.PICTURE:
-                setContentView(R.layout.fragment_picture_question);
-                break;
-
-        }*/
-
-
-
-
     }
 
     /**
@@ -76,17 +62,20 @@ public class ExerciseActivity extends AppCompatActivity {
      * into the fragment. Can be used every time
      * the user goes to the next question.
      */
-    private void populateFragment(String quizType){
-        //TODO for now it just works for single choice text questions
-        if(questionCounter <= unitExercise.getQuestionsNumber())
+    private void populateFragment(final String quizType){
+        if(questionCounter < unitExercise.getQuestionsNumber())
         {
+            Button nextButton = (Button) findViewById(R.id.next_question);
+            if(nextButton.getText().equals("NEXT"));
+                nextButton.setText("NEXT");
+
             if(quizType.equals("single"))
             {
                 TextView questionText = (TextView) findViewById(R.id.question);
-                questionText.setText(unitExercise.getQuestion(questionCounter-1).getQuestionText());
+                questionText.setText(unitExercise.getQuestion(questionCounter).getQuestionText());
                 RadioGroup possibleAnswers = (RadioGroup) findViewById(R.id.possible_answers);
 
-                if(questionCounter == 1) {
+                if(questionCounter == 0) {
                     possibleAnswers.removeAllViews();
                 }
 
@@ -97,12 +86,14 @@ public class ExerciseActivity extends AppCompatActivity {
                     button.setText(answer);
                     possibleAnswers.addView(button);
                 }
+
+                Log.e("QUESTION","QUESTION NUMBER: " + questionCounter);
             }
             else if(quizType.equals("multiple"))
             {
                 //set the audio file to be played to the correct audio file
 
-                LinearLayout possibleAnswers = (LinearLayout) findViewById(R.id.multiple_possible_answers);
+                LinearLayout possibleAnswers = (LinearLayout) findViewById(R.id.possible_answers);
 
                 if(questionCounter == 0) {
                     possibleAnswers.removeAllViews();
@@ -119,7 +110,7 @@ public class ExerciseActivity extends AppCompatActivity {
             else if(quizType.equals("pictures"))
             {
                 TextView questionText = (TextView) findViewById(R.id.picture_question);
-                questionText.setText(unitExercise.getQuestion(questionCounter-1).getQuestionText());
+                questionText.setText(unitExercise.getQuestion(questionCounter).getQuestionText());
                 ImageView[] images = {
                         (ImageView) findViewById(R.id.picture1),
                         (ImageView) findViewById(R.id.picture2),
@@ -147,37 +138,67 @@ public class ExerciseActivity extends AppCompatActivity {
                 }
             }
         }
+        if(questionCounter == unitExercise.getQuestionsNumber()-1)
+        {
+            Button nextButton = (Button) findViewById(R.id.next_question);
+            nextButton.setText("FINISH");
+        }
+    }
 
+    public void nextQuestionButtonClicked(View view)
+    {
+        Button nextButton = (Button) findViewById(R.id.next_question);
+        if(nextButton.getText().equals("NEXT"))
+        {
+            LinearLayout possibleAnswers = (LinearLayout) findViewById(R.id.possible_answers);
+            possibleAnswers.removeAllViews();
+            ++questionCounter;
+            populateFragment(quizType);
+        }
+        else
+        {
+            Intent intent = new Intent(getBaseContext(), ResultActivity.class);
+            startActivity(intent);
+        }
+    }
+
+    public void previousQuestionButtonClicked(View view)
+    {
+        LinearLayout possibleAnswers = (LinearLayout) findViewById(R.id.possible_answers);
+        possibleAnswers.removeAllViews();
+        --questionCounter;
+        populateFragment(quizType);
     }
 
     private void chooseFragment()
     {
         String quizType = getIntent().getStringExtra(QuizIntroActivity.QUIZ_TYPE);
+        //FrameLayout frameLayout = (FrameLayout) findViewById(R.id.question_container);
 
         switch (quizType) {
             case "single":
                 setContentView(R.layout.fragment_text_question);
-                questionCounter = 1;
+                questionCounter = 0;
                 populateFragment("single");
-                quizType="single";
+                this.quizType="single";
                 break;
             case "multiple":
                 setContentView(R.layout.activity_content_audio_quiz);
                 questionCounter = 0;
                 populateFragment("multiple");
-                quizType="multiple";
+                this.quizType="multiple";
                 break;
             case "pictures":
                 setContentView(R.layout.fragment_picture_question);
-                questionCounter = 1;
+                questionCounter = 0;
                 populateFragment("pictures");
-                quizType="pictures";
+                this.quizType="pictures";
                 break;
             case "audio":
                 //start ??? New fragment just like textQuestionFragment with an audio as well
-                questionCounter = 1;
+                questionCounter = 0;
                 populateFragment("audio");
-                quizType="audio";
+                this.quizType="audio";
                 break;
             default:
                 //nothing

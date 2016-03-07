@@ -1,5 +1,7 @@
 package com.puzzle.appname.Backend;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -19,6 +21,18 @@ public class UnitQuestion {
 
     public void addPossibleAnswers(String answers) {
         ArrayList<String> lines = new ArrayList<>(Arrays.asList(answers.split(",")));
+
+        //goes through the possible answers, if one has a ;, replace it with a ,
+        for(int i = 0; i < lines.size(); ++i)
+        {
+            String line = lines.get(i);
+            if(line.contains(";"))
+            {
+                line = line.replace(";",",");
+                lines.remove(i);
+                lines.add(i,line);
+            }
+        }
         possibleAnswers = lines;
     }
 
