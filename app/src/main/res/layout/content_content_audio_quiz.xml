@@ -19,24 +19,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pause"
-        android:onClick="pauseSound"
-        android:id="@+id/pause_button"
-        android:layout_marginTop="96dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
     <SeekBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/seekBar"
-        android:layout_below="@+id/stop"
-        android:layout_toRightOf="@+id/shuffle"
-        android:layout_toEndOf="@+id/shuffle"
         android:layout_marginTop="43dp"
         android:indeterminate="false" />
 
@@ -66,33 +52,8 @@
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true">
-
-            <CheckBox
-                android:id="@+id/checkBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/checkBox2"
-                android:layout_alignStart="@+id/checkBox2"
-                android:layout_below="@+id/checkBox2"
-                android:text="New CheckBox" />
-
-            <CheckBox
-                android:id="@+id/checkBox2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="New CheckBox" />
-
-
-            <CheckBox
-                android:id="@+id/checkBox3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/checkBox2"
-                android:layout_alignLeft="@+id/checkBox2"
-                android:layout_alignStart="@+id/checkBox2"
-                android:text="New CheckBox" />
+            android:layout_alignParentTop="true"
+            android:id="@+id/multiple_possible_answers">
 
         </RelativeLayout>
 

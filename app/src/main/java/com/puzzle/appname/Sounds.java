@@ -13,8 +13,6 @@ public class Sounds {
 
     Sounds(Context myContext)
     {
-        Log.e("SOUND","Music file id: "+R.raw.background);
-        Log.e("SOUND","Context: "+myContext.getPackageName());
         mySound = MediaPlayer.create(myContext, R.raw.background);
     }
 }

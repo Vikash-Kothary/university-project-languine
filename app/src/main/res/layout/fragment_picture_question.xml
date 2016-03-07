@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/picture_frame"
     tools:context="com.puzzle.appname.PictureQuestionFragment">
 
     <TextView
@@ -12,7 +13,9 @@
         android:layout_marginLeft="6dp"
         android:layout_marginBottom="6dp"
         android:textSize="30dp"
-        android:text="Question to go here"/>
+        android:text="Question to go here"
+        android:textAlignment="center"
+        android:id="@+id/picture_question"/>
 
     <ImageView
         android:layout_width="150dp"
@@ -20,7 +23,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="55dp"
-        android:id="@+id/imageView2"
+        android:id="@+id/picture1"
         android:layout_gravity="left|top"
         android:src="@mipmap/ic_launcher"/>
 
@@ -30,7 +33,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="55dp"
-        android:id="@+id/imageView3"
+        android:id="@+id/picture2"
         android:layout_gravity="right|top"
         android:src="@mipmap/ic_launcher"/>
 
@@ -41,7 +44,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="35dp"
         android:layout_marginBottom="12dp"
-        android:id="@+id/imageView4"
+        android:id="@+id/picture3"
         android:layout_gravity="left|center_vertical"
         android:src="@mipmap/ic_launcher"/>
 
@@ -52,7 +55,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="35dp"
         android:layout_marginBottom="12dp"
-        android:id="@+id/imageView5"
+        android:id="@+id/picture4"
         android:layout_gravity="right|center_vertical"
         android:src="@mipmap/ic_launcher"/>
 
@@ -63,7 +66,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="12dp"
-        android:id="@+id/imageView6"
+        android:id="@+id/picture5"
         android:layout_gravity="left|bottom"
         android:src="@mipmap/ic_launcher"/>
 
@@ -74,7 +77,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
-        android:id="@+id/imageView7"
+        android:id="@+id/picture6"
         android:layout_gravity="right|bottom"
         android:src="@mipmap/ic_launcher"/>
 
