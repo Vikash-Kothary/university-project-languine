@@ -1,19 +1,19 @@
 package com.puzzle.appname;
 
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 /**
  * Created by williamhawken on 12/02/2016.
  */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.LessonViewHolder> {
-    private Lessons[] mDataset;
+    private ArrayList<Lesson> mDataset;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -33,7 +33,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.LessonViewHolder> 
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(Lessons[] myDataset) {
+    public MyAdapter(ArrayList<Lesson> myDataset) {
         mDataset = myDataset;
     }
 
@@ -55,16 +55,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.LessonViewHolder> 
     public void onBindViewHolder(LessonViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.lessonThumbnail.setImageResource(mDataset[position].getImageID());
-        holder.lessonTitle.setText(mDataset[position].getLessonName());
-        holder.lessonProgress.setText(mDataset[position].getProgress() + "%");
+        holder.lessonThumbnail.setImageResource(mDataset.get(position).getImageID());
+        holder.lessonTitle.setText(mDataset.get(position).getLessonName());
+        holder.lessonProgress.setText(mDataset.get(position).getProgress() + "%");
 
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return mDataset.length;
+        return mDataset.size();
     }
 
     @Override

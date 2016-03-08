@@ -12,89 +12,87 @@
     tools:context=".AudioQuiz"
     tools:showIn="@layout/activity_content_audio_quiz">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Play "
-        android:onClick="playSound"
-        android:id="@+id/button"
-        android:layout_alignTop="@+id/pause_button"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pause"
-        android:onClick="pauseSound"
-        android:id="@+id/pause_button"
-        android:layout_marginTop="96dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/question"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:textAlignment="center" />
 
-    <SeekBar
+        <SeekBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/seekBar"
-        android:layout_below="@+id/stop"
-        android:layout_toRightOf="@+id/shuffle"
-        android:layout_toEndOf="@+id/shuffle"
         android:layout_marginTop="43dp"
         android:indeterminate="false" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mute"
-        android:id="@+id/muteButton"
-        android:layout_alignBottom="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:checked="false" />
+        <Button
+            android:id="@+id/pause_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="96dp"
+            android:text="Pause" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New RadioButton"
-        android:id="@+id/radioButton"
-        android:layout_below="@+id/button"
-        android:layout_alignRight="@+id/muteButton"
-        android:layout_alignEnd="@+id/muteButton"
-        android:layout_marginTop="42dp" />
+        <Button
+            android:id="@+id/play_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/pause_button"
+            android:onClick="playSound"
+            android:text="Play " />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New RadioButton"
-        android:id="@+id/radioButton2"
-        android:layout_below="@+id/radioButton"
-        android:layout_alignLeft="@+id/radioButton"
-        android:layout_alignStart="@+id/radioButton" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:orientation="vertical"
+            android:id="@+id/possible_answers"
+            android:layout_below="@+id/pause_button">
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New RadioButton"
-        android:id="@+id/radioButton3"
-        android:layout_below="@+id/radioButton2"
-        android:layout_alignLeft="@+id/radioButton2"
-        android:layout_alignStart="@+id/radioButton2" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="89dp"
+                android:id="@+id/radio_possible_answers" />
+        </LinearLayout>
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New RadioButton"
-        android:id="@+id/radioButton4"
-        android:layout_below="@+id/radioButton3"
-        android:layout_alignLeft="@+id/radioButton3"
-        android:layout_alignStart="@+id/radioButton3" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NEXT"
+                android:id="@+id/next_question"
+                android:onClick="nextQuestionButtonClicked"
+                android:layout_alignParentBottom="true"
+                android:layout_alignRight="@+id/fragment"
+                android:layout_alignEnd="@+id/fragment"
+                android:layout_marginRight="61dp"
+                android:layout_marginEnd="61dp"
+                android:layout_marginBottom="24dp" />
+        </LinearLayout>
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New RadioButton"
-        android:id="@+id/radioButton5"
-        android:layout_below="@+id/radioButton4"
-        android:layout_alignRight="@+id/radioButton3"
-        android:layout_alignEnd="@+id/radioButton3" />
+    </RelativeLayout>
 </RelativeLayout>

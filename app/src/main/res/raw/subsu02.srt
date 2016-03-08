@@ -1,0 +1,92 @@
+1
+00:00:08,300 --> 00:00:09,557
+Buenos días.
+
+2
+00:00:09,562 --> 00:00:10,795
+- Buenos días.
+
+3
+00:00:10,800 --> 00:00:11,987
+Tengo una reserva.
+
+4
+00:00:11,997 --> 00:00:13,716
+Muy vien. ¿Cómo se llama?
+
+5
+00:00:13,726 --> 00:00:14,598
+Peter.
+
+6
+00:00:14,604 --> 00:00:15,990
+¿Y cómo se apenllida?
+
+7
+00:00:15,993 --> 00:00:16,770
+Grey.
+
+8
+00:00:16,777 --> 00:00:18,450
+¿Cuál es su nacionalidad?
+
+9
+00:00:18,454 --> 00:00:19,939
+Soy británico.
+
+10
+00:00:19,941 --> 00:00:21,255
+¿Cuál es su dirección?
+
+11
+00:00:21,906 --> 00:00:30,735
+12 (doce) Union Road, Código postal N (ene)
+19 (diecinueve) 3 (tres) A (a) B (be).
+Londres.
+
+12
+00:00:31,244 --> 00:00:32,900
+¿Y cuál es su teléfono?
+
+13
+00:00:32,902 --> 00:00:42,140
+Sí, es el 07 65 37 21 48
+(Cero siete, seis cinco, tres siete,
+dos uno, cuatro ocho).
+
+14
+00:00:42,143 --> 00:00:45,192
+Gracias, ¿Cuál es su ocupación?
+
+15
+00:00:45,196 --> 00:00:47,660
+Estudio psicología y trabajo en un bar.
+
+16
+00:00:47,664 --> 00:00:49,344
+¿Tiene una tarjeta de crédito?
+
+17
+00:00:49,348 --> 00:00:50,675
+Sí, aquí está.
+
+18
+00:00:51,779 --> 00:00:54,825
+Gracias. Su habitación es la 26.
+
+19
+00:00:54,829 --> 00:00:56,920
+Perdón, puede repetir. Por favor.
+
+20
+00:00:56,928 --> 00:01:00,970
+Sí, es la 26.
+Dos, seis.
+
+21
+00:01:00,974 --> 00:01:05,085
+La dos, seis. ¡Ah, sí, veintiséis! Gracias.
+
+22
+00:01:05,090 --> 00:01:06,142
+De nada.
