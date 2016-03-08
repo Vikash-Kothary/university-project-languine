@@ -1,0 +1,22 @@
+Elige la foto que corresponde a cada palabra.
+Choose the correct picture to match each word.
+pictures
+6
+banco
+U04P2
+U04P1,U04P2,U04P3,U04P4,U04P5,U04P6
+árbol
+U04P3
+U04P1,U04P2,U04P3,U04P4,U04P5,U04P6
+parque
+U04P5
+U04P1,U04P2,U04P3,U04P4,U04P5,U04P6
+restaurante
+U04P1
+U04P1,U04P2,U04P3,U04P4,U04P5,U04P6
+glorieta
+U04P4
+U04P1,U04P2,U04P3,U04P4,U04P5,U04P6
+persona mayor
+U04P6
+U04P1,U04P2,U04P3,U04P4,U04P5,U04P6

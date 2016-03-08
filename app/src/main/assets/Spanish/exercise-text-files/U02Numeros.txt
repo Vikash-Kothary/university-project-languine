@@ -1,0 +1,22 @@
+Escucha el audio y elige el número que falta en cada oración.
+Listen to the audio and drag and drop the missing number to the blank top.
+audio
+6
+U02E03Q1,La habitación de Peter es la número
+26
+27,26,25,20
+U02E03Q2,El código postal el N _ 5RB
+29
+29,19,9,1
+U02E03Q3,Juana tiene _ años
+14
+12,13,14,15
+U02E03Q4,Hoy es el _ de diciembre
+25
+5,7,27,25
+U02E03Q5,Lucas tiene _ años
+16
+25,15,17,16
+U02E03Q6,El número de mi casa es el _
+22
+12,11,22,16

@@ -16,11 +16,16 @@ public class Exercises extends AppCompatActivity {
 
     public static final String EXERCISE_TITLE = "TITLE";
     public static final String EXERCISE_NAMES = "NAMES";
+<<<<<<< HEAD
     public static final String EXERCISE_VIDEO_TITLE = "TITLE";
     public static final String EXERCISE_VIDEO_NAMES = "NAMES";
 
 
 
+=======
+    public static final String LESSON_NUMBER = "NUMBER";
+    private String lessonNumber;
+>>>>>>> refs/remotes/origin/populating-data
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,8 @@ public class Exercises extends AppCompatActivity {
         setContentView(R.layout.activity_exercises);
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle((getIntent().getStringExtra(GetStarted.LESSON_TITLE)));
+        lessonNumber = (getIntent().getStringExtra(GetStarted.LESSON_NUMBER));
+
         setSupportActionBar(toolbar);
         RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);
         cardList.setHasFixedSize(true);
@@ -72,7 +79,7 @@ public class Exercises extends AppCompatActivity {
                 namesPlaceHolder = exercisesPerLesson[i];
                 String[] buttonTitles = namesPlaceHolder.split(", ");
                 //get the name of the page title for next activity
-                titlePlaceHolder = buttonTitles[1];
+                titlePlaceHolder = buttonTitles[2];
             }
         }
 
@@ -95,6 +102,7 @@ public class Exercises extends AppCompatActivity {
         cardList.addOnItemTouchListener(
                 new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
+<<<<<<< HEAD
                     public void onItemClick(View view, int position)
                     {
                         if(position == 0)
@@ -112,6 +120,14 @@ public class Exercises extends AppCompatActivity {
                             intent.putExtra(EXERCISE_NAMES, exerciseNames);
                             startActivity(intent);
                         }
+=======
+                    public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(getBaseContext(), Experiment.class);
+                        intent.putExtra(EXERCISE_TITLE, exercisePageTitle);
+                        intent.putExtra(EXERCISE_NAMES, exerciseNames);
+                        intent.putExtra(LESSON_NUMBER, lessonNumber);
+                        startActivity(intent);
+>>>>>>> refs/remotes/origin/populating-data
                     }
                 })
         );

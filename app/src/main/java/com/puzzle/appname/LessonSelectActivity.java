@@ -20,12 +20,16 @@ import java.util.Arrays;
 public class LessonSelectActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    public static final String QUESTION_TYPE = "QuestionType";
     public static final String LESSON_TITLE = "TITLE";
+<<<<<<< HEAD
     ArrayList<Integer> lessonImages = new ArrayList<Integer>(Arrays.asList(R.drawable.greetings, R.drawable.checkingin,
             R.drawable.sightseeing, R.drawable.directions, R.drawable.eating, R.drawable.likes, R.drawable.planning,
             R.drawable.shopping,R.drawable.dating ));
     ArrayList<String> lessonNames = new ArrayList<String>(
+=======
+    public static final String LESSON_NUMBER = "NUMBER";
+    ArrayList<String> lessonNames = new ArrayList<>(
+>>>>>>> refs/remotes/origin/populating-data
             Arrays.asList("Greetings","Checking in","Sightseeing","Directions","Eating","Likes","Planning","Shopping","Dating")
     );
 
@@ -74,7 +78,11 @@ public class LessonSelectActivity extends AppCompatActivity
                 {
                     Intent intent = new Intent(getBaseContext(), GetStarted.class);
                     intent.putExtra(LESSON_TITLE, lessonNames.get(position));
+<<<<<<< HEAD
                     intent.putExtra("WhichVideo",position);
+=======
+                    intent.putExtra(LESSON_NUMBER, (position + 1) + "");
+>>>>>>> refs/remotes/origin/populating-data
                     startActivity(intent);
                 }
             })
@@ -148,7 +156,6 @@ public class LessonSelectActivity extends AppCompatActivity
                 break;
             case R.id.nav_picture_questions:
                 i = new Intent(this, ExerciseActivity.class);
-                i.putExtra(QUESTION_TYPE, QuestionType.PICTURE);
             case R.id.nav_quiz_intro:
                 i = new Intent(this, QuizIntroActivity.class);
                 break;

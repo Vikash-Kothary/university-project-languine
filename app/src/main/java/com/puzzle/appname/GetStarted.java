@@ -18,6 +18,8 @@ public class GetStarted extends AppCompatActivity {
 //    VideoFragment video = new VideoFragment();
 
     public static final String LESSON_TITLE = "TITLE";
+    public static final String LESSON_NUMBER = "NUMBER";
+    private String lessonNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,8 @@ public class GetStarted extends AppCompatActivity {
         setContentView(R.layout.activity_get_started);
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(getIntent().getStringExtra(LessonSelectActivity.LESSON_TITLE));
+        lessonNumber = getIntent().getStringExtra(LessonSelectActivity.LESSON_NUMBER);
+        System.out.println("LESSON NUMBER IS: " + lessonNumber);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -59,11 +63,16 @@ public class GetStarted extends AppCompatActivity {
                     public void onItemClick(View view, int position) {
                         Intent intent = new Intent(getBaseContext(), Exercises.class);
                         intent.putExtra(LESSON_TITLE, toolbar.getTitle());
+<<<<<<< HEAD
                         intent.putExtra("FirstVideo",getIntent().getIntExtra("WhichVideo",-1));
+=======
+                        intent.putExtra(LESSON_NUMBER, lessonNumber);
+>>>>>>> refs/remotes/origin/populating-data
                         startActivity(intent);
                     }
                 })
         );
+
         View frag = findViewById(R.id.fragment3);
         frag.setMinimumHeight(200);
         VideoFragment fragment = (VideoFragment) getSupportFragmentManager().findFragmentById(R.id.fragment3);

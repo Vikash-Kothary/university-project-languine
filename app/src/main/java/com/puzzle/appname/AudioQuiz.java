@@ -30,11 +30,9 @@ public class AudioQuiz extends AppCompatActivity {
 
     public void playSound(View view)
     {
-        Log.e("SOUND", "Sound is playing? " + sounds.mySound.isPlaying());
         if(!sounds.mySound.isPlaying())
         {
             sounds.mySound.start();
-            Log.e("SOUND", "Sound is playing? " + sounds.mySound.isPlaying());
         }
     }
 

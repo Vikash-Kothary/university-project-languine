@@ -1,0 +1,23 @@
+Elige la forma correcta del verbo jugar.
+Choose the right form of the verb jugar.
+single
+6
+Tú _
+juegas
+juegan,juegas,jugamos,juego,jugáis,juega
+Nosotros _
+jugamos
+juegan,juegas,jugamos,juego,jugáis,juega
+Vosotros _
+jugáis
+juegan,juegas,jugamos,juego,jugáis,juega
+Yo _
+juego
+juegan,juegas,jugamos,juego,jugáis,juega
+Ellos, ellas, ustedes _
+juegan
+juegan,juegas,jugamos,juego,jugáis,juega
+Él, ella, usted _
+juega
+juegan,juegas,jugamos,juego,jugáis,juega
+
