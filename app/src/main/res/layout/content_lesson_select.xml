@@ -11,11 +11,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.puzzle.appname.LessonSelectActivity"
-    tools:showIn="@layout/app_bar_lesson_select">
+    tools:showIn="@layout/app_bar_lesson_select"
+    android:background="#dcd4d4">
+
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/card_list"
         android:scrollbars="vertical" />
+        
 </LinearLayout>

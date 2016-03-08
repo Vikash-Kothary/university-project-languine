@@ -1,12 +1,17 @@
 package com.puzzle.appname;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
 /**
@@ -17,7 +22,7 @@ import android.view.ViewGroup;
  * Use the {@link PictureQuestionFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PictureQuestionFragment extends Fragment {
+public class PictureQuestionFragment extends Fragment  implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -28,6 +33,9 @@ public class PictureQuestionFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    private ImageView imgView1, imgView2, imgView3, imgView4, imgView5, imgView6;
+    private TextView question;
 
     public PictureQuestionFragment() {
         // Required empty public constructor
@@ -54,6 +62,41 @@ public class PictureQuestionFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+<<<<<<< HEAD
+        ImageView imgView1 = (ImageView) getActivity().findViewById(R.id.picture1);
+        ImageView imgView2 = (ImageView) getActivity().findViewById(R.id.picture2);
+        ImageView imgView3 = (ImageView) getActivity().findViewById(R.id.picture3);
+        ImageView imgView4 = (ImageView) getActivity().findViewById(R.id.picture4);
+        ImageView imgView5 = (ImageView) getActivity().findViewById(R.id.picture5);
+        ImageView imgView6 = (ImageView) getActivity().findViewById(R.id.picture6);
+=======
+        TextView question = (TextView) getActivity().findViewById(R.id.textView);
+        question = this.question;
+
+        ImageView imgView1 = (ImageView) getActivity().findViewById(R.id.imageView2);
+        ImageView imgView2 = (ImageView) getActivity().findViewById(R.id.imageView3);
+        ImageView imgView3 = (ImageView) getActivity().findViewById(R.id.imageView4);
+        ImageView imgView4 = (ImageView) getActivity().findViewById(R.id.imageView5);
+        ImageView imgView5 = (ImageView) getActivity().findViewById(R.id.imageView6);
+        ImageView imgView6 = (ImageView) getActivity().findViewById(R.id.imageView7);
+>>>>>>> refs/remotes/origin/picture-questions-interface
+
+        imgView1 = this.imgView1;
+        imgView2 = this.imgView2;
+        imgView3 = this.imgView3;
+        imgView4 = this.imgView4;
+        imgView5 = this.imgView5;
+        imgView6 = this.imgView6;
+
+        imgView1.setOnClickListener(this);
+        imgView2.setOnClickListener(this);
+        imgView3.setOnClickListener(this);
+        imgView4.setOnClickListener(this);
+        imgView5.setOnClickListener(this);
+        imgView6.setOnClickListener(this);
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -90,6 +133,27 @@ public class PictureQuestionFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
+    @Override
+    public void onClick(View v) {
+
+        switch(v.getId()) {
+            case R.id.imageView2:
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+                // set title
+                alertDialogBuilder.setTitle("Your Title");
+                // create alert dialog
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                // show it
+                alertDialog.show();
+                break;
+            case R.id.imageView3:
+                
+        }
+
+    }
+
+
 
     /**
      * This interface must be implemented by activities that contain this

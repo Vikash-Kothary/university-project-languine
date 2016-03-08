@@ -2,6 +2,7 @@ package com.puzzle.appname;
 
 import android.content.Context;
 import android.media.MediaPlayer;
+import android.util.Log;
 
 /**
  * Created by WSH on 16/02/16.
@@ -10,8 +11,8 @@ public class Sounds {
 
     static MediaPlayer mySound;
 
-    Sounds(Context myContext){
+    Sounds(Context myContext)
+    {
         mySound = MediaPlayer.create(myContext, R.raw.background);
     }
-
 }

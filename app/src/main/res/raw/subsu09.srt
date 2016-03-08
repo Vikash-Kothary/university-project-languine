@@ -1,0 +1,63 @@
+1
+00:00:08,100 --> 00:00:09,200
+¿Qué quieres beber?
+
+2
+00:00:09,300 --> 00:00:12,500
+Yo un zumo de naranja ¿y tú?
+
+3
+00:00:12,600 --> 00:00:18,050 
+Yo un café solo. Entonces ¿a qué horas nos vemos para ir a la disco?
+
+4
+00:00:18,200 --> 00:00:22,900 
+¿Qué te parece si paso por ti a las nueve y vamos primero a tomar una copa?
+
+5
+00:00:23,000 --> 00:00:24,000
+Muy bien 
+
+6
+00:00:24,100 --> 00:00:25,600 
+¿Cuál es la dirección del hotel?
+
+7
+00:00:25,700 --> 00:00:34,100
+Es Paseo de la Castellana número 22. Puedes mandarme un texto al llegar y yo bajo a la recepción. 
+
+8
+00:00:34,200 --> 00:00:35,400 
+¿Cuál es tu teléfono?
+
+9
+00:00:35,500 --> 00:00:44,700 
+Sí, se el cero siete, seis cinco, tres siete, dos uno, cuatro ocho. 
+
+10
+00:00:44,800 --> 00:00:48,600
+Gracias, te voy a hacer una llamada perdida para darte el mío.
+
+11
+00:00:50,200 --> 00:00:51,800
+¡Vale!
+
+12
+00:00:51,900 --> 00:00:53,500
+Buenas tardes, ¿qué les pongo?
+
+13
+00:00:53,600 --> 00:00:58,300
+A ella póngale un zumo de naranja y a mí póngame un café solo. 
+
+14
+00:00:58,450 --> 00:01:01,300 
+Un zumo de naranja y un café solo, ¿algo más?
+
+15
+00:01:01,450 --> 00:01:03,200 
+No, es todo gracias.
+
+16
+00:01:03,300 --> 00:01:04,400
+De nada. 

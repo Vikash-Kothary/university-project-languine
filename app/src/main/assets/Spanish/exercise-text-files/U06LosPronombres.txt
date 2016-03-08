@@ -1,0 +1,22 @@
+Elige el pronombre correcto para cada oración.
+Choose the correct pronoun for each sentence.
+single
+6
+A mí no _ gustan los museos
+me
+le,os,les,te,nos,me
+A ustedes no _ gustan los bailes
+les
+le,os,les,te,nos,me
+A él _ gustan los autos
+le
+le,os,les,te,nos,me
+A ella no _ gustan las discotecas
+le
+le,os,les,te,nos,me
+A nosotros _ gustan las esculturas
+nos
+le,os,les,te,nos,me
+A vosotros _ gusta el arte
+os
+le,os,les,te,nos,me
