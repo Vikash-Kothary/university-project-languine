@@ -8,8 +8,20 @@
 
     <FrameLayout
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="match_parent"
         android:id="@+id/picture_frame">
+=======
+        android:layout_height="50dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginBottom="6dp"
+        android:textSize="30dp"
+        android:text="Question to go here"
+        android:textAlignment="center"
+        android:id="@+id/textView"/>
+>>>>>>> refs/remotes/origin/picture-questions-interface
 
         <TextView
             android:layout_width="match_parent"
