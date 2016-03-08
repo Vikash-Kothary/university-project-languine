@@ -49,6 +49,11 @@ public class LessonSelectActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         setupRecyclerView();
+        Intent j = new Intent(this, LanguageSelectActivity.class);
+        startActivity(j);
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
+
 
     }
 
@@ -164,6 +169,9 @@ public class LessonSelectActivity extends AppCompatActivity
                 break;
             case R.id.nav_Video:
                 i = new Intent(this, VideoActivity.class);
+                break;
+            case R.id.nav_settings:
+                i = new Intent(this, SettingsActivity.class);
                 break;
         }
         if(i!=null){

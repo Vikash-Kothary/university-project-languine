@@ -115,12 +115,20 @@
             android:label="@string/title_activity_vocabulario"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+<<<<<<< HEAD
             android:name=".RevisionVideos"
             android:label="@string/title_activity_revision_videos"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RevisionVideoView"
             android:label="@string/title_activity_revision_video_view"
+=======
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".Register"
+            android:label="@string/title_activity_register"
+>>>>>>> refs/remotes/origin/Settings
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

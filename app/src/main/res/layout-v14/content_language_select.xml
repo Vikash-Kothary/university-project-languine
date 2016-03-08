@@ -18,7 +18,8 @@
         android:id="@+id/spanish_image"
         android:layout_above="@+id/spanish_text"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/spain_flag" />
+        android:src="@drawable/spain_flag"
+        android:onClick="flag"/>
 
     <TextView
         android:layout_width="wrap_content"
