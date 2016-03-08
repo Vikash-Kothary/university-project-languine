@@ -63,6 +63,14 @@ public class PictureQuestionFragment extends Fragment  implements View.OnClickLi
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+<<<<<<< HEAD
+        ImageView imgView1 = (ImageView) getActivity().findViewById(R.id.picture1);
+        ImageView imgView2 = (ImageView) getActivity().findViewById(R.id.picture2);
+        ImageView imgView3 = (ImageView) getActivity().findViewById(R.id.picture3);
+        ImageView imgView4 = (ImageView) getActivity().findViewById(R.id.picture4);
+        ImageView imgView5 = (ImageView) getActivity().findViewById(R.id.picture5);
+        ImageView imgView6 = (ImageView) getActivity().findViewById(R.id.picture6);
+=======
         TextView question = (TextView) getActivity().findViewById(R.id.textView);
         question = this.question;
 
@@ -72,6 +80,7 @@ public class PictureQuestionFragment extends Fragment  implements View.OnClickLi
         ImageView imgView4 = (ImageView) getActivity().findViewById(R.id.imageView5);
         ImageView imgView5 = (ImageView) getActivity().findViewById(R.id.imageView6);
         ImageView imgView6 = (ImageView) getActivity().findViewById(R.id.imageView7);
+>>>>>>> refs/remotes/origin/picture-questions-interface
 
         imgView1 = this.imgView1;
         imgView2 = this.imgView2;

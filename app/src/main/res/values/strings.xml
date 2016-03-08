@@ -36,6 +36,457 @@
     </string>
     <string name="title_activity_login">Sign in</string>
 
+    <string name="glossary_text">
+        a la derecha: to the right,
+        a la izquierda: to the left,
+        abierto: open,
+        abrigo: coat,
+        acuarela: watercolour,
+        adiós: goodbye,
+        aeropuerto: airport,
+        agencia de viajes: travel agency,
+        agua con gas: sparkling water,
+        agua sin gas: still water,
+        ahí / allí: there,
+        al lado (de): next (to),
+        albergue: hostel,
+        almuerzo: lunch,
+        amarillo/a: yellow,
+        andén: platform,
+        antes: before,
+        apellido: surname,
+        aperitivo: appetizer,
+        aquí: here,
+        arte moderno: modern art,
+        artista: artist,
+        ascensor: elevator,
+        autobús: bus,
+        avión: plane,
+        ayudar: to help,
+        azúcar: sugar,
+        azul: blue,
+        baloncesto: basketball,
+        bar: bar,
+        barrio: district,
+        beber: to drink,
+        bebida: drink,
+        bicicleta: bicycle,
+        billete de ida y vuelta: return ticket,
+        billete de ida: one-way ticket,
+        billete: ticket,
+        blanco/a: white,
+        botones: bellboy,
+        buenas noches: good evening / night,
+        buenas tardes: good afternoon,
+        buenos días: good morning,
+        caliente: hot,
+        calle: street,
+        camarero/a: waiter / waitress,
+        cambiar: to exchange,
+        cambio: change,
+        camisa: shirt,
+        camiseta: t-shirt,
+        cansado: tired,
+        carne: meat,
+        carta: menu,
+        catedral: cathedral,
+        cena: dinner,
+        centro comercial: shopping centre,
+        cerca: nearby,
+        cerrado: closed,
+        código postal: postcode,
+        comer: to eat,
+        comprar: to buy,
+        consigna: left-luggage office,
+        copa: glass (wine),
+        cortado: espresso macchiato,
+        cuadro: picture,
+        cuchara: spoon,
+        cucharilla: teaspoon,
+        cuchillo: knife,
+        chaqueta: jacket,
+        chico/a: guy / girl,
+        de nada: you’re welcome,
+        del tiempo: room temperature,
+        delante (de): in front of,
+        dependiente/a: shop assistant,
+        deportes: sports,
+        deportista: athlete,
+        derecha: right,
+        desayuno: breakfast,
+        después: after,
+        detrás: behind,
+        devolución: refund,
+        devolver: to return,
+        días festivos: bank holidays,
+        días laborables: weekdays,
+        difícil: difficult,
+        dirección: address,
+        discoteca: disco / club,
+        discoteca: disco / club,
+        domingo: Sunday,
+        efectivo: cash,
+        en frente (de): opposite (to),
+        encantado / mucho gusto: nice to meet you,
+        ensalada: salad,
+        entrada: ticket,
+        entre: between,
+        equipaje: luggage,
+        escaleras mecanicas: escalator,
+        escaleras: stairs,
+        escultura: sculpture,
+        esquina: corner,
+        estación: train station,
+        estoy muerto/a: I’m dead tired,
+        estudiar: to study,
+        excursión: excursión / trip,
+        exposición: exhibition,
+        fácil: easy,
+        farmacia: pharmacy / chemist,
+        fin de semana: weekend,
+        frío/a:  cold,
+        fruta: fruit,
+        fútbol: football,
+        galería de arte: art gallery,
+        galleta: biscuit,
+        ganga: bargain,
+        genial: cool,
+        girar: to turn,
+        glorieta: roundabout,
+        gracias: thank you,
+        guía turístico: tourist guide,
+        guía: guidebook,
+        habitación: room,
+        hacer planes: making plans,
+        hasta luego: see you later,
+        hasta pronto: see you soon,
+        hielo: ice,
+        hola: hello / hi,
+        horario: opening hours,
+        horario: schedule,
+        hostal: guesthouse / inn,
+        hotel: hotel,
+        iglesia: church,
+        infusión: herbal tea,
+        izquierda: left,
+        jersey: jumper,
+        jueves: Thursday,
+        juntos: together,
+        la cuenta: the bill,
+        leche: milk,
+        leer: to read,
+        lejos: far,
+        limonada: lemonade,
+        lugares turísticos: places of touristic interest,
+        lunes: Monday,
+        llamada perdida: missed call,
+        llamar: to call,
+        maleta: suitcase,
+        mañana: morning,
+        mapa: map,
+        mármol: marble,
+        marrón: brown,
+        martes: Tuesday,
+        mensaje (de texto): text message,
+        menú: set menu,
+        mesa: table,
+        metro: tube,
+        miércoles: Wednesday,
+        monumento: monument,
+        morado/a: purple,
+        museo: museum,
+        nacionalidad: nationality,
+        naranja: orange,
+        natillas: custard,
+        negro/a: black,
+        niño/a: boy / girl,
+        noche: night,
+        nombre: name,
+        obra maestra: masterpiece,
+        ocupación: occupation,
+        oleo: oil painting,
+        pan: bread,
+        pantalón: trouser,
+        parque: park,
+        pastel: cake,
+        patatas fritas: French fries,
+        pedir: to order,
+        perdone: excuse me,
+        persona mayor: senior citizen,
+        pescado: fish,
+        pintor: painter,
+        pintura: painting,
+        planta: floor,
+        plato: dish,
+        plaza: square,
+        pollo: chicken,
+        ponerse de acuerdo:  to agree,
+        postre: dessert,
+        precio: price,
+        preguntar: to ask,
+        presentar: to introduce,
+        primer plato: starter,
+        probador: fitting room,
+        probarse: to try on,
+        propina: tip,
+        quedar: to meet,
+        quedarse: to stay,
+        quiosco: kiosk,
+        rebajas: sales,
+        recepción: reception,
+        recepcionista: receptionist,
+        recibo: sales receipt,
+        recoger: to pick up,
+        refresco: soft drink / soda,
+        registrarse: to check in,
+        reserva: reservation / booking,
+        reservar: to book,
+        restaurante: restaurant,
+        retrato: portrait,
+        rojo/a: red,
+        rosa: pink,
+        sábado: Saturday,
+        sala: room,
+        sandalias: flip flops,
+        seguir: to continue,
+        segundo plato: main course,
+        servicio de habitaciones: room service,
+        servicios: public toilet,
+        servilleta: napkin,
+        silla: chair,
+        sopa: soup,
+        supermercado: supermarket,
+        talla: size,
+        también: too,
+        tampoco: neither,
+        tarde: afternoon / evening,
+        tarifa: fare,
+        tarjeta de crédito / débito:  credit / debit card,
+        taxi: taxi,
+        taza: cup,
+        té: tea,
+        teléfono: telephone,
+        tenedor: fork,
+        tenis: tennis,
+        tetera: teapot,
+        tienda: shop,
+        todo recto: straight away,
+        tomar algo: to go for a drink,
+        trabajar: to work,
+        transporte público: public transport,
+        tren: train,
+        vagón: carriage,
+        vale: okay,
+        vaqueros: jeans,
+        vaso: glass (tumbler),
+        ver: to watch,
+        verde: green,
+        verdura: vegetables,
+        vestido: dress,
+        vía: track,
+        viajar: to travel,
+        viaje: trip,
+        viajero: passenger,
+        viernes: Friday,
+        vino blanco: white wine,
+        vino rosado: rose wine,
+        vino tinto: red wine,
+        visita con guía: guided tour,
+        visitar: to visit,
+        zapatería: shoe shop,
+        zapatos: shoes,
+        zumo de naranja: orange juice
+
+    </string>
+
+    <!--Strings related to the names of quizzes -->
+     <string name="lesson_names">
+       Greetings,
+         01,
+       At the train station,
+       Pronombres,
+       Ser y estar,
+       Llamarse,
+       Las letras,
+       Vocabulario,
+       Comprensión auditiva:
+       Checking in,
+         02,
+       At the hotel,
+         Artículo indeterminado,
+        Artículo determinado,
+        Números,
+        Nacionalidades,
+         Vocabulario,
+        Comprensión auditiva:
+        Sightseeing,
+         03,
+        At the tourist office,
+        Preposiciones,
+        Hay que y Tener que,
+        Verbo Estar,
+        Vocabulario,
+        Comprensión auditiva:
+        Directions,
+         04,
+        At the park,
+        Imperativo 1,
+        Imperativo 2,
+        Tú o Usted,
+        Vocabulario,
+        Comprensión auditiva:
+        Eating,
+         05,
+        At the restaurant,
+        Verbos Querer y Pensar,
+        Verbo Poder,
+         Verbo Jugar,
+        Vocabulario,
+        Comprensión auditiva:
+        Likes,
+         06,
+        At the museum,
+        El Verbo Gustar,
+        Los Pronombres,
+        Gustos,
+        Vocabulario,
+        Comprensión auditiva:
+        Planning,
+         07,
+        At the centre of madrid,
+        Futuro con ir,
+        El Verbo Doler,
+        Practica la Hora,
+        Vocabulario,
+        Comprensión auditiva:
+        Shopping,
+         08,
+        At the shopping centre,
+        Los Adjetivos,
+        Objeto Directo,
+        Quisiera,
+        Vocabulario,
+        Comprensión auditiva:
+        Dating,
+         09,
+        At the cafeteria,
+        Interrogativos,
+        Pronombres Posesivos,
+         Adjetivos Posesivos,
+        Vocabulario,
+        Comprensión auditiva
+    </string>
+
+
+      <string name="video_names">
+          Greetings,
+          Greetings - Revision Videos,
+        Pronombres,
+        Llamarse,
+        Ser y Estar,
+        Vocabulario:
+          Checking in,
+        Checking in - Revision Videos,
+        Nationalidades,
+        Verbos Regulares,
+        Verbs “go”,
+        Vocabulario:
+          Sightseeing,
+        Sightseeing - Revision Videos,
+        Hay que y Tener que,
+        Las Preposiciones,
+        El Verbo Estar,
+        Vocabulario:
+          Directions,
+        Directions - Revision Videos,
+        Imperativo,
+        Tú o Usted,
+        El Verbo lr,
+        Vocabulario:
+          Eating,
+        Eating - Revision Videos,
+        Verbos Irregulares,
+        Comida y Precios,
+        Vocabulario:
+          Likes,
+        Likes - Revision Videos,
+        Los Gustos,
+        El Verbo Gustos,
+        Vocabulario:
+          Planning,
+        Planning - Revision Videos,
+        El Futuro con lr,
+        El Verbo Doler,
+        Vocabulario:
+          Shopping,
+        Shopping - Revision Videos,
+        Adjetivos,
+        Objeto
+        Vocabulario:
+          Dating,
+        Dating - Revision Videos,
+        Interrogativos,
+        Posesivos,
+        Vocabulario
+    </string>
+
+    <string name="video_file_names">
+       Greetings,
+        u01,
+        u0101grapronombres,
+        u0102grallamarse,
+        u0103graserestar,
+        u0104vocabmdetransporte:
+        Checking in,
+        u02,
+        u0201granacionalidades,
+        u0202graregulares,
+        u0203grairregularesgo,
+        u0204grasustantivosarticulos.mp4:
+        Sightseeing,
+        u03,
+        u0301grahayquetenerque,
+        u0302grapreposiciones,
+        u0303graverboestar,
+        u03vocabenlaoficina:
+        Directions,
+        u04,
+        u0401graimperativo,
+        u0401graimperativo2,
+        u0402gratuusted,
+        u0403graverboIr,
+        u0403graverboIr2,
+        u04vocabenelparque:
+        Eating,
+        u05,
+        u0501graverboscambios,
+        u0502gracomida,
+        u0503gramercado:
+        Likes,
+        u06,
+        u0601gragustos,
+        u0602gragustos,
+        u0603enelmuseovocab:
+        Planning,
+        u07,
+        u0701grafuturo,
+        u0702gradoler,
+        u07vocab:
+        Shopping,
+        u08,
+        u0801graadjetivos,
+        u0802graod,
+        u08vocab:
+        Dating,
+        u09,
+        u0901grainterrogativosold,
+        u0901interrogativos,
+        u0902graposesivos,
+        u0903vocab.mp4
+    </string>
+
+
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
@@ -54,5 +505,80 @@
     <string name="observe">Observe</string>
     <string name="reflect">Reflect</string>
     <string name="experiment">Experiment</string>
->>>>>>> origin/master
+    <string name="title_activity_content_audio_quiz">content_audio_quiz</string>
+    <string name="title_activity_quiz">Introduction</string>
+    <string name="title_activity_review">Review</string>
+    <string name="title_activity_language_select">Select a Language</string>
+    <string name="title_activity_glossary">Glossary</string>
+    <string name="title_activity_media_player">MediaPlayer</string>
+    <string name="title_activity_get_started">GetStarted</string>
+    <string name="title_activity_exercises">Exercises</string>
+    <string name="title_activity_video">VideoActivity</string>
+    <string name="title_activity_experiment">Experiment</string>
+    <string name="title_activity_vocabulario">Vocabulario</string>
+<<<<<<< HEAD
+    <string name="title_activity_revision_videos">RevisionVideos</string>
+    <string name="title_activity_revision_video_view">RevisionVideoView</string>
+=======
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_register">Register</string>
+>>>>>>> refs/remotes/origin/Settings
 </resources>

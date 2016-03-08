@@ -2,31 +2,45 @@ package com.puzzle.appname;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.view.View;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class LessonSelectActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    public static final String QUESTION_TYPE = "QuestionType";
+    public static final String LESSON_TITLE = "TITLE";
+<<<<<<< HEAD
+    ArrayList<Integer> lessonImages = new ArrayList<Integer>(Arrays.asList(R.drawable.greetings, R.drawable.checkingin,
+            R.drawable.sightseeing, R.drawable.directions, R.drawable.eating, R.drawable.likes, R.drawable.planning,
+            R.drawable.shopping,R.drawable.dating ));
+    ArrayList<String> lessonNames = new ArrayList<String>(
+=======
+    public static final String LESSON_NUMBER = "NUMBER";
+    ArrayList<String> lessonNames = new ArrayList<>(
+>>>>>>> refs/remotes/origin/populating-data
+            Arrays.asList("Greetings","Checking in","Sightseeing","Directions","Eating","Likes","Planning","Shopping","Dating")
+    );
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_select);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -34,11 +48,14 @@ public class LessonSelectActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
         setupRecyclerView();
+        Intent j = new Intent(this, LanguageSelectActivity.class);
+        startActivity(j);
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
+
 
     }
 
@@ -52,13 +69,32 @@ public class LessonSelectActivity extends AppCompatActivity
 
         // specify an adapter (see also next example)
 
-        Lessons[] myDataset  = {new Lessons(R.mipmap.ic_launcher, "1. Greetings",100),
-                new Lessons(R.mipmap.ic_launcher, "2. Swearing",0)};
+        ArrayList<Lesson> myDataset  = new ArrayList<Lesson>();
+        for(int i = 0; i < lessonNames.size(); ++i)
+        {
+            myDataset.add(new Lesson(lessonImages.get(i), i+1 + ". " + lessonNames.get(i),0));
+        }
 
         MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);
+        cardList.addOnItemTouchListener(
+            new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener()
+            {
+                @Override
+                public void onItemClick(View view, int position)
+                {
+                    Intent intent = new Intent(getBaseContext(), GetStarted.class);
+                    intent.putExtra(LESSON_TITLE, lessonNames.get(position));
+<<<<<<< HEAD
+                    intent.putExtra("WhichVideo",position);
+=======
+                    intent.putExtra(LESSON_NUMBER, (position + 1) + "");
+>>>>>>> refs/remotes/origin/populating-data
+                    startActivity(intent);
+                }
+            })
+        );
     }
-
 
     @Override
     public void onBackPressed() {
@@ -86,6 +122,8 @@ public class LessonSelectActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.openDrawer(GravityCompat.START);
             return true;
         }
 
@@ -97,20 +135,6 @@ public class LessonSelectActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
         Intent i=null;
         switch (item.getItemId()){
             case R.id.nav_lock_screen:
@@ -122,13 +146,34 @@ public class LessonSelectActivity extends AppCompatActivity
             case R.id.nav_exersice_menus:
                 i = new Intent(this, ExerciseMenuActivity.class);
                 break;
+            case R.id.nav_audio_quiz:
+                i = new Intent(this, AudioQuiz.class);
+                break;
+            case R.id.nav_getStarted:
+                i= new Intent(this, GetStarted.class);
+                break;
+            case R.id.nav_exercises:
+                i = new Intent(this, Exercises.class);
+                break;
+            case R.id.nav_glossary:
+                i = new Intent(this, Glossary.class);
+                break;
             case R.id.nav_text_questions:
                 i = new Intent(this, ExerciseActivity.class);
-                //i.putExtra();
                 break;
             case R.id.nav_picture_questions:
                 i = new Intent(this, ExerciseActivity.class);
-                i.putExtra(QUESTION_TYPE, QuestionType.PICTURE);
+            case R.id.nav_quiz_intro:
+                i = new Intent(this, QuizIntroActivity.class);
+                break;
+            case R.id.nav_language_select:
+                i = new Intent(this, LanguageSelectActivity.class);
+                break;
+            case R.id.nav_Video:
+                i = new Intent(this, VideoActivity.class);
+                break;
+            case R.id.nav_settings:
+                i = new Intent(this, SettingsActivity.class);
                 break;
         }
         if(i!=null){
