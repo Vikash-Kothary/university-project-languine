@@ -1,0 +1,33 @@
+Elige la forma correcta del imperativo para cada pronombre.
+Choose the right imperative form for each pronoun.
+10
+Ustedes _
+cojan
+coged,coge,coja,cojamos,cojan
+Vosotros/as _
+coged
+coged,coge,coja,cojamos,cojan
+Nosotros/as _
+cojamos
+coged,coge,coja,cojamos,cojan
+Usted _
+coja
+coged,coge,coja,cojamos,cojan
+Tú _
+coge
+coged,coge,coja,cojamos,cojan
+Usted _
+tome
+toma,tomemos,tomen,tomad,tome
+Ustedes _
+tomen
+toma,tomemos,tomen,tomad,tome
+Nosotros/as _
+tomemos
+toma,tomemos,tomen,tomad,tome
+Tú _
+toma
+toma,tomemos,tomen,tomad,tome
+Vosotros/as _
+tomad
+toma,tomemos,tomen,tomad,tome

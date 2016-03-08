@@ -13,12 +13,12 @@
     tools:showIn="@layout/activity_get_started">
 
     <LinearLayout android:orientation="vertical" android:layout_height="wrap_content" android:layout_width="match_parent">
-        <VideoView
-            android:layout_width="wrap_content"
-            android:layout_height="167dp"
-            android:id="@+id/introVid"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="com.puzzle.appname.VideoFragment"
+            android:id="@+id/fragment3" />
 
         <LinearLayout android:layout_weight="1" android:layout_height="fill_parent" android:layout_width="fill_parent"/>
 

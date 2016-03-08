@@ -17,7 +17,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="89dp"
-        android:id="@+id/radioGroup">
+        android:id="@+id/possible_answers">
 
     </RadioGroup>
 
@@ -26,17 +26,39 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
-        android:id="@+id/titleText"
+        android:id="@+id/question"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:textAlignment="center" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textb"
-        android:layout_below="@+id/titleText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentBottom="true">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PREV"
+            android:id="@+id/previous_question"
+            android:onClick="previousQuestionButtonClicked"
+            android:layout_alignBottom="@+id/next_question"
+            android:layout_toLeftOf="@+id/next_question"
+            android:layout_toStartOf="@+id/next_question"
+            android:layout_marginRight="36dp"
+            android:layout_marginEnd="36dp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEXT"
+            android:id="@+id/next_question"
+            android:onClick="nextQuestionButtonClicked"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/fragment"
+            android:layout_alignEnd="@+id/fragment"
+            android:layout_marginRight="61dp"
+            android:layout_marginEnd="61dp"
+            android:layout_marginBottom="24dp" />
+    </LinearLayout>
 
 </RelativeLayout>

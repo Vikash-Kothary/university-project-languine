@@ -16,6 +16,16 @@ public class Exercises extends AppCompatActivity {
 
     public static final String EXERCISE_TITLE = "TITLE";
     public static final String EXERCISE_NAMES = "NAMES";
+<<<<<<< HEAD
+    public static final String EXERCISE_VIDEO_TITLE = "TITLE";
+    public static final String EXERCISE_VIDEO_NAMES = "NAMES";
+
+
+
+=======
+    public static final String LESSON_NUMBER = "NUMBER";
+    private String lessonNumber;
+>>>>>>> refs/remotes/origin/populating-data
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +33,11 @@ public class Exercises extends AppCompatActivity {
         setContentView(R.layout.activity_exercises);
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle((getIntent().getStringExtra(GetStarted.LESSON_TITLE)));
+        lessonNumber = (getIntent().getStringExtra(GetStarted.LESSON_NUMBER));
+
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);
         cardList.setHasFixedSize(true);
 
@@ -46,8 +60,17 @@ public class Exercises extends AppCompatActivity {
         //split that string for each lesson
         String[] exercisesPerLesson = allExerciseNames.split(": ");
 
+        //get the string for all the revision video names
+        String allVideoTopics = getResources().getString(R.string.video_names);
+        //split that string for each video topic
+        String[] videosPerLesson = allVideoTopics.split(": ");
+
         String titlePlaceHolder = "";
         String namesPlaceHolder = "";
+
+        String videoPlaceHolder = "";
+        String videoNamesPlaceHolder = "";
+
 
         for(int i = 0; i < exercisesPerLesson.length; ++i)
         {
@@ -58,21 +81,55 @@ public class Exercises extends AppCompatActivity {
                 namesPlaceHolder = exercisesPerLesson[i];
                 String[] buttonTitles = namesPlaceHolder.split(", ");
                 //get the name of the page title for next activity
-                titlePlaceHolder = buttonTitles[1];
+                titlePlaceHolder = buttonTitles[2];
+            }
+        }
+
+        for(int i = 0; i < videosPerLesson.length; ++i){
+            // if the name of the lesson matches the lesson the user selected
+            if (videosPerLesson[i].startsWith(toolbar.getTitle().toString())){
+                videoNamesPlaceHolder = videosPerLesson[i];
+                String[] videoButtonTitles = videoNamesPlaceHolder.split(", ");
+
+                videoPlaceHolder = videoButtonTitles[1];
             }
         }
 
         final String exercisePageTitle = titlePlaceHolder;
         final String exerciseNames = namesPlaceHolder;
 
+        final String videoPageTitle = videoPlaceHolder;
+        final String videoNames = videoNamesPlaceHolder;
+
         cardList.addOnItemTouchListener(
                 new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
+<<<<<<< HEAD
+                    public void onItemClick(View view, int position)
+                    {
+                        if(position == 0)
+                        {
+                            Intent intent = new Intent(getBaseContext(), RevisionVideos.class);
+                            intent.putExtra(EXERCISE_VIDEO_TITLE, videoPageTitle);
+                            intent.putExtra(EXERCISE_VIDEO_NAMES, videoNames);
+                            intent.putExtra("FirstVideo",getIntent().getIntExtra("FirstVideo",-1));
+                            startActivity(intent);
+                        }
+                        else
+                        {
+                            Intent intent = new Intent(getBaseContext(), Experiment.class);
+                            intent.putExtra(EXERCISE_TITLE, exercisePageTitle);
+                            intent.putExtra(EXERCISE_NAMES, exerciseNames);
+                            startActivity(intent);
+                        }
+=======
                     public void onItemClick(View view, int position) {
                         Intent intent = new Intent(getBaseContext(), Experiment.class);
                         intent.putExtra(EXERCISE_TITLE, exercisePageTitle);
                         intent.putExtra(EXERCISE_NAMES, exerciseNames);
+                        intent.putExtra(LESSON_NUMBER, lessonNumber);
                         startActivity(intent);
+>>>>>>> refs/remotes/origin/populating-data
                     }
                 })
         );
