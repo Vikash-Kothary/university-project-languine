@@ -43,7 +43,13 @@ public class QuizIntroActivity extends AppCompatActivity {
 
         /*setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+<<<<<<< HEAD
         getSupportActionBar().setDisplayShowHomeEnabled(true);*/
+=======
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+>>>>>>> refs/remotes/origin/xmlEdit
     }
 
     public void nextButtonClicked(View view){

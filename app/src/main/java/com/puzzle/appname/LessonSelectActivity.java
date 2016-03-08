@@ -39,6 +39,8 @@ public class LessonSelectActivity extends AppCompatActivity
         setContentView(R.layout.activity_lesson_select);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

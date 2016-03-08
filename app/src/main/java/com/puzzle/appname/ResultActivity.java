@@ -16,10 +16,19 @@ public class ResultActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
         //setContentView(R.layout.activity_result);
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //toolbar.setTitle("Result");
         //setSupportActionBar(toolbar);
+=======
+        setContentView(R.layout.activity_result);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+>>>>>>> refs/remotes/origin/xmlEdit
     }
 
     public void reviewButtonClicked(View v) {

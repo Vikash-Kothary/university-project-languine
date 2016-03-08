@@ -161,12 +161,21 @@ public class ExerciseActivity extends AppCompatActivity {
                 }
             }
         }
+<<<<<<< HEAD
         if(questionCounter == unitExercise.getQuestionsNumber()-1)
         {
             Button nextButton = (Button) findViewById(R.id.next_question);
             nextButton.setText("FINISH");
         }
     }
+=======
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+>>>>>>> refs/remotes/origin/xmlEdit
 
     public void nextQuestionButtonClicked(View view)
     {

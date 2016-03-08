@@ -36,6 +36,8 @@ public class Exercises extends AppCompatActivity {
         lessonNumber = (getIntent().getStringExtra(GetStarted.LESSON_NUMBER));
 
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);
         cardList.setHasFixedSize(true);
 

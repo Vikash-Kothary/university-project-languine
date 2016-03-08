@@ -30,15 +30,8 @@ public class GetStarted extends AppCompatActivity {
         lessonNumber = getIntent().getStringExtra(LessonSelectActivity.LESSON_NUMBER);
         System.out.println("LESSON NUMBER IS: " + lessonNumber);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
 
         RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);
