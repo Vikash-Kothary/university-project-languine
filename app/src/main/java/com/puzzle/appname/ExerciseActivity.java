@@ -39,15 +39,17 @@ public class ExerciseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         exerciseName = getIntent().getStringExtra(QuizIntroActivity.QUIZ_TITLE);
         System.out.println("EXERCISE NAME: " + exerciseName);
         lessonNumber = (getIntent().getStringExtra(QuizIntroActivity.LESSON_NUMBER));
-        //toolbar.setTitle(exerciseName);
-
+        toolbar.setTitle(exerciseName);
         unitExercise = Data.getExercise(lessonNumber, exerciseName, this.getApplicationContext());
 
         chooseFragment();
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         questionCounter = 0;
         //TODO increase questionCounter when the user clicks next (goes to the next question)
 
@@ -161,21 +163,12 @@ public class ExerciseActivity extends AppCompatActivity {
                 }
             }
         }
-<<<<<<< HEAD
         if(questionCounter == unitExercise.getQuestionsNumber()-1)
         {
             Button nextButton = (Button) findViewById(R.id.next_question);
             nextButton.setText("FINISH");
         }
     }
-=======
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
->>>>>>> refs/remotes/origin/xmlEdit
 
     public void nextQuestionButtonClicked(View view)
     {

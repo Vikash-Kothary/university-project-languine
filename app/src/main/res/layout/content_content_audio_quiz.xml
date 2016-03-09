@@ -85,7 +85,6 @@
                 android:layout_height="wrap_content"
                 android:text="NEXT"
                 android:id="@+id/next_question"
-                android:onClick="nextQuestionButtonClicked"
                 android:layout_alignParentBottom="true"
                 android:layout_alignRight="@+id/fragment"
                 android:layout_alignEnd="@+id/fragment"

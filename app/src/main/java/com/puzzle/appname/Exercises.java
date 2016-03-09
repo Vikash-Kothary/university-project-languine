@@ -14,18 +14,15 @@ import java.util.ArrayList;
 
 public class Exercises extends AppCompatActivity {
 
-    public static final String EXERCISE_TITLE = "TITLE";
-    public static final String EXERCISE_NAMES = "NAMES";
-<<<<<<< HEAD
-    public static final String EXERCISE_VIDEO_TITLE = "TITLE";
-    public static final String EXERCISE_VIDEO_NAMES = "NAMES";
+    /* Constants */
+    public static final String EXERCISE_TITLE = "EXERCISE_TITLE";
+    public static final String EXERCISE_NAMES = "EXERCISE_NAMES";
+    public static final String EXERCISE_VIDEO_TITLE = "EXERCISE_VIDEO_TITLE";
+    public static final String EXERCISE_VIDEO_NAMES = "EXERCISE_VIDEO_NAMES";
+    public static final String LESSON_NUMBER = "LESSON_NUMBER";
 
-
-
-=======
-    public static final String LESSON_NUMBER = "NUMBER";
+    /* Global Variables */
     private String lessonNumber;
->>>>>>> refs/remotes/origin/populating-data
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +43,6 @@ public class Exercises extends AppCompatActivity {
         cardList.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-
         ArrayList<Lesson> myDataset = new ArrayList<>();
         myDataset.add(new Lesson(R.mipmap.ic_launcher, "Revision Videos",100));
         myDataset.add(new Lesson(R.mipmap.ic_launcher, "Exercises", 100));
@@ -104,7 +100,6 @@ public class Exercises extends AppCompatActivity {
         cardList.addOnItemTouchListener(
                 new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
-<<<<<<< HEAD
                     public void onItemClick(View view, int position)
                     {
                         if(position == 0)
@@ -112,6 +107,7 @@ public class Exercises extends AppCompatActivity {
                             Intent intent = new Intent(getBaseContext(), RevisionVideos.class);
                             intent.putExtra(EXERCISE_VIDEO_TITLE, videoPageTitle);
                             intent.putExtra(EXERCISE_VIDEO_NAMES, videoNames);
+                            intent.putExtra(LESSON_NUMBER, lessonNumber);
                             intent.putExtra("FirstVideo",getIntent().getIntExtra("FirstVideo",-1));
                             startActivity(intent);
                         }
@@ -120,16 +116,9 @@ public class Exercises extends AppCompatActivity {
                             Intent intent = new Intent(getBaseContext(), Experiment.class);
                             intent.putExtra(EXERCISE_TITLE, exercisePageTitle);
                             intent.putExtra(EXERCISE_NAMES, exerciseNames);
+                            intent.putExtra(LESSON_NUMBER, lessonNumber);
                             startActivity(intent);
                         }
-=======
-                    public void onItemClick(View view, int position) {
-                        Intent intent = new Intent(getBaseContext(), Experiment.class);
-                        intent.putExtra(EXERCISE_TITLE, exercisePageTitle);
-                        intent.putExtra(EXERCISE_NAMES, exerciseNames);
-                        intent.putExtra(LESSON_NUMBER, lessonNumber);
-                        startActivity(intent);
->>>>>>> refs/remotes/origin/populating-data
                     }
                 })
         );

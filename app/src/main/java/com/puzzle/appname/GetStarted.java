@@ -2,13 +2,13 @@ package com.puzzle.appname;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import com.puzzle.appname.ui.activity.LessonSelectActivity;
 
 import java.util.ArrayList;
 
@@ -56,11 +56,8 @@ public class GetStarted extends AppCompatActivity {
                     public void onItemClick(View view, int position) {
                         Intent intent = new Intent(getBaseContext(), Exercises.class);
                         intent.putExtra(LESSON_TITLE, toolbar.getTitle());
-<<<<<<< HEAD
                         intent.putExtra("FirstVideo",getIntent().getIntExtra("WhichVideo",-1));
-=======
                         intent.putExtra(LESSON_NUMBER, lessonNumber);
->>>>>>> refs/remotes/origin/populating-data
                         startActivity(intent);
                     }
                 })

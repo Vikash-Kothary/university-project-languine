@@ -3,6 +3,8 @@ package com.puzzle.appname;
 import android.support.test.espresso.assertion.ViewAssertions;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.puzzle.appname.ui.activity.LessonSelectActivity;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;

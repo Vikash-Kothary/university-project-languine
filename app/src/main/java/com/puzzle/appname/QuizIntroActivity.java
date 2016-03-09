@@ -26,6 +26,7 @@ public class QuizIntroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz_intro);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
+
         TextView spaInstructionView = (TextView) findViewById(R.id.description_esp);
         TextView engInstructionView = (TextView) findViewById(R.id.description_en);
 
@@ -41,15 +42,9 @@ public class QuizIntroActivity extends AppCompatActivity {
 
         quizType = exercise.getType();
 
-        /*setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-<<<<<<< HEAD
-        getSupportActionBar().setDisplayShowHomeEnabled(true);*/
-=======
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
->>>>>>> refs/remotes/origin/xmlEdit
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
     public void nextButtonClicked(View view){

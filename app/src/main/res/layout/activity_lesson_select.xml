@@ -22,4 +22,6 @@
         app:headerLayout="@layout/nav_header_lesson_select"
         app:menu="@menu/activity_lesson_select_drawer" />
 
+    <!-- TODO: Second navigation view -->
+
 </android.support.v4.widget.DrawerLayout>

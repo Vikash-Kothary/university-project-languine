@@ -516,10 +516,8 @@
     <string name="title_activity_video">VideoActivity</string>
     <string name="title_activity_experiment">Experiment</string>
     <string name="title_activity_vocabulario">Vocabulario</string>
-<<<<<<< HEAD
     <string name="title_activity_revision_videos">RevisionVideos</string>
     <string name="title_activity_revision_video_view">RevisionVideoView</string>
-=======
     <string name="title_activity_settings">Settings</string>
 
     <!-- Strings related to Settings -->
@@ -580,5 +578,4 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="title_activity_register">Register</string>
->>>>>>> refs/remotes/origin/Settings
 </resources>

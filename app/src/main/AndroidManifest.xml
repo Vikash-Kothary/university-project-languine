@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LessonSelectActivity"
+            android:name=".ui.activity.LessonSelectActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -27,11 +27,11 @@
         <activity
             android:name=".ExerciseMenuActivity"
             android:label="@string/title_activity_exercise_menu"
-            android:parentActivityName=".LessonSelectActivity"
+            android:parentActivityName=".ui.activity.LessonSelectActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.puzzle.appname.LessonSelectActivity" />
+                android:value=".ui.activity.LessonSelectActivity" />
         </activity>
         <activity
             android:name=".ExerciseActivity"
@@ -45,55 +45,54 @@
         <activity
             android:name=".CreditsActivity"
             android:label="@string/title_activity_credits"
-            android:parentActivityName=".LessonSelectActivity"
+            android:parentActivityName=".ui.activity.LessonSelectActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.puzzle.appname.LessonSelectActivity" />
+                android:value=".ui.activity.LessonSelectActivity" />
         </activity>
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
-            android:parentActivityName=".LessonSelectActivity">
+            android:parentActivityName=".ui.activity.LessonSelectActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.puzzle.appname.LessonSelectActivity" />
+                android:value=".ui.activity.LessonSelectActivity" />
         </activity>
         <activity
             android:name=".AudioQuiz"
             android:label="@string/title_activity_content_audio_quiz"
             android:theme="@style/AppTheme.NoActionBar" />
-        android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".QuizIntroActivity"
             android:label="@string/title_activity_quiz"
-            android:parentActivityName=".LessonSelectActivity"
+            android:parentActivityName=".ui.activity.LessonSelectActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.puzzle.appname.LessonSelectActivity" />
+                android:value=".ui.activity.LessonSelectActivity" />
         </activity>
         <activity
             android:name=".ResultActivity"
             android:label="@string/title_activity_review"
             android:theme="@style/AppTheme.NoActionBar">
-            android:parentActivityName=".LessonSelectActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.puzzle.appname.LessonSelectActivity" />
+                android:value=".ui.activity.LessonSelectActivity" />
         </activity>
         <activity
-            android:name=".LanguageSelectActivity"
+            android:name=".ui.LanguageSelectActivity"
             android:label="@string/title_activity_language_select"
-            android:parentActivityName=".LessonSelectActivity"
+            android:parentActivityName=".ui.activity.LessonSelectActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.puzzle.appname.LessonSelectActivity" />
+                android:value=".ui.activity.LessonSelectActivity" />
+        </activity>
+        <activity
             android:name=".VideoActivity"
             android:label="@string/title_activity_video"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Glossary"
             android:label="@string/title_activity_glossary"
@@ -115,21 +114,21 @@
             android:label="@string/title_activity_vocabulario"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-<<<<<<< HEAD
             android:name=".RevisionVideos"
             android:label="@string/title_activity_revision_videos"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RevisionVideoView"
             android:label="@string/title_activity_revision_video_view"
-=======
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings" />
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Register"
             android:label="@string/title_activity_register"
->>>>>>> refs/remotes/origin/Settings
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <meta-data
