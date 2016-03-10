@@ -1,4 +1,4 @@
-package com.puzzle.appname.ui;
+package com.puzzle.appname.ui.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,19 +13,33 @@ import android.widget.ImageView;
 
 import com.puzzle.appname.R;
 
-public class LanguageSelectActivity extends AppCompatActivity {
+public class LanguageSelectActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_language_select);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        setupToolbar();
+
+        ImageButton spanishFlag = (ImageButton) findViewById(R.id.spanish_image);
+        spanishFlag.setOnClickListener(this);
 
     }
 
-    public void flag(View view) {
-        finish();
+    private void setupToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setElevation(0);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.spanish_image:
+                finish();
+                break;
+        }
     }
 }

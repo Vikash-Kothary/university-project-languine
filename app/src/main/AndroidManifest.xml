@@ -43,7 +43,7 @@
                 android:value="com.puzzle.appname.ExerciseMenuActivity" />
         </activity>
         <activity
-            android:name=".CreditsActivity"
+            android:name=".ui.activity.CreditsActivity"
             android:label="@string/title_activity_credits"
             android:parentActivityName=".ui.activity.LessonSelectActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -52,7 +52,7 @@
                 android:value=".ui.activity.LessonSelectActivity" />
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.activity.LoginActivity"
             android:label="@string/title_activity_login"
             android:parentActivityName=".ui.activity.LessonSelectActivity">
             <meta-data
@@ -81,7 +81,7 @@
                 android:value=".ui.activity.LessonSelectActivity" />
         </activity>
         <activity
-            android:name=".ui.LanguageSelectActivity"
+            android:name=".ui.activity.LanguageSelectActivity"
             android:label="@string/title_activity_language_select"
             android:parentActivityName=".ui.activity.LessonSelectActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -94,7 +94,7 @@
             android:label="@string/title_activity_video"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Glossary"
+            android:name=".ui.activity.GlossaryActivity"
             android:label="@string/title_activity_glossary"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

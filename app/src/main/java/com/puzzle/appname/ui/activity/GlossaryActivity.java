@@ -1,4 +1,4 @@
-package com.puzzle.appname;
+package com.puzzle.appname.ui.activity;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,10 +18,14 @@ import android.widget.Button;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.puzzle.appname.GlossaryAdapter;
+import com.puzzle.appname.GlossaryController;
+import com.puzzle.appname.R;
+import com.puzzle.appname.Translation;
 
 import java.util.ArrayList;
 
-public class Glossary extends AppCompatActivity {
+public class GlossaryActivity extends AppCompatActivity {
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -86,7 +90,7 @@ public class Glossary extends AppCompatActivity {
         client.connect();
         Action viewAction = Action.newAction(
                 Action.TYPE_VIEW, // TODO: choose an action type.
-                "Glossary Page", // TODO: Define a title for the content shown.
+                "GlossaryActivity Page", // TODO: Define a title for the content shown.
                 // TODO: If you have web page content that matches this app activity's content,
                 // make sure this auto-generated web page URL is correct.
                 // Otherwise, set the URL to null.
@@ -105,7 +109,7 @@ public class Glossary extends AppCompatActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         Action viewAction = Action.newAction(
                 Action.TYPE_VIEW, // TODO: choose an action type.
-                "Glossary Page", // TODO: Define a title for the content shown.
+                "GlossaryActivity Page", // TODO: Define a title for the content shown.
                 // TODO: If you have web page content that matches this app activity's content,
                 // make sure this auto-generated web page URL is correct.
                 // Otherwise, set the URL to null.

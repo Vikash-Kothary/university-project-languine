@@ -1,4 +1,4 @@
-package com.puzzle.appname;
+package com.puzzle.appname.ui.activity;
 
 import android.content.res.Configuration;
 import android.os.Bundle;

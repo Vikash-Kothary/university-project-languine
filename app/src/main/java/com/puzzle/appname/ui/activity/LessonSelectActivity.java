@@ -10,26 +10,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.puzzle.appname.AudioQuiz;
-import com.puzzle.appname.CreditsActivity;
 import com.puzzle.appname.ExerciseActivity;
 import com.puzzle.appname.ExerciseMenuActivity;
 import com.puzzle.appname.Exercises;
 import com.puzzle.appname.GetStarted;
-import com.puzzle.appname.Glossary;
 import com.puzzle.appname.Lesson;
-import com.puzzle.appname.LoginActivity;
 import com.puzzle.appname.MyAdapter;
 import com.puzzle.appname.QuizIntroActivity;
 import com.puzzle.appname.R;
 import com.puzzle.appname.RecyclerItemClickListener;
 import com.puzzle.appname.SettingsActivity;
 import com.puzzle.appname.VideoActivity;
-import com.puzzle.appname.ui.LanguageSelectActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -62,10 +57,10 @@ public class LessonSelectActivity extends AppCompatActivity
         setupNavigationDrawer(toolbar);
         setupRecyclerView();
 
-        Intent j = new Intent(this, LanguageSelectActivity.class);
-        startActivity(j);
-        Intent i = new Intent(this, LoginActivity.class);
-        startActivity(i);
+//        Intent j = new Intent(this, LanguageSelectActivity.class);
+//        startActivity(j);
+//        Intent i = new Intent(this, LoginActivity.class);
+//        startActivity(i);
     }
 
     private Toolbar setupToolbar() {
@@ -175,7 +170,7 @@ public class LessonSelectActivity extends AppCompatActivity
                 i = new Intent(this, Exercises.class);
                 break;
             case R.id.nav_glossary:
-                i = new Intent(this, Glossary.class);
+                i = new Intent(this, GlossaryActivity.class);
                 break;
             case R.id.nav_text_questions:
                 i = new Intent(this, ExerciseActivity.class);
