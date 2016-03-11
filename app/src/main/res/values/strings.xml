@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AppName</string>
+    <string name="app_name">Languine</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -485,7 +485,26 @@
         u0903vocab.mp4
     </string>
 
-
+    <string name="video_file_numbers"> 
+        Greetings, 
+        4: 
+        Checking in, 
+        4: 
+        Sightseeing, 
+        4: 
+        Directions, 
+        6: 
+        Eating, 
+        3: 
+        Likes, 
+        3: 
+        Planning, 
+        3: 
+        Shopping, 
+        3: 
+        Dating, 
+        4
+         </string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

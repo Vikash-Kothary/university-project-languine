@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import com.puzzle.appname.ui.activity.LessonSelectActivity;
@@ -19,6 +20,7 @@ public class GetStarted extends AppCompatActivity {
 
     public static final String LESSON_TITLE = "TITLE";
     public static final String LESSON_NUMBER = "NUMBER";
+    public static final String FIRST_VIDEO = "FIRST_VIDEO";
     private String lessonNumber;
 
     @Override
@@ -31,8 +33,6 @@ public class GetStarted extends AppCompatActivity {
         System.out.println("LESSON NUMBER IS: " + lessonNumber);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
 
         RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);
         cardList.setHasFixedSize(true);
@@ -56,7 +56,7 @@ public class GetStarted extends AppCompatActivity {
                     public void onItemClick(View view, int position) {
                         Intent intent = new Intent(getBaseContext(), Exercises.class);
                         intent.putExtra(LESSON_TITLE, toolbar.getTitle());
-                        intent.putExtra("FirstVideo",getIntent().getIntExtra("WhichVideo",-1));
+                        intent.putExtra("FirstVideo", getIntent().getIntExtra("WhichVideo", -1));
                         intent.putExtra(LESSON_NUMBER, lessonNumber);
                         startActivity(intent);
                     }
@@ -66,6 +66,10 @@ public class GetStarted extends AppCompatActivity {
         View frag = findViewById(R.id.fragment3);
         frag.setMinimumHeight(200);
         VideoFragment fragment = (VideoFragment) getSupportFragmentManager().findFragmentById(R.id.fragment3);
+
+
+
+
         switch (getIntent().getIntExtra("WhichVideo", 0)+1) {
             case 1:
                 fragment.runVideo(R.raw.u01);
