@@ -381,53 +381,53 @@
       <string name="video_names">
           Greetings,
           Greetings - Revision Videos,
-        Pronombres,
-        Llamarse,
-        Ser y Estar,
-        Vocabulario:
+        Pronombres;pronombres,
+        Llamarse;llamarse,
+        Ser y Estar;ser_y_estar,
+        Vocabulario;vocabulario:
           Checking in,
         Checking in - Revision Videos,
-        Nationalidades,
-        Verbos Regulares,
-        Verbs “go”,
-        Vocabulario:
+        Nationalidades;nacion,
+        Verbos Regulares;regular,
+        Verbs “go”;to_go,
+        Vocabulario;vocabulario:
           Sightseeing,
         Sightseeing - Revision Videos,
-        Hay que y Tener que,
-        Las Preposiciones,
-        El Verbo Estar,
-        Vocabulario:
+        Hay que y Tener que;hay,
+        Las Preposiciones;preposiciones,
+        El Verbo Estar;estar,
+        Vocabulario;vocabulario:
           Directions,
         Directions - Revision Videos,
-        Imperativo,
-        Tú o Usted,
-        El Verbo lr,
-        Vocabulario:
+        Imperativo;imperativo,
+        Tú o Usted;tu_usted,
+        El Verbo lr;go,
+        Vocabulario;vocabulario:
           Eating,
         Eating - Revision Videos,
-        Verbos Irregulares,
-        Comida y Precios,
-        Vocabulario:
+        Verbos Irregulares;irregular,
+        Comida y Precios;food_prices,
+        Vocabulario;vocabulario:
           Likes,
         Likes - Revision Videos,
-        Los Gustos,
-        El Verbo Gustos,
-        Vocabulario:
+        Los Gustos;gusta,
+        El Verbo Gustos;gusta,
+        Vocabulario;vocabulario:
           Planning,
         Planning - Revision Videos,
-        El Futuro con lr,
-        El Verbo Doler,
-        Vocabulario:
+        El Futuro con lr,futuro,
+        El Verbo Doler;doler,
+        Vocabulario;vocabulario:
           Shopping,
         Shopping - Revision Videos,
-        Adjetivos,
-        Objeto
-        Vocabulario:
+        Adjetivos;adjectivos,
+        Objeto;objecto,
+        Vocabulario;vocabulario:
           Dating,
         Dating - Revision Videos,
-        Interrogativos,
-        Posesivos,
-        Vocabulario
+        Interrogativos;interrogativos,
+        Posesivos;pos_pro,
+        Vocabulario;vocabulario
     </string>
 
     <string name="video_file_names">

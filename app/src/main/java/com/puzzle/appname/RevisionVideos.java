@@ -38,10 +38,28 @@ public class RevisionVideos extends AppCompatActivity {
         String[] videoNamesArray = videoNames.split(", ");
 
         final ArrayList<Lesson> myDataset = new ArrayList<>();
-        for(int i = 2; i < videoNamesArray.length; ++i)
+//        for(int i = 2; i < videoNamesArray.length; ++i)
+//        {
+//            myDataset.add(new Lesson(R.mipmap.ic_launcher,videoNamesArray[i],59));
+//        }
+
+
+        for(int i = 3; i < videoNamesArray.length; ++i)
         {
-            myDataset.add(new Lesson(R.mipmap.ic_launcher,videoNamesArray[i],59));
+            String[] exerciseDetails = videoNamesArray[i].split(";");
+            if(!exerciseDetails[1].equals(" "))
+            {
+                myDataset.add(new Lesson(getResources().getIdentifier(exerciseDetails[1],"drawable",getPackageName()),exerciseDetails[0],0));
+            }
+            else
+            {
+                myDataset.add(new Lesson(R.mipmap.ic_launcher,exerciseDetails[0],0));
+            }
         }
+
+
+
+
         MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);
         cardList.addOnItemTouchListener(
