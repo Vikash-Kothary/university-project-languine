@@ -44,7 +44,7 @@ public class GetStarted extends AppCompatActivity {
         // specify an adapter (see also next example)
 
         ArrayList<Lesson> myDataset = new ArrayList<>();
-        myDataset.add(new Lesson(R.mipmap.ic_launcher, "Get Started", 100));
+        myDataset.add(new Lesson(R.drawable.get_started, "Get Started", 100));
 
         MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);

@@ -10,7 +10,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/cardview_shadow_end_color">
+        android:background="@color/cardview_shadow_end_color"
+        android:backgroundTint="#de2121"
+        android:elevation="20dp">
 
         <ImageView
             android:id="@+id/thumbnail"

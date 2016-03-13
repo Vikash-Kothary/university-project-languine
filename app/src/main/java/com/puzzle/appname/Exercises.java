@@ -8,10 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Exercises extends AppCompatActivity {
 
@@ -24,6 +26,7 @@ public class Exercises extends AppCompatActivity {
 
     /* Global Variables */
     private String lessonNumber;
+    ArrayList<Integer> exerciseImages;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +46,19 @@ public class Exercises extends AppCompatActivity {
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         cardList.setLayoutManager(mLayoutManager);
 
+
+        exerciseImages = new ArrayList<Integer>(
+                Arrays.asList(R.drawable.at_the_train1, R.drawable.at_the_hotel2,
+                        R.drawable.at_the_tourist_office3, R.drawable.at_the_park4,
+                        R.drawable.at_the_restaurant5, R.drawable.at_the_museum6,
+                        R.drawable.at_the_centre_of_madrid7, R.drawable.at_the_shopping_centre8,
+                        R.drawable.at_the_cafe9)
+        );
+
         // specify an adapter (see also next example)
         ArrayList<Lesson> myDataset = new ArrayList<>();
-        myDataset.add(new Lesson(R.mipmap.ic_launcher, "Revision Videos",100));
-        myDataset.add(new Lesson(R.mipmap.ic_launcher, "Exercises", 100));
-
+        myDataset.add(new Lesson(R.drawable.revision_videos, "Revision Videos", 100));
+        myDataset.add(new Lesson(exerciseImages.get(Integer.parseInt(lessonNumber) - 1), "Exercises", 100));
 
         MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);
