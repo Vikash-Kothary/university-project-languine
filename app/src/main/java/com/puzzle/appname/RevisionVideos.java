@@ -44,7 +44,7 @@ public class RevisionVideos extends AppCompatActivity {
 //        }
 
 
-        for(int i = 3; i < videoNamesArray.length; ++i)
+        for(int i = 2; i < videoNamesArray.length; ++i)
         {
             String[] exerciseDetails = videoNamesArray[i].split(";");
             if(!exerciseDetails[1].equals(" "))
