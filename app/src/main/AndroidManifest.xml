@@ -54,7 +54,8 @@
         <activity
             android:name=".ui.activity.LoginActivity"
             android:label="@string/title_activity_login"
-            android:parentActivityName=".ui.activity.LessonSelectActivity">
+            android:parentActivityName=".ui.activity.LessonSelectActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.activity.LessonSelectActivity" />
