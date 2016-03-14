@@ -102,4 +102,5 @@
         android:layout_below="@+id/language_image_layout">
 
     </LinearLayout>
+
 </RelativeLayout>

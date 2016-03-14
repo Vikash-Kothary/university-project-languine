@@ -39,14 +39,14 @@ public class ExerciseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         exerciseName = getIntent().getStringExtra(QuizIntroActivity.QUIZ_TITLE);
         System.out.println("EXERCISE NAME: " + exerciseName);
         lessonNumber = (getIntent().getStringExtra(QuizIntroActivity.LESSON_NUMBER));
-        toolbar.setTitle(exerciseName);
+       // toolbar.setTitle(exerciseName);
         unitExercise = Data.getExercise(lessonNumber, exerciseName, this.getApplicationContext());
 
         chooseFragment();
