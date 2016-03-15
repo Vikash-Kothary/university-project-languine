@@ -3,6 +3,12 @@
 
     <item android:title="Pages">
         <menu>
+
+            <item
+                android:id="@+id/nav_login"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Login" />
+
             <item
                 android:id="@+id/nav_lock_screen"
                 android:icon="@mipmap/ic_launcher"

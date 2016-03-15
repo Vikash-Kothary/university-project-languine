@@ -1,4 +1,17 @@
 <resources>
+
+    <string name="hello">Hello World, ParseStarterProjectActivity!</string>
+
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="LoginBtn">Login</string>
+    <string name="SignupBtn">Sign Up</string>
+    <string name="LogoutBtn">Log Out</string>
+    <string name="Welcome">Welcome!</string>
+
+    <string name="AppID">eAFtucJR0T0NJMexWh7iZWBNi0MBq4OJwSE51TkC</string>
+    <string name="ClientID">QErTxyMNBz9nW9I7xpoe2lZu1pi1O3IoxLQdKmVt</string>
+
     <string name="app_name">Languine</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -7,6 +20,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_exercise_menu">LessonTitle</string>
     <string name="title_activity_exercise">ExerciseTitle</string>
+
+    <string name="facebook_app_id">1690408691215611</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -597,4 +612,5 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="title_activity_register">Register</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>

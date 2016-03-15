@@ -13,18 +13,24 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.facebook.appevents.AppEventsLogger;
 import com.puzzle.appname.AudioQuiz;
 import com.puzzle.appname.ExerciseActivity;
 import com.puzzle.appname.ExerciseMenuActivity;
 import com.puzzle.appname.Exercises;
 import com.puzzle.appname.GetStarted;
 import com.puzzle.appname.Lesson;
+import com.puzzle.appname.LoginSignupActivity;
 import com.puzzle.appname.MyAdapter;
 import com.puzzle.appname.QuizIntroActivity;
 import com.puzzle.appname.R;
 import com.puzzle.appname.RecyclerItemClickListener;
 import com.puzzle.appname.SettingsActivity;
 import com.puzzle.appname.VideoActivity;
+import com.parse.ParseAnonymousUtils;
+import com.parse.ParseUser;
+import com.facebook.FacebookSdk;
+import com.puzzle.appname.Welcome;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -43,6 +49,37 @@ public class LessonSelectActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_select);
+
+        // Determine whether the current user is an anonymous user
+        if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
+            // If user is anonymous, send the user to LoginSignupActivity.class
+            Intent intent = new Intent(this,
+                    LoginSignupActivity.class);
+            startActivity(intent);
+            finish();
+        }
+//        else {
+//            // If current user is NOT anonymous user
+//            // Get current user data from Parse.com
+//            ParseUser currentUser = ParseUser.getCurrentUser();
+//            if (currentUser != null) {
+//                // Send logged in users to Welcome.class
+//                Intent intent = new Intent(this, Welcome.class);
+//                startActivity(intent);
+//                finish();
+//            } else {
+//                // Send user to LoginSignupActivity.class
+//                Intent intent = new Intent(this,
+//                        LoginSignupActivity.class);
+//                startActivity(intent);
+//                finish();
+//            }
+        //}
+
+
+
+
+
 
         lessonImages = new ArrayList<Integer>(
                 Arrays.asList(R.drawable.greetings, R.drawable.checkingin,
@@ -63,6 +100,22 @@ public class LessonSelectActivity extends AppCompatActivity
 //        startActivity(i);
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Logs 'install' and 'app activate' App Events.
+        AppEventsLogger.activateApp(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        // Logs 'app deactivate' App Event.
+        AppEventsLogger.deactivateApp(this);
+    }
     private Toolbar setupToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -151,6 +204,9 @@ public class LessonSelectActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         Intent i = null;
         switch (item.getItemId()) {
+            case R.id.nav_login:
+                i = new Intent(this, LoginSignupActivity.class);
+                break;
             case R.id.nav_lock_screen:
                 i = new Intent(this, LoginActivity.class);
                 break;
