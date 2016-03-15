@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.puzzle.Languine"
+        applicationId "com.puzzle.languine"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
