@@ -48,33 +48,33 @@ public class AudioQuiz extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (buttonRecord.getText().toString().equals("Record")) {
-                    buttonRecord.setText("Stop Recording");
-                    recordLabel.setText("Recording...");
                     try {
                         recordClicked();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+                    buttonRecord.setText("Stop Recording");
+                    recordLabel.setText("Recording...");
 
                 } else if (buttonRecord.getText().toString().equals("Stop Recording")) {
+                    stopClicked();
                     recordLabel.setText("Recording Done");
                     buttonRecord.setText("Play Recording");
-                    stopClicked();
                 } else if (buttonRecord.getText().toString().equals("Play Recording")) {
-                    recordLabel.setText("Playing Recording");
-                    buttonRecord.setText("Stop");
                     try {
                         playClicked();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+                    //recordLabel.setText("Playing Recording");
+                    buttonRecord.setText("Stop");
                 } else {
                     stopPlaybackClicked();
                     buttonRecord.setText("Record");
+                    //recordLabel.setText("");
+
                 }
             }
-
-
         });
         outputFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/recording.3gpp";;
 
@@ -113,12 +113,23 @@ public class AudioQuiz extends AppCompatActivity {
         play.prepare();
         play.start();
 
+//        if (play.isPlaying()) {
+//            buttonRecord.setText("Stop");
+//        }
+//        else{
+//            buttonRecord.setText("Record");
+//        }
+
         play.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer play) {
                 play.release(); //release resources
+                recordLabel.setText("Well done, try Again");
+                buttonRecord.setText("Record");
             }
         });
+        recordLabel.setText("Well done, try Again");
+
     }
 
     public void stopClicked(){
