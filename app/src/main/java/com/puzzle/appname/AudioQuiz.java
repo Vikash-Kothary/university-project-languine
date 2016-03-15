@@ -48,5 +48,4 @@ public class AudioQuiz extends AppCompatActivity {
             seekBar.setProgress(sounds.mySound.getCurrentPosition());
         }
     }
-
 }
