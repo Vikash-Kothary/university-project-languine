@@ -16,7 +16,7 @@ import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 import com.puzzle.appname.ui.activity.LessonSelectActivity;
 
-public class LoginSignupActivity extends Activity {
+public class LoginSignUpActivity extends Activity {
     // Declare Variables
     Button loginbutton;
     Button signup;
@@ -53,7 +53,7 @@ public class LoginSignupActivity extends Activity {
                                 if (user != null) {
                                     // If user exist and authenticated, send user to Welcome.class
                                     Intent intent = new Intent(
-                                            LoginSignupActivity.this,
+                                            LoginSignUpActivity.this,
                                             LessonSelectActivity.class);
                                     startActivity(intent);
                                     Toast.makeText(getApplicationContext(),
@@ -104,9 +104,7 @@ public class LoginSignupActivity extends Activity {
                         }
                     });
                 }
-
             }
         });
-
     }
 }

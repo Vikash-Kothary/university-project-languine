@@ -20,7 +20,7 @@ import com.puzzle.appname.ExerciseMenuActivity;
 import com.puzzle.appname.Exercises;
 import com.puzzle.appname.GetStarted;
 import com.puzzle.appname.Lesson;
-import com.puzzle.appname.LoginSignupActivity;
+import com.puzzle.appname.LoginSignUpActivity;
 import com.puzzle.appname.MyAdapter;
 import com.puzzle.appname.QuizIntroActivity;
 import com.puzzle.appname.R;
@@ -29,8 +29,6 @@ import com.puzzle.appname.SettingsActivity;
 import com.puzzle.appname.VideoActivity;
 import com.parse.ParseAnonymousUtils;
 import com.parse.ParseUser;
-import com.facebook.FacebookSdk;
-import com.puzzle.appname.Welcome;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -54,7 +52,7 @@ public class LessonSelectActivity extends AppCompatActivity
         if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
             // If user is anonymous, send the user to LoginSignupActivity.class
             Intent intent = new Intent(this,
-                    LoginSignupActivity.class);
+                    LoginSignUpActivity.class);
             startActivity(intent);
             finish();
         }
@@ -205,7 +203,7 @@ public class LessonSelectActivity extends AppCompatActivity
         Intent i = null;
         switch (item.getItemId()) {
             case R.id.nav_login:
-                i = new Intent(this, LoginSignupActivity.class);
+                i = new Intent(this, LoginSignUpActivity.class);
                 break;
             case R.id.nav_lock_screen:
                 i = new Intent(this, LoginActivity.class);
