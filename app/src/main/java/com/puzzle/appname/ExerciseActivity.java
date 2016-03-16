@@ -21,9 +21,11 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.puzzle.appname.Backend.Data;
 import com.puzzle.appname.Backend.UnitExercise;
+import com.puzzle.appname.Backend.UnitQuestion;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -173,17 +175,51 @@ public class ExerciseActivity extends AppCompatActivity {
     public void nextQuestionButtonClicked(View view)
     {
         Button nextButton = (Button) findViewById(R.id.next_question);
-        if(nextButton.getText().equals("NEXT"))
+
+        if(quizType.equals("single"))
         {
-            LinearLayout possibleAnswers = (LinearLayout) findViewById(R.id.possible_answers);
-            possibleAnswers.removeAllViews();
-            ++questionCounter;
-            populateFragment(quizType);
-        }
-        else
-        {
-            Intent intent = new Intent(getBaseContext(), ResultActivity.class);
-            startActivity(intent);
+            RadioGroup possibleAnswers = (RadioGroup) findViewById(R.id.possible_answers);
+            String resultMessage = "";
+            if(possibleAnswers.getCheckedRadioButtonId() == -1)
+            {
+                resultMessage = "Please select an answer.";
+            }
+            else
+            {
+                int id= possibleAnswers.getCheckedRadioButtonId();
+                View radioButton = possibleAnswers.findViewById(id);
+                int radioId = possibleAnswers.indexOfChild(radioButton);
+                RadioButton selectedButton = (RadioButton) possibleAnswers.getChildAt(radioId);
+                String selectedAnswer = (String) selectedButton.getText();
+                UnitQuestion currentQuestion = unitExercise.getQuestion(questionCounter);
+
+                if(currentQuestion.checkAnswer(selectedAnswer))
+                {
+                    resultMessage = "This is the correct answer!";
+                }
+                else
+                {
+                    resultMessage = "This is the wrong answer";
+                }
+
+                Toast toast = Toast.makeText(this, resultMessage, Toast.LENGTH_SHORT);
+                toast.show();
+
+                if(nextButton.getText().equals("NEXT"))
+                {
+                    LinearLayout possibleAnswersContainer = (LinearLayout) findViewById(R.id.possible_answers);
+                    possibleAnswersContainer.removeAllViews();
+                    ++questionCounter;
+                    populateFragment(quizType);
+                }
+                else
+                {
+                    Intent intent = new Intent(getBaseContext(), ResultActivity.class);
+                    startActivity(intent);
+                }
+            }
+            Toast toast = Toast.makeText(this, resultMessage, Toast.LENGTH_SHORT);
+            toast.show();
         }
     }
 
