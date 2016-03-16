@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -36,11 +38,14 @@ public class ExerciseActivity extends AppCompatActivity {
     private UnitExercise unitExercise;
     private int questionCounter;
     private String quizType;
+    private ImageView selectedImage;
+    private ImageView[] images = new ImageView[6];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setContentView(R.layout.activity_exercise);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -138,13 +143,12 @@ public class ExerciseActivity extends AppCompatActivity {
             {
                 TextView questionText = (TextView) findViewById(R.id.picture_question);
                 questionText.setText(unitExercise.getQuestion(questionCounter).getQuestionText());
-                ImageView[] images = {
-                        (ImageView) findViewById(R.id.picture1),
-                        (ImageView) findViewById(R.id.picture2),
-                        (ImageView) findViewById(R.id.picture3),
-                        (ImageView) findViewById(R.id.picture4),
-                        (ImageView) findViewById(R.id.picture5),
-                        (ImageView) findViewById(R.id.picture6),};
+                images[0] = (ImageView) findViewById(R.id.picture1);
+                images[1] = (ImageView) findViewById(R.id.picture2);
+                images[2] = (ImageView) findViewById(R.id.picture3);
+                images[3] = (ImageView) findViewById(R.id.picture4);
+                images[4] = (ImageView) findViewById(R.id.picture5);
+                images[5] = (ImageView) findViewById(R.id.picture6);
 
                 ArrayList<String> answers = unitExercise.getQuestion(questionCounter).getPossibleAnswers();
 
@@ -162,6 +166,23 @@ public class ExerciseActivity extends AppCompatActivity {
                     }
                     Bitmap bitmap = BitmapFactory.decodeStream(istr);
                     images[i].setImageBitmap(bitmap);
+
+                    images[i].setOnClickListener(new View.OnClickListener(){
+
+                        @Override
+                        public void onClick(View v)
+                        {
+                            if(selectedImage == null || !selectedImage.equals(v))
+                            {
+                                for(ImageView image : images)
+                                {
+                                    image.clearColorFilter();
+                                }
+                                selectedImage = (ImageView) v;
+                                ((ImageView) v).setColorFilter(Color.argb(70,31,190,214));
+                            }
+                        }
+                    });
                 }
             }
         }
@@ -205,10 +226,62 @@ public class ExerciseActivity extends AppCompatActivity {
                 Toast toast = Toast.makeText(this, resultMessage, Toast.LENGTH_SHORT);
                 toast.show();
 
+
+                possibleAnswers.clearCheck();
+
                 if(nextButton.getText().equals("NEXT"))
                 {
                     LinearLayout possibleAnswersContainer = (LinearLayout) findViewById(R.id.possible_answers);
                     possibleAnswersContainer.removeAllViews();
+                    ++questionCounter;
+                    populateFragment(quizType);
+                }
+                else
+                {
+                    Intent intent = new Intent(getBaseContext(), ResultActivity.class);
+                    startActivity(intent);
+                }
+            }
+            Toast toast = Toast.makeText(this, resultMessage, Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        else if(quizType.equals("pictures"))
+        {
+            String resultMessage = "";
+            String selectedAnswer = "";
+            if(selectedImage == null)
+            {
+                resultMessage = "Please select an answer.";
+            }
+            else
+            {
+                UnitQuestion currentQuestion = unitExercise.getQuestion(questionCounter);
+                for(int i = 0; i < images.length; ++i)
+                {
+                    if(selectedImage.equals(images[i]))
+                    {
+                        selectedAnswer = currentQuestion.getPossibleAnswers().get(i);
+                    }
+                }
+
+                if(currentQuestion.checkAnswer(selectedAnswer))
+                {
+                    resultMessage = "This is the correct answer!";
+                }
+                else
+                {
+                    resultMessage = "This is the wrong answer";
+                }
+
+                Toast toast = Toast.makeText(this, resultMessage, Toast.LENGTH_SHORT);
+                toast.show();
+
+                selectedImage = null;
+
+                if(nextButton.getText().equals("NEXT"))
+                {
+                    //GridLayout possibleAnswersContainer = (GridLayout) findViewById(R.id.picture_frame);
+                    //possibleAnswersContainer.removeAllViews();
                     ++questionCounter;
                     populateFragment(quizType);
                 }

@@ -1,6 +1,7 @@
 package com.puzzle.appname.Backend;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Tamara on 04/03/2016.
@@ -12,10 +13,12 @@ public class UnitExercise {
     private int numQuestions;   //number of questions in the exercise
     private ArrayList<UnitQuestion> questionsArr;
     private String type;
+    private HashMap<String, String> selectedAnswers;  //keeps pair of (your answer, correct answer)
 
     public UnitExercise(String spanishDescription, String englishDescription,
                         int numQuestions, String type) {
         questionsArr = new ArrayList<>();
+        selectedAnswers = new HashMap<>();
         this.numQuestions = numQuestions;
         this.type = type;
         this.englishDescription = englishDescription;
@@ -59,4 +62,12 @@ public class UnitExercise {
     public int getQuestionsNumber(){
         return numQuestions;
     }
+
+    public void addPairOfAnswers(String selectedAnswer, String correctAnswer) {
+        selectedAnswers.put(selectedAnswer, correctAnswer);
+    }
+
+    public HashMap<String, String> getSelectedAnswers() { return selectedAnswers; }
+
+
 }
