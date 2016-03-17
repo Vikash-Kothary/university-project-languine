@@ -51,9 +51,20 @@ public class UnitQuestion {
 
     //TODO maybe create another method for checking answers (where more answers are correct)
     //Use this only when there is one possible answer
-    public boolean checkAnswer(String answer) {
-        if (correctAnswers.contains(answer))
-            return true;
+    public boolean checkAnswer(String answer)
+    {
+        if(answer.contains(","))
+        {
+            if (correctAnswers.contains(answer))
+                return true;
+        }
+        else
+        {
+            if (answer.equals(correctAnswers))
+            {
+                return true;
+            }
+        }
         return false;
     }
 

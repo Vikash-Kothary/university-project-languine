@@ -40,6 +40,7 @@ public class ExerciseActivity extends AppCompatActivity {
     private String quizType;
     private ImageView selectedImage;
     private ImageView[] images = new ImageView[6];
+    private ArrayList<CheckBox> checkBoxes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,11 +133,13 @@ public class ExerciseActivity extends AppCompatActivity {
                 }
 
                 ArrayList<String> answers = unitExercise.getQuestion(questionCounter).getPossibleAnswers();
+                checkBoxes = new ArrayList<>();
 
                 for(String answer: answers) {
                     CheckBox box = new CheckBox(this);
                     box.setText(answer);
                     possibleAnswers.addView(box);
+                    checkBoxes.add(box);
                 }
             }
             else if(quizType.equals("pictures"))
@@ -276,12 +279,66 @@ public class ExerciseActivity extends AppCompatActivity {
                 Toast toast = Toast.makeText(this, resultMessage, Toast.LENGTH_SHORT);
                 toast.show();
 
+                selectedImage.clearColorFilter();
                 selectedImage = null;
 
                 if(nextButton.getText().equals("NEXT"))
                 {
                     //GridLayout possibleAnswersContainer = (GridLayout) findViewById(R.id.picture_frame);
                     //possibleAnswersContainer.removeAllViews();
+                    ++questionCounter;
+                    populateFragment(quizType);
+                }
+                else
+                {
+                    Intent intent = new Intent(getBaseContext(), ResultActivity.class);
+                    startActivity(intent);
+                }
+            }
+            Toast toast = Toast.makeText(this, resultMessage, Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        else if(quizType.equals("multiple"))
+        {
+            LinearLayout possibleAnswers = (LinearLayout) findViewById(R.id.possible_answers);
+            String resultMessage = "";
+
+            if(answerIsSelected())
+            {
+                resultMessage = "Please select an answer.";
+            }
+            else
+            {
+                String selectedAnswer = "";
+
+                for(CheckBox checkBox : checkBoxes)
+                {
+                    if(checkBox.isChecked())
+                    {
+                        selectedAnswer += checkBox.getText().toString() + ",";
+                    }
+                }
+                selectedAnswer = selectedAnswer.substring(0,selectedAnswer.length()-1);
+                UnitQuestion currentQuestion = unitExercise.getQuestion(questionCounter);
+
+                if(currentQuestion.checkAnswer(selectedAnswer))
+                {
+                    resultMessage = "This is the correct answer!";
+                }
+                else
+                {
+                    resultMessage = "This is the wrong answer";
+                }
+
+                Toast toast = Toast.makeText(this, resultMessage, Toast.LENGTH_SHORT);
+                toast.show();
+
+                possibleAnswers.removeAllViews();
+
+                if(nextButton.getText().equals("NEXT"))
+                {
+                    LinearLayout possibleAnswersContainer = (LinearLayout) findViewById(R.id.possible_answers);
+                    possibleAnswersContainer.removeAllViews();
                     ++questionCounter;
                     populateFragment(quizType);
                 }
@@ -338,5 +395,17 @@ public class ExerciseActivity extends AppCompatActivity {
                 //nothing
                 break;
         }
+    }
+
+    private boolean answerIsSelected()
+    {
+        for(CheckBox checkBox : checkBoxes)
+        {
+            if(checkBox.isChecked())
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
