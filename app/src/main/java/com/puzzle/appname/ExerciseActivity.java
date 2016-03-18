@@ -52,7 +52,6 @@ public class ExerciseActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         exerciseName = getIntent().getStringExtra(QuizIntroActivity.QUIZ_TITLE);
-        System.out.println("EXERCISE NAME: " + exerciseName);
         lessonNumber = (getIntent().getStringExtra(QuizIntroActivity.LESSON_NUMBER));
         toolbar.setTitle(exerciseName);
         unitExercise = Data.getExercise(lessonNumber, exerciseName, this.getApplicationContext());
@@ -141,6 +140,8 @@ public class ExerciseActivity extends AppCompatActivity {
                     possibleAnswers.addView(box);
                     checkBoxes.add(box);
                 }
+
+                Log.e("ANSWER", "Quiz type: " + quizType);
             }
             else if(quizType.equals("pictures"))
             {
@@ -199,6 +200,7 @@ public class ExerciseActivity extends AppCompatActivity {
     public void nextQuestionButtonClicked(View view)
     {
         Button nextButton = (Button) findViewById(R.id.next_question);
+        Log.e("ANSWER","Button has been pressed");
 
         if(quizType.equals("single"))
         {
@@ -303,12 +305,15 @@ public class ExerciseActivity extends AppCompatActivity {
             LinearLayout possibleAnswers = (LinearLayout) findViewById(R.id.possible_answers);
             String resultMessage = "";
 
+            Log.e("ANSWER","I'm here");
             if(answerIsSelected())
             {
                 resultMessage = "Please select an answer.";
+                Log.e("ANSWER","I'm in if");
             }
             else
             {
+                Log.e("ANSWER","I'm in else");
                 String selectedAnswer = "";
 
                 for(CheckBox checkBox : checkBoxes)
@@ -348,6 +353,7 @@ public class ExerciseActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             }
+            Log.e("ANSWER","I'm at toast");
             Toast toast = Toast.makeText(this, resultMessage, Toast.LENGTH_SHORT);
             toast.show();
         }

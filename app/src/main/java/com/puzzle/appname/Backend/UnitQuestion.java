@@ -45,7 +45,13 @@ public class UnitQuestion {
         questionText = text;
     }
 
-    public String getQuestionText() {
+    public String getQuestionText()
+    {
+        String questionText = this.questionText;
+        if(questionText.contains("_"))
+        {
+            questionText = questionText.replace("_","_______");
+        }
         return questionText;
     }
 
@@ -55,15 +61,15 @@ public class UnitQuestion {
     {
         if(answer.contains(","))
         {
-            if (correctAnswers.contains(answer))
-                return true;
-        }
-        else
-        {
             if (answer.equals(correctAnswers))
             {
                 return true;
             }
+        }
+        else
+        {
+            if (correctAnswers.contains(answer))
+                return true;
         }
         return false;
     }
