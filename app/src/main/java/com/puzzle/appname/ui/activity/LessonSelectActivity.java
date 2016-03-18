@@ -19,10 +19,12 @@ import com.puzzle.appname.ExerciseMenuActivity;
 import com.puzzle.appname.Exercises;
 import com.puzzle.appname.GetStarted;
 import com.puzzle.appname.Lesson;
+import com.puzzle.appname.LoginActivity;
 import com.puzzle.appname.MyAdapter;
 import com.puzzle.appname.QuizIntroActivity;
 import com.puzzle.appname.R;
 import com.puzzle.appname.RecyclerItemClickListener;
+import com.puzzle.appname.Resources;
 import com.puzzle.appname.SettingsActivity;
 import com.puzzle.appname.VideoActivity;
 
@@ -185,6 +187,9 @@ public class LessonSelectActivity extends AppCompatActivity
                 break;
             case R.id.nav_Video:
                 i = new Intent(this, VideoActivity.class);
+                break;
+            case R.id.nav_resources:
+                i = new Intent(this, Resources.class);
                 break;
             case R.id.nav_settings:
                 i = new Intent(this, SettingsActivity.class);
