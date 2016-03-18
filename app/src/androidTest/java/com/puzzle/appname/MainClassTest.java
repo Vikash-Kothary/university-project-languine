@@ -42,13 +42,13 @@ public class MainClassTest {
         onView(withId(R.id.email)).perform(typeText("cake"), closeSoftKeyboard());
         onView(withId(R.id.password)).check(ViewAssertions.matches(isDisplayed()));
         onView(withId(R.id.password)).perform(typeText("bak"), closeSoftKeyboard());
-        onView(withId(R.id.email_sign_in_button)).check(ViewAssertions.matches(isDisplayed()));
-        onView(withId(R.id.email_sign_in_button)).perform(click());
+        onView(withId(R.id.sign_in)).check(ViewAssertions.matches(isDisplayed()));
+        onView(withId(R.id.sign_in)).perform(click());
         onView(withId(R.id.card_list)).check(ViewAssertions.doesNotExist());
         //test for pass
         onView(withId(R.id.email)).perform(clearText(),typeText("cake@baker"), closeSoftKeyboard());
         onView(withId(R.id.password)).perform(clearText(),typeText("bakes"), closeSoftKeyboard());
-        onView(withId(R.id.email_sign_in_button)).perform(click());
+        onView(withId(R.id.sign_in)).perform(click());
         onView(withId(R.id.card_list)).check(ViewAssertions.matches(isDisplayed()));
     }
 
