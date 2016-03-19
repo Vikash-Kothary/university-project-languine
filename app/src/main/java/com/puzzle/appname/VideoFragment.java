@@ -147,13 +147,11 @@ public class VideoFragment extends Fragment implements MediaController.MediaPlay
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
         mediaPlayer.setDisplay(holder);
-        subAsync.execute();
     }
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
         position = mediaPlayer.getCurrentPosition();
-        subAsync.cancel(true);
         mediaPlayer.pause();
     }
 
