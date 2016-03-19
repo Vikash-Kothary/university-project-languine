@@ -61,10 +61,7 @@ public class UnitQuestion {
     {
         if(answer.contains(","))
         {
-            if (answer.equals(correctAnswers))
-            {
-                return true;
-            }
+
         }
         else
         {
@@ -85,4 +82,6 @@ public class UnitQuestion {
     public ArrayList<String> getPossibleAnswers() {
         return possibleAnswers;
     }
+
+    public ArrayList<String> getCorrectAnswers() { return correctAnswers; }
 }

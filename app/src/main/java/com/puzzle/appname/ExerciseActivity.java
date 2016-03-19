@@ -66,8 +66,10 @@ public class ExerciseActivity extends AppCompatActivity {
      */
     private void populateFragment(final String quizType)
     {
+        Button previousButton = (Button) findViewById(R.id.previous_question);
         if(questionCounter < unitExercise.getQuestionsNumber())
         {
+            previousButton.setVisibility(View.VISIBLE);
             nextButton = (Button) findViewById(R.id.next_question);
             if(nextButton.getText().equals("NEXT"));
                 nextButton.setText("NEXT");
@@ -90,14 +92,18 @@ public class ExerciseActivity extends AppCompatActivity {
         }
         if(questionCounter == unitExercise.getQuestionsNumber()-1)
         {
-            Button nextButton = (Button) findViewById(R.id.next_question);
+            nextButton = (Button) findViewById(R.id.next_question);
             nextButton.setText("FINISH");
+        }
+        if(questionCounter == 0)
+        {
+            previousButton.setVisibility(View.INVISIBLE);
         }
     }
 
     public void nextQuestionButtonClicked(View view)
     {
-        Button nextButton = (Button) findViewById(R.id.next_question);
+        nextButton = (Button) findViewById(R.id.next_question);
         currentQuestion = unitExercise.getQuestion(questionCounter);
 
         if(quizType.equals("single"))
@@ -118,19 +124,26 @@ public class ExerciseActivity extends AppCompatActivity {
         }
         else if(quizType.equals("multiple"))
         {
-            LinearLayout possibleAnswers = (LinearLayout) findViewById(R.id.possible_answers);
-
             if(answerIsSelected())
             {
                 getAudioQuizSelection();
             }
         }
-        String resultMessage = writeToast();
-        Toast toast = Toast.makeText(this, resultMessage, Toast.LENGTH_SHORT);
-        toast.show();
+
+        String resultMessage = "";
+        if(unitExercise.getSelectedAnswers().size() <= questionCounter)
+        {
+            resultMessage = writeToast();
+            Toast toast = Toast.makeText(this, resultMessage, Toast.LENGTH_SHORT);
+            toast.show();
+        }
 
         if(!resultMessage.equals("Please select an answer."))
         {
+            if(unitExercise.getSelectedAnswers().size() <= questionCounter)
+            {
+                unitExercise.addPairOfAnswers(currentQuestion.getCorrectAnswers().get(0),selectedAnswer);
+            }
             removeSelections();
             setUpButtonListener();
         }
@@ -138,8 +151,11 @@ public class ExerciseActivity extends AppCompatActivity {
 
     public void previousQuestionButtonClicked(View view)
     {
-        LinearLayout possibleAnswers = (LinearLayout) findViewById(R.id.possible_answers);
-        possibleAnswers.removeAllViews();
+        if(!quizType.equals("pictures"))
+        {
+            LinearLayout possibleAnswers = (LinearLayout) findViewById(R.id.possible_answers);
+            possibleAnswers.removeAllViews();
+        }
         --questionCounter;
         populateFragment(quizType);
     }
@@ -215,6 +231,18 @@ public class ExerciseActivity extends AppCompatActivity {
             RadioButton button = new RadioButton(this);
             button.setText(answer);
             possibleAnswers.addView(button);
+            if(unitExercise.getSelectedAnswers().size() > questionCounter && !unitExercise.getSelectedAnswers().isEmpty())
+            {
+                button.setEnabled(false);
+                //if the answer the user inputted matches that button's text
+                Log.e("ANSWER","correct answer: " + currentQuestion.getCorrectAnswers().get(0));
+                Log.e("ANSWER","current question: " + currentQuestion);
+                Log.e("ANSWER", "inputted answer: " + unitExercise.getSelectedAnswers().get(currentQuestion.getCorrectAnswers().get(0)));
+                if(unitExercise.getSelectedAnswers().get(currentQuestion.getCorrectAnswers().get(0)).equals(answer))
+                {
+                    button.setChecked(true);
+                }
+            }
         }
     }
 
@@ -292,22 +320,35 @@ public class ExerciseActivity extends AppCompatActivity {
             Bitmap bitmap = BitmapFactory.decodeStream(istr);
             images[i].setImageBitmap(bitmap);
 
-            images[i].setOnClickListener(new View.OnClickListener(){
-
-                @Override
-                public void onClick(View v)
+            if(unitExercise.getSelectedAnswers().size() > questionCounter && !unitExercise.getSelectedAnswers().isEmpty())
+            {
+                Log.e("ANSWER","correct answer: " + currentQuestion.getCorrectAnswers().get(0));
+                Log.e("ANSWER","text: " + answers.get(i));
+                Log.e("ANSWER","inputted answer: " + unitExercise.getSelectedAnswers().get(currentQuestion.getCorrectAnswers().get(0)));
+                if (unitExercise.getSelectedAnswers().get(currentQuestion.getCorrectAnswers().get(0)).equals(answers.get(i)))
                 {
-                    if(selectedImage == null || !selectedImage.equals(v))
-                    {
-                        for(ImageView image : images)
-                        {
-                            image.clearColorFilter();
-                        }
-                        selectedImage = (ImageView) v;
-                        ((ImageView) v).setColorFilter(Color.argb(70,31,190,214));
-                    }
+                    images[i].setColorFilter(Color.argb(70, 31, 190, 214));
                 }
-            });
+            }
+            else
+            {
+                images[i].setOnClickListener(new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View v)
+                    {
+                        if(selectedImage == null || !selectedImage.equals(v))
+                        {
+                            for(ImageView image : images)
+                            {
+                                image.clearColorFilter();
+                            }
+                            selectedImage = (ImageView) v;
+                            ((ImageView) v).setColorFilter(Color.argb(70,31,190,214));
+                        }
+                    }
+                });
+            }
         }
     }
 

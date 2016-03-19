@@ -1,5 +1,7 @@
 package com.puzzle.appname.Backend;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -13,7 +15,7 @@ public class UnitExercise {
     private int numQuestions;   //number of questions in the exercise
     private ArrayList<UnitQuestion> questionsArr;
     private String type;
-    private HashMap<String, String> selectedAnswers;  //keeps pair of (your answer, correct answer)
+    private HashMap<String, String> selectedAnswers;  //keeps pair of (correct answer, your answer)
 
     public UnitExercise(String spanishDescription, String englishDescription,
                         int numQuestions, String type) {
@@ -63,8 +65,12 @@ public class UnitExercise {
         return numQuestions;
     }
 
-    public void addPairOfAnswers(String selectedAnswer, String correctAnswer) {
-        selectedAnswers.put(selectedAnswer, correctAnswer);
+    public void addPairOfAnswers(String correctAnswer, String selectedAnswer) {
+        selectedAnswers.put(correctAnswer, selectedAnswer);
+        //Log.e("ANSWER","correct answer: " + correctAnswer);
+        //Log.e("ANSWER","selected answer: " + selectedAnswer);
+        //Log.e("ANSWER","selected answer in map: " + selectedAnswers.get(correctAnswer));
+        //Log.e("ANSWER","map size: " + selectedAnswers.size());
     }
 
     public HashMap<String, String> getSelectedAnswers() { return selectedAnswers; }
