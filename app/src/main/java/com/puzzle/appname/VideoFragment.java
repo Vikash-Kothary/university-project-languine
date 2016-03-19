@@ -32,6 +32,7 @@ public class VideoFragment extends Fragment implements MediaController.MediaPlay
     MediaPlayer mediaPlayer;
     private TimedTextObject srt;
     private SurfaceHolder sh;
+    private SubtitleAsyncTask subAsync;
 
     public VideoFragment() {
         // Required empty public constructor
@@ -45,8 +46,8 @@ public class VideoFragment extends Fragment implements MediaController.MediaPlay
     }
 
     public void runVideo(int whichVideo) {
-        videoView = (VideoView)view.findViewById(R.id.videoView);
-        TextView txtDisplay = (TextView)view.findViewById(R.id.txtSubtitles);
+        videoView = (VideoView) view.findViewById(R.id.videoView);
+        TextView txtDisplay = (TextView) view.findViewById(R.id.txtSubtitles);
         txtDisplay.setVisibility(View.INVISIBLE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             txtDisplay.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
@@ -54,13 +55,12 @@ public class VideoFragment extends Fragment implements MediaController.MediaPlay
         final MediaController mediaController = new MediaController(this.getContext());
         mediaPlayer = new MediaPlayer();
         try {
-            mediaPlayer.setDataSource(this.getContext(),Uri.parse("android.resource://" + getContext().getPackageName() + "/" + whichVideo));
+            mediaPlayer.setDataSource(this.getContext(), Uri.parse("android.resource://" + getContext().getPackageName() + "/" + whichVideo));
         } catch (IOException e) {
             e.printStackTrace();
         }
         sh = videoView.getHolder();
         sh.addCallback(this);
-        sh.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
         mediaController.setMediaPlayer(this);
         mediaController.setAnchorView(videoView);
         view.setOnTouchListener(new View.OnTouchListener() {
@@ -76,7 +76,8 @@ public class VideoFragment extends Fragment implements MediaController.MediaPlay
         mediaPlayer.setOnPreparedListener(this);
         mediaPlayer.prepareAsync();
         mediaPlayer.start();
-        (new SubtitleAsyncTask()).execute();
+        subAsync = (new SubtitleAsyncTask());
+        subAsync.execute();
     }
 
     @Override
@@ -145,12 +146,16 @@ public class VideoFragment extends Fragment implements MediaController.MediaPlay
 
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-        mediaPlayer.setDisplay(sh);
+        mediaPlayer.setDisplay(holder);
+
     }
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
-        mediaPlayer.release();
+        position = mediaPlayer.getCurrentPosition();
+        mediaPlayer.pause();
+//        mediaPlayer.release();
+
     }
 
     public class SubtitleAsyncTask extends AsyncTask<Void, Void, Void> {
@@ -159,8 +164,9 @@ public class VideoFragment extends Fragment implements MediaController.MediaPlay
         protected Void doInBackground(Void... params) {
             try {
                 FormatSRT formatSRT = new FormatSRT();
-                srt = formatSRT.parseFile(getResources().getResourceName(R.raw.subsu01),getResources().openRawResource(R.raw.subsu01));
+                srt = formatSRT.parseFile(getResources().getResourceName(R.raw.subsu01), getResources().openRawResource(R.raw.subsu01));
                 subtitleDisplayHandler.post(subtitle);
+
             } catch (Exception e) {
                 Log.e(getClass().getName(), e.getMessage(), e);
             }
@@ -171,10 +177,10 @@ public class VideoFragment extends Fragment implements MediaController.MediaPlay
     private Handler subtitleDisplayHandler = new Handler();
     private Runnable subtitle = new Runnable() {
         public void run() {
-            if (mediaPlayer!=null&&mediaPlayer.isPlaying()) {
+            if (mediaPlayer != null && mediaPlayer.isPlaying()) {
                 int currentPos = mediaPlayer.getCurrentPosition();
-                Collection<Caption> subtitles =  srt.captions.values();
-                for(Caption caption : subtitles) {
+                Collection<Caption> subtitles = srt.captions.values();
+                for (Caption caption : subtitles) {
                     if (currentPos >= caption.start.getMseconds() && currentPos <= caption.end.getMseconds()) {
                         onTimedText(caption);
                         break;
@@ -186,22 +192,24 @@ public class VideoFragment extends Fragment implements MediaController.MediaPlay
             long SUBTITLE_DISPLAY_CHECK = 100;
             subtitleDisplayHandler.postDelayed(this, SUBTITLE_DISPLAY_CHECK);
         }
+
     };
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("Position", mediaPlayer.getCurrentPosition());
-        mediaPlayer.pause();
+        outState.putInt("Position", position);
     }
 
     public int position = 0;
+
     @Override
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
         //we use onRestoreInstanceState in order to play the video playback from the stored position
         super.onViewStateRestored(savedInstanceState);
         position = savedInstanceState != null ? savedInstanceState.getInt("Position") : 0;
         mediaPlayer.seekTo(position);
+        mediaPlayer.start();
     }
 
 
