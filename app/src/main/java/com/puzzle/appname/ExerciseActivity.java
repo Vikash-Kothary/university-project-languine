@@ -157,6 +157,7 @@ public class ExerciseActivity extends AppCompatActivity {
             possibleAnswers.removeAllViews();
         }
         --questionCounter;
+        currentQuestion = unitExercise.getQuestion(questionCounter);
         populateFragment(quizType);
     }
 
@@ -235,9 +236,6 @@ public class ExerciseActivity extends AppCompatActivity {
             {
                 button.setEnabled(false);
                 //if the answer the user inputted matches that button's text
-                Log.e("ANSWER","correct answer: " + currentQuestion.getCorrectAnswers().get(0));
-                Log.e("ANSWER","current question: " + currentQuestion);
-                Log.e("ANSWER", "inputted answer: " + unitExercise.getSelectedAnswers().get(currentQuestion.getCorrectAnswers().get(0)));
                 if(unitExercise.getSelectedAnswers().get(currentQuestion.getCorrectAnswers().get(0)).equals(answer))
                 {
                     button.setChecked(true);
@@ -322,13 +320,16 @@ public class ExerciseActivity extends AppCompatActivity {
 
             if(unitExercise.getSelectedAnswers().size() > questionCounter && !unitExercise.getSelectedAnswers().isEmpty())
             {
-                Log.e("ANSWER","correct answer: " + currentQuestion.getCorrectAnswers().get(0));
-                Log.e("ANSWER","text: " + answers.get(i));
-                Log.e("ANSWER","inputted answer: " + unitExercise.getSelectedAnswers().get(currentQuestion.getCorrectAnswers().get(0)));
+                images[i].clearColorFilter();
+//                Log.e("ANSWER", "Current question: " + currentQuestion);
+//                Log.e("ANSWER", "Selected answer: " + unitExercise.getSelectedAnswers().get(currentQuestion.getCorrectAnswers().get(0)));
+//                Log.e("ANSWER", "Correct answer: " + currentQuestion.getCorrectAnswers().get(0));
+//                Log.e("ANSWER", "Question number: " + questionCounter);
                 if (unitExercise.getSelectedAnswers().get(currentQuestion.getCorrectAnswers().get(0)).equals(answers.get(i)))
                 {
                     images[i].setColorFilter(Color.argb(70, 31, 190, 214));
                 }
+                images[i].setEnabled(false);
             }
             else
             {
@@ -414,7 +415,10 @@ public class ExerciseActivity extends AppCompatActivity {
                 possibleAnswers.clearCheck();
                 break;
             case "pictures":
-                selectedImage.clearColorFilter();
+                if(selectedImage != null)
+                {
+                    selectedImage.clearColorFilter();
+                }
                 selectedImage = null;
                 break;
             case "multiple":
@@ -434,6 +438,7 @@ public class ExerciseActivity extends AppCompatActivity {
                 possibleAnswersContainer.removeAllViews();
             }
             ++questionCounter;
+            currentQuestion = unitExercise.getQuestion(questionCounter);
             populateFragment(quizType);
         }
         else
