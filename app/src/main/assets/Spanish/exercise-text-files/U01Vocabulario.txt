@@ -1,7 +1,7 @@
 Elige la foto que corresponde a cada palabra.
 Choose the correct picture to each word.
 pictures
-5
+6
 tren
 U01P1
 U01P2,U01P1,U01P5,U01P3,U01P4,U01P6
