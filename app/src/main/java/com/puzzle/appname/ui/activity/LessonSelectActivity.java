@@ -13,7 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.puzzle.appname.AudioQuiz;
+import com.puzzle.appname.AudioQuizFragment;
 import com.puzzle.appname.ExerciseActivity;
 import com.puzzle.appname.ExerciseMenuActivity;
 import com.puzzle.appname.Exercises;
@@ -161,7 +161,7 @@ public class LessonSelectActivity extends AppCompatActivity
                 i = new Intent(this, ExerciseMenuActivity.class);
                 break;
             case R.id.nav_audio_quiz:
-                i = new Intent(this, AudioQuiz.class);
+                i = new Intent(this, ExerciseActivity.class);
                 break;
             case R.id.nav_getStarted:
                 i = new Intent(this, GetStarted.class);
