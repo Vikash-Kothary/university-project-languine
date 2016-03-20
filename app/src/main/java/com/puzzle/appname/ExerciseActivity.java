@@ -181,7 +181,7 @@ public class ExerciseActivity extends AppCompatActivity {
                 break;
             case "multiple":
                 getSupportFragmentManager().beginTransaction().add(R.id.fragment, AudioQuizFragment.newInstance(R.raw.background)).commit();
-                setContentView(R.layout.activity_content_audio_quiz);
+                setContentView(R.layout.fragment_audio_quiz);
                 questionCounter = 0;
                 populateFragment("multiple");
                 this.quizType = "multiple";

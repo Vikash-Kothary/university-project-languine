@@ -13,10 +13,7 @@ import android.widget.TextView;
  */
 public class TextQuestionFragment extends Fragment {
 
-    public TextQuestionFragment() {
-
-
-    }
+    public TextQuestionFragment() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
