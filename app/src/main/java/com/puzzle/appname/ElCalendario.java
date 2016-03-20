@@ -16,6 +16,12 @@ public class ElCalendario extends AppCompatActivity {
 
     CalendarView calender;
 
+    private String[] days = {"uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez",
+    "once", "doce", "trece", "catorce", "quince", "dieciséis", "dieciseite", "diecioho","diecinueve", "veinte",
+            "veintiuno", "veintodós", "veintitrés", "veinticuatro", "veinticinco", "veintiseis", "veintisiete",
+    "veintiocho", "veintinueve", "treinta", "treinta y uno"};
+    private String[] months = {"enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octobre","noviembre","diciembre"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,10 +33,13 @@ public class ElCalendario extends AppCompatActivity {
         start.set(Calendar.DAY_OF_MONTH, start.getActualMinimum(Calendar.DAY_OF_MONTH));
         end.set(Calendar.DAY_OF_MONTH, end.getActualMaximum(Calendar.DAY_OF_MONTH));
         System.out.println(start.getActualMinimum(Calendar.DAY_OF_MONTH));
+
 //        setTimeToBeginningOfDay(start);
 //        setTimeToEndofDay(start);
 //        calender.setMinDate(start.getTimeInMillis());
 //        calender.setMaxDate(end.getTimeInMillis());
+
+        getDateRange();
 
 
         calender.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -38,8 +47,8 @@ public class ElCalendario extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                 Toast.makeText(getBaseContext(), "Selected Date is\n\n"
-                                + dayOfMonth + " : " + month + " : " + year,
-                        Toast.LENGTH_LONG).show();
+                                + days[dayOfMonth-1] + " de " + months[month],
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -78,7 +87,13 @@ public class ElCalendario extends AppCompatActivity {
             end = calendar.getTime();
         }
 
+
+        calender.setMinDate(begining.getTime());
+        calender.setMaxDate(end.getTime());
+
         return Pair.create(begining, end);
+
+
     }
 
     private static Calendar getCalendarForNow() {

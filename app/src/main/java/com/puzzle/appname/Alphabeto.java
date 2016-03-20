@@ -15,10 +15,7 @@ public class Alphabeto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alphabeto);
-        layout1 = (RelativeLayout) findViewById(R.id.layout1);
-        for(int i=0; i < 26; i++) // where x is the size of the list containing your alphabet.
-        {
 
-        }
+
     }
 }
