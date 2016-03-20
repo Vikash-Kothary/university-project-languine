@@ -9,10 +9,9 @@ import java.util.HashMap;
  * Class that represents one exercise of the quizzes
  */
 public class UnitExercise {
-    private String englishDescription, spanishDescription;
-    private int numQuestions;   //number of questions in the exercise
+    private String englishDescription, spanishDescription, type;
+    private int numQuestions, score;   //number of questions in the exercise
     private ArrayList<UnitQuestion> questionsArr;
-    private String type;
     private HashMap<String, String> selectedAnswers;  //keeps pair of (correct answer, your answer)
 
     public UnitExercise(String spanishDescription, String englishDescription,
@@ -49,6 +48,10 @@ public class UnitExercise {
     {
         return type;
     }
+
+    public int getScore() { return score; }
+
+    public void setScore(int score) { this.score = score; }
 
     public String toString(){
         String result = englishDescription + "\n" + spanishDescription + "\n" +

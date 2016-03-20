@@ -402,6 +402,7 @@ public class ExerciseActivity extends AppCompatActivity implements DialogInterfa
         else if(currentQuestion.checkAnswer(selectedAnswer))
         {
             resultMessage = "This is the right answer!";
+            unitExercise.setScore(unitExercise.getScore()+10);
         }
         else
         {

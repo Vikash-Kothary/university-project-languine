@@ -11,6 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
+import com.puzzle.appname.Backend.Data;
+
 import java.util.ArrayList;
 
 public class Experiment extends AppCompatActivity {
@@ -45,7 +47,8 @@ public class Experiment extends AppCompatActivity {
         ArrayList<Lesson> myDataset = new ArrayList<>();
         for(int i = 3; i < exerciseNamesArray.length; ++i)
         {
-            myDataset.add(new Lesson(R.mipmap.ic_launcher,exerciseNamesArray[i],0));
+            int score = Data.getExercise(lessonNumber, exerciseNamesArray[i],this).getScore();
+            myDataset.add(new Lesson(R.mipmap.ic_launcher,exerciseNamesArray[i],score));
         }
         MyAdapter mAdapter = new MyAdapter(myDataset);
         cardList.setAdapter(mAdapter);
