@@ -40,7 +40,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-public class ExerciseActivity extends AppCompatActivity {
+public class ExerciseActivity extends AppCompatActivity implements DialogInterface.OnClickListener {
     private String lessonNumber, exerciseName, quizType, selectedAnswer;
     private UnitExercise unitExercise;
     private UnitQuestion currentQuestion;
@@ -329,10 +329,6 @@ public class ExerciseActivity extends AppCompatActivity {
             if(unitExercise.getSelectedAnswers().size() > questionCounter && !unitExercise.getSelectedAnswers().isEmpty())
             {
                 images[i].clearColorFilter();
-//                Log.e("ANSWER", "Current question: " + currentQuestion);
-//                Log.e("ANSWER", "Selected answer: " + unitExercise.getSelectedAnswers().get(currentQuestion.getCorrectAnswers().get(0)));
-//                Log.e("ANSWER", "Correct answer: " + currentQuestion.getCorrectAnswers().get(0));
-//                Log.e("ANSWER", "Question number: " + questionCounter);
                 if (unitExercise.getSelectedAnswers().get(currentQuestion.getCorrectAnswers().get(0)).equals(answers.get(i)))
                 {
                     images[i].setColorFilter(Color.argb(70, 31, 190, 214));
@@ -459,27 +455,25 @@ public class ExerciseActivity extends AppCompatActivity {
     @Override
     public void onBackPressed()
     {
-        super.onBackPressed();
+
         // 1. Instantiate an AlertDialog.Builder with its constructor
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-// 2. Chain together various setter methods to set the dialog characteristics
+        // 2. Chain together various setter methods to set the dialog characteristics
         builder.setMessage("Are you sure you want to quit the quiz? All your progress will be lost.")
                 .setTitle("Rage quit?");
-// 3. Get the AlertDialog from create()
-        AlertDialog dialog = builder.create();
 
-// Add the buttons
-        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                Intent intent = new Intent(getBaseContext(), Experiment.class);
-                startActivity(intent);
-            }
-        });
-        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                dialog.cancel();
-            }
-        });
+        // Add the buttons
+        builder.setPositiveButton("YES", this);
+        builder.setNegativeButton("NO", null);
+
+        // 3. Get the AlertDialog from create()
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    @Override
+    public void onClick(DialogInterface dialog, int which) {
+        super.onBackPressed();
     }
 }
