@@ -6,10 +6,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Toolbar;
-
-import com.puzzle.appname.ui.activity.Alphabeto;
-import com.puzzle.appname.ui.activity.LessonSelectActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;

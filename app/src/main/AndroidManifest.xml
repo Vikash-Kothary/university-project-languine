@@ -140,7 +140,7 @@
         <activity android:name=".Resources" />
         <activity android:name=".LaHora" />
         <activity android:name=".LosDias" />
-        <activity android:name=".ui.activity.Alphabeto" />
+        <activity android:name=".Alphabeto" />
         <activity android:name=".Numeros" />
         <activity android:name=".SpaMex" />
         <activity android:name=".ElCalendario" />
