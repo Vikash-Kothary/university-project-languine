@@ -4,12 +4,16 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -50,7 +54,7 @@ public class ExerciseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        
         exerciseName = getIntent().getStringExtra(QuizIntroActivity.QUIZ_TITLE);
         lessonNumber = (getIntent().getStringExtra(QuizIntroActivity.LESSON_NUMBER));
         unitExercise = Data.getExercise(lessonNumber, exerciseName, this.getApplicationContext());
@@ -173,25 +177,26 @@ public class ExerciseActivity extends AppCompatActivity {
                 setContentView(R.layout.fragment_text_question);
                 questionCounter = 0;
                 populateFragment("single");
-                this.quizType="single";
+                this.quizType = "single";
                 break;
             case "multiple":
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment, AudioQuizFragment.newInstance(R.raw.background)).commit();
                 setContentView(R.layout.activity_content_audio_quiz);
                 questionCounter = 0;
                 populateFragment("multiple");
-                this.quizType="multiple";
+                this.quizType = "multiple";
                 break;
             case "pictures":
                 setContentView(R.layout.fragment_picture_question);
                 questionCounter = 0;
                 populateFragment("pictures");
-                this.quizType="pictures";
+                this.quizType = "pictures";
                 break;
             case "audio":
-                setContentView(R.layout.activity_content_audio_quiz);
+                setContentView(R.layout.fragment_audio_quiz);
                 questionCounter = 0;
                 populateFragment("audio");
-                this.quizType="audio";
+                this.quizType = "audio";
                 break;
             default:
                 //nothing

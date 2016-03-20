@@ -9,7 +9,7 @@ import android.util.Log;
  */
 public class Sounds {
 
-    static MediaPlayer mySound;
+    public static MediaPlayer mySound;
 
     Sounds(Context myContext)
     {
