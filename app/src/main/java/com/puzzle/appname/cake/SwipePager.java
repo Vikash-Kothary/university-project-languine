@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 
 import com.puzzle.appname.R;
+import com.puzzle.appname.TextQuestionFragment;
 
 public class SwipePager extends FragmentActivity{
     ViewPager viewPager;
@@ -15,6 +16,11 @@ public class SwipePager extends FragmentActivity{
         setContentView(R.layout.activity_swipe_pager);
         viewPager = (ViewPager) findViewById(R.id.pager);
         swipeViewAdapter = new SwipeViewAdapter(getSupportFragmentManager());
+        swipeViewAdapter.addFragment(new TextQuestionFragment());
+        swipeViewAdapter.addFragment(new TextQuestionFragment());
+        swipeViewAdapter.addFragment(new TextQuestionFragment());
+        swipeViewAdapter.notifyDataSetChanged();
         viewPager.setAdapter(swipeViewAdapter);
+
     }
 }
