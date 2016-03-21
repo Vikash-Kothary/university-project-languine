@@ -279,7 +279,6 @@ public class AudioQuizFragment extends Fragment {
             }
         });
         recordLabel.setText("Well done, try Again");
-
     }
 
     public void stopClicked() {

@@ -1,6 +1,7 @@
 package com.puzzle.appname.Backend;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Tamara on 04/03/2016.
@@ -8,14 +9,15 @@ import java.util.ArrayList;
  * Class that represents one exercise of the quizzes
  */
 public class UnitExercise {
-    private String englishDescription, spanishDescription;
-    private int numQuestions;   //number of questions in the exercise
+    private String englishDescription, spanishDescription, type;
+    private int numQuestions, score;   //number of questions in the exercise
     private ArrayList<UnitQuestion> questionsArr;
-    private String type;
+    private HashMap<String, String> selectedAnswers;  //keeps pair of (correct answer, your answer)
 
     public UnitExercise(String spanishDescription, String englishDescription,
                         int numQuestions, String type) {
         questionsArr = new ArrayList<>();
+        selectedAnswers = new HashMap<>();
         this.numQuestions = numQuestions;
         this.type = type;
         this.englishDescription = englishDescription;
@@ -47,6 +49,10 @@ public class UnitExercise {
         return type;
     }
 
+    public int getScore() { return score; }
+
+    public void setScore(int score) { this.score = score; }
+
     public String toString(){
         String result = englishDescription + "\n" + spanishDescription + "\n" +
                 "Number of questions: " + numQuestions + "\n" + "Type: " + type;
@@ -59,4 +65,12 @@ public class UnitExercise {
     public int getQuestionsNumber(){
         return numQuestions;
     }
+
+    public void addPairOfAnswers(String correctAnswer, String selectedAnswer) {
+        selectedAnswers.put(correctAnswer, selectedAnswer);
+    }
+
+    public HashMap<String, String> getSelectedAnswers() { return selectedAnswers; }
+
+
 }

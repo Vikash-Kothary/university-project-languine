@@ -45,15 +45,29 @@ public class UnitQuestion {
         questionText = text;
     }
 
-    public String getQuestionText() {
+    public String getQuestionText()
+    {
+        String questionText = this.questionText;
+        if(questionText.contains("_"))
+        {
+            questionText = questionText.replace("_","_______");
+        }
         return questionText;
     }
 
     //TODO maybe create another method for checking answers (where more answers are correct)
     //Use this only when there is one possible answer
-    public boolean checkAnswer(String answer) {
-        if (correctAnswers.contains(answer))
-            return true;
+    public boolean checkAnswer(String answer)
+    {
+        if(answer.contains(","))
+        {
+
+        }
+        else
+        {
+            if (correctAnswers.contains(answer))
+                return true;
+        }
         return false;
     }
 
@@ -68,4 +82,6 @@ public class UnitQuestion {
     public ArrayList<String> getPossibleAnswers() {
         return possibleAnswers;
     }
+
+    public ArrayList<String> getCorrectAnswers() { return correctAnswers; }
 }
