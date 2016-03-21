@@ -1,4 +1,17 @@
 <resources>
+
+    <string name="hello">Hello World, ParseStarterProjectActivity!</string>
+
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="LoginBtn">Login</string>
+    <string name="SignupBtn">Sign Up</string>
+    <string name="LogoutBtn">Log Out</string>
+    <string name="Welcome">Welcome!</string>
+
+    <string name="AppID">eAFtucJR0T0NJMexWh7iZWBNi0MBq4OJwSE51TkC</string>
+    <string name="ClientID">QErTxyMNBz9nW9I7xpoe2lZu1pi1O3IoxLQdKmVt</string>
+
     <string name="app_name">Languine</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -7,6 +20,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_exercise_menu">LessonTitle</string>
     <string name="title_activity_exercise">ExerciseTitle</string>
+
+    <string name="facebook_app_id">1690408691215611</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -304,130 +319,130 @@
        Greetings,
          01,
        At the train station,
-       Pronombres,
-       Ser y estar,
-       Llamarse,
-       Las letras,
-       Vocabulario,
-       Comprensión auditiva:
+       Pronombres;pronombres,
+       Ser y estar;ser_y_estar,
+       Llamarse;llamarse,
+       Las letras;letras,
+       Vocabulario;vocabulario,
+       Comprensión auditiva;comprension_auditiva:
        Checking in,
          02,
        At the hotel,
-         Artículo indeterminado,
-        Artículo determinado,
-        Números,
-        Nacionalidades,
-         Vocabulario,
-        Comprensión auditiva:
+         Artículo indeterminado;articulo_indeterminado,
+        Artículo determinado;articulo_determinado,
+        Números;numeros,
+        Nacionalidades;nacion,
+         Vocabulario;vocabulario,
+       Comprensión auditiva;comprension_auditiva:
         Sightseeing,
          03,
         At the tourist office,
-        Preposiciones,
-        Hay que y Tener que,
-        Verbo Estar,
-        Vocabulario,
-        Comprensión auditiva:
+        Preposiciones;preposiciones,
+        Hay que y Tener que;hay,
+        Verbo Estar;estar,
+        Vocabulario;vocabulario,
+       Comprensión auditiva;comprension_auditiva:
         Directions,
          04,
         At the park,
-        Imperativo 1,
-        Imperativo 2,
-        Tú o Usted,
-        Vocabulario,
-        Comprensión auditiva:
+        Imperativo 1; imperativo ,
+        Imperativo 2; imperativo,
+        Tú o Usted;tu_usted ,
+        Vocabulario;vocabulario,
+       Comprensión auditiva;comprension_auditiva:
         Eating,
          05,
         At the restaurant,
-        Verbos Querer y Pensar,
-        Verbo Poder,
-         Verbo Jugar,
-        Vocabulario,
-        Comprensión auditiva:
+        Verbos Querer y Pensar;pensar,
+        Verbo Poder;poder,
+         Verbo Jugar;jugar,
+        Vocabulario;vocabulario,
+       Comprensión auditiva;comprension_auditiva:
         Likes,
          06,
         At the museum,
-        El Verbo Gustar,
-        Los Pronombres,
-        Gustos,
-        Vocabulario,
-        Comprensión auditiva:
+        El Verbo Gustar;gusta,
+        Los Pronombres;pronombres,
+        Gustos;gusta,
+        Vocabulario;vocabulario,
+       Comprensión auditiva;comprension_auditiva:
         Planning,
          07,
         At the centre of madrid,
-        Futuro con ir,
-        El Verbo Doler,
-        Practica la Hora,
-        Vocabulario,
-        Comprensión auditiva:
+        Futuro con ir;futuro,
+        El Verbo Doler;doler,
+        Practica la Hora;hora,
+        Vocabulario;vocabulario,
+       Comprensión auditiva;comprension_auditiva:
         Shopping,
          08,
         At the shopping centre,
-        Los Adjetivos,
-        Objeto Directo,
-        Quisiera,
-        Vocabulario,
-        Comprensión auditiva:
+        Los Adjetivos;adjectivos,
+        Objeto Directo;objecto,
+        Quisiera;quisiera,
+        Vocabulario;vocabulario,
+       Comprensión auditiva;comprension_auditiva:
         Dating,
          09,
         At the cafeteria,
-        Interrogativos,
-        Pronombres Posesivos,
-         Adjetivos Posesivos,
-        Vocabulario,
-        Comprensión auditiva
+        Interrogativos;interrogativos,
+        Pronombres Posesivos;pos_pro,
+         Adjetivos Posesivos;pos_adj,
+        Vocabulario;vocabulario,
+       Comprensión auditiva;comprension_auditiva
     </string>
 
 
       <string name="video_names">
           Greetings,
           Greetings - Revision Videos,
-        Pronombres,
-        Llamarse,
-        Ser y Estar,
-        Vocabulario:
+        Pronombres;pronombres,
+        Llamarse;llamarse,
+        Ser y Estar;ser_y_estar,
+        Vocabulario;vocabulario:
           Checking in,
         Checking in - Revision Videos,
-        Nationalidades,
-        Verbos Regulares,
-        Verbs “go”,
-        Vocabulario:
+        Nationalidades;nacion,
+        Verbos Regulares;regular,
+        Verbs “go”;to_go,
+        Vocabulario;vocabulario:
           Sightseeing,
         Sightseeing - Revision Videos,
-        Hay que y Tener que,
-        Las Preposiciones,
-        El Verbo Estar,
-        Vocabulario:
+        Hay que y Tener que;hay,
+        Las Preposiciones;preposiciones,
+        El Verbo Estar;estar,
+        Vocabulario;vocabulario:
           Directions,
         Directions - Revision Videos,
-        Imperativo,
-        Tú o Usted,
-        El Verbo lr,
-        Vocabulario:
+        Imperativo;imperativo,
+        Tú o Usted;tu_usted,
+        El Verbo lr;go,
+        Vocabulario;vocabulario:
           Eating,
         Eating - Revision Videos,
-        Verbos Irregulares,
-        Comida y Precios,
-        Vocabulario:
+        Verbos Irregulares;irregular,
+        Comida y Precios;food_prices,
+        Vocabulario;vocabulario:
           Likes,
         Likes - Revision Videos,
-        Los Gustos,
-        El Verbo Gustos,
-        Vocabulario:
+        Los Gustos;gusta,
+        El Verbo Gustos;gusta,
+        Vocabulario;vocabulario:
           Planning,
         Planning - Revision Videos,
-        El Futuro con lr,
-        El Verbo Doler,
-        Vocabulario:
+        El Futuro con lr,futuro,
+        El Verbo Doler;doler,
+        Vocabulario;vocabulario:
           Shopping,
         Shopping - Revision Videos,
-        Adjetivos,
-        Objeto
-        Vocabulario:
+        Adjetivos;adjectivos,
+        Objeto;objecto,
+        Vocabulario;vocabulario:
           Dating,
         Dating - Revision Videos,
-        Interrogativos,
-        Posesivos,
-        Vocabulario
+        Interrogativos;interrogativos,
+        Posesivos;pos_pro,
+        Vocabulario;vocabulario
     </string>
 
     <string name="video_file_names">
@@ -601,4 +616,7 @@
     <string name="button_intro">Intro</string>
     <string name="button_revision">Revision</string>
     <string name="button_exercises">Exercises</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="title_activity_audio_record_test">AudioRecordTest</string>
 </resources>

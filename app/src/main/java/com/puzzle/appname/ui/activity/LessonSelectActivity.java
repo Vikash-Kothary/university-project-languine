@@ -13,13 +13,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.puzzle.appname.AudioQuiz;
+import com.facebook.appevents.AppEventsLogger;
+//import com.puzzle.appname.AudioQuiz;
 import com.puzzle.appname.ExerciseActivity;
 import com.puzzle.appname.ExerciseMenuActivity;
 import com.puzzle.appname.Exercises;
 import com.puzzle.appname.GetStarted;
 import com.puzzle.appname.Lesson;
 import com.puzzle.appname.LoginActivity;
+import com.puzzle.appname.LoginSignUpActivity;
 import com.puzzle.appname.MyAdapter;
 import com.puzzle.appname.QuizIntroActivity;
 import com.puzzle.appname.R;
@@ -27,6 +29,9 @@ import com.puzzle.appname.RecyclerItemClickListener;
 import com.puzzle.appname.Resources;
 import com.puzzle.appname.SettingsActivity;
 import com.puzzle.appname.VideoActivity;
+import com.parse.ParseAnonymousUtils;
+import com.parse.ParseUser;
+import com.puzzle.appname.VideoFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,10 +46,44 @@ public class LessonSelectActivity extends AppCompatActivity
     ArrayList<Integer> lessonImages;
     ArrayList<String> lessonNames;
 
+//    private ViewPager viewPager;
+//    private SwipeViewAdapter swipeViewAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_select);
+
+        // Determine whether the current user is an anonymous user
+        if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
+            // If user is anonymous, send the user to LoginSignupActivity.class
+            Intent intent = new Intent(this,
+                    LoginSignUpActivity.class);
+            startActivity(intent);
+            finish();
+        }
+//        else {
+//            // If current user is NOT anonymous user
+//            // Get current user data from Parse.com
+//            ParseUser currentUser = ParseUser.getCurrentUser();
+//            if (currentUser != null) {
+//                // Send logged in users to Welcome.class
+//                Intent intent = new Intent(this, Welcome.class);
+//                startActivity(intent);
+//                finish();
+//            } else {
+//                // Send user to LoginSignupActivity.class
+//                Intent intent = new Intent(this,
+//                        LoginSignupActivity.class);
+//                startActivity(intent);
+//                finish();
+//            }
+        //}
+
+
+
+
+
 
         lessonImages = new ArrayList<Integer>(
                 Arrays.asList(R.drawable.greetings, R.drawable.checkingin,
@@ -57,6 +96,9 @@ public class LessonSelectActivity extends AppCompatActivity
 
         Toolbar toolbar = setupToolbar();
         setupNavigationDrawer(toolbar);
+//        viewPager = (ViewPager) findViewById(R.id.pager);
+//        swipeViewAdapter = new SwipeViewAdapter(getSupportFragmentManager());
+//        viewPager.setAdapter(swipeViewAdapter);
         setupRecyclerView();
 
 //        Intent j = new Intent(this, LanguageSelectActivity.class);
@@ -65,6 +107,22 @@ public class LessonSelectActivity extends AppCompatActivity
 //        startActivity(i);
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Logs 'install' and 'app activate' App Events.
+        AppEventsLogger.activateApp(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        // Logs 'app deactivate' App Event.
+        AppEventsLogger.deactivateApp(this);
+    }
     private Toolbar setupToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -96,6 +154,13 @@ public class LessonSelectActivity extends AppCompatActivity
         ArrayList<Lesson> myDataset = new ArrayList<Lesson>();
         for (int i = 0; i < lessonNames.size(); ++i) {
             myDataset.add(new Lesson(lessonImages.get(i), i + 1 + ". " + lessonNames.get(i), 0));
+//            BlankFragment fragment = new BlankFragment();
+//            fragment.setLessonImageID(lessonImages.get(i));
+//            fragment.setLessonName(i + 1 + ". " + lessonNames.get(i));
+//            fragment.setProgress(0);
+//            fragment.setPosition(i);
+//            swipeViewAdapter.addFragment(fragment);
+//            swipeViewAdapter.notifyDataSetChanged();
         }
 
         MyAdapter mAdapter = new MyAdapter(myDataset);
@@ -153,6 +218,9 @@ public class LessonSelectActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         Intent i = null;
         switch (item.getItemId()) {
+            case R.id.nav_login:
+                i = new Intent(this, LoginSignUpActivity.class);
+                break;
             case R.id.nav_lock_screen:
                 i = new Intent(this, LoginActivity.class);
                 break;
@@ -163,7 +231,7 @@ public class LessonSelectActivity extends AppCompatActivity
                 i = new Intent(this, ExerciseMenuActivity.class);
                 break;
             case R.id.nav_audio_quiz:
-                i = new Intent(this, AudioQuiz.class);
+                i = new Intent(this, ExerciseActivity.class);
                 break;
             case R.id.nav_getStarted:
                 i = new Intent(this, GetStarted.class);
