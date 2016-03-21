@@ -19,17 +19,18 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentStart="true"
-        android:id="@+id/tableLayout">
+        android:layout_height="wrap_content"
+        android:id="@+id/tableLayout"
+        android:layout_above="@+id/textView3"
+        android:layout_below="@+id/questionButton"
+        android:layout_alignParentEnd="true">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="lunes \n Monday"
                 android:id="@+id/monBtn"
@@ -87,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:text="domingo \n Sunday"
                 android:id="@+id/suBtn"
-                android:layout_column="0" />
+                android:layout_column="2" />
         </TableRow>
 
         <TableRow
@@ -210,7 +211,16 @@
         android:layout_height="wrap_content"
         android:text="Click on a day to hear it"
         android:id="@+id/textView3"
-        android:layout_above="@+id/tableLayout"
-        android:layout_alignEnd="@+id/tableLayout" />
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="?"
+        android:id="@+id/questionButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
