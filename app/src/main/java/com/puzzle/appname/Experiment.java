@@ -48,7 +48,7 @@ public class Experiment extends AppCompatActivity {
         for(int i = 3; i < exerciseNamesArray.length; ++i)
         {
             String[] exerciseDetails = exerciseNamesArray[i].split(";");
-            int score = Data.getExercise(lessonNumber, exerciseNamesArray[i],this).getScore();
+            int score = 0;
             if(!exerciseDetails[1].equals(" "))
             {
                 myDataset.add(new Lesson(getResources().getIdentifier(exerciseDetails[1],"drawable",getPackageName()),exerciseDetails[0],score));
@@ -69,7 +69,6 @@ public class Experiment extends AppCompatActivity {
                         intent.putExtra(QUIZ_TITLE, exerciseNamesArray[position+3]);
                         intent.putExtra(UNIT_NUMBER, exerciseNamesArray[1]);
                         intent.putExtra(LESSON_NUMBER, lessonNumber);
-                        Log.e("NUMBERS", exerciseNamesArray[1] + " " + lessonNumber);
                         startActivity(intent);
                     }
                 })

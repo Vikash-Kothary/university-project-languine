@@ -117,7 +117,7 @@ private Context context;
                                     // If user exist and authenticated, send user to Welcome.class
                                     Intent intent = new Intent(
                                             getApplicationContext(),
-                                            LessonSelectActivity.class);
+                                            com.puzzle.appname.ui.activity.LessonSelectActivity.class);
                                     startActivity(intent);
                                     Toast.makeText(getApplicationContext(),
                                             "Successfully Logged in",
