@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.puzzle.appname.ui.activity.LessonSelectActivity;
+import com.puzzle.appname.cake.BlankFragment;
 
 import java.util.ArrayList;
 
@@ -22,14 +23,17 @@ public class GetStarted extends AppCompatActivity {
     public static final String LESSON_NUMBER = "NUMBER";
     public static final String FIRST_VIDEO = "FIRST_VIDEO";
     private String lessonNumber;
-
+    private String lessonName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_started);
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(getIntent().getStringExtra(LessonSelectActivity.LESSON_TITLE));
-        lessonNumber = getIntent().getStringExtra(LessonSelectActivity.LESSON_NUMBER);
+
+        lessonName = getIntent().getStringExtra(BlankFragment.LESSON_TITLE);
+            toolbar.setTitle(getIntent().getStringExtra(BlankFragment.LESSON_TITLE));
+
+        lessonNumber = getIntent().getStringExtra(BlankFragment.LESSON_NUMBER);
         System.out.println("LESSON NUMBER IS: " + lessonNumber);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -55,8 +59,8 @@ public class GetStarted extends AppCompatActivity {
                     @Override
                     public void onItemClick(View view, int position) {
                         Intent intent = new Intent(getBaseContext(), Exercises.class);
-                        intent.putExtra(LESSON_TITLE, toolbar.getTitle());
-                        intent.putExtra("FirstVideo", getIntent().getIntExtra("WhichVideo", -1));
+                        intent.putExtra(LESSON_TITLE, lessonName);
+                        intent.putExtra("FirstVideo",getIntent().getIntExtra("WhichVideo",-1));
                         intent.putExtra(LESSON_NUMBER, lessonNumber);
                         startActivity(intent);
                     }

@@ -29,6 +29,7 @@ import com.puzzle.appname.SettingsActivity;
 import com.puzzle.appname.VideoActivity;
 import com.parse.ParseAnonymousUtils;
 import com.parse.ParseUser;
+import com.puzzle.appname.VideoFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,6 +43,9 @@ public class LessonSelectActivity extends AppCompatActivity
 
     ArrayList<Integer> lessonImages;
     ArrayList<String> lessonNames;
+
+//    private ViewPager viewPager;
+//    private SwipeViewAdapter swipeViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +94,9 @@ public class LessonSelectActivity extends AppCompatActivity
 
         Toolbar toolbar = setupToolbar();
         setupNavigationDrawer(toolbar);
+//        viewPager = (ViewPager) findViewById(R.id.pager);
+//        swipeViewAdapter = new SwipeViewAdapter(getSupportFragmentManager());
+//        viewPager.setAdapter(swipeViewAdapter);
         setupRecyclerView();
 
 //        Intent j = new Intent(this, LanguageSelectActivity.class);
@@ -145,6 +152,13 @@ public class LessonSelectActivity extends AppCompatActivity
         ArrayList<Lesson> myDataset = new ArrayList<Lesson>();
         for (int i = 0; i < lessonNames.size(); ++i) {
             myDataset.add(new Lesson(lessonImages.get(i), i + 1 + ". " + lessonNames.get(i), 0));
+//            BlankFragment fragment = new BlankFragment();
+//            fragment.setLessonImageID(lessonImages.get(i));
+//            fragment.setLessonName(i + 1 + ". " + lessonNames.get(i));
+//            fragment.setProgress(0);
+//            fragment.setPosition(i);
+//            swipeViewAdapter.addFragment(fragment);
+//            swipeViewAdapter.notifyDataSetChanged();
         }
 
         MyAdapter mAdapter = new MyAdapter(myDataset);
@@ -215,7 +229,7 @@ public class LessonSelectActivity extends AppCompatActivity
                 i = new Intent(this, ExerciseMenuActivity.class);
                 break;
             case R.id.nav_audio_quiz:
-                i = new Intent(this, AudioQuiz.class);
+                i = new Intent(this, ExerciseActivity.class);
                 break;
             case R.id.nav_getStarted:
                 i = new Intent(this, GetStarted.class);
@@ -238,7 +252,7 @@ public class LessonSelectActivity extends AppCompatActivity
                 i = new Intent(this, LanguageSelectActivity.class);
                 break;
             case R.id.nav_Video:
-                i = new Intent(this, VideoActivity.class);
+                i = new Intent(this, VideoFragment.class);
                 break;
             case R.id.nav_settings:
                 i = new Intent(this, SettingsActivity.class);

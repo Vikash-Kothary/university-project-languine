@@ -24,7 +24,7 @@
 
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/lessonTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/thumbnail"
@@ -39,7 +39,7 @@
             android:id="@+id/progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/title"
+            android:layout_below="@+id/lessonTitle"
             android:maxLines="3"
             android:padding="8dp"
             android:text="World"
