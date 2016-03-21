@@ -3,30 +3,32 @@ package com.puzzle.appname.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.puzzle.appname.ExerciseActivity;
 import com.puzzle.appname.ExerciseMenuActivity;
 import com.puzzle.appname.Exercises;
 import com.puzzle.appname.GetStarted;
 import com.puzzle.appname.Lesson;
+import com.puzzle.appname.MyAdapter;
 import com.puzzle.appname.QuizIntroActivity;
 import com.puzzle.appname.R;
+import com.puzzle.appname.RecyclerItemClickListener;
 import com.puzzle.appname.SettingsActivity;
 import com.puzzle.appname.VideoFragment;
-import com.puzzle.appname.cake.BlankFragment;
-import com.puzzle.appname.cake.SwipeViewAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class LessonSelectActivity extends FragmentActivity
+public class LessonSelectActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     /* Constants */
@@ -36,8 +38,8 @@ public class LessonSelectActivity extends FragmentActivity
     ArrayList<Integer> lessonImages;
     ArrayList<String> lessonNames;
 
-    private ViewPager viewPager;
-    private SwipeViewAdapter swipeViewAdapter;
+//    private ViewPager viewPager;
+//    private SwipeViewAdapter swipeViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +57,9 @@ public class LessonSelectActivity extends FragmentActivity
 
         Toolbar toolbar = setupToolbar();
         setupNavigationDrawer(toolbar);
-        viewPager = (ViewPager) findViewById(R.id.pager);
-        swipeViewAdapter = new SwipeViewAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(swipeViewAdapter);
+//        viewPager = (ViewPager) findViewById(R.id.pager);
+//        swipeViewAdapter = new SwipeViewAdapter(getSupportFragmentManager());
+//        viewPager.setAdapter(swipeViewAdapter);
         setupRecyclerView();
 
 //        Intent j = new Intent(this, LanguageSelectActivity.class);
@@ -68,9 +70,9 @@ public class LessonSelectActivity extends FragmentActivity
 
     private Toolbar setupToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setElevation(0);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setElevation(0);
         return toolbar;
     }
 
@@ -86,40 +88,40 @@ public class LessonSelectActivity extends FragmentActivity
     }
 
     private void setupRecyclerView() {
-//        RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);
-//        cardList.setHasFixedSize(true);
-//
-//        // use a linear layout manager
-//        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
-//        cardList.setLayoutManager(mLayoutManager);
+        RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);
+        cardList.setHasFixedSize(true);
+
+        // use a linear layout manager
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
+        cardList.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
         ArrayList<Lesson> myDataset = new ArrayList<Lesson>();
         for (int i = 0; i < lessonNames.size(); ++i) {
-            //myDataset.add(new Lesson(lessonImages.get(i), i + 1 + ". " + lessonNames.get(i), 0));
-            BlankFragment fragment = new BlankFragment();
-            fragment.setLessonImageID(lessonImages.get(i));
-            fragment.setLessonName(i + 1 + ". " + lessonNames.get(i));
-            fragment.setProgress(0);
-            fragment.setPosition(i);
-            swipeViewAdapter.addFragment(fragment);
-            swipeViewAdapter.notifyDataSetChanged();
+            myDataset.add(new Lesson(lessonImages.get(i), i + 1 + ". " + lessonNames.get(i), 0));
+//            BlankFragment fragment = new BlankFragment();
+//            fragment.setLessonImageID(lessonImages.get(i));
+//            fragment.setLessonName(i + 1 + ". " + lessonNames.get(i));
+//            fragment.setProgress(0);
+//            fragment.setPosition(i);
+//            swipeViewAdapter.addFragment(fragment);
+//            swipeViewAdapter.notifyDataSetChanged();
         }
 
-//        MyAdapter mAdapter = new MyAdapter(myDataset);
-//        cardList.setAdapter(mAdapter);
-//        cardList.addOnItemTouchListener(
-//                new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
-//                    @Override
-//                    public void onItemClick(View view, int position) {
-//                        Intent intent = new Intent(getBaseContext(), GetStarted.class);
-//                        intent.putExtra(LESSON_TITLE, lessonNames.get(position));
-//                        intent.putExtra("WhichVideo", position);
-//                        intent.putExtra(LESSON_NUMBER, (position + 1) + "");
-//                        startActivity(intent);
-//                    }
-//                })
-//        );
+        MyAdapter mAdapter = new MyAdapter(myDataset);
+        cardList.setAdapter(mAdapter);
+        cardList.addOnItemTouchListener(
+                new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(getBaseContext(), GetStarted.class);
+                        intent.putExtra(LESSON_TITLE, lessonNames.get(position));
+                        intent.putExtra("WhichVideo", position);
+                        intent.putExtra(LESSON_NUMBER, (position + 1) + "");
+                        startActivity(intent);
+                    }
+                })
+        );
     }
 
     @Override
