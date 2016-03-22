@@ -10,220 +10,279 @@
     android:id="@+id/layout1">
 
 
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="A"
+        android:text="A - a"
+        android:textAllCaps="false"
         android:id="@+id/a"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/h" />
+        android:layout_above="@+id/g" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="B"
+        android:text="B - b"
+        android:textAllCaps="false"
         android:id="@+id/b"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/a" />
+        android:layout_toEndOf="@+id/a"
+        android:layout_alignBottom="@+id/a">
+
+
+    </Button>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="C"
+        android:text="C - ce"
         android:id="@+id/c"
+        android:textAllCaps="false"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/b" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="D"
-        android:id="@+id/d"
+        android:text="CH - che"
+        android:textAllCaps="false"
+        android:id="@+id/ch"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="E"
-        android:id="@+id/e"
+        android:text="D - de"
+        android:textAllCaps="false"
+        android:id="@+id/d"
         android:layout_below="@+id/a"
         android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="H"
-        android:id="@+id/h"
+        android:text="g - ge"
+        android:textAllCaps="false"
+        android:id="@+id/g"
         android:layout_below="@+id/c"
         android:layout_toEndOf="@+id/c" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="G"
+        android:text="F- efe"
+        android:textAllCaps="false"
         android:id="@+id/f"
-        android:layout_alignTop="@+id/f"
+        android:layout_alignTop="@+id/e"
         android:layout_alignStart="@+id/c" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="F"
-        android:id="@+id/f"
-        android:layout_alignTop="@+id/e"
+        android:text="E - e"
+        android:textAllCaps="false"
+        android:id="@+id/e"
+        android:layout_alignTop="@+id/d"
         android:layout_toStartOf="@+id/c" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="A"
+        android:textAllCaps="false"
         android:id="@+id/button5"
+        android:layout_below="@+id/d"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="H - hache"
+        android:textAllCaps="false"
+        android:id="@+id/h"
         android:layout_below="@+id/e"
-        android:layout_alignParentStart="true" />
+        android:layout_toStartOf="@+id/e" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="I"
-        android:id="@+id/i"
-        android:layout_below="@+id/f"
-        android:layout_toStartOf="@+id/f" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="K"
-        android:id="@+id/k"
-        android:layout_below="@+id/h"
-        android:layout_toEndOf="@+id/j" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="J"
+        android:text="J - jota"
+        android:textAllCaps="false"
         android:id="@+id/j"
-        android:layout_below="@+id/h"
-        android:layout_alignStart="@+id/f" />
+        android:layout_below="@+id/g"
+        android:layout_toEndOf="@+id/i" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="L"
-        android:id="@+id/l"
-        android:layout_below="@+id/h"
-        android:layout_toEndOf="@+id/k" />
+        android:text="I - i"
+        android:textAllCaps="false"
+        android:id="@+id/i"
+        android:layout_below="@+id/g"
+        android:layout_alignStart="@+id/e" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="N"
-        android:id="@+id/n"
-        android:layout_below="@+id/button5"
-        android:layout_alignEnd="@+id/j" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="M"
-        android:id="@+id/m"
-        android:layout_below="@+id/button5"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="O"
-        android:id="@+id/o"
-        android:layout_below="@+id/k"
+        android:text="K - ka"
+        android:textAllCaps="false"
+        android:id="@+id/k"
+        android:layout_below="@+id/g"
         android:layout_toEndOf="@+id/j" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="P"
-        android:id="@+id/p"
-        android:layout_below="@+id/k"
-        android:layout_toEndOf="@+id/k" />
+        android:text="LL - elle"
+        android:textAllCaps="false"
+        android:id="@+id/ll"
+        android:layout_below="@+id/button5"
+        android:layout_alignEnd="@+id/i" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Q"
-        android:id="@+id/q"
-        android:layout_below="@+id/m"
+        android:text="L- ele"
+        android:textAllCaps="false"
+        android:id="@+id/l"
+        android:layout_below="@+id/button5"
         android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="R"
-        android:id="@+id/r"
-        android:layout_alignTop="@+id/q"
-        android:layout_toEndOf="@+id/q" />
+        android:text="M - eme"
+        android:textAllCaps="false"
+        android:id="@+id/m"
+        android:layout_below="@+id/j"
+        android:layout_toEndOf="@+id/i" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="S"
-        android:id="@+id/s"
-        android:layout_below="@+id/n"
-        android:layout_toEndOf="@+id/n" />
+        android:text="N - ene"
+        android:textAllCaps="false"
+        android:id="@+id/n"
+        android:layout_below="@+id/j"
+        android:layout_toEndOf="@+id/j" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="T"
-        android:id="@+id/t"
-        android:layout_alignTop="@+id/s"
+        android:text="Ñ - eñe"
+        android:textAllCaps="false"
+        android:id="@+id/ñ"
+        android:layout_below="@+id/l"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="O - o"
+        android:textAllCaps="false"
+        android:id="@+id/o"
+        android:layout_alignTop="@+id/ñ"
+        android:layout_toEndOf="@+id/ñ" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="P - pe"
+        android:textAllCaps="false"
+        android:id="@+id/p"
+        android:layout_below="@+id/ll"
+        android:layout_toEndOf="@+id/ll" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Q - cu"
+        android:textAllCaps="false"
+        android:id="@+id/q"
+        android:layout_alignTop="@+id/p"
         android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="U"
+        android:text="R - erre"
+        android:textAllCaps="false"
+        android:id="@+id/r"
+        android:layout_below="@+id/ñ"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="S - ese"
+        android:textAllCaps="false"
+        android:id="@+id/v"
+        android:layout_below="@+id/o"
+        android:layout_toStartOf="@+id/p" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="T - te"
+        android:textAllCaps="false"
+        android:id="@+id/t"
+        android:layout_below="@+id/p"
+        android:layout_alignStart="@+id/p" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="U - u"
+        android:textAllCaps="false"
         android:id="@+id/u"
         android:layout_below="@+id/q"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="V"
-        android:id="@+id/v"
-        android:layout_below="@+id/r"
-        android:layout_toStartOf="@+id/s" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="W"
-        android:id="@+id/w"
-        android:layout_below="@+id/s"
-        android:layout_alignStart="@+id/s" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="X"
-        android:id="@+id/x"
-        android:layout_below="@+id/t"
         android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Y"
-        android:id="@+id/y"
-        android:layout_below="@+id/u"
-        android:layout_toEndOf="@+id/u" />
+        android:text="V - eve"
+        android:textAllCaps="false"
+        android:id="@+id/v"
+        android:layout_below="@+id/r"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Z"
-        android:id="@+id/z"
+        android:text="W - eve doble"
+        android:id="@+id/w"
+        android:textAllCaps="false"
+        android:layout_below="@+id/t"
+        android:layout_toEndOf="@+id/v" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X - equis"
+        android:textAllCaps="false"
+        android:id="@+id/x"
+        android:layout_below="@+id/t"
+        android:layout_toEndOf="@+id/w" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Y - i griega"
+        android:textAllCaps="false"
+        android:id="@+id/y"
         android:layout_below="@+id/v"
         android:layout_toEndOf="@+id/v" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Z - zeta"
+        android:textAllCaps="false"
+        android:id="@+id/z"
+        android:layout_below="@+id/w"
+        android:layout_toEndOf="@+id/w" />
+
 </RelativeLayout>

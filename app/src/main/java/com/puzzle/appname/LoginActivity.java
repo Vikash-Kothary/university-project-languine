@@ -29,6 +29,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import com.facebook.FacebookSdk;
 
@@ -79,8 +80,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mLoginFormView;
 
 
-    Button loginbutton;
-    Button signup;
+    ImageButton loginbutton;
+    ImageButton signup;
     String usernametxt;
     String passwordtxt;
     EditText password;
@@ -177,7 +178,7 @@ private Context context;
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
-        Button without = (Button)findViewById(R.id.continuewithout);
+        ImageButton without = (ImageButton)findViewById(R.id.continuewithout);
         without.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -197,7 +198,7 @@ private Context context;
             }
         });
 
-        Button mEmailSignInButton = (Button) findViewById(R.id.sign_in);
+        ImageButton mEmailSignInButton = (ImageButton) findViewById(R.id.main_sign_in);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
