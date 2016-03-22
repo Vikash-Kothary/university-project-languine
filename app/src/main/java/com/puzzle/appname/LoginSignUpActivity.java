@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
@@ -18,8 +19,8 @@ import com.puzzle.appname.ui.activity.LessonSelectActivity;
 
 public class LoginSignUpActivity extends Activity {
     // Declare Variables
-    Button loginbutton;
-    Button signup;
+    ImageButton loginbutton;
+    ImageButton signup;
     String usernametxt;
     String passwordtxt;
     EditText password;
@@ -35,8 +36,8 @@ public class LoginSignUpActivity extends Activity {
         password = (EditText) findViewById(R.id.password);
 
         // Locate Buttons in main.xml
-        loginbutton = (Button) findViewById(R.id.login);
-        signup = (Button) findViewById(R.id.signup);
+        loginbutton = (ImageButton) findViewById(R.id.main_sign_in);
+        signup = (ImageButton) findViewById(R.id.register);
 
         // Login Button Click Listener
         loginbutton.setOnClickListener(new OnClickListener() {

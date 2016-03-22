@@ -2,6 +2,7 @@ package com.puzzle.appname.Backend;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -36,13 +37,11 @@ public class Data {
             assetManager = context.getAssets(); //without this a NullPointerException occurred when trying to read the file
             InputStream inputStream = assetManager.open("Spanish/exercise-text-files/U0" + unitNumber + exerciseName + ".txt");  //e.g. U01Pronombres.txt
             String text = convertStreamToString(inputStream);   //the text from the .txt file
-            inputStream = assetManager.open("Spanish/exercise-text-files/ExerciseScores.txt");  //e.g. U01Pronombres.txt
-            String scores = convertStreamToString(inputStream);   //the text from the .txt file
             //assetManager.close(); //this would cause an error when trying to change activity, though not sure why??
             inputStream.close();
 
-            int score = getScoreFromFile(scores,unitNumber,exerciseName);
-            setUpExercise(text, score);    //fill static field 'exercise' with questions
+            Log.e("NULL","Exercise name: " + exerciseName);
+            setUpExercise(text);    //fill static field 'exercise' with questions
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -55,13 +54,15 @@ public class Data {
      *
      * @param text contains exercise information
      */
-    private static void setUpExercise(String text, int score) {
+    private static void setUpExercise(String text) {
         ArrayList<String> lines = new ArrayList<>(Arrays.asList(text.split(System.getProperty("line.separator"))));
 
         String spanishDescription = lines.get(0);
         String englishDescription = lines.get(1);
         String typeOfQuiz = lines.get(2);
         int numQuestions = Integer.parseInt(lines.get(3));
+
+        Log.e("NULL", "Spanish line: " + lines.get(0));
 
         exercise = new UnitExercise(spanishDescription, englishDescription, numQuestions, typeOfQuiz);
 
@@ -72,8 +73,6 @@ public class Data {
             question.addPossibleAnswers(lines.get(i));
             exercise.addQuestion(question);
         }
-
-        exercise.setScore(score);
     }
 
     private static String replaceSpanishLetters(String string) {
@@ -124,20 +123,5 @@ public class Data {
         }
         reader.close();
         return sBuild.toString();
-    }
-
-    private static int getScoreFromFile(String scores, String unitNumber, String exerciseName)
-    {
-        ArrayList<String> units = new ArrayList<>(Arrays.asList(scores.split(";")));
-        String[] scoresPerExercise = units.get(Integer.parseInt(unitNumber)-1).split(System.getProperty("line.separator"));
-
-        for(String score : scoresPerExercise)
-        {
-            if(score.startsWith(exerciseName))
-            {
-                return Integer.parseInt(score.split(",")[1]);
-            }
-        }
-        return -1;
     }
 }
