@@ -63,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="G"
-        android:id="@+id/f"
+        android:id="@+id/g"
         android:layout_alignTop="@+id/f"
         android:layout_alignStart="@+id/c" />
 
