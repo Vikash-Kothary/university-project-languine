@@ -69,20 +69,13 @@
         android:id="@+id/g"
         android:layout_below="@+id/c"
         android:layout_toEndOf="@+id/c" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
         android:text="F- efe"
         android:textAllCaps="false"
         android:id="@+id/f"
         android:layout_alignTop="@+id/e"
-=======
-        android:text="G"
-        android:id="@+id/g"
-        android:layout_alignTop="@+id/f"
->>>>>>> origin/resources
         android:layout_alignStart="@+id/c" />
 
     <Button
