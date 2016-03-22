@@ -72,10 +72,6 @@
                 android:value=".ui.activity.LessonSelectActivity" />
         </activity>
         <activity
-            android:name=".AudioQuiz"
-            android:label="@string/title_activity_content_audio_quiz"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".QuizIntroActivity"
             android:label="@string/title_activity_quiz"
             android:parentActivityName=".ui.activity.LessonSelectActivity"
@@ -149,17 +145,12 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".LoginSignUpActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Welcome"></activity>
 
-        <activity
-            android:name=".AudioRecordTest"
-            android:label="@string/title_activity_audio_record_test"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".cake.SwipePager"></activity>
 
         <activity android:name=".Resources" />

@@ -98,8 +98,8 @@ private Context context;
         password = (EditText) findViewById(R.id.password);
 
         // Locate Buttons in main.xml
-        //loginbutton = (Button) findViewById(R.id.login);
-        //signup = (Button) findViewById(R.id.signup);
+        loginbutton = (Button) findViewById(R.id.sign_in);
+        signup = (Button) findViewById(R.id.register);
 
         // Login Button Click Listener
         loginbutton.setOnClickListener(new OnClickListener() {
@@ -175,7 +175,7 @@ private Context context;
 
         context = this;
         // Set up the login form.
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
+        mEmailView = (AutoCompleteTextView) findViewById(R.id.username);
         populateAutoComplete();
         Button without = (Button)findViewById(R.id.continuewithout);
         without.setOnClickListener(new OnClickListener() {
