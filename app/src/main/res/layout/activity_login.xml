@@ -16,8 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:id="@+id/imageView2"
-        android:src="@drawable/languine"
-        android:layout_gravity="center_horizontal" />
+        android:src="@drawable/languine" />
 
     <ProgressBar
         android:id="@+id/login_progress"
@@ -37,7 +36,9 @@
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingTop="50dp"
+            android:columnOrderPreserved="false">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -63,7 +64,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_password"
-                    android:imeActionId="@+id/login"
+                    android:imeActionId="@+id/mainlogin"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
@@ -72,39 +73,47 @@
 
             </android.support.design.widget.TextInputLayout>
 
-            <Button
-                android:id="@+id/sign_in"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Sign in"
-                android:textStyle="bold"
-                android:background="#ff951b"
-                android:textColor="#000000" />
-
-            <Button
-                android:id="@+id/register"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Register"
-                android:textStyle="bold"
-                android:background="#ff951b"
-                android:textColor="#000000" />
-
-            <Button
-                android:id="@+id/continuewithout"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Continue Without Login"
-                android:textStyle="bold"
-                android:background="#ff951b"
-                android:textColor="#000000" />
-
         </GridLayout>
+
+    <ImageButton
+        android:id="@+id/main_sign_in"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src= "@drawable/signin"
+        android:textStyle="bold"
+        android:background="#00faf6f2"
+        android:textColor="#000000"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:paddingTop="40dp" />
+
+    <ImageButton
+        android:id="@+id/register"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/register"
+        android:textStyle="bold"
+        android:background="#00ff951b"
+        android:textColor="#000000"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true" />
+
+    <ImageButton
+        android:id="@+id/continuewithout"
+        style="?android:textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/guest"
+        android:textStyle="bold"
+        android:background="#00ff951b"
+        android:textColor="#000000"
+        android:scaleType="fitStart"
+        android:adjustViewBounds="true"
+        android:baselineAlignBottom="false" />
+
     <!--</ScrollView>-->
 </LinearLayout>
