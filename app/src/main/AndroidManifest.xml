@@ -63,7 +63,7 @@
                 android:value=".ui.activity.LessonSelectActivity" />
         </activity>
         <activity
-            android:name=".ui.activity.LoginActivity"
+            android:name=".LoginActivity"
             android:label="@string/title_activity_login"
             android:parentActivityName=".ui.activity.LessonSelectActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -161,6 +161,16 @@
             android:label="@string/title_activity_audio_record_test"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".cake.SwipePager"></activity>
+
+        <activity android:name=".Resources" />
+        <activity android:name=".LaHora" />
+        <activity android:name=".LosDias" />
+        <activity android:name=".Alphabeto" />
+        <activity android:name=".Numeros" />
+        <activity android:name=".SpaMex" />
+        <activity android:name=".ElCalendario" />
+        <activity android:name=".Festividades" />
+        <activity android:name=".Estaciones"></activity>
     </application>
 
 </manifest>

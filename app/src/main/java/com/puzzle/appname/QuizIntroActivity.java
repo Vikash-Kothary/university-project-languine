@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -33,9 +34,11 @@ public class QuizIntroActivity extends AppCompatActivity {
         String unitNumber = getIntent().getStringExtra(Experiment.UNIT_NUMBER);
         quizTitle = getIntent().getStringExtra(Experiment.QUIZ_TITLE);
         lessonNumber = (getIntent().getStringExtra(Experiment.LESSON_NUMBER));
-        toolbar.setTitle(quizTitle);
 
-        UnitExercise exercise = Data.getExercise(lessonNumber, quizTitle, this);
+        String[] quizDetails = quizTitle.split(";");
+        toolbar.setTitle(quizDetails[0]);
+
+        UnitExercise exercise = Data.getExercise(lessonNumber, quizDetails[0], this);
 
         spaInstructionView.setText(exercise.getSpanishDescription());
         engInstructionView.setText(exercise.getEnglishDescription());

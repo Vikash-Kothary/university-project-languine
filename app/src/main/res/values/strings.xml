@@ -612,6 +612,10 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="title_activity_register">Register</string>
+    <string name="button_resume">Resume</string>
+    <string name="button_intro">Intro</string>
+    <string name="button_revision">Revision</string>
+    <string name="button_exercises">Exercises</string>
     <string name="title_activity_main">MainActivity</string>
 
     <string name="title_activity_audio_record_test">AudioRecordTest</string>

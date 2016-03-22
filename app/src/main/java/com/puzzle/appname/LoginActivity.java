@@ -1,4 +1,4 @@
-package com.puzzle.appname.ui.activity;
+package com.puzzle.appname;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -46,8 +46,6 @@ import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
-
-import com.puzzle.appname.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -120,7 +118,7 @@ private Context context;
                                     // If user exist and authenticated, send user to Welcome.class
                                     Intent intent = new Intent(
                                             getApplicationContext(),
-                                            LessonSelectActivity.class);
+                                            com.puzzle.appname.ui.activity.LessonSelectActivity.class);
                                     startActivity(intent);
                                     Toast.makeText(getApplicationContext(),
                                             "Successfully Logged in",
