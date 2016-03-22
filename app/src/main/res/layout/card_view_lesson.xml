@@ -61,10 +61,12 @@
 
         </RelativeLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/button_resume"
+        <ImageButton
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:src="@drawable/resume"
+            android:background="#00ffffff"
+            android:scaleType="fitXY"
             android:visibility="gone"/>
 
         <LinearLayout
