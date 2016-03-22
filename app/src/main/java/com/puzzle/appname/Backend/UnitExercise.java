@@ -53,6 +53,21 @@ public class UnitExercise {
 
     public void setScore(int score) { this.score = score; }
 
+    public int getTotalPossibleScore()
+    {
+        int totalPossibleScore = 0;
+
+        if(!type.equals("multiple"))
+        {
+            totalPossibleScore = numQuestions*10;
+        }
+        else
+        {
+            totalPossibleScore = 100;
+        }
+        return totalPossibleScore;
+    }
+
     public String toString(){
         String result = englishDescription + "\n" + spanishDescription + "\n" +
                 "Number of questions: " + numQuestions + "\n" + "Type: " + type;
