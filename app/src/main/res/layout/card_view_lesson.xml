@@ -25,7 +25,7 @@
                 android:layout_alignParentLeft="true">
 
                 <TextView
-                    android:id="@+id/module_title"
+                    android:id="@+id/season_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:maxLines="1"
@@ -39,7 +39,7 @@
                     android:id="@+id/module_description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/module_title"
+                    android:layout_below="@+id/season_title"
                     android:maxLines="3"
                     android:padding="8dp"
                     android:text="World"
