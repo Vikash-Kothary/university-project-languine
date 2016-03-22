@@ -51,6 +51,9 @@ public class ExerciseActivity extends AppCompatActivity implements DialogInterfa
     private RadioGroup possibleAnswers;
     private Button nextButton;
 
+    public static final String SCORE = "SCORE";
+    public static final String TOTAL_POSS_SCORE = "TOTAL-SCORE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,7 +79,10 @@ public class ExerciseActivity extends AppCompatActivity implements DialogInterfa
         Button previousButton = (Button) findViewById(R.id.previous_question);
         if(questionCounter < unitExercise.getQuestionsNumber())
         {
-            previousButton.setVisibility(View.VISIBLE);
+            if(!quizType.equals("multiple"))
+            {
+                previousButton.setVisibility(View.VISIBLE);
+            }
             nextButton = (Button) findViewById(R.id.next_question);
             if(nextButton.getText().equals("NEXT"));
                 nextButton.setText("NEXT");
@@ -102,7 +108,7 @@ public class ExerciseActivity extends AppCompatActivity implements DialogInterfa
             nextButton = (Button) findViewById(R.id.next_question);
             nextButton.setText("FINISH");
         }
-        if(questionCounter == 0)
+        if(questionCounter == 0 && !quizType.equals("multiple"))
         {
             previousButton.setVisibility(View.INVISIBLE);
         }
@@ -137,15 +143,20 @@ public class ExerciseActivity extends AppCompatActivity implements DialogInterfa
             }
         }
 
-        String resultMessage = "";
+        String[] resultMessage = getResultStrings();
         if(unitExercise.getSelectedAnswers().size() <= questionCounter)
         {
-            resultMessage = writeToast();
-            Toast toast = Toast.makeText(this, resultMessage, Toast.LENGTH_SHORT);
-            toast.show();
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            builder.setMessage(resultMessage[0]).setTitle(resultMessage[1]);
+
+            builder.setPositiveButton("CONTINUE", null);
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
         }
 
-        if(!resultMessage.equals("Please select an answer."))
+        if(!resultMessage[0].equals("Please select an answer."))
         {
             if(unitExercise.getSelectedAnswers().size() <= questionCounter)
             {
@@ -389,9 +400,10 @@ public class ExerciseActivity extends AppCompatActivity implements DialogInterfa
         selectedAnswer = selectedAnswer.substring(0, selectedAnswer.length() - 1);
     }
 
-    private String writeToast()
+    private String[] getResultStrings()
     {
         String resultMessage = "";
+        String resultTitle = "";
 
         if((quizType.equals("single") && possibleAnswers.getCheckedRadioButtonId() == -1)
                 || (quizType.equals("pictures") && selectedImage == null)
@@ -401,15 +413,19 @@ public class ExerciseActivity extends AppCompatActivity implements DialogInterfa
         }
         else if(currentQuestion.checkAnswer(selectedAnswer))
         {
-            resultMessage = "This is the right answer!";
+            resultMessage = "That's right! You selected the correct response.";
+            resultTitle = "Correct";
             unitExercise.setScore(unitExercise.getScore()+10);
         }
         else
         {
-            resultMessage = "This is the wrong answer.";
+            resultMessage = "You did not select the correct response.";
+            resultTitle = "Incorrect";
         }
 
-        return resultMessage;
+        String[] resultStrings = {resultMessage, resultTitle};
+
+        return resultStrings;
     }
 
     private void removeSelections()
@@ -449,6 +465,8 @@ public class ExerciseActivity extends AppCompatActivity implements DialogInterfa
         else
         {
             Intent intent = new Intent(getBaseContext(), ResultActivity.class);
+            intent.putExtra(SCORE,""+unitExercise.getScore());
+            intent.putExtra(TOTAL_POSS_SCORE,""+unitExercise.getTotalPossibleScore());
             startActivity(intent);
         }
     }
