@@ -1,4 +1,4 @@
-package com.puzzle.appname.ui.activity;
+package com.puzzle.appname;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,12 +9,12 @@ import android.view.View;
 
 import com.puzzle.appname.R;
 
-public class numeros2 extends AppCompatActivity {
+public class numeros3 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numeros2);
+        setContentView(R.layout.activity_numeros3);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

@@ -620,4 +620,5 @@
 
     <string name="title_activity_audio_record_test">AudioRecordTest</string>
     <string name="title_activity_numeros2">numeros2</string>
+    <string name="title_activity_numeros3">numeros3</string>
 </resources>

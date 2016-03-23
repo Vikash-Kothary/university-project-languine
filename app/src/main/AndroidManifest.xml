@@ -167,9 +167,17 @@
         <activity android:name=".Festividades" />
         <activity android:name=".Estaciones" />
         <activity
-            android:name=".ui.activity.numeros2"
+            android:name=".numeros2"
             android:label="@string/title_activity_numeros2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".numeros3"
+            android:label="@string/title_activity_numeros3"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".numeros4" />
+        <activity android:name=".numeros5" />
+        <activity android:name=".numeros6" />
+        <activity android:name=".numeros7"></activity>
     </application>
 
 </manifest>
