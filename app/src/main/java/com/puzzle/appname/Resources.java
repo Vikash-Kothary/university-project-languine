@@ -78,7 +78,7 @@ public class Resources extends AppCompatActivity {
                     {
                         if(position == 0 || position == 1 || position == 4)
                         {
-                            Intent intent = new Intent(getBaseContext(), SpaMex.class);
+                            Intent intent = new Intent(Resources.this, SpaMex.class);
                             //intent.putExtra(RESOURCE_TITLE, ResourceNames.get(position));
                             intent.putExtra(RESOURCE_NUMBER, ""+position);
                             //intent.putExtra(LESSON_NUMBER, (position + 1) + "");
@@ -86,21 +86,21 @@ public class Resources extends AppCompatActivity {
                         }
                         else if(position == 2)
                         {
-                            Intent intent = new Intent(getBaseContext(), LosDias.class);
+                            Intent intent = new Intent(Resources.this, LosDias.class);
                             startActivity(intent);
                         }
                         else if(position == 3)
                         {
-                            Intent intent = new Intent(getBaseContext(), ElCalendario.class);
+                            Intent intent = new Intent(Resources.this, ElCalendario.class);
                             startActivity(intent);
                         }
                         else if(position == 5)
                         {
-                            Intent intent = new Intent(getBaseContext(), Estaciones.class);
+                            Intent intent = new Intent(Resources.this, Estaciones.class);
                             startActivity(intent);
                         }
                         else {
-                            Intent intent = new Intent(getBaseContext(), LaHora.class);
+                            Intent intent = new Intent(Resources.this, LaHora.class);
                             startActivity(intent);
                         }
                     }

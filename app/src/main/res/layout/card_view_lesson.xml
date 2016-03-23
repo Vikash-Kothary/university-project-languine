@@ -57,7 +57,8 @@
                 android:src="@mipmap/ic_launcher"
                 android:layout_alignParentRight="true"
                 android:padding="@dimen/activity_horizontal_margin"
-                android:paddingRight="5dp" />
+                android:paddingRight="5dp"
+                android:layout_alignParentBottom="true" />
 
         </RelativeLayout>
 
@@ -71,7 +72,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="57dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3"
             >

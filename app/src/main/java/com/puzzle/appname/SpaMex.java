@@ -31,7 +31,7 @@ public class SpaMex extends AppCompatActivity {
 
 
     private void setupRecyclerView() {
-        RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);
+        RecyclerView cardList = (RecyclerView) findViewById(R.id.languages_1);
         cardList.setHasFixedSize(true);
 
         // use a linear layout manager
