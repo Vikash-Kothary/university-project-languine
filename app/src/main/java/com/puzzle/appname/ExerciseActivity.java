@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -49,7 +50,7 @@ public class ExerciseActivity extends AppCompatActivity implements DialogInterfa
     private ImageView[] images = new ImageView[6];
     private ArrayList<CheckBox> checkBoxes;
     private RadioGroup possibleAnswers;
-    private Button nextButton;
+    private ImageButton nextButton;
 
     public static final String SCORE = "SCORE";
     public static final String TOTAL_POSS_SCORE = "TOTAL-SCORE";
@@ -76,16 +77,14 @@ public class ExerciseActivity extends AppCompatActivity implements DialogInterfa
      */
     private void populateFragment(final String quizType)
     {
-        Button previousButton = (Button) findViewById(R.id.previous_question);
+        ImageButton previousButton = (ImageButton) findViewById(R.id.previous_question);
         if(questionCounter < unitExercise.getQuestionsNumber())
         {
             if(!quizType.equals("multiple"))
             {
                 previousButton.setVisibility(View.VISIBLE);
             }
-            nextButton = (Button) findViewById(R.id.next_question);
-            if(nextButton.getText().equals("NEXT"));
-                nextButton.setText("NEXT");
+            nextButton = (ImageButton) findViewById(R.id.next_question);
 
             switch(quizType)
             {
@@ -105,8 +104,8 @@ public class ExerciseActivity extends AppCompatActivity implements DialogInterfa
         }
         if(questionCounter == unitExercise.getQuestionsNumber()-1)
         {
-            nextButton = (Button) findViewById(R.id.next_question);
-            nextButton.setText("FINISH");
+            nextButton = (ImageButton) findViewById(R.id.next_question);
+            nextButton.setImageResource(R.drawable.finish);
         }
         if(questionCounter == 0 && !quizType.equals("multiple"))
         {
@@ -116,7 +115,7 @@ public class ExerciseActivity extends AppCompatActivity implements DialogInterfa
 
     public void nextQuestionButtonClicked(View view)
     {
-        nextButton = (Button) findViewById(R.id.next_question);
+        nextButton = (ImageButton) findViewById(R.id.next_question);
         currentQuestion = unitExercise.getQuestion(questionCounter);
 
         if(quizType.equals("single"))
@@ -451,7 +450,7 @@ public class ExerciseActivity extends AppCompatActivity implements DialogInterfa
 
     private void setUpButtonListener()
     {
-        if(nextButton.getText().equals("NEXT"))
+        if(questionCounter < unitExercise.getQuestionsNumber()-1)
         {
             if(!quizType.equals("pictures"))
             {

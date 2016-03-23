@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -25,7 +26,8 @@ public class AudioQuizFragment extends Fragment {
 
     public Sounds sounds;
     public SeekBar seekBar;
-    private Button buttonRecord, playSoundButton, pause_button;
+
+    private ImageButton buttonRecord, playSoundButton;
     private TextView recordLabel;
     private MediaRecorder myAudioRecorder;
     private MediaPlayer play;
@@ -142,12 +144,12 @@ public class AudioQuizFragment extends Fragment {
 //            }
 //        });
     seekBar = (SeekBar) getActivity().findViewById(R.id.seekBar);
-    playSoundButton = (Button) getActivity().findViewById(R.id.play_button);
-    pause_button = (Button) getActivity().findViewById(R.id.pauseButton);
-    buttonRecord = (Button) getActivity().findViewById(R.id.buttonRecord);
+    playSoundButton = (ImageButton) getActivity().findViewById(R.id.play_button);
+    //pause_button = (Button) getActivity().findViewById(R.id.pauseButton);
+    //buttonRecord = (ImageButton) getActivity().findViewById(R.id.buttonRecord);
     recordLabel = (TextView) getActivity().findViewById(R.id.RecordLabel);
 
-    buttonRecord.setOnClickListener(new View.OnClickListener() {
+    /*buttonRecord.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             if (buttonRecord.getText().toString().equals("Record")) {
@@ -178,7 +180,7 @@ public class AudioQuizFragment extends Fragment {
 
             }
         }
-    });
+    });*/
 
 //        if (getArguments() != null) {
 //            mParam1 = getArguments().getString(ARG_PARAM1);
@@ -190,20 +192,26 @@ public class AudioQuizFragment extends Fragment {
         public void onClick(View v) {
             if (!sounds.mySound.isPlaying()) {
                 sounds.mySound.start();
+                playSoundButton.setImageResource(R.drawable.pause);
+            }
+            else
+            {
+                sounds.mySound.pause();
+                playSoundButton.setImageResource(R.drawable.play);
             }
         }
     });
 
     initiateBar();
 
-    pause_button.setOnClickListener(new View.OnClickListener() {
+    /*pause_button.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             if (sounds.mySound.isPlaying()) {
                 sounds.mySound.stop();
             }
         }
-    });
+    });*/
     outputFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/recording.3gpp";
 
     return view;
@@ -270,7 +278,7 @@ public class AudioQuizFragment extends Fragment {
         play.prepare();
         play.start();
 
-        play.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        /*play.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer play) {
                 play.release(); //release resources
@@ -278,7 +286,7 @@ public class AudioQuizFragment extends Fragment {
                 buttonRecord.setText("Record");
             }
         });
-        recordLabel.setText("Well done, try Again");
+        recordLabel.setText("Well done, try Again");*/
     }
 
     public void stopClicked() {
