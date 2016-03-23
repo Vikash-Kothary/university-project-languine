@@ -12,4 +12,27 @@
     tools:context="com.puzzle.appname.ui.activity.numeros2"
     tools:showIn="@layout/activity_numeros2">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:id="@+id/a"
+        >
+
+        <ImageButton
+            android:layout_width="124sp"
+            android:layout_weight="1"
+            android:layout_height="80dp"
+            android:src="@drawable/one"
+            android:background="#00ffffff"
+            android:scaleType="fitXY"
+            android:layout_gravity="bottom|right"
+            android:paddingLeft="5dp" />
+
+
+    </LinearLayout>
+
+
 </RelativeLayout>
