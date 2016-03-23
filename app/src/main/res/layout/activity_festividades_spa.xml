@@ -32,7 +32,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Q"
+                android:text="i"
                 android:id="@+id/questionButton"
                 android:layout_alignParentTop="true"
                 android:layout_alignEnd="@+id/gridLayout" />

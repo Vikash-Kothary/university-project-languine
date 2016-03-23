@@ -16,8 +16,8 @@
 
         <ImageView
             android:id="@+id/festividad_thumbnail"
-            android:layout_width="318dp"
-            android:layout_height="318dp"
+            android:layout_width="285dp"
+            android:layout_height="285dp"
             android:scaleType="fitXY"
             android:src="@mipmap/ic_launcher"
             android:padding="@dimen/activity_horizontal_margin"
