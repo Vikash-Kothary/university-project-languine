@@ -23,8 +23,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Festivals and national holidays-Spain"
-                android:id="@+id/textView4"
+                android:text="Festivals and national holidays - Spain"
+                android:id="@+id/festividad_title"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true" />
 
@@ -32,8 +32,9 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="i"
+                android:text="\?"
                 android:id="@+id/questionButton"
+                android:onClick="showPopup"
                 android:layout_alignParentTop="true"
                 android:layout_alignEnd="@+id/gridLayout" />
 
@@ -45,13 +46,28 @@
             android:id="@+id/card_list"
             android:scrollbars="vertical" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Click on the images for Spanish/English translation and audio"
-            android:id="@+id/textView5"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Click on the images for the audio."
+                android:id="@+id/festividad_instructions"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fragment_container">
+
+
+            </FrameLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
