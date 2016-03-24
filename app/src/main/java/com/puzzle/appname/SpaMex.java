@@ -54,14 +54,28 @@ public class SpaMex extends AppCompatActivity {
                     @Override
                     public void onItemClick(View view, int position)
                     {
-                        Intent intent = new Intent(getBaseContext(), Festividades.class);
+                        Intent intent = null;
+                        int resourceNumber = Integer.parseInt(getIntent().getStringExtra(Resources.RESOURCE_NUMBER));
+                        if(resourceNumber == 0)
+                        {
+                            intent = new Intent(getBaseContext(), Alphabeto.class);
+                        }
+                        else if(resourceNumber == 1)
+                        {
+                            intent = new Intent(getBaseContext(), Numeros.class);
+                        }
+                        else if(resourceNumber == 4)
+                        {
+                            intent = new Intent(getBaseContext(), Festividades.class);
+                        }
+
                         if(position == 0)
                         {
                             intent.putExtra(LANGUAGE,"Spanish");
                         }
                         else
                         {
-                            intent.putExtra(LANGUAGE,"Mexican");
+                            intent.putExtra(LANGUAGE, "Mexican");
                         }
                         startActivity(intent);
                     }

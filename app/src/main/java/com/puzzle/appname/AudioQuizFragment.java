@@ -26,7 +26,7 @@ public class AudioQuizFragment extends MaterialFragment {
 
     public Sounds sounds;
     public SeekBar seekBar;
-    private ImageButton buttonRecord, playSoundButton;
+    private ImageButton buttonRecord;
     private TextView recordLabel;
     private MediaRecorder myAudioRecorder;
     private MediaPlayer play;
@@ -62,7 +62,7 @@ public class AudioQuizFragment extends MaterialFragment {
 //            }
 //        });
     seekBar = (SeekBar) getActivity().findViewById(R.id.seekBar);
-    playSoundButton = (ImageButton) getActivity().findViewById(R.id.play_button);
+    playSoundButton = (Button) getActivity().findViewById(R.id.play_button);
     //pause_button = (Button) getActivity().findViewById(R.id.pauseButton);
     //buttonRecord = (ImageButton) getActivity().findViewById(R.id.buttonRecord);
     recordLabel = (TextView) getActivity().findViewById(R.id.RecordLabel);
@@ -111,12 +111,12 @@ public class AudioQuizFragment extends MaterialFragment {
         public void onClick(View v) {
             if (!sounds.mySound.isPlaying()) {
                 sounds.mySound.start();
-                playSoundButton.setImageResource(R.drawable.pause);
+                //playSoundButton.setImageResource(R.drawable.pause);
             }
             else
             {
                 sounds.mySound.pause();
-                playSoundButton.setImageResource(R.drawable.play);
+                //playSoundButton.setImageResource(R.drawable.play);
             }
         }
     });

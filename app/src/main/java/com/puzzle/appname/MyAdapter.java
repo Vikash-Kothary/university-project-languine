@@ -1,6 +1,7 @@
 package com.puzzle.appname;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,13 +23,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.LessonViewHolder> 
         // each data item is just a string in this case
         ImageView lessonThumbnail;
         TextView lessonTitle;
-        TextView lessonProgress;
+        //TextView lessonProgress;
 
         public LessonViewHolder(View itemView) {
             super(itemView);
             lessonThumbnail = (ImageView) itemView.findViewById(R.id.thumbnail);
             lessonTitle = (TextView)itemView.findViewById(R.id.module_title);
-            lessonProgress = (TextView)itemView.findViewById(R.id.module_description);
+            //lessonProgress = (TextView)itemView.findViewById(R.id.module_description);
         }
     }
 
@@ -57,7 +58,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.LessonViewHolder> 
         // - replace the contents of the view with that element
         holder.lessonThumbnail.setImageResource(mDataset.get(position).getImageID());
         holder.lessonTitle.setText(mDataset.get(position).getLessonName());
-        holder.lessonProgress.setText(mDataset.get(position).getProgress() + "%");
+        //holder.lessonProgress.setText(mDataset.get(position).getProgress() + "%");
 
     }
 
