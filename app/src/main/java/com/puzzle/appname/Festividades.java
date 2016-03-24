@@ -30,6 +30,7 @@ public class Festividades extends MaterialActivity {
     private String[] mexDates = {"Primero de enero","El 6 de enero", "Primero de mayo", "El Cinco de mayo", "16 de septiembre", "El 12 de octubre", "El 2 de noviembre", "El 20 de noviembre", "12 de diciembre", "El 25 de diciembre"};
     private String[] mexNames = {"El año nuevo","El Día de los Reyes Magos", "Día del Trabajo", "La Batalla de Puebla", "La Independencia de México", "El Descumbrimiento de América", "El Día de los Muertos", "La Revolución de Mexcicana", "Día de la Virgen de Guadalupe", "La Navidad"};
     private String[] mexEnglishNames = {"New Year's Day","Epiphany", "Labour Day", "5th May-Batalla of Puebla", "Independence Day", "Discovery of Americas", "Day of the Dead", "Revolution Day", "Day of the virgin of Guadalupe", "Christmas Day"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
