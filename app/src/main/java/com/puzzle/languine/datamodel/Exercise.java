@@ -13,6 +13,8 @@ public class Exercise {
     private int numQuestions, score;   //number of questions in the exercise
     private ArrayList<Question> questionsArr;
     private HashMap<String, String> selectedAnswers;  //keeps pair of (correct answer, your answer)
+    private String stringForReview;
+    private ArrayList<String> selected;
 
     public Exercise(String spanishDescription, String englishDescription,
                     int numQuestions, String type) {
@@ -22,6 +24,7 @@ public class Exercise {
         this.type = type;
         this.englishDescription = englishDescription;
         this.spanishDescription = spanishDescription;
+        selected = new ArrayList<>();
     }
 
     public void addQuestion(Question question) {
@@ -44,48 +47,62 @@ public class Exercise {
         return englishDescription;
     }
 
-    public String getType()
-    {
+    public String getType() {
         return type;
     }
 
-    public int getScore() { return score; }
+    public int getScore() {
+        return score;
+    }
 
-    public void setScore(int score) { this.score = score; }
+    public void setScore(int score) {
+        this.score = score;
+    }
 
-    public int getTotalPossibleScore()
-    {
+    public int getTotalPossibleScore() {
         int totalPossibleScore = 0;
 
-        if(!type.equals("multiple"))
-        {
-            totalPossibleScore = numQuestions*10;
-        }
-        else
-        {
+        if (!type.equals("multiple")) {
+            totalPossibleScore = numQuestions * 10;
+        } else {
             totalPossibleScore = 100;
         }
         return totalPossibleScore;
     }
 
-    public String toString(){
+    public String toString() {
         String result = englishDescription + "\n" + spanishDescription + "\n" +
                 "Number of questions: " + numQuestions + "\n" + "Type: " + type;
-        for(Question q: questionsArr){
+        for (Question q : questionsArr) {
             result += q;
         }
         return result;
     }
 
-    public int getQuestionsNumber(){
+    public int getQuestionsNumber() {
         return numQuestions;
     }
 
     public void addPairOfAnswers(String correctAnswer, String selectedAnswer) {
         selectedAnswers.put(correctAnswer, selectedAnswer);
+        selected.add(selectedAnswer);
     }
 
-    public HashMap<String, String> getSelectedAnswers() { return selectedAnswers; }
+    public HashMap<String, String> getSelectedAnswers() {
+        return selectedAnswers;
+    }
+
+    public String getStringForReview() {
+        String string = "";
+        int questionNum = 1;
+        for (Question q : questionsArr) {
+            string += questionNum + ". " + q.getQuestionText() + "\n";
+            string += "    selected: " + selected.get(questionNum - 1) + "\n";
+            string += "    correct: " + q.getCorrectAnswers().get(0) + "\n\n"; //works only for single choice
+            questionNum++;
+        }
+        return string;
+    }
 
 
 }

@@ -16,4 +16,5 @@ public class IntentConts
     public static final String QUIZ_TYPE = "quiz_type" ;
     public static final String FRAGMENT = "fragment";
     public static final String VIDEO_ID = "video_id";
+    public static final String REVIEW = "review";
 }

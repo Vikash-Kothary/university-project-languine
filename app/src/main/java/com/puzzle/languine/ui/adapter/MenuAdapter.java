@@ -27,7 +27,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
     public MenuAdapter.MenuViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.module_select_card_view, parent, false);
+                .inflate(R.layout.module_select_card_view_simple, parent, false);
         // set the view's size, margins, paddings and layout parameters
 
         MenuViewHolder vh = new MenuViewHolder(v);

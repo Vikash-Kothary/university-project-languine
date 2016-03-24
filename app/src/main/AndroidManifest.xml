@@ -10,8 +10,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name="com.puzzle.languine.ParseApplication"
@@ -24,7 +24,7 @@
         <activity
             android:name=".ui.activity.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,7 +36,7 @@
             android:name=".ui.activity.LoginActivity"
             android:label="@string/title_activity_login"
             android:parentActivityName=".ui.activity.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.puzzle.languine.ui.activity.MainActivity" />
@@ -46,7 +46,7 @@
             android:name=".ui.activity.CreditsActivity"
             android:label="@string/title_activity_credits"
             android:parentActivityName=".ui.activity.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.puzzle.languine.ui.activity.MainActivity" />
@@ -63,8 +63,8 @@
         </activity>
 
         <activity
-            android:name="com.puzzle.languine.ResultActivity"
-            android:label="@string/title_activity_review"
+            android:name=".ui.activity.ResultActivity"
+            android:label="@string/title_activity_result"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -86,7 +86,12 @@
         <activity
             android:name=".ui.activity.VideoActivity"
             android:label="@string/title_activity_get_started"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".ui.activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.MainActivity" />
+            </activity>
         <activity
             android:name=".ui.activity.ExerciseMenuActivity"
             android:label="@string/title_activity_experiment"
@@ -112,7 +117,7 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name="com.puzzle.languine.Welcome"></activity>
-        
+
         <activity android:name=".ui.activity.ResourcesActivity" />
         <activity android:name="com.puzzle.languine.LaHora" />
         <activity android:name="com.puzzle.languine.LosDias" />
@@ -122,6 +127,15 @@
         <activity android:name="com.puzzle.languine.ElCalendario" />
         <activity android:name="com.puzzle.languine.Festividades" />
         <activity android:name="com.puzzle.languine.Estaciones"></activity>
+        <activity
+            android:name=".ReviewActivity"
+            android:label="@string/title_activity_review"
+            android:parentActivityName=".ExerciseMenuActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ExerciseMenuActivity" />
+        </activity>
     </application>
 
 </manifest>
