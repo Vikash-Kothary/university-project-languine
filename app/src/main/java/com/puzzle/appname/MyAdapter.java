@@ -26,6 +26,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.LessonViewHolder> 
 
         public LessonViewHolder(View itemView) {
             super(itemView);
+
             lessonThumbnail = (ImageView) itemView.findViewById(R.id.thumbnail);
             lessonTitle = (TextView)itemView.findViewById(R.id.module_title);
             lessonProgress = (TextView)itemView.findViewById(R.id.module_description);

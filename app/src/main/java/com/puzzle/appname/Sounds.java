@@ -11,8 +11,8 @@ public class Sounds {
 
     public static MediaPlayer mySound;
 
-    Sounds(Context myContext)
+    Sounds(Context myContext, int music)
     {
-        mySound = MediaPlayer.create(myContext, R.raw.background);
+        mySound = MediaPlayer.create(myContext, music);
     }
 }

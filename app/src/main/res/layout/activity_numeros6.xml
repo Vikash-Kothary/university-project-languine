@@ -32,6 +32,7 @@
                     android:layout_weight="1"
                     android:layout_height="80dp"
                     android:src="@drawable/million"
+                    android:id="@+id/million"
                     android:background="#00ffffff"
                     android:scaleType="fitXY"
                     android:layout_gravity="bottom|right"
@@ -54,6 +55,7 @@
                     android:layout_weight="1"
                     android:layout_height="80dp"
                     android:src="@drawable/twomillion"
+                    android:id="@+id/twomillion"
                     android:background="#00ffffff"
                     android:scaleType="fitXY"
                     android:layout_gravity="bottom|right"
@@ -76,6 +78,7 @@
                     android:layout_weight="1"
                     android:layout_height="80dp"
                     android:src="@drawable/fivehundredmillion"
+                    android:id="@+id/fivehundredmillion"
                     android:background="#00ffffff"
                     android:scaleType="fitXY"
                     android:layout_gravity="bottom|right"
@@ -83,6 +86,7 @@
 
 
             </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -97,7 +101,8 @@
                     android:layout_width="124sp"
                     android:layout_weight="1"
                     android:layout_height="80dp"
-                    android:src="@drawable/onethousandmillion"
+                    android:src="@drawable/fivethousandmillion"
+                    android:id="@+id/fivethousandmillion"
                     android:background="#00ffffff"
                     android:scaleType="fitXY"
                     android:layout_gravity="bottom|right"
@@ -105,6 +110,7 @@
 
 
             </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -119,7 +125,8 @@
                     android:layout_width="124sp"
                     android:layout_weight="1"
                     android:layout_height="80dp"
-                    android:src="@drawable/onethousandtwohundredmillion"
+                    android:src="@drawable/onethousandmillion"
+                    android:id="@+id/onethousandmillion"
                     android:background="#00ffffff"
                     android:scaleType="fitXY"
                     android:layout_gravity="bottom|right"
@@ -141,7 +148,8 @@
                     android:layout_width="124sp"
                     android:layout_weight="1"
                     android:layout_height="80dp"
-                    android:src="@drawable/fivehundredmillion"
+                    android:src="@drawable/onethousandtwohundredmillion"
+                    android:id="@+id/onethousandtwohundredmillion"
                     android:background="#00ffffff"
                     android:scaleType="fitXY"
                     android:layout_gravity="bottom|right"
@@ -164,7 +172,8 @@
                     android:layout_width="124sp"
                     android:layout_weight="1"
                     android:layout_height="80dp"
-                    android:src="@drawable/fivehundredmillion"
+                    android:src="@drawable/onebillion"
+                    android:id="@+id/onebillion"
                     android:background="#00ffffff"
                     android:scaleType="fitXY"
                     android:layout_gravity="bottom|right"
@@ -186,7 +195,8 @@
                     android:layout_width="124sp"
                     android:layout_weight="1"
                     android:layout_height="80dp"
-                    android:src="@drawable/fivethousandmillion"
+                    android:src="@drawable/thousandbillion"
+                    android:id="@+id/thousandbillion"
                     android:background="#00ffffff"
                     android:scaleType="fitXY"
                     android:layout_gravity="bottom|right"
@@ -208,7 +218,8 @@
                     android:layout_width="124sp"
                     android:layout_weight="1"
                     android:layout_height="80dp"
-                    android:src="@drawable/onebillion"
+                    android:src="@drawable/onetrillion"
+                    android:id="@+id/onetrillion"
                     android:background="#00ffffff"
                     android:scaleType="fitXY"
                     android:layout_gravity="bottom|right"
@@ -230,51 +241,8 @@
                     android:layout_width="124sp"
                     android:layout_weight="1"
                     android:layout_height="80dp"
-                    android:src="@drawable/thousandbillion"
-                    android:background="#00ffffff"
-                    android:scaleType="fitXY"
-                    android:layout_gravity="bottom|right"
-                    android:paddingLeft="5dp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1"
-                android:id="@+id/k"
-                android:layout_below="@+id/j"
-                >
-
-                <ImageButton
-                    android:layout_width="124sp"
-                    android:layout_weight="1"
-                    android:layout_height="80dp"
-                    android:src="@drawable/onetrillion"
-                    android:background="#00ffffff"
-                    android:scaleType="fitXY"
-                    android:layout_gravity="bottom|right"
-                    android:paddingLeft="5dp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1"
-                android:id="@+id/l"
-                android:layout_below="@+id/k"
-                >
-
-                <ImageButton
-                    android:layout_width="124sp"
-                    android:layout_weight="1"
-                    android:layout_height="80dp"
                     android:src="@drawable/quadtrillion"
+                    android:id="@+id/quadtrillion"
                     android:background="#00ffffff"
                     android:scaleType="fitXY"
                     android:layout_gravity="bottom|right"

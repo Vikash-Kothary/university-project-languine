@@ -12,6 +12,15 @@ import com.puzzle.appname.R;
 
 public class Numeros3 extends AppCompatActivity {
 
+    private int[] number_id = {R.id.twohundredtwo, R.id.threehundredthree, R.id.fourhundredfour,R.id.fivehundredfive, R.id.sixhundredsix,
+            R.id.sevenhundredseven, R.id.eighthundredright, R.id.ninehundrednine, R.id.onethousand};
+
+    private int[] spa_audio = {R.raw.n202m,R.raw.n303m,R.raw.n404_s, R.raw.n505_s, R.raw.n606_s, R.raw.n707_s, R.raw.n808_s,
+            R.raw.n909_s, R.raw.n1000_s};
+
+    private int[] mex_audio = {R.raw.n202m,R.raw.n303m,R.raw.n404m, R.raw.n505m, R.raw.n606m, R.raw.n707m, R.raw.n808m,
+            R.raw.n909_m, R.raw.n1000m};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

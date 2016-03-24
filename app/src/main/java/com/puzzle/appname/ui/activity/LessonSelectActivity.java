@@ -1,6 +1,7 @@
 package com.puzzle.appname.ui.activity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -45,6 +46,7 @@ public class LessonSelectActivity extends AppCompatActivity
 
     ArrayList<Integer> lessonImages;
     ArrayList<String> lessonNames;
+    private MediaPlayer mediaPlayer;
 
 //    private ViewPager viewPager;
 //    private SwipeViewAdapter swipeViewAdapter;
@@ -53,7 +55,7 @@ public class LessonSelectActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_select);
-
+        
         // Determine whether the current user is an anonymous user
 //        if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
 //            // If user is anonymous, send the user to LoginSignupActivity.class

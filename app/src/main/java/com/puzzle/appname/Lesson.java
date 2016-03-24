@@ -8,7 +8,7 @@ package com.puzzle.appname;
 
 public class Lesson {
     private int imageID;
-    private String lessonName;
+    private String lessonName ;
     private int progress;
 
     public Lesson(){}

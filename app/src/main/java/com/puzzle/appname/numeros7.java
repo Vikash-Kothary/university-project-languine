@@ -9,6 +9,17 @@ import android.view.View;
 
 public class Numeros7 extends AppCompatActivity {
 
+
+    private int[] number_id = {R.id.onedec, R.id.twodec, R.id.threedec, R.id.fourdec, R.id.fivedec, R.id.sixdec, R.id.sevendec,
+            R.id.eightdec, R.id.ninedec};
+
+    private int[] spa_audio = {R.raw.n01_o_s, R.raw.n02_o_s, R.raw.n03_o_s, R.raw.n04_o_s, R.raw.n05_o_s,R.raw.n06_o_s,
+            R.raw.n07_o_s, R.raw.n08_o_s, R.raw.n09_o_s, R.raw.n10_o_s};
+
+    private int[] mex_audio = {R.raw.n01_o_m, R.raw.n02_o_m, R.raw.n03_o_m, R.raw.n04_o_m, R.raw.n05_o_m,R.raw.n06_o_m,
+            R.raw.n07_o_m, R.raw.n08_o_m, R.raw.n09_o_m, R.raw.n10_o_m};
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

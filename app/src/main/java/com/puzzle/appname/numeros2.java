@@ -12,6 +12,12 @@ import com.puzzle.appname.R;
 
 public class Numeros2 extends AppCompatActivity {
 
+    private int[] number_id = {R.id.forty,R.id.fifty, R.id.sixty, R.id.seventy, R.id.eighty,R.id.ninety, R.id.onehundred};
+
+    private int[] spa_audio = {R.raw.n40_s, R.raw.n50_s, R.raw.n60_s, R.raw.n70_s, R.raw.n80_s, R.raw.n90_s, R.raw.n100_s };
+
+    private int[] mex_audio = {R.raw.n40m, R.raw.n50m, R.raw.n60m, R.raw.n70m, R.raw.n80m, R.raw.n90m, R.raw.n100m };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,5 +45,4 @@ public class Numeros2 extends AppCompatActivity {
             }
         });
     }
-
 }
