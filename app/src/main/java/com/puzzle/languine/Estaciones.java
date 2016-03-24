@@ -11,6 +11,9 @@ import com.puzzle.languine.ui.adapter.EstacionesAdapter;
 
 import java.util.ArrayList;
 
+/**
+ * Class which represents the activity for the seasons part of the Resources page.
+ */
 public class Estaciones extends MaterialActivity
 {
     private int[] images = {R.drawable.primavera,R.drawable.verana,R.drawable.otono,R.drawable.invierno};
@@ -18,12 +21,14 @@ public class Estaciones extends MaterialActivity
     private String[] months = {"marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre","enero","febrero"};
 
     @Override
+    /**
+     * Creates an instance of the Estaciones object.
+     */
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estaciones);
         setupToolbar();
-
         setupRecyclerView();
     }
 
