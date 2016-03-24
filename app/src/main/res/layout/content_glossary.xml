@@ -10,7 +10,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.puzzle.languine.ui.activity.GlossaryActivity"
-    tools:showIn="@layout/activity_glossary">
+    tools:showIn="@layout/activity_glossary"
+    android:background="#3a4aa6">
 
     <Button
         android:layout_width="wrap_content"
@@ -19,43 +20,42 @@
         android:id="@+id/engspa"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentStart="false"
         android:layout_marginLeft="46dp"
-        android:layout_marginStart="46dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EN -> SP"
-        android:id="@+id/speng"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/view"
-        android:layout_alignEnd="@+id/view"
-        android:layout_marginRight="42dp"
-        android:layout_marginEnd="42dp" />
+        android:layout_marginStart="46dp"
+        android:visibility="invisible" />
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/translation_list"
-        android:scrollbars="vertical" />
+        android:scrollbars="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/toolbar" />
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_toRightOf="@+id/engspa"
-        android:layout_toEndOf="@+id/engspa"
-        android:layout_marginLeft="134dp"
-        android:layout_marginStart="134dp"
-        android:background="#ff0000">
+        android:layout_marginLeft="176dp"
+        android:layout_marginStart="176dp"
+        android:background="#3a4aa6"
+        android:id="@+id/alphabetView"
+        android:gravity="center|fill_horizontal|center_vertical|center_horizontal|fill_vertical"
+        android:layout_toRightOf="@+id/translation_list"
+        android:layout_toEndOf="@+id/engspa">
 
-        <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/alphabet"
-            android:layout_weight="1" />
     </LinearLayout>
 
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/alphabet"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:layout_alignBottom="@+id/translation_list"
+        android:layout_toRightOf="@+id/translation_list"
+        android:layout_toEndOf="@+id/translation_list"
+        android:layout_marginBottom="5dp" />
 
 </RelativeLayout>

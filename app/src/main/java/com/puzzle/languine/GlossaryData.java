@@ -33,10 +33,10 @@ public class GlossaryData
 
                 if(prevSpanishWord.charAt(0) != spanishWords[i].charAt(0))
                 {
-                    for(int j = 0; j < 3; ++j)
-                    {
-                        translations.add(new Translation("",""));
-                    }
+                    //Adding some space in between and a label to the letter
+                    translations.add(new Translation("",""));
+                    translations.add(new Translation("", "--- " + spanishWords[i].substring(0, 1).toUpperCase() + " ---"));
+                    translations.add(new Translation("",""));
                 }
             }
             translations.add(new Translation(twoWords[1],twoWords[0]));

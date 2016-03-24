@@ -6,11 +6,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.puzzle.languine.datamodel.Estacion;
+import com.puzzle.languine.ui.MaterialActivity;
 import com.puzzle.languine.ui.adapter.EstacionesAdapter;
 
 import java.util.ArrayList;
 
-public class Estaciones extends AppCompatActivity
+public class Estaciones extends MaterialActivity
 {
     private int[] images = {R.drawable.primavera,R.drawable.verana,R.drawable.otono,R.drawable.invierno};
     private String[] seasons = {"Primavera","Verano","Otoño","Invierno"};
@@ -21,6 +22,7 @@ public class Estaciones extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estaciones);
+        setupToolbar();
 
         setupRecyclerView();
     }

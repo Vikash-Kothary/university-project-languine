@@ -6,12 +6,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.puzzle.languine.datamodel.Hour;
+import com.puzzle.languine.ui.MaterialActivity;
 import com.puzzle.languine.ui.adapter.LaHoraAdapter;
 
 import java.util.ArrayList;
 
-public class LaHora extends AppCompatActivity {
-
+public class LaHora extends MaterialActivity
+{
     private int[] images = {R.drawable.clock1,R.drawable.clock2,R.drawable.clock3,R.drawable.clock4,R.drawable.clock5,R.drawable.clock6};
     private String[] times = {"Son la doce en punto","Son las doce y cinco","Son las doce y cuarto","Son las doce y media","Es la una menos cuarto","Es la una menos diez"};
 
@@ -20,6 +21,7 @@ public class LaHora extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_la_hora);
+        setupToolbar();
 
         setupRecyclerView();
     }

@@ -626,4 +626,12 @@
     <string name="title_activity_audio_record_test">AudioRecordTest</string>
     <string name="prompt_name">Enter full name</string>
     <string name="title_activity_result">Result</string>
+    <string name="title_estaciones">Estaciónes y Meses</string>
+    <string name="title_la_hora">La Hora</string>
+    <string name="title_los_dias">Los Dias</string>
+    <string name="title_alphabeto">Alphabeto</string>
+    <string name="title_numeros">Los Numeros</string>
+    <string name="title_calendario">El Calendario</string>
+    <string name="title_festividades">Festividades</string>
+    <string name="title_resources">Resources</string>
 </resources>

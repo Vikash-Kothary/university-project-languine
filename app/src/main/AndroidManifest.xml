@@ -70,6 +70,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.puzzle.languine.ui.activity.MainActivity" />
         </activity>
+
         <activity
             android:name="com.puzzle.languine.ui.activity.LanguageSelectActivity"
             android:label="@string/title_activity_language_select"
@@ -79,31 +80,56 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.puzzle.languine.ui.activity.MainActivity" />
         </activity>
+
         <activity
             android:name="com.puzzle.languine.ui.activity.GlossaryActivity"
             android:label="@string/title_activity_glossary"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".ui.activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.MainActivity" />
+        </activity>
+
         <activity
             android:name=".ui.activity.VideoActivity"
             android:label="@string/title_activity_get_started"
             android:parentActivityName=".ui.activity.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.activity.MainActivity" />
-            </activity>
+        </activity>
+
         <activity
             android:name=".ui.activity.ExerciseMenuActivity"
             android:label="@string/title_activity_experiment"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".ui.activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.MainActivity" />
+        </activity>
+
         <activity
             android:name="com.puzzle.languine.Vocabulario"
             android:label="@string/title_activity_vocabulario"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".ui.activity.ExerciseMenuActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.ExerciseMenuActivity" />
+        </activity>
+
         <activity
             android:name=".ui.activity.RevisionVideosActivity"
             android:label="@string/title_activity_revision_videos"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".ui.activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.MainActivity" />
+        </activity>
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -114,15 +140,87 @@
 
         <activity android:name="com.puzzle.languine.Welcome"></activity>
 
-        <activity android:name=".ui.activity.ResourcesActivity" />
-        <activity android:name="com.puzzle.languine.LaHora" />
-        <activity android:name="com.puzzle.languine.LosDias" />
-        <activity android:name="com.puzzle.languine.Alphabeto" />
-        <activity android:name="com.puzzle.languine.Numeros" />
+        <activity android:name=".ui.activity.ResourcesActivity"
+            android:label="@string/title_resources"
+            android:parentActivityName=".ui.activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.languine.ui.activity.MainActivity" />
+        </activity>
+
+        <activity
+            android:name="com.puzzle.languine.LaHora"
+            android:label="@string/title_la_hora"
+            android:parentActivityName=".ui.activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.languine.ui.activity.MainActivity" />
+        </activity>
+
+        <activity
+            android:name="com.puzzle.languine.LosDias"
+            android:label="@string/title_los_dias"
+            android:parentActivityName=".ui.activity.ResourcesActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.languine.ui.activity.ResourcesActivity" />
+        </activity>
+
+        <activity
+            android:name="com.puzzle.languine.Alphabeto"
+            android:label="@string/title_alphabeto"
+            android:parentActivityName=".ui.activity.ResourcesActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.languine.ui.activity.ResourcesActivity" />
+        </activity>
+
+        <activity
+            android:name="com.puzzle.languine.Numeros"
+            android:label="@string/title_numeros"
+            android:parentActivityName=".ui.activity.ResourcesActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.languine.ui.activity.ResourcesActivity" />
+        </activity>
+
         <activity android:name="com.puzzle.languine.SpaMex" />
-        <activity android:name="com.puzzle.languine.ElCalendario" />
-        <activity android:name="com.puzzle.languine.Festividades" />
-        <activity android:name="com.puzzle.languine.Estaciones"></activity>
+
+        <activity
+            android:name="com.puzzle.languine.ElCalendario"
+            android:label="@string/title_calendario"
+            android:parentActivityName=".ui.activity.ResourcesActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.languine.ui.activity.ResourcesActivity" />
+        </activity>
+
+        <activity
+            android:name="com.puzzle.languine.Festividades"
+            android:label="@string/title_festividades"
+            android:parentActivityName=".ui.activity.ResourcesActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.languine.ui.activity.ResourcesActivity" />
+        </activity>
+
+        <activity
+            android:name="com.puzzle.languine.Estaciones"
+            android:label="@string/title_estaciones"
+            android:parentActivityName=".ui.activity.ResourcesActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.languine.ui.activity.ResourcesActivity" />
+        </activity>
+
         <activity
             android:name=".ReviewActivity"
             android:label="@string/title_activity_review"

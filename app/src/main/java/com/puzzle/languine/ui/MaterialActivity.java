@@ -1,6 +1,7 @@
 package com.puzzle.languine.ui;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -13,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.puzzle.languine.R;
 
@@ -37,10 +39,13 @@ public class MaterialActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {
             setSupportActionBar(toolbar);
+            toolbar.setTitleTextColor(Color.WHITE);
             // Show menu icon
             final ActionBar ab = getSupportActionBar();
             ab.setDisplayHomeAsUpEnabled(true);
         }
+        final ViewGroup viewGroup = (ViewGroup) ((ViewGroup) this.findViewById(android.R.id.content)).getChildAt(0);
+        viewGroup.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
     }
 
     public Toolbar getToolbar() {
@@ -91,11 +96,6 @@ public class MaterialActivity extends AppCompatActivity {
 
     protected void changeFragment(MaterialFragment fragment) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
-    }
-
-    protected void Log(String output) {
-        String TAG = getPackageName();
-        Log.e(TAG, output);
     }
 
 //    protected void setupRecyclerView(RecyclerView.Adapter adapter) {
