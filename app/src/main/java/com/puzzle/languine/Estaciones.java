@@ -18,9 +18,10 @@ public class Estaciones extends MaterialActivity
 {
     private int[] images = {R.drawable.primavera,R.drawable.verana,R.drawable.otono,R.drawable.invierno};
     private String[] seasons = {"Primavera","Verano","Otoño","Invierno"};
-    private int[] months = {R.drawable.march,R.drawable.april,R.drawable.may,R.drawable.june,R.drawable.july,R.drawable.august,
-                            R.drawable.september,R.drawable.october,R.drawable.november,R.drawable.december,R.drawable.january,
-                            R.drawable.february};
+    //private String[] months = {"marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre","enero","febrero"};
+    private int[] buttonImages = {R.drawable.march,R.drawable.april,R.drawable.may,R.drawable.june,R.drawable.july,R.drawable.august,
+                                  R.drawable.september,R.drawable.october,R.drawable.november,R.drawable.december,R.drawable.january,
+                                  R.drawable.february};
 
     @Override
     /**
@@ -47,7 +48,7 @@ public class Estaciones extends MaterialActivity
         ArrayList<Estacion> myDataset = new ArrayList<Estacion>();
         for (int i = 0; i < seasons.length; ++i)
         {
-            myDataset.add(new Estacion(images[i],seasons[i],months[i*3],months[i*3+1],months[i*3+2]));
+            myDataset.add(new Estacion(images[i],seasons[i],buttonImages[i*3],buttonImages[i*3+1],buttonImages[i*3+2]));
         }
 
         EstacionesAdapter estacionesAdapter = new EstacionesAdapter(myDataset);

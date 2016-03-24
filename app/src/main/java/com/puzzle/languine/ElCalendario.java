@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
+import com.puzzle.languine.ui.MaterialActivity;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class ElCalendario extends AppCompatActivity {
+public class ElCalendario extends MaterialActivity {
 
     CalendarView calender;
 
@@ -24,6 +26,7 @@ public class ElCalendario extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_el_calendario);
+        setupToolbar();
 
         calender = (CalendarView) findViewById(R.id.calender);
         Calendar start = Calendar.getInstance();

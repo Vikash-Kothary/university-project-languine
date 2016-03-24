@@ -11,8 +11,9 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.puzzle.languine.R;
+import com.puzzle.languine.ui.MaterialActivity;
 
-public class Numeros3 extends AppCompatActivity {
+public class Numeros3 extends MaterialActivity {
 
     private int[] number_id = {R.id.twohundredtwo, R.id.threehundredthree, R.id.fourhundredfour,R.id.fivehundredfive, R.id.sixhundredsix,
             R.id.sevenhundredseven, R.id.eighthundredright, R.id.ninehundrednine, R.id.onethousand};
@@ -30,8 +31,7 @@ public class Numeros3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numeros3);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setupToolbar();
 
         for ( int i = 0; i < number_id.length; ++i) {
             ImageButton imageButton = (ImageButton) findViewById(number_id[i]);

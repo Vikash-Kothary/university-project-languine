@@ -10,9 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.puzzle.languine.R;
+import com.puzzle.languine.ui.MaterialActivity;
 import com.puzzle.languine.utils.IntentConts;
 
-public class Numeros extends AppCompatActivity {
+public class Numeros extends MaterialActivity {
 
     public static boolean spanish = true;
 
@@ -30,6 +32,7 @@ public class Numeros extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numeros);
+        setupToolbar();
 
         String language = getIntent().getStringExtra(IntentConts.LANGUAGE);
         if(language.equals("Mexican"))

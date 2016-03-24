@@ -9,9 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.puzzle.languine.ui.MaterialActivity;
 import com.puzzle.languine.ui.activity.ResourcesActivity;
 
-public class Numeros7 extends AppCompatActivity {
+public class Numeros7 extends MaterialActivity {
 
 
     private int[] number_id = {R.id.onedec, R.id.twodec, R.id.threedec, R.id.fourdec, R.id.fivedec, R.id.sixdec, R.id.sevendec,

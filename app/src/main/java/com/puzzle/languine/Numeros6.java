@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class Numeros6 extends AppCompatActivity {
+import com.puzzle.languine.ui.MaterialActivity;
+
+public class Numeros6 extends MaterialActivity {
 
 
     private int[] number_id = {R.id.million, R.id.twomillion, R.id.fivehundredmillion, R.id.onethousandmillion, R.id.onethousandtwohundredmillion,
@@ -27,6 +29,7 @@ public class Numeros6 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numeros6);
+        setupToolbar();
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab2);
 

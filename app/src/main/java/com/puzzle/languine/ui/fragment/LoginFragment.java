@@ -98,13 +98,13 @@ public class LoginFragment extends MaterialFragment implements View.OnClickListe
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putBoolean(PrefsConst.CONTINUE, true);
                 editor.commit();
-                askForLannguage();
+                askForLanguage();
                 finish();
                 break;
         }
     }
 
-    private void askForLannguage() {
+    private void askForLanguage() {
         if (getPrefs().getString(PrefsConst.LANGUAGE,"").equals("")) { // if no language has been selected
             startActivity(new Intent(getContext(), LanguageSelectActivity.class));
         }

@@ -44,6 +44,7 @@ public class Festividades extends MaterialActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_festividades);
+        setupToolbar();
 
 
 

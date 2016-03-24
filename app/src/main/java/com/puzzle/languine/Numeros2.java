@@ -11,8 +11,9 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.puzzle.languine.R;
+import com.puzzle.languine.ui.MaterialActivity;
 
-public class Numeros2 extends AppCompatActivity {
+public class Numeros2 extends MaterialActivity {
 
     private int[] number_id = {R.id.forty,R.id.fifty, R.id.sixty, R.id.seventy, R.id.eighty,R.id.ninety, R.id.onehundred};
 
@@ -20,17 +21,13 @@ public class Numeros2 extends AppCompatActivity {
 
     private int[] mex_audio = {R.raw.n40m, R.raw.n50m, R.raw.n60m, R.raw.n70m, R.raw.n80m, R.raw.n90m, R.raw.n100m };
 
-
-
-
     MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numeros2);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setupToolbar();
 
 
         for ( int i = 0; i < number_id.length; ++i) {

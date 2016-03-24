@@ -32,10 +32,10 @@ public class EstacionesAdapter extends RecyclerView.Adapter<EstacionesAdapter.Le
         public LessonViewHolder(View itemView) {
             super(itemView);
             seasonThumbnail = (ImageView) itemView.findViewById(R.id.thumbnail);
-            seasonTitle = (TextView)itemView.findViewById(R.id.season_title);
+            seasonTitle = (TextView) itemView.findViewById(R.id.season_title);
             month1 = (ImageButton) itemView.findViewById(R.id.month1);
-            month2 = (ImageButton)itemView.findViewById(R.id.month2);
-            month3 = (ImageButton)itemView.findViewById(R.id.month3);
+            month2 = (ImageButton) itemView.findViewById(R.id.month2);
+            month3 = (ImageButton) itemView.findViewById(R.id.month3);
         }
     }
 
@@ -47,7 +47,7 @@ public class EstacionesAdapter extends RecyclerView.Adapter<EstacionesAdapter.Le
     // Create new views (invoked by the layout manager)
     @Override
     public EstacionesAdapter.LessonViewHolder onCreateViewHolder(ViewGroup parent,
-                                                   int viewType) {
+                                                                 int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.card_view_season, parent, false);

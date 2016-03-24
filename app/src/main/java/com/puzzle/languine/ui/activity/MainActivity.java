@@ -32,9 +32,6 @@ public class MainActivity extends MaterialActivity
         //TODO: display name and email on nav drawer
         TextView name = (TextView) findViewById(R.id.name);
         TextView email = (TextView) findViewById(R.id.email);
-
-        //name.setText(ParseUser.getCurrentUser().get("name").toString());
-        //email.setText(ParseUser.getCurrentUser().getEmail());
     }
 
 
