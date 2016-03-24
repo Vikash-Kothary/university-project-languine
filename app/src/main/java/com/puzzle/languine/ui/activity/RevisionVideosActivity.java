@@ -90,7 +90,7 @@ public class RevisionVideosActivity extends MaterialActivity implements Material
         // TODO: pass moduleName into function to return array of topics
         // TODO: use position to get video id from topics array
         Intent intent = new Intent(this, VideoActivity.class);
-//        intent.putExtra(IntentConts.VIDEO_ID, videoID);
+        intent.putExtra(IntentConts.VIDEO_LINK, caching.getRevisionVideos(moduleName).get(position));
         startActivity(intent);
     }
 }
