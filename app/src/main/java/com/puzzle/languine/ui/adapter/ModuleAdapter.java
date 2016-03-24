@@ -3,12 +3,10 @@ package com.puzzle.languine.ui.adapter;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
-import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -40,6 +38,7 @@ public class ModuleAdapter extends RecyclerView.Adapter<ModuleAdapter.ModuleView
         ModuleViewHolder vh = new ModuleViewHolder(v);
         return vh;
     }
+
     public void setDrawableSize(Bitmap bitmap, ImageView view) {
 // Get current dimensions AND the desired bounding box
         int width = 0;
@@ -87,6 +86,12 @@ public class ModuleAdapter extends RecyclerView.Adapter<ModuleAdapter.ModuleView
 
             holder.textView_moduleTitle.setText(moduleData.get(position).getModuleName());
             holder.textView_moduleDescription.setText(String.format("%d%%", moduleData.get(position).getProgress()));
+//            holder.button_resume.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    onButtonClick(v, position);
+//                }
+//            });
             holder.button_introVideo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -97,14 +102,12 @@ public class ModuleAdapter extends RecyclerView.Adapter<ModuleAdapter.ModuleView
                 @Override
                 public void onClick(View v) {
                     mListener.onItemClick(v, position);
-
                 }
             });
             holder.button_exercises.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     mListener.onItemClick(v, position);
-
                 }
             });
         }
@@ -140,6 +143,7 @@ public class ModuleAdapter extends RecyclerView.Adapter<ModuleAdapter.ModuleView
             button_introVideo = (ImageButton) itemView.findViewById(R.id.intro_button);
             button_revisionVideos = (ImageButton) itemView.findViewById(R.id.revision_button);
             button_exercises = (ImageButton) itemView.findViewById(R.id.exercises_button);
+            button_resume = (ImageButton) itemView.findViewById(R.id.button_resume);
         }
     }
 

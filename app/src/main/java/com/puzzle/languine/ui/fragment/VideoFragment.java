@@ -7,7 +7,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,17 +18,16 @@ import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import com.puzzle.languine.R;
 import com.puzzle.languine.TODO.VideoSubtitles.Caption;
 import com.puzzle.languine.TODO.VideoSubtitles.FormatSRT;
 import com.puzzle.languine.TODO.VideoSubtitles.TimedTextObject;
-import com.puzzle.languine.R;
 import com.puzzle.languine.ui.MaterialFragment;
 import com.puzzle.languine.utils.IntentConts;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Collection;
 
 public class VideoFragment extends MaterialFragment implements MediaController.MediaPlayerControl, MediaPlayer.OnPreparedListener, SurfaceHolder.Callback {
@@ -56,7 +54,7 @@ public class VideoFragment extends MaterialFragment implements MediaController.M
         rootView = inflater.inflate(R.layout.fragment_video, container, false);
 
         String video_link = getArguments().getString(IntentConts.VIDEO_LINK);
-        if(video_link!=null){
+        if (video_link != null) {
             runVideo(video_link);
         }
         return rootView;
@@ -91,10 +89,17 @@ public class VideoFragment extends MaterialFragment implements MediaController.M
             }
         });
         mediaPlayer.setOnPreparedListener(this);
-        mediaPlayer.prepareAsync();
+        try {
+            mediaPlayer.prepare();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         mediaPlayer.start();
-        subAsync = (new SubtitleAsyncTask());
-        subAsync.execute(videoLink);
+        String subtitleLink = videoLink.replace(".mp4", ".srt");
+        if ((new File(subtitleLink)).exists()) {
+            subAsync = (new SubtitleAsyncTask());
+            subAsync.execute(subtitleLink);
+        }
     }
 
     @Override
@@ -178,9 +183,7 @@ public class VideoFragment extends MaterialFragment implements MediaController.M
         protected Void doInBackground(String... params) {
             try {
                 FormatSRT formatSRT = new FormatSRT();
-                System.out.println(params[0]);
-                String subtitleLink = params[0].replace(".mp4",".srt");
-                srt = formatSRT.parseFile((new File(subtitleLink)).getName(),new FileInputStream(new File(subtitleLink)));
+                srt = formatSRT.parseFile((new File(params[0])).getName(), new FileInputStream(new File(params[0])));
                 subtitleDisplayHandler.post(subtitle);
 
             } catch (Exception e) {
