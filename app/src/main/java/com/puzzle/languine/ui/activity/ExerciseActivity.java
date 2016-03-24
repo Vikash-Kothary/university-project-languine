@@ -11,6 +11,10 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+
+import android.widget.FrameLayout;
+import android.widget.GridLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -98,6 +102,7 @@ public class ExerciseActivity extends MaterialActivity implements DialogInterfac
 
     public void nextQuestionButtonClicked(View view) {
         nextButton = (Button) findViewById(R.id.next_question);
+
         currentQuestion = unitExercise.getQuestion(questionCounter);
 
         if (quizType.equals("single")) {
@@ -368,6 +373,7 @@ public class ExerciseActivity extends MaterialActivity implements DialogInterfac
     private void setUpButtonListener() {
         if (nextButton.getText().equals("NEXT")) {
             if (!quizType.equals("pictures")) {
+
                 LinearLayout possibleAnswersContainer = (LinearLayout) findViewById(R.id.possible_answers);
                 possibleAnswersContainer.removeAllViews();
             }

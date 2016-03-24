@@ -33,9 +33,12 @@ public class BlankFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.card_view_lesson, container, false);
-        lessonImageView = (ImageView)view.findViewById(R.id.thumbnail);
-//        lessonNameView = (TextView)view.findViewById(R.id.lessonTitle);
-//        progessView = (TextView)view.findViewById(R.id.progress);
+        //lessonImageView = (ImageView)view.findViewById(R.id.thumbnail);
+        lessonNameView = (TextView)view.findViewById(R.id.module_title);
+        progessView = (TextView)view.findViewById(R.id.module_description);
+        lessonImageView = (ImageView)view.findViewById(R.id.festividad_thumbnail);
+        //lessonNameView = (TextView)view.findViewById(R.id.lessonTitle);
+        //progessView = (TextView)view.findViewById(R.id.progress);
         lessonImageView.setImageResource(lessonImageID);
         lessonNameView.setText(lessonName);
         progessView.setText(String.format("%d%%", progress));
