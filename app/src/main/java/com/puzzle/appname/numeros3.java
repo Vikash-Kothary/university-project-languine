@@ -1,12 +1,14 @@
 package com.puzzle.appname;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageButton;
 
 import com.puzzle.appname.R;
 
@@ -21,12 +23,35 @@ public class Numeros3 extends AppCompatActivity {
     private int[] mex_audio = {R.raw.n202m,R.raw.n303m,R.raw.n404m, R.raw.n505m, R.raw.n606m, R.raw.n707m, R.raw.n808m,
             R.raw.n909_m, R.raw.n1000m};
 
+    MediaPlayer mediaPlayer;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numeros3);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        for ( int i = 0; i < number_id.length; ++i) {
+            ImageButton imageButton = (ImageButton) findViewById(number_id[i]);
+            final int num = i;
+            imageButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(Numeros.spanish)
+                    {
+                        mediaPlayer = MediaPlayer.create(Numeros3.this, spa_audio[num]);
+                    }
+                    else
+                    {
+                        mediaPlayer = MediaPlayer.create(Numeros3.this, mex_audio[num]);
+                    }
+                    mediaPlayer.start();
+                }
+            });
+        }
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab2);

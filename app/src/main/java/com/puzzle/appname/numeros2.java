@@ -20,6 +20,9 @@ public class Numeros2 extends AppCompatActivity {
 
     private int[] mex_audio = {R.raw.n40m, R.raw.n50m, R.raw.n60m, R.raw.n70m, R.raw.n80m, R.raw.n90m, R.raw.n100m };
 
+
+
+
     MediaPlayer mediaPlayer;
 
     @Override
@@ -36,7 +39,14 @@ public class Numeros2 extends AppCompatActivity {
             imageButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mediaPlayer = MediaPlayer.create(Numeros2.this, spa_audio[num]);
+                    if(Numeros.spanish)
+                    {
+                        mediaPlayer = MediaPlayer.create(Numeros2.this, spa_audio[num]);
+                    }
+                    else
+                    {
+                        mediaPlayer = MediaPlayer.create(Numeros2.this, mex_audio[num]);
+                    }
                     mediaPlayer.start();
                 }
             });

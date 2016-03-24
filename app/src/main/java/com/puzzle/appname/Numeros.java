@@ -16,6 +16,8 @@ import com.puzzle.appname.R;
 
 public class Numeros extends AppCompatActivity {
 
+    public static boolean spanish = true;
+
     private int[] number_id = {R.id.one, R.id.two, R.id.three, R.id.four, R.id.five, R.id.six, R.id.seven, R.id.eight, R.id.nine,
             R.id.ten, R.id.eleven, R.id.twelve, R.id.thirteen, R.id.fourteen, R.id.fifteen, R.id.sixteen, R.id.seventeen,
             R.id.eighteen, R.id.nineteen, R.id.twenty, R.id.twentyone, R.id.twentytwo, R.id.twentythree, R.id.twentyfour,
@@ -30,6 +32,17 @@ public class Numeros extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numeros);
+
+        String language = getIntent().getStringExtra(SpaMex.LANGUAGE);
+        if(language.equals("Mexican"))
+        {
+            spanish = false;
+        }
+        else
+        {
+            spanish = true;
+        }
+
         for ( int i = 0; i < number_id.length; ++i) {
             ImageButton imageButton = (ImageButton) findViewById(number_id[i]);
             final int num = i;
@@ -44,7 +57,8 @@ public class Numeros extends AppCompatActivity {
         FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab2);
         fab2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 Intent intent = new Intent(getBaseContext(), Numeros2.class);
                 startActivity(intent);
             }
