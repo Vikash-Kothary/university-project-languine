@@ -1,19 +1,13 @@
 package com.puzzle.languine;
 
-import android.media.MediaPlayer;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.RelativeLayout;
-
-import com.puzzle.languine.R;
 import com.puzzle.languine.utils.IntentConts;
 
 public class Alphabeto extends AppCompatActivity {
@@ -32,7 +26,7 @@ public class Alphabeto extends AppCompatActivity {
             R.raw.t, R.raw.u, R.raw.v, R.raw.w, R.raw.x, R.raw.y, R.raw.z};
 
     RelativeLayout layout1;
-    MediaPlayer mediaPlayer;
+    SoundPool sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,15 +46,15 @@ public class Alphabeto extends AppCompatActivity {
             imageButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    sp = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
+
                     if (Alphabeto.spanish) {
-                        System.out.println(spa_audio[num]);
-                        System.out.println(mex_audio[num]);
-                        mediaPlayer = MediaPlayer.create(Alphabeto.this, spa_audio[num]);
+                        int spid = sp.load(Alphabeto.this, spa_audio[num], 1);
+                        sp.play(spid, 1, 1, 1, 0, 1);
                     } else {
-                        mediaPlayer = MediaPlayer.create(Alphabeto.this, mex_audio[num]);
+                        int spid = sp.load(Alphabeto.this, mex_audio[num], 1);
+                        sp.play(spid, 1, 1, 1, 0, 1);
                     }
-                    if (mediaPlayer != null) mediaPlayer.start();
-                    if(mediaPlayer!=null) mediaPlayer.start();
                 }
             });
         }

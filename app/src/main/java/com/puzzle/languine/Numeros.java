@@ -1,18 +1,15 @@
 package com.puzzle.languine;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.puzzle.languine.R;
 import com.puzzle.languine.utils.IntentConts;
 
 public class Numeros extends AppCompatActivity {
@@ -27,7 +24,7 @@ public class Numeros extends AppCompatActivity {
     private int[] audio = {R.raw.n01, R.raw.n02, R.raw.n03, R.raw.n04, R.raw.n05, R.raw.n06, R.raw.n07, R.raw.n08, R.raw.n09,
             R.raw.n10, R.raw.n11, R.raw.n12, R.raw.n13, R.raw.n14, R.raw.n15, R.raw.n16, R.raw.n17, R.raw.n18,R.raw.n19, R.raw.n20, R.raw.n21,
             R.raw.n22, R.raw.n23, R.raw.n24, R.raw.n25, R.raw.n26, R.raw.n27, R.raw.n28, R.raw.n29, R.raw.n30, R.raw.n31};
-    MediaPlayer mediaPlayer;
+    SoundPool sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +47,9 @@ public class Numeros extends AppCompatActivity {
             imageButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mediaPlayer = MediaPlayer.create(Numeros.this, audio[num]);
-                    mediaPlayer.start();
+                    sp = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
+                    int spid = sp.load(Numeros.this, audio[num], 1);
+                    sp.play(spid,1,1,1,0,1);
                 }
             });
         }
