@@ -5,25 +5,33 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.puzzle.languine.R;
+import com.puzzle.languine.datamodel.Caching;
 import com.puzzle.languine.ui.MaterialActivity;
 import com.puzzle.languine.ui.MaterialRecyclerView;
 import com.puzzle.languine.ui.adapter.MenuAdapter;
-import com.puzzle.languine.ui.fragment.VideoFragment;
 import com.puzzle.languine.utils.IntentConts;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class RevisionVideosActivity extends MaterialActivity implements MaterialRecyclerView.OnItemClickListener {
-
+    private ArrayList<String> topics;
+    private static Caching caching;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_revision_videos);
-
         setupToolbar();
+        String module = getIntent().getStringExtra(IntentConts.MODULE_NAME);
+        if (caching == null) {
+            caching = new Caching();
+        }
+        topics = new ArrayList<>();
+        for (String s : caching.getRevisionVideos(module)) {
+            topics.add((new File(s)).getName());
+        }
 
-        ArrayList<String> topics = new ArrayList<>();
         MenuAdapter adapter = new MenuAdapter(topics);
         new MaterialRecyclerView(this, adapter);
 
@@ -83,7 +91,7 @@ public class RevisionVideosActivity extends MaterialActivity implements Material
         // TODO: pass moduleName into function to return array of topics
         // TODO: use position to get video id from topics array
         Intent intent = new Intent(this, VideoActivity.class);
-//        intent.putExtra(IntentConts.VIDEO_ID, videoID);
+        intent.putExtra(IntentConts.VIDEO_LINK, caching.getRevisionVideos(moduleName).get(position));
         startActivity(intent);
     }
 }

@@ -12,10 +12,8 @@ import android.view.MenuItem;
 
 import com.parse.ParseAnonymousUtils;
 import com.parse.ParseUser;
-import com.puzzle.languine.ui.activity.LoginActivity;
 import com.puzzle.languine.R;
 import com.puzzle.languine.ui.MaterialActivity;
-import com.puzzle.languine.utils.IntentConts;
 import com.puzzle.languine.utils.PrefsConst;
 
 public class MainActivity extends MaterialActivity
@@ -40,7 +38,6 @@ public class MainActivity extends MaterialActivity
             if (!getPrefs().getBoolean(PrefsConst.CONTINUE, false)) { // and not continuing without logging in
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent); // send to login screen
-                finish();
             }
         }
     }

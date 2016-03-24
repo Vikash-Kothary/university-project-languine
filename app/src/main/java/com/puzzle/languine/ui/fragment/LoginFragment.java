@@ -21,7 +21,6 @@ import com.puzzle.languine.ui.MaterialActivity;
 import com.puzzle.languine.ui.MaterialFragment;
 import com.puzzle.languine.ui.activity.LanguageSelectActivity;
 import com.puzzle.languine.ui.activity.LoginActivity;
-import com.puzzle.languine.ui.activity.MainActivity;
 import com.puzzle.languine.utils.IntentConts;
 import com.puzzle.languine.utils.PrefsConst;
 
@@ -72,7 +71,6 @@ public class LoginFragment extends MaterialFragment implements View.OnClickListe
                             Toast.makeText(getContext(),
                                     "Successfully Logged in",
                                     Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getContext(), MainActivity.class));
                             finish();
                         } else {
                             Toast.makeText(
@@ -100,7 +98,6 @@ public class LoginFragment extends MaterialFragment implements View.OnClickListe
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putBoolean(PrefsConst.CONTINUE, true);
                 editor.commit();
-                startActivity(new Intent(getContext(), MainActivity.class));
                 askForLannguage();
                 finish();
                 break;

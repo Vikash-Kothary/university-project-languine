@@ -4,12 +4,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.puzzle.languine.R;
-import com.puzzle.languine.datamodel.ModuleData;
 
 import java.util.ArrayList;
 
@@ -30,8 +27,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
                 .inflate(R.layout.module_select_card_view_simple, parent, false);
         // set the view's size, margins, paddings and layout parameters
 
-        MenuViewHolder vh = new MenuViewHolder(v);
-        return vh;
+        return new MenuViewHolder(v);
     }
 
     @Override

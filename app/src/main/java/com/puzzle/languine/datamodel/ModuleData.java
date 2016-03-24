@@ -22,17 +22,9 @@ public class ModuleData extends ArrayList<Module> {
             }
             System.out.println("Caching: " + caching.getEntry(position));
         }
-
-//        this.add(new Module(R.drawable.greetings, "Greetings"));
-//        this.add(new Module(R.drawable.checkingin, "Checking in"));
-//        this.add(new Module(R.drawable.sightseeing, "Sightseeing"));
-//        this.add(new Module(R.drawable.directions, "Directions"));
-//        this.add(new Module(R.drawable.eating, "Eating"));
-//        this.add(new Module(R.drawable.likes, "Likes"));
-//        this.add(new Module(R.drawable.planning, "Planning"));
-//        this.add(new Module(R.drawable.shopping, "Shopping"));
-//        this.add(new Module(R.drawable.dating, "Dating"));
-//        this.add(new Module(R.drawable.greetings, "Swearing"));
+        for (int i = 0; i < 6; i++) {
+            Caching.getQuestion("Greeting_Llamarse"+i);
+        }
     }
 
     public Module getModule(int index){
