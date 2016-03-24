@@ -7,6 +7,13 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.RelativeLayout;
+
+import com.puzzle.languine.R;
 import com.puzzle.languine.utils.IntentConts;
 
 public class Alphabeto extends AppCompatActivity {
@@ -53,6 +60,7 @@ public class Alphabeto extends AppCompatActivity {
                         mediaPlayer = MediaPlayer.create(Alphabeto.this, mex_audio[num]);
                     }
                     if (mediaPlayer != null) mediaPlayer.start();
+                    if(mediaPlayer!=null) mediaPlayer.start();
                 }
             });
         }
