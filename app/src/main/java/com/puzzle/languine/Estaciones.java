@@ -18,7 +18,9 @@ public class Estaciones extends MaterialActivity
 {
     private int[] images = {R.drawable.primavera,R.drawable.verana,R.drawable.otono,R.drawable.invierno};
     private String[] seasons = {"Primavera","Verano","Otoño","Invierno"};
-    private String[] months = {"marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre","enero","febrero"};
+    private int[] months = {R.drawable.march,R.drawable.april,R.drawable.may,R.drawable.june,R.drawable.july,R.drawable.august,
+                            R.drawable.september,R.drawable.october,R.drawable.november,R.drawable.december,R.drawable.january,
+                            R.drawable.february};
 
     @Override
     /**
