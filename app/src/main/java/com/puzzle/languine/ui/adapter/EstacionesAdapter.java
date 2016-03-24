@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,15 +27,15 @@ public class EstacionesAdapter extends RecyclerView.Adapter<EstacionesAdapter.Le
         // each data item is just a string in this case
         ImageView seasonThumbnail;
         TextView seasonTitle;
-        Button month1, month2, month3;
+        ImageButton month1, month2, month3;
 
         public LessonViewHolder(View itemView) {
             super(itemView);
             seasonThumbnail = (ImageView) itemView.findViewById(R.id.thumbnail);
             seasonTitle = (TextView)itemView.findViewById(R.id.season_title);
-            month1 = (Button) itemView.findViewById(R.id.month1);
-            month2 = (Button)itemView.findViewById(R.id.month2);
-            month3 = (Button)itemView.findViewById(R.id.month3);
+            month1 = (ImageButton)itemView.findViewById(R.id.month1);
+            month2 = (ImageButton)itemView.findViewById(R.id.month2);
+            month3 = (ImageButton)itemView.findViewById(R.id.month3);
         }
     }
 
@@ -63,9 +64,9 @@ public class EstacionesAdapter extends RecyclerView.Adapter<EstacionesAdapter.Le
         // - replace the contents of the view with that element
         holder.seasonThumbnail.setImageResource(mDataset.get(position).getImageID());
         holder.seasonTitle.setText(mDataset.get(position).getName());
-        holder.month1.setText(mDataset.get(position).getMonth1());
-        holder.month2.setText(mDataset.get(position).getMonth2());
-        holder.month3.setText(mDataset.get(position).getMonth3());
+        holder.month1.setImageResource(mDataset.get(position).getMonth1());
+        holder.month2.setImageResource(mDataset.get(position).getMonth2());
+        holder.month3.setImageResource(mDataset.get(position).getMonth3());
     }
 
     // Return the size of your dataset (invoked by the layout manager)

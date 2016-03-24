@@ -9,9 +9,11 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
 import com.puzzle.languine.R;
+import com.puzzle.languine.ui.MaterialActivity;
 import com.puzzle.languine.utils.IntentConts;
 
-public class Alphabeto extends AppCompatActivity {
+public class Alphabeto extends MaterialActivity
+{
 
     public static boolean spanish = true;
 

@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
+import com.puzzle.languine.ui.MaterialActivity;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class ElCalendario extends AppCompatActivity {
+public class ElCalendario extends MaterialActivity {
 
     CalendarView calender;
 

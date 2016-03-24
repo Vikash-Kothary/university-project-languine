@@ -13,9 +13,10 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.puzzle.languine.R;
+import com.puzzle.languine.ui.MaterialActivity;
 import com.puzzle.languine.utils.IntentConts;
 
-public class Numeros extends AppCompatActivity {
+public class Numeros extends MaterialActivity {
 
     public static boolean spanish = true;
 

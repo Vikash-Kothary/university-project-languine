@@ -10,8 +10,9 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.puzzle.languine.R;
+import com.puzzle.languine.ui.MaterialActivity;
 
-public class Numeros4 extends AppCompatActivity {
+public class Numeros4 extends MaterialActivity {
 
     private int[] number_id = {R.id.onethousand,R.id.twothousandtwo, R.id.threethousandthreethree, R.id.fourzerozerofour,
             R.id.fivezerofivefive, R.id.sixsixsixsix, R.id.sevensevenzeroseven, R.id.eightzeroeighteight, R.id.ninenineninenine,

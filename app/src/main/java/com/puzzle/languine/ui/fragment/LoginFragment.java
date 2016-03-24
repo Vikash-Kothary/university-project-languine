@@ -102,13 +102,13 @@ public class LoginFragment extends MaterialFragment implements View.OnClickListe
                 editor.putBoolean(PrefsConst.CONTINUE, true);
                 editor.commit();
                 startActivity(new Intent(getContext(), MainActivity.class));
-                askForLannguage();
+                askForLanguage();
                 finish();
                 break;
         }
     }
 
-    private void askForLannguage() {
+    private void askForLanguage() {
         if (getPrefs().getString(PrefsConst.LANGUAGE,"").equals("")) { // if no language has been selected
             startActivity(new Intent(getContext(), LanguageSelectActivity.class));
         }
