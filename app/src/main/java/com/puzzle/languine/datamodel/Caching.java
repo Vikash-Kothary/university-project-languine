@@ -80,6 +80,19 @@ public class Caching {
         }
     }
 
+    public ArrayList<String> getRevisionVideos(String module) {
+        ArrayList<String> tmp = new ArrayList<>();
+        File videoDir = new File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath() + "/Puzzle/Videos/");
+        File tmpDir = new File(videoDir + "/revision/" + module);
+        File[] listFiles = tmpDir.listFiles();
+        if (listFiles != null) {
+            for (File f : listFiles) {
+                tmp.add(f.getAbsolutePath());
+            }
+        }
+        return tmp;
+    }
+
     public void storeModule(Module module) {
         try {
             System.out.println("really starting to store");
@@ -210,6 +223,53 @@ public class Caching {
         }
     }
 
+    public static Question getQuestion(String name) {
+        String from = name.substring(0, name.indexOf("_"));
+        name = name.substring(name.indexOf("_") + 1, name.length());
+        File Dir = new File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath() + "/Puzzle/Videos/Revision/" + from);
+        if ((new File(Dir, name)).exists()) {
+            FileInputStream inputStream;
+            try {
+                inputStream = new FileInputStream(new File(Dir, name));
+                ObjectInputStream in;
+                in = new ObjectInputStream(inputStream);
+                questionFile tmp = (questionFile) in.readObject();
+                in.close();
+                inputStream.close();
+                System.out.println("baker: " + tmp.correctAnswers + "   " + tmp.questionText + "  " + tmp.possibleAnswers);
+                return new Question(tmp.correctAnswers, tmp.questionText, tmp.possibleAnswers);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
+    public synchronized static void storeQuestion(Question question, String name) {
+        String from = name.substring(0, name.indexOf("_"));
+        name = name.substring(name.indexOf("_") + 1, name.length());
+        File Dir = new File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath() + "/Puzzle/Videos/Revision/" + from);
+
+        if (!(new File(Dir, name)).exists()) {
+            FileOutputStream outputStream;
+            try {
+                (new File(Dir.getAbsolutePath())).mkdirs();
+                outputStream = new FileOutputStream(new File(Dir, name));
+                ObjectOutputStream out;
+                out = new ObjectOutputStream(outputStream);
+                questionFile qf = new questionFile();
+                qf.possibleAnswers = question.getPossibleAnswers();
+                qf.correctAnswers = question.getCorrectAnswers();
+                qf.questionText = question.getQuestionText();
+                out.writeObject(qf);
+                out.flush();
+                out.close();
+                outputStream.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     public int getFileNameSize() {
         getFileNames();

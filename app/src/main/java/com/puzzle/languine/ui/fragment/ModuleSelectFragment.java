@@ -46,6 +46,7 @@ public class ModuleSelectFragment extends MaterialFragment implements ModuleAdap
                 break;
             case R.id.revision_button:
                 intent = new Intent(getContext(), RevisionVideosActivity.class);
+
                 break;
             case R.id.exercises_button:
                 intent = new Intent(getContext(), ExerciseMenuActivity.class);

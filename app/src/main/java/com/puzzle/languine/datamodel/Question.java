@@ -1,7 +1,5 @@
 package com.puzzle.languine.datamodel;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -17,6 +15,12 @@ public class Question {
     public Question() {
         possibleAnswers = new ArrayList<>();
         correctAnswers = new ArrayList<>();
+    }
+
+    public Question(ArrayList<String> correctAnswers, String questionText, ArrayList<String> possibleAnswers) {
+        this.correctAnswers = correctAnswers;
+        this.questionText = questionText;
+        this.possibleAnswers = possibleAnswers;
     }
 
     public void addPossibleAnswers(String answers) {
@@ -84,4 +88,5 @@ public class Question {
     }
 
     public ArrayList<String> getCorrectAnswers() { return correctAnswers; }
+
 }

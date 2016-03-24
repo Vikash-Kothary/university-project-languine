@@ -99,13 +99,39 @@ public class ContentPull {
             @Override
             public void run() {
                 for (CDAEntry entry : getEntryFromContentType(modules)) {
-                        System.out.println(entry.getField("subtitle").toString());
+                    System.out.println(entry.getField("subtitle").toString());
 
-                        Caching.storeSubtitlesStream(entry.getField("subtitle").toString(),entry.getField("moduleName").toString());
+                    Caching.storeSubtitlesStream(entry.getField("subtitle").toString(), entry.getField("moduleName").toString());
                 }
             }
         }).start();
     }
+    static int k = 0;
+    private synchronized void getTestQuestions() {
+        final CDAContentType modules = getContentType("textQuestions");
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                for (CDAEntry entry : getEntryFromContentType(modules)) {
+                    System.out.println("baker: " + entry.getField("module").toString() + ": " + entry.getField("question"));
+                    Question q = new Question();
+                    q.setQuestionText(entry.getField("question").toString());
+                    ArrayList<String> array = entry.getField("correctAnswer");
+                    for (int i = 0; i < array.size(); i++) {
+                        q.addCorrectAnswers(array.get(i));
+                    }
+                    array = entry.getField("allPossibleAnswers");
+                    for (int i = 0; i < array.size(); i++) {
+                        q.addPossibleAnswers(array.get(i));
+                    }
+                    Caching.storeQuestion(q, entry.getField("module").toString() + k);
+                    ++k;
+                }
+            }
+        }).start();
+    }
+
 
     private void getModuleRevisionVideos() {
         final CDAContentType modules = getContentType("modules");
@@ -118,7 +144,7 @@ public class ContentPull {
                         for (int i = 0; i < revisionVideos.size(); i++) {
                             System.out.println((((CDAAsset) revisionVideos.get(i))).url());
                             URL url = new URL("http:" + ((revisionVideos.get(i)).url()));
-                            Caching.storeVideoStream("Revision/" + entry.getField("moduleName").toString(), String.valueOf(i), url);
+                            Caching.storeVideoStream("Revision/" + entry.getField("moduleName").toString(), (revisionVideos.get(i)).title(), url);
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -155,6 +181,7 @@ public class ContentPull {
         getModuleIntroVideos();
         getModuleRevisionVideos();
         getModuleIntroVideosSubtitles();
+        getTestQuestions();
     }
 
     private static class ContentTypeWrapper {

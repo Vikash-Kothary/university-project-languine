@@ -29,45 +29,45 @@ public class MainClassTest {
 
     @Test
     public void LockScreen() {
-        onView(withId(R.id.card_list)).check(ViewAssertions.matches(isDisplayed()));
         onView(withContentDescription("Open navigation drawer")).perform(click());
         //open new activity
-        onView(withText("Lock Screen")).perform(click());
+        onView(withText("Sign In")).perform(click());
         onView(withId(R.id.login_form)).check(ViewAssertions.matches(isDisplayed()));
         onView(withId(R.id.email_login_form)).check(ViewAssertions.matches(isDisplayed()));
         //test for fail
-        //onView(withId(R.id.email)).check(ViewAssertions.matches(isDisplayed()));
-        //onView(withId(R.id.email)).perform(typeText("cake"), closeSoftKeyboard());
-        onView(withId(R.id.password)).check(ViewAssertions.matches(isDisplayed()));
-        onView(withId(R.id.password)).perform(typeText("bak"), closeSoftKeyboard());
-        //onView(withId(R.id.sign_in)).check(ViewAssertions.matches(isDisplayed()));
-        //onView(withId(R.id.sign_in)).perform(click());
-        onView(withId(R.id.card_list)).check(ViewAssertions.doesNotExist());
+        onView(withId(R.id.edit_text_username)).check(ViewAssertions.matches(isDisplayed()));
+        onView(withId(R.id.edit_text_username)).perform(typeText("cake"), closeSoftKeyboard());
+        onView(withId(R.id.edit_text_password)).check(ViewAssertions.matches(isDisplayed()));
+        onView(withId(R.id.edit_text_password)).perform(typeText("bak"), closeSoftKeyboard());
+        onView(withId(R.id.button_sign_in)).check(ViewAssertions.matches(isDisplayed()));
+        onView(withId(R.id.button_sign_in)).perform(click());
         //test for pass
-        //onView(withId(R.id.email)).perform(clearText(),typeText("cake@baker"), closeSoftKeyboard());
-        onView(withId(R.id.password)).perform(clearText(),typeText("bakes"), closeSoftKeyboard());
-        //onView(withId(R.id.sign_in)).perform(click());
-        onView(withId(R.id.card_list)).check(ViewAssertions.matches(isDisplayed()));
+        onView(withId(R.id.edit_text_username)).perform(clearText(), typeText("cake@bake.com"), closeSoftKeyboard());
+        onView(withId(R.id.edit_text_password)).perform(clearText(), typeText("soup"), closeSoftKeyboard());
+        onView(withText("Sign In")).perform(click());
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
-    public void Credits(){
-        onView(withId(R.id.card_list)).check(ViewAssertions.matches(isDisplayed()));
+    public void Credits() {
         onView(withContentDescription("Open navigation drawer")).perform(click());
         onView(withId(R.id.nav_view)).perform(swipeUp());
         onView(withText("Credits")).perform(click());
         onView(withText(R.string.credits_text)).check(ViewAssertions.matches(isDisplayed()));
     }
 
-    @Test
-    public void ExerciseMenu(){
-        onView(withId(R.id.card_list)).check(ViewAssertions.matches(isDisplayed()));
-        onView(withContentDescription("Open navigation drawer")).perform(click());
-        onView(withText("Exercise Menu")).perform(click());
-        onView(withText("Observe")).check(ViewAssertions.matches(isDisplayed()));
-        onView(withText("Reflect")).check(ViewAssertions.matches(isDisplayed()));
-        onView(withText("Experiment")).check(ViewAssertions.matches(isDisplayed()));
-    }
+//    @Test
+//    public void ExerciseMenu(){
+//        onView(withContentDescription("Open navigation drawer")).perform(click());
+//        onView(withText("Exercise Menu")).perform(click());
+//        onView(withText("Observe")).check(ViewAssertions.matches(isDisplayed()));
+//        onView(withText("Reflect")).check(ViewAssertions.matches(isDisplayed()));
+//        onView(withText("Experiment")).check(ViewAssertions.matches(isDisplayed()));
+//    }
 //
 //    @Test
 //    public void AudioQuiz(){
@@ -90,11 +90,16 @@ public class MainClassTest {
 //        onView(withText("Picture Questions")).perform(click());
 //    }
 
-//    @Test
-//    public void QuizIntroduction(){
-//        onView(withId(R.id.card_list)).check(ViewAssertions.matches(isDisplayed()));
-//        onView(withContentDescription("Open navigation drawer")).perform(click());
-//        onView(withId(R.id.nav_view)).perform(swipeUp());
-//        onView(withText("Quiz Introduction")).perform(click());
-//    }
+    @Test
+     public void Glossery(){
+        onView(withContentDescription("Open navigation drawer")).perform(click());
+        onView(withId(R.id.nav_view)).perform(swipeUp());
+        onView(withText("Glossary")).perform(click());
+    }
+    @Test
+    public void Resources(){
+        onView(withContentDescription("Open navigation drawer")).perform(click());
+        onView(withId(R.id.nav_view)).perform(swipeUp());
+        onView(withText("Resources")).perform(click());
+    }
 }
