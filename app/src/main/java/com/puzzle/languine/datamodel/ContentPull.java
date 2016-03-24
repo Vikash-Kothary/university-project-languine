@@ -20,6 +20,7 @@ public class ContentPull {
     private CDAClient client;
     private ArrayList<ContentTypeWrapper> tmp;
     private List<CDAResource> items;
+    // the file used to store things "Cache" them
     private Caching caching = new Caching();
 
     /**
