@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder> {
     private ArrayList<String> menuData;
 
+
     public MenuAdapter(ArrayList<String> moduleData) {
         this.menuData = moduleData;
     }
