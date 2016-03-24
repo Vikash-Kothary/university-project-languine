@@ -13,7 +13,7 @@
         android:background="@color/cardview_shadow_end_color">
 
         <ImageView
-            android:id="@+id/thumbnail"
+            android:id="@+id/festividad_thumbnail"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_alignParentTop="true"
@@ -25,7 +25,7 @@
             android:id="@+id/module_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/thumbnail"
+            android:layout_below="@+id/festividad_thumbnail"
             android:maxLines="3"
             android:padding="8dp"
             android:text="Hello"

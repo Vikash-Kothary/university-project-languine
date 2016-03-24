@@ -36,6 +36,9 @@ public class BlankFragment extends Fragment {
         lessonImageView = (ImageView)view.findViewById(R.id.thumbnail);
         lessonNameView = (TextView)view.findViewById(R.id.module_title);
         progessView = (TextView)view.findViewById(R.id.module_description);
+        lessonImageView = (ImageView)view.findViewById(R.id.festividad_thumbnail);
+        //lessonNameView = (TextView)view.findViewById(R.id.lessonTitle);
+        //progessView = (TextView)view.findViewById(R.id.progress);
         lessonImageView.setImageResource(lessonImageID);
         lessonNameView.setText(lessonName);
         progessView.setText(String.format("%d%%", progress));

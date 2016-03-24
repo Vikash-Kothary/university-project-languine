@@ -12,6 +12,8 @@ import java.util.Arrays;
 
 public class SpaMex extends AppCompatActivity {
 
+    public static final String LANGUAGE = "Language";
+
     ArrayList<Integer> SpaMaxImages;
     ArrayList<String> SpaMaxNames;
 
@@ -28,7 +30,6 @@ public class SpaMex extends AppCompatActivity {
         setupRecyclerView();
 
     }
-
 
     private void setupRecyclerView() {
         RecyclerView cardList = (RecyclerView) findViewById(R.id.languages_1);
@@ -51,24 +52,20 @@ public class SpaMex extends AppCompatActivity {
         cardList.addOnItemTouchListener(
                 new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
-                    public void onItemClick(View view, int position) {
-                        if (resourceNumber == 0) {
-                            Intent intent = new Intent(getBaseContext(), Alphabeto.class);
-                            startActivity(intent);
-                        } else if(resourceNumber == 1) {
-                            Intent intent = new Intent(getBaseContext(), Numeros.class);
-                            startActivity(intent);
+                    public void onItemClick(View view, int position)
+                    {
+                        Intent intent = new Intent(getBaseContext(), Festividades.class);
+                        if(position == 0)
+                        {
+                            intent.putExtra(LANGUAGE,"Spanish");
                         }
                         else
                         {
-                            Intent intent = new Intent(getBaseContext(), Festividades.class);
-                            startActivity(intent);
+                            intent.putExtra(LANGUAGE,"Mexican");
                         }
-
-
+                        startActivity(intent);
                     }
                 })
         );
-
     }
 }
