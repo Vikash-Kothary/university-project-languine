@@ -9,8 +9,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.puzzle.appname.ui.activity.LanguageSelectActivity"
-    tools:showIn="@layout/activity_language_select">
+    tools:context="com.puzzle.languine.ui.activity.LanguageSelectActivity"
+    tools:showIn="@layout/language_select_activity">
 
     <ImageView
         android:layout_width="200dp"
@@ -18,8 +18,7 @@
         android:id="@+id/spanish_image"
         android:layout_above="@+id/spanish_text"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/spain_flag"
-        android:onClick="flag"/>
+        android:src="@drawable/spain_flag"/>
 
     <TextView
         android:layout_width="wrap_content"

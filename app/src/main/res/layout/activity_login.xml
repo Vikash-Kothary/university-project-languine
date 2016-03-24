@@ -76,7 +76,7 @@
         </GridLayout>
 
     <ImageButton
-        android:id="@+id/main_sign_in"
+        android:id="@+id/button_sign_in"
         style="?android:textAppearanceSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
         android:paddingTop="40dp" />
 
     <ImageButton
-        android:id="@+id/register"
+        android:id="@+id/button_register"
         style="?android:textAppearanceSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
         android:adjustViewBounds="true" />
 
     <ImageButton
-        android:id="@+id/continuewithout"
+        android:id="@+id/button_continue"
         style="?android:textAppearanceSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

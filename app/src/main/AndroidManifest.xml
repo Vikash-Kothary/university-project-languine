@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.puzzle.appname">
+    package="com.puzzle.languine">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -10,23 +10,19 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".ParseApplication"
+        android:name="com.puzzle.languine.ParseApplication"
         android:allowBackup="true"
         android:icon="@drawable/logo1"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
-
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
-
         <activity
-            android:name=".ui.activity.LessonSelectActivity"
+            android:name=".ui.activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -35,112 +31,105 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".ExerciseMenuActivity"
-            android:label="@string/title_activity_exercise_menu"
-            android:parentActivityName=".ui.activity.LessonSelectActivity"
+            android:name=".ui.activity.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:parentActivityName=".ui.activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.activity.LessonSelectActivity" />
+                android:value="com.puzzle.languine.ui.activity.MainActivity" />
         </activity>
-        <activity
-            android:name=".ExerciseActivity"
-            android:label="@string/title_activity_exercise"
-            android:parentActivityName=".ExerciseMenuActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.puzzle.appname.ExerciseMenuActivity" />
-        </activity>
+
         <activity
             android:name=".ui.activity.CreditsActivity"
             android:label="@string/title_activity_credits"
-            android:parentActivityName=".ui.activity.LessonSelectActivity"
+            android:parentActivityName=".ui.activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.activity.LessonSelectActivity" />
+                android:value="com.puzzle.languine.ui.activity.MainActivity" />
         </activity>
+
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login"
-            android:parentActivityName=".ui.activity.LessonSelectActivity"
+            android:name=".ui.activity.ExerciseActivity"
+            android:label="@string/title_activity_exercise"
+            android:parentActivityName="com.puzzle.languine.ui.activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.activity.LessonSelectActivity" />
+                android:value="com.puzzle.languine.ui.activity.MainActivity" />
         </activity>
+
         <activity
-            android:name=".AudioQuiz"
-            android:label="@string/title_activity_content_audio_quiz"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".QuizIntroActivity"
-            android:label="@string/title_activity_quiz"
-            android:parentActivityName=".ui.activity.LessonSelectActivity"
+            android:name=".ui.activity.ResultActivity"
+            android:label="@string/title_activity_result"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.activity.LessonSelectActivity" />
+                android:value="com.puzzle.languine.ui.activity.MainActivity" />
         </activity>
+
         <activity
-            android:name=".ResultActivity"
-            android:label="@string/title_activity_review"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.activity.LessonSelectActivity" />
-        </activity>
-        <activity
-            android:name=".ui.activity.LanguageSelectActivity"
+            android:name="com.puzzle.languine.ui.activity.LanguageSelectActivity"
             android:label="@string/title_activity_language_select"
-            android:parentActivityName=".ui.activity.LessonSelectActivity"
+            android:parentActivityName="com.puzzle.languine.ui.activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.activity.LessonSelectActivity" />
+                android:value="com.puzzle.languine.ui.activity.MainActivity" />
         </activity>
+
         <activity
-            android:name=".VideoActivity"
-            android:label="@string/title_activity_video"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ui.activity.GlossaryActivity"
+            android:name="com.puzzle.languine.ui.activity.GlossaryActivity"
             android:label="@string/title_activity_glossary"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".ui.activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.MainActivity" />
+        </activity>
+
         <activity
-            android:name=".GetStarted"
+            android:name=".ui.activity.VideoActivity"
             android:label="@string/title_activity_get_started"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".ui.activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.MainActivity" />
+        </activity>
+
         <activity
-            android:name=".Exercises"
-            android:label="@string/title_activity_exercises"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Experiment"
+            android:name=".ui.activity.ExerciseMenuActivity"
             android:label="@string/title_activity_experiment"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".ui.activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.MainActivity" />
+        </activity>
+
         <activity
-            android:name=".Vocabulario"
+            android:name="com.puzzle.languine.Vocabulario"
             android:label="@string/title_activity_vocabulario"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".ui.activity.ExerciseMenuActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.ExerciseMenuActivity" />
+        </activity>
+
         <activity
-            android:name=".RevisionVideos"
+            android:name=".ui.activity.RevisionVideosActivity"
             android:label="@string/title_activity_revision_videos"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".RevisionVideoView"
-            android:label="@string/title_activity_revision_video_view"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Register"
-            android:label="@string/title_activity_register"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".ui.activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.MainActivity" />
+        </activity>
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -149,28 +138,112 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".LoginSignUpActivity" />
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Welcome"></activity>
+        <activity android:name="com.puzzle.languine.Welcome"></activity>
+
+        <activity android:name=".ui.activity.ResourcesActivity"
+            android:label="@string/title_resources"
+            android:parentActivityName=".ui.activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.languine.ui.activity.MainActivity" />
+        </activity>
 
         <activity
-            android:name=".AudioRecordTest"
-            android:label="@string/title_activity_audio_record_test"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".cake.SwipePager"></activity>
+            android:name="com.puzzle.languine.LaHora"
+            android:label="@string/title_la_hora"
+            android:parentActivityName=".ui.activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.languine.ui.activity.MainActivity" />
+        </activity>
 
-        <activity android:name=".Resources" />
-        <activity android:name=".LaHora" />
-        <activity android:name=".LosDias" />
-        <activity android:name=".Alphabeto" />
-        <activity android:name=".Numeros" />
-        <activity android:name=".SpaMex" />
-        <activity android:name=".ElCalendario" />
-        <activity android:name=".Festividades" />
-        <activity android:name=".Estaciones"></activity>
+        <activity
+            android:name="com.puzzle.languine.LosDias"
+            android:label="@string/title_los_dias"
+            android:parentActivityName=".ui.activity.ResourcesActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.languine.ui.activity.ResourcesActivity" />
+        </activity>
+
+        <activity
+            android:name="com.puzzle.languine.Alphabeto"
+            android:label="@string/title_alphabeto"
+            android:parentActivityName=".ui.activity.ResourcesActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.languine.ui.activity.ResourcesActivity" />
+        </activity>
+
+        <activity
+            android:name="com.puzzle.languine.Numeros"
+            android:label="@string/title_numeros"
+            android:parentActivityName=".ui.activity.ResourcesActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.languine.ui.activity.ResourcesActivity" />
+        </activity>
+
+        <activity android:name="com.puzzle.languine.SpaMex" />
+
+        <activity
+            android:name="com.puzzle.languine.ElCalendario"
+            android:label="@string/title_calendario"
+            android:parentActivityName=".ui.activity.ResourcesActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.languine.ui.activity.ResourcesActivity" />
+        </activity>
+
+        <activity
+            android:name="com.puzzle.languine.Festividades"
+            android:label="@string/title_festividades"
+            android:parentActivityName=".ui.activity.ResourcesActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.languine.ui.activity.ResourcesActivity" />
+        </activity>
+
+        <activity
+            android:name="com.puzzle.languine.Estaciones"
+            android:label="@string/title_estaciones"
+            android:parentActivityName=".ui.activity.ResourcesActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.puzzle.languine.ui.activity.ResourcesActivity" />
+        </activity>
+
+        <activity
+            android:name="com.puzzle.languine.Numeros2"
+            android:label="@string/title_activity_numeros2"
+            android:parentActivityName=".ui.activity.ResourcesActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".numeros3"
+            android:label="@string/title_activity_numeros3"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Numeros4" />
+        <activity android:name=".numeros5" />
+        <activity android:name=".numeros6" />
+        <activity android:name=".numeros7"></activity>
+
+        <activity
+            android:name=".ReviewActivity"
+            android:label="@string/title_activity_review"
+            android:parentActivityName=".ExerciseMenuActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ExerciseMenuActivity" />
+        </activity>
     </application>
 
 </manifest>

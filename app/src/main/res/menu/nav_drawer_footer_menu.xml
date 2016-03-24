@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- TODO: replace icons -->
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_resources" android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Resources" />
+        <item android:id="@+id/nav_glossary" android:icon="@android:drawable/ic_menu_gallery"
+            android:title="Glossary" />
+        <item android:id="@+id/nav_credits" android:icon="@android:drawable/ic_menu_share"
+            android:title="Credits" />
+        <item android:id="@+id/nav_sign_in" android:icon="@android:drawable/ic_menu_directions"
+            android:title="Sign In" />
+        <item android:id="@+id/nav_log_out" android:icon="@android:drawable/ic_menu_directions"
+            android:title="Log out"
+            android:visible="false"/>
+    </group>
+
+</menu>

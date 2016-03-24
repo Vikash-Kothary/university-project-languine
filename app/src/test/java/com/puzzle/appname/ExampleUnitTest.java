@@ -1,4 +1,4 @@
-package com.puzzle.appname;
+package com.puzzle.languine;
 
 import org.junit.Test;
 

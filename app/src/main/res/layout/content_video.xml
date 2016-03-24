@@ -4,12 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_video" tools:context="com.puzzle.appname.VideoActivity">
+    tools:showIn="@layout/activity_video" tools:context="com.puzzle.languine.VideoActivity">
 
     <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.puzzle.appname.VideoFragment"
+        android:name="com.puzzle.languine.ui.fragment.VideoFragment"
         android:id="@+id/fragment2"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
