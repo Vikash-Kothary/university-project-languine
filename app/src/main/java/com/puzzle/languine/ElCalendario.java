@@ -26,6 +26,7 @@ public class ElCalendario extends MaterialActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_el_calendario);
+        setupToolbar();
 
         calender = (CalendarView) findViewById(R.id.calender);
         Calendar start = Calendar.getInstance();

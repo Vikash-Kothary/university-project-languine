@@ -17,6 +17,7 @@ public class LosDias extends MaterialActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_los_dias);
+        setupToolbar();
 
         /*for ( int i = 0; i < number_id.length; ++i) {
             ImageButton imageButton = (ImageButton) findViewById(number_id[i]);

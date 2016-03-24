@@ -41,6 +41,7 @@ public class Festividades extends MaterialActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_festividades);
+        setupToolbar();
 
         TextView pageTitle = (TextView) findViewById(R.id.festividad_title);
         language = getIntent().getStringExtra(IntentConts.LANGUAGE);

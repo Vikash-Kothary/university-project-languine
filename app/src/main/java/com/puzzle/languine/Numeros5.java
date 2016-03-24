@@ -30,6 +30,7 @@ public class Numeros5 extends MaterialActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numeros5);
+        setupToolbar();
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab2);
 

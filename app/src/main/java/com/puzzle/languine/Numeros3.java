@@ -31,8 +31,7 @@ public class Numeros3 extends MaterialActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numeros3);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setupToolbar();
 
         for ( int i = 0; i < number_id.length; ++i) {
             ImageButton imageButton = (ImageButton) findViewById(number_id[i]);

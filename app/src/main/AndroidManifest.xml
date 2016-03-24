@@ -197,21 +197,21 @@
             android:parentActivityName=".ui.activity.ResourcesActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".numeros3"
+            android:name=".Numeros3"
             android:label="@string/title_activity_numeros3"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Numeros4" />
-        <activity android:name=".numeros5" />
-        <activity android:name=".numeros6" />
-        <activity android:name=".numeros7" />
+        <activity android:name=".Numeros5" />
+        <activity android:name=".Numeros6" />
+        <activity android:name=".Numeros7" />
         <activity
             android:name=".ReviewActivity"
             android:label="@string/title_activity_review"
-            android:parentActivityName=".ExerciseMenuActivity"
+            android:parentActivityName=".ResultActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ExerciseMenuActivity" />
+                android:value=".ResultActivity" />
         </activity>
         <activity
             android:name=".ui.activity.ExerciseActivity"

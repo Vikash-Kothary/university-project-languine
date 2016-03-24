@@ -550,10 +550,10 @@
     <string name="title_activity_language_select">Select a Language</string>
     <string name="title_activity_glossary">Glossary</string>
     <string name="title_activity_media_player">MediaPlayer</string>
-    <string name="title_activity_get_started">GetStarted</string>
+    <string name="title_activity_get_started">Introductory Video</string>
     <string name="title_activity_exercises">Exercises</string>
     <string name="title_activity_video">VideoActivity</string>
-    <string name="title_activity_experiment">Experiment</string>
+    <string name="title_activity_experiment">Exercises</string>
     <string name="title_activity_vocabulario">Vocabulario</string>
     <string name="title_activity_revision_videos">RevisionVideos</string>
     <string name="title_activity_revision_video_view">RevisionVideoView</string>

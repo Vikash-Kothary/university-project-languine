@@ -34,6 +34,7 @@ public class Numeros extends MaterialActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numeros);
+        setupToolbar();
 
         String language = getIntent().getStringExtra(IntentConts.LANGUAGE);
         if(language.equals("Mexican"))
