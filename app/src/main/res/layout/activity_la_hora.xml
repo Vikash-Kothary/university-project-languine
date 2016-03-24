@@ -7,6 +7,43 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.puzzle.appname.LaHora">
+    tools:context="com.puzzle.languine.Estaciones">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Qué hora es?"
+            android:layout_gravity="center_horizontal"
+            android:textSize="25dp"
+            android:paddingBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selecciona las barras y esucha y observa como se dice la hora."
+            android:layout_gravity="center_horizontal"
+            android:textSize="18dp"
+            android:paddingBottom="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click in each tab to listen and learn how to tell the time."
+            android:layout_gravity="center_horizontal"
+            android:textSize="18dp"
+            android:paddingBottom="10dp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/card_list"
+            android:scrollbars="vertical" />
+
+    </LinearLayout>
 
 </RelativeLayout>

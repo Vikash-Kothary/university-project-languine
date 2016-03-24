@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.puzzle.appname.PictureQuestionFragment"
+    tools:context="com.puzzle.languine.ui.fragment.PictureQuestionFragment"
     android:weightSum="1">
 
     <TextView

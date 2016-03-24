@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.puzzle.appname.ui.fragment.AudioQuizFragment">
+    tools:context="com.puzzle.languine.ui.fragment.AudioQuizFragment">
 
 
     <android.support.design.widget.AppBarLayout

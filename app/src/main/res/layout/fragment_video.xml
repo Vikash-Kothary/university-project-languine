@@ -2,29 +2,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
-    tools:context="com.puzzle.appname.VideoFragment">
+    tools:context="com.puzzle.languine.ui.fragment.VideoFragment">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:paddingTop="100dp">
 
         <TextView
+            android:id="@+id/txtSubtitles"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/txtSubtitles"
             android:layout_gravity="center_horizontal"
-            />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
         <VideoView
-        android:id="@+id/videoView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        />
+            android:id="@+id/videoView"
+            android:layout_width="wrap_content"
+            android:layout_height="240dp"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
-
-
 
 
 </FrameLayout>
