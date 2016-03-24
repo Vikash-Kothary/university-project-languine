@@ -38,4 +38,11 @@ public class ModuleData extends ArrayList<Module> {
     public Module getModule(int index){
         return this.get(index);
     }
+    public Module getModule(String moduleName){
+        for(Module module:this){
+            if(module.getModuleName().equals(moduleName))
+                return module;
+        }
+        return null;
+    }
 }

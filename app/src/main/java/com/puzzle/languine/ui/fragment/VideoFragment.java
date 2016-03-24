@@ -26,7 +26,10 @@ import com.puzzle.languine.R;
 import com.puzzle.languine.ui.MaterialFragment;
 import com.puzzle.languine.utils.IntentConts;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Collection;
 
 public class VideoFragment extends MaterialFragment implements MediaController.MediaPlayerControl, MediaPlayer.OnPreparedListener, SurfaceHolder.Callback {
@@ -36,10 +39,10 @@ public class VideoFragment extends MaterialFragment implements MediaController.M
     private SurfaceHolder sh;
     private SubtitleAsyncTask subAsync;
 
-    public static VideoFragment newInstance(int whichVideo) {
+    public static VideoFragment newInstance(String videoLink) {
         VideoFragment fragment = new VideoFragment();
         Bundle args = new Bundle();
-        args.putInt(IntentConts.VIDEO_ID, whichVideo);
+        args.putString(IntentConts.VIDEO_LINK, videoLink);
         fragment.setArguments(args);
         return fragment;
     }
@@ -52,14 +55,14 @@ public class VideoFragment extends MaterialFragment implements MediaController.M
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_video, container, false);
 
-        int video_id = getArguments().getInt(IntentConts.VIDEO_ID, 0);
-        if(video_id!=0){
-            runVideo(video_id);
+        String video_link = getArguments().getString(IntentConts.VIDEO_LINK);
+        if(video_link!=null){
+            runVideo(video_link);
         }
         return rootView;
     }
 
-    public void runVideo(int whichVideo) {
+    public void runVideo(String videoLink) {
         videoView = (VideoView) findViewById(R.id.videoView);
         TextView txtDisplay = (TextView) findViewById(R.id.txtSubtitles);
         txtDisplay.setVisibility(View.INVISIBLE);
@@ -69,7 +72,7 @@ public class VideoFragment extends MaterialFragment implements MediaController.M
         final MediaController mediaController = new MediaController(super.getContext());
         mediaPlayer = new MediaPlayer();
         try {
-            mediaPlayer.setDataSource(this.getContext(), Uri.parse("android.resource://" + getContext().getPackageName() + "/" + whichVideo));
+            mediaPlayer.setDataSource(this.getContext(), Uri.fromFile(new File(videoLink)));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -91,7 +94,7 @@ public class VideoFragment extends MaterialFragment implements MediaController.M
         mediaPlayer.prepareAsync();
         mediaPlayer.start();
         subAsync = (new SubtitleAsyncTask());
-        subAsync.execute();
+        subAsync.execute(videoLink);
     }
 
     @Override
@@ -169,13 +172,15 @@ public class VideoFragment extends MaterialFragment implements MediaController.M
         mediaPlayer.pause();
     }
 
-    public class SubtitleAsyncTask extends AsyncTask<Void, Void, Void> {
+    public class SubtitleAsyncTask extends AsyncTask<String, Void, Void> {
 
         @Override
-        protected Void doInBackground(Void... params) {
+        protected Void doInBackground(String... params) {
             try {
                 FormatSRT formatSRT = new FormatSRT();
-                srt = formatSRT.parseFile(getResources().getResourceName(R.raw.subsu01), getResources().openRawResource(R.raw.subsu01));
+                System.out.println(params[0]);
+                String subtitleLink = params[0].replace(".mp4",".srt");
+                srt = formatSRT.parseFile((new File(subtitleLink)).getName(),new FileInputStream(new File(subtitleLink)));
                 subtitleDisplayHandler.post(subtitle);
 
             } catch (Exception e) {

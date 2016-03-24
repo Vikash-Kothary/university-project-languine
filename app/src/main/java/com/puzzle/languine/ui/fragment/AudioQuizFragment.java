@@ -2,42 +2,31 @@ package com.puzzle.languine.ui.fragment;
 
 import android.content.Context;
 import android.media.MediaPlayer;
-import android.media.MediaRecorder;
 import android.os.Bundle;
-import android.os.Environment;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.SeekBar;
-import android.widget.TextView;
 
 import com.puzzle.languine.R;
-import com.puzzle.languine.Sounds;
 import com.puzzle.languine.datamodel.Exercise;
 import com.puzzle.languine.datamodel.Question;
-import com.puzzle.languine.ui.MaterialActivity;
 import com.puzzle.languine.ui.MaterialFragment;
 import com.puzzle.languine.utils.IntentConts;
 
-import java.io.File;
 import java.util.ArrayList;
 
-public class AudioQuizFragment extends MaterialFragment
-{
+public class AudioQuizFragment extends MaterialFragment {
     /**
      * The fragment argument representing the section number for this
      * fragment.
      */
-    private static final String ARG_AUDIO_ID = "audio_id";
     private ExerciseData mExercise;
 
-    public Sounds sounds;
+    public MediaPlayer player;
     public SeekBar seekBar;
     private Button playSoundButton;
     private ArrayList<CheckBox> checkBoxes;
@@ -45,17 +34,17 @@ public class AudioQuizFragment extends MaterialFragment
     public static AudioQuizFragment newInstance(int audioID, int questionCounter) {
         AudioQuizFragment fragment = new AudioQuizFragment();
         Bundle args = new Bundle();
-        args.putInt(AudioQuizFragment.ARG_AUDIO_ID, audioID);
+        args.putInt(IntentConts.AUDIO_ID, audioID);
         fragment.setArguments(args);
         return fragment;
     }
 
-    public AudioQuizFragment() {}
+    public AudioQuizFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState)
-    {
+                             Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_audio_quiz, container, false);
 
         createAudioQuiz();
@@ -63,16 +52,15 @@ public class AudioQuizFragment extends MaterialFragment
         return rootView;
     }
 
-    private void createAudioQuiz()
-    {
+    private void createAudioQuiz() {
         seekBar = (SeekBar) getActivity().findViewById(R.id.seekBar);
         playSoundButton = (Button) getActivity().findViewById(R.id.play_button);
 
         playSoundButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!sounds.mySound.isPlaying()) {
-                    sounds.mySound.start();
+                if (!player.isPlaying()) {
+                    player.start();
                 }
             }
         });
@@ -82,7 +70,7 @@ public class AudioQuizFragment extends MaterialFragment
         ArrayList<String> answers = mExercise.getQuestion().getPossibleAnswers();
         checkBoxes = new ArrayList<>();
 
-        for(String answer: answers) {
+        for (String answer : answers) {
             CheckBox box = new CheckBox(getContext());
             box.setText(answer);
             possibleAnswers.addView(box);
@@ -111,14 +99,16 @@ public class AudioQuizFragment extends MaterialFragment
 
     public interface ExerciseData {
         Question getQuestion();
+
         Exercise getExercise();
+
         Question getCurrentQuestion();
     }
 
     public void initiateBar() {
-        seekBar.setMax(sounds.mySound.getDuration());
-        while (sounds.mySound.isPlaying()) {
-            seekBar.setProgress(sounds.mySound.getCurrentPosition());
+        seekBar.setMax(player.getDuration());
+        while (player.isPlaying()) {
+            seekBar.setProgress(player.getCurrentPosition());
         }
     }
 }

@@ -1,8 +1,0 @@
-spanishInstructions
-englishInstructions
-typeOfQuiz (audio, pictures, multiple, single)
-number of quiestions
-FOR EACH QUESTION:
-question
-right answer (possibly more)
-all possible answers
