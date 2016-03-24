@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -55,9 +56,13 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         // each data item is just a string in this case
         public TextView textView_moduleTitle;
 
+
+
+
         public MenuViewHolder(View itemView) {
             super(itemView);
             textView_moduleTitle = (TextView) itemView.findViewById(R.id.text_view_module_title);
+
         }
     }
 
