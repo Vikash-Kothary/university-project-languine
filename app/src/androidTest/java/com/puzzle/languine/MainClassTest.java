@@ -32,7 +32,6 @@ public class MainClassTest {
         onView(withContentDescription("Open navigation drawer")).perform(click());
         //open new activity
         onView(withText("Sign In")).perform(click());
-        onView(withId(R.id.login_form)).check(ViewAssertions.matches(isDisplayed()));
         onView(withId(R.id.email_login_form)).check(ViewAssertions.matches(isDisplayed()));
         //test for fail
         onView(withId(R.id.edit_text_username)).check(ViewAssertions.matches(isDisplayed()));
@@ -101,5 +100,11 @@ public class MainClassTest {
         onView(withContentDescription("Open navigation drawer")).perform(click());
         onView(withId(R.id.nav_view)).perform(swipeUp());
         onView(withText("Resources")).perform(click());
+        onView(withText("El Alphabeto")).perform(click());
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
