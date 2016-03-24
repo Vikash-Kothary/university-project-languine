@@ -39,30 +39,26 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <Button
+                    <ImageButton
                         android:layout_width="124sp"
                         android:layout_weight="1"
                         android:layout_height="31dp"
                         android:scaleType="fitXY"
                         android:paddingLeft="5dp"
-                        android:id="@+id/month1" />
+                        android:id="@+id/month1"
+                        android:background="#00ffffff"/>
 
-                    <!--android:src="@drawable/revision"
-                        android:background="#00ffffff"-->
-
-                    <Button
+                    <ImageButton
                         android:layout_width="124sp"
                         android:layout_weight="1"
                         android:layout_height="31dp"
                         android:scaleType="fitXY"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
-                        android:id="@+id/month2" />
+                        android:id="@+id/month2"
+                        android:background="#00ffffff"/>
 
-                    <!--android:src="@drawable/exercises"
-                    android:background="#00ffffff"-->
-
-                    <Button
+                    <ImageButton
                         android:layout_width="124sp"
                         android:layout_weight="1"
                         android:layout_height="31dp"
@@ -70,10 +66,8 @@
                         android:layout_gravity="bottom"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
-                        android:id="@+id/month3" />
-
-                    <!--android:src="@drawable/intro"
-                    android:background="#00ffffff"-->
+                        android:id="@+id/month3"
+                        android:background="#00ffffff"/>
 
                 </LinearLayout>
 
