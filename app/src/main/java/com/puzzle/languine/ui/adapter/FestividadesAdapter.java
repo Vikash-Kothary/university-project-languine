@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,17 +25,19 @@ public class FestividadesAdapter extends RecyclerView.Adapter<FestividadesAdapte
 // you provide access to all the views for a data item in a view holder
     public static class LessonViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        ImageView festividadThumbnail;
+        ImageButton festividadThumbnail;
         TextView date;
         TextView spanishName;
         TextView englishName;
 
+
         public LessonViewHolder(View itemView) {
             super(itemView);
-            festividadThumbnail = (ImageView) itemView.findViewById(R.id.festividad_thumbnail);
+            festividadThumbnail = (ImageButton) itemView.findViewById(R.id.festividad_thumbnail);
             date = (TextView) itemView.findViewById(R.id.date);
             spanishName = (TextView) itemView.findViewById(R.id.spanish_name);
             englishName = (TextView) itemView.findViewById(R.id.english_name);
+
 
         }
 
@@ -64,6 +67,12 @@ public class FestividadesAdapter extends RecyclerView.Adapter<FestividadesAdapte
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.festividadThumbnail.setImageResource(mDataset.get(position).getImageID());
+        holder.festividadThumbnail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         holder.date.setText(mDataset.get(position).date());
         holder.spanishName.setText(mDataset.get(position).getSpanishName());
         holder.englishName.setText(mDataset.get(position).getEnglishName());

@@ -21,6 +21,7 @@ import java.util.Arrays;
 public class ResourcesActivity extends MaterialActivity implements MaterialRecyclerView.OnItemClickListener {
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

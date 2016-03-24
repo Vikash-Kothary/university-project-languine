@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ImageView
+        <ImageButton
             android:id="@+id/festividad_thumbnail"
             android:layout_width="251dp"
             android:layout_height="251dp"
@@ -85,14 +85,6 @@
             </LinearLayout>
 
         </RelativeLayout>
-
-        <ImageButton
-            android:layout_width="fill_parent"
-            android:layout_height="45dp"
-            android:src="@drawable/resume"
-            android:background="#00ffffff"
-            android:scaleType="fitXY"
-            android:visibility="gone"/>
 
         <LinearLayout
             android:layout_width="match_parent"

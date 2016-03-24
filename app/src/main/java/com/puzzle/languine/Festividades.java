@@ -1,11 +1,13 @@
 package com.puzzle.languine;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.puzzle.languine.datamodel.Festividad;
@@ -26,6 +28,7 @@ public class Festividades extends MaterialActivity {
     private int[] mex_sound = {R.raw.h01_m, R.raw.h02_m,R.raw.h03_m, R.raw.h04_m, R.raw.h05_m, R.raw.h06_m, R.raw.h07_m, R.raw.h08_m, R.raw.h09_m, R.raw.h10_m};
 
 
+    public static boolean spanish = true;
     private String language;
 
     private String[] dates = {"Uno de enero","Seis de enero", "Marzo o abril", "Uno de mayo", "25 de julio", "12 de octubre", "Uno de noviembre", "Seis de diciembre", "Ocho de diciembre", "25 de diciembre"};
@@ -41,6 +44,8 @@ public class Festividades extends MaterialActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_festividades);
+
+
 
         TextView pageTitle = (TextView) findViewById(R.id.festividad_title);
         language = getIntent().getStringExtra(IntentConts.LANGUAGE);
