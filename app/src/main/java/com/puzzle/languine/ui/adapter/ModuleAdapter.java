@@ -1,15 +1,20 @@
 package com.puzzle.languine.ui.adapter;
 
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.puzzle.languine.R;
 import com.puzzle.languine.datamodel.ModuleData;
+import com.puzzle.languine.ui.MaterialActivity;
 
 /**
  * Created by Vikash Kothary on 15-Mar-16.
@@ -33,38 +38,80 @@ public class ModuleAdapter extends RecyclerView.Adapter<ModuleAdapter.ModuleView
         ModuleViewHolder vh = new ModuleViewHolder(v);
         return vh;
     }
+    public void setDrawableSize(Bitmap bitmap, ImageView view) {
+// Get current dimensions AND the desired bounding box
+        int width = 0;
+        width = bitmap.getWidth();
+
+        int height = bitmap.getHeight();
+        int bounding = dpToPx(250);
+
+        // Determine how much to scale: the dimension requiring less scaling is
+        // closer to the its side. This way the image always stays inside your
+        // bounding box AND either x/y axis touches it.
+        float xScale = ((float) bounding) / width;
+        float yScale = ((float) bounding) / height;
+        float scale = (xScale <= yScale) ? xScale : yScale;
+
+        // Create a matrix for the scaling and add the scaling data
+        Matrix matrix = new Matrix();
+        matrix.postScale(scale, scale);
+
+        // Create a new bitmap and convert it to a format understood by the ImageView
+        Bitmap scaledBitmap = Bitmap.createBitmap(bitmap, 0, 0, width, height, matrix, true);
+        width = scaledBitmap.getWidth(); // re-use
+        height = scaledBitmap.getHeight(); // re-use
+        BitmapDrawable result = new BitmapDrawable(scaledBitmap);
+
+        // Apply the scaled bitmap
+        view.setImageDrawable(result);
+
+        // Now change ImageView's dimensions to match the scaled image
+        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) view.getLayoutParams();
+        params.width = width;
+        params.height = height;
+        view.setLayoutParams(params);
+    }
+
+    private int dpToPx(int dp) {
+        float density = MaterialActivity.density;
+        return Math.round((float) dp * density);
+    }
 
     @Override
     public void onBindViewHolder(ModuleViewHolder holder, final int position) {
-        holder.imageView_picture.setImageResource(moduleData.get(position).getImageID());
-        holder.textView_moduleTitle.setText(moduleData.get(position).getModuleName());
-        holder.textView_moduleDescription.setText(moduleData.get(position).getProgress() + "%");
-        holder.button_resume.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onButtonClick(v, position);
-            }
-        });
-        holder.button_introVideo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mListener.onItemClick(v, position);
+        if (moduleData.get(position) != null) {
+            setDrawableSize(moduleData.get(position).getImageBitmap(), holder.imageView_picture);
 
-            }
-        });
-        holder.button_revisionVideos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mListener.onItemClick(v, position);
-            }
-        });
-        holder.button_exercises.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mListener.onItemClick(v, position);
+            holder.textView_moduleTitle.setText(moduleData.get(position).getModuleName());
+            holder.textView_moduleDescription.setText(String.format("%d%%", moduleData.get(position).getProgress()));
+            holder.button_resume.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onButtonClick(v, position);
+                }
+            });
+            holder.button_introVideo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mListener.onItemClick(v, position);
+                }
+            });
+            holder.button_revisionVideos.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mListener.onItemClick(v, position);
 
-            }
-        });
+                }
+            });
+            holder.button_exercises.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mListener.onItemClick(v, position);
+
+                }
+            });
+        }
     }
 
     @Override

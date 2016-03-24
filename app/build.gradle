@@ -51,4 +51,6 @@ dependencies {
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
     compile 'com.parse.bolts:bolts-android:1.+'
     compile 'com.parse:parse-android:1.+'
+    compile 'com.parse:parse-android:1.+'
+    compile 'com.contentful.java:java-sdk:4.0.2'
 }

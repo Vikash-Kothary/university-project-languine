@@ -1,29 +1,33 @@
 package com.puzzle.languine.datamodel;
 
-import com.puzzle.languine.R;
+import android.graphics.Bitmap;
+
+import java.util.ArrayList;
 
 /**
  * Created by Vikash Kothary on 15-Mar-16.
  */
 public class Module {
-    private int imageID;
+    private Bitmap imageBitmap;
+    private String videoLink;
     private String moduleName;
     private String moduleDescription;
+    private ArrayList<String> revisionVideos = new ArrayList<>();
     private int moduleProgress;
 
     public Module() {
         init();
     }
 
-    public Module(int imageID, String moduleName) {
+    public Module(Bitmap imageBitmap, String moduleName) {
         init();
-        this.imageID = imageID;
+        this.imageBitmap = imageBitmap;
         this.moduleName = moduleName;
     }
 
-    public Module(int imageID, String moduleName, int progress) {
+    public Module(String moduleName,Bitmap imageBitmap , int progress) {
         init();
-        this.imageID = imageID;
+        this.imageBitmap = imageBitmap;
         this.moduleName = moduleName;
         setProgress(progress);
     }
@@ -34,18 +38,9 @@ public class Module {
     }
 
     private void init() {
-        this.imageID = R.mipmap.ic_launcher;
         this.moduleName = "Module Name";
         this.moduleDescription = "Module Description";
         setProgress(0);
-    }
-
-    public int getImageID() {
-        return imageID;
-    }
-
-    public void setImageID(int imageID) {
-        this.imageID = imageID;
     }
 
     public String getModuleName() {
@@ -66,5 +61,37 @@ public class Module {
         }
         this.moduleProgress = progress;
         return true;
+    }
+
+    public Bitmap getImageBitmap() {
+        return imageBitmap;
+    }
+
+    public void setImageBitmap(Bitmap imageBitmap) {
+        this.imageBitmap = imageBitmap;
+    }
+
+    @Override
+    public String toString() {
+        return "Module{" +
+                ", moduleName='" + moduleName + '\'' +
+                ", moduleDescription='" + moduleDescription + '\'' +
+                ", moduleProgress=" + moduleProgress +
+                '}';
+    }
+
+    public String getVideoLink() {
+        return videoLink;
+    }
+
+    public void setVideoLink(String videoLink) {
+        this.videoLink = videoLink;
+    }
+
+    public ArrayList<String> getRevisionVideos() {
+        return revisionVideos;
+    }
+    public void addRevisionVideos(String url) {
+        revisionVideos.add(url);
     }
 }

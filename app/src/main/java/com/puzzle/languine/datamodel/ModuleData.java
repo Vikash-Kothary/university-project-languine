@@ -8,16 +8,20 @@ import java.util.ArrayList;
 public class ModuleData extends ArrayList<Module> {
 
     public ModuleData(){
-        this.add(new Module("Greetings"));
-        this.add(new Module("Checking in"));
-        this.add(new Module("Sightseeing"));
-        this.add(new Module("Directions"));
-        this.add(new Module("Eating"));
-        this.add(new Module("Likes"));
-        this.add(new Module("Planning"));
-        this.add(new Module("Shopping"));
-        this.add(new Module("Dating"));
-        this.add(new Module("Swearing"));
+        Caching caching = new Caching();
+        System.out.println("starting Caching");
+        for (int position = 0; position < caching.getFileNameSize(); position++) {
+            if (caching.getEntries().size() <= position) {
+                this.add(caching.getEntry(position));
+            } else {
+                if (caching.getEntries().get(position) != null) {
+                    this.add(caching.getEntries().get(position));
+                } else {
+                    this.add(caching.getEntry(position));
+                }
+            }
+            System.out.println("Caching: " + caching.getEntry(position));
+        }
 
 //        this.add(new Module(R.drawable.greetings, "Greetings"));
 //        this.add(new Module(R.drawable.checkingin, "Checking in"));

@@ -1,6 +1,5 @@
 package com.puzzle.languine.ui;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
@@ -11,8 +10,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -23,7 +20,7 @@ import com.puzzle.languine.R;
  * Created by Vikash Kothary on 14-Mar-16.
  */
 public class MaterialActivity extends AppCompatActivity {
-
+    public static float density;
     private Toolbar toolbar = null;
     private NavigationView navigationViewFooter = null;
     private SharedPreferences prefs=null;
@@ -36,6 +33,7 @@ public class MaterialActivity extends AppCompatActivity {
     }
 
     protected void setupToolbar() {
+        density =getApplicationContext().getResources().getDisplayMetrics().density;;
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {
             setSupportActionBar(toolbar);
