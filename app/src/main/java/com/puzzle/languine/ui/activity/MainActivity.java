@@ -9,6 +9,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.parse.ParseAnonymousUtils;
 import com.parse.ParseUser;
@@ -17,6 +18,8 @@ import com.puzzle.languine.R;
 import com.puzzle.languine.ui.MaterialActivity;
 import com.puzzle.languine.utils.IntentConts;
 import com.puzzle.languine.utils.PrefsConst;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends MaterialActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -31,7 +34,11 @@ public class MainActivity extends MaterialActivity
         setupNavigationalDrawer(null);
 
         //TODO: display name and email on nav drawer
+        TextView name = (TextView) findViewById(R.id.name);
+        TextView email = (TextView) findViewById(R.id.email);
 
+        //name.setText(ParseUser.getCurrentUser().get("name").toString());
+        //email.setText(ParseUser.getCurrentUser().getEmail());
     }
 
 
@@ -44,9 +51,6 @@ public class MainActivity extends MaterialActivity
             }
         }
     }
-
-
-
 
     @Override
     protected void setupNavigationalDrawer(NavigationView.OnNavigationItemSelectedListener listener) {
@@ -101,23 +105,4 @@ public class MainActivity extends MaterialActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main_menu, menu);
-//        return true;
-//    }
-
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        switch (item.getItemId()){
-//            case R.id.action_settings:
-//                return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
 }

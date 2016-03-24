@@ -3,6 +3,8 @@ package com.puzzle.languine;
 import android.support.test.espresso.assertion.ViewAssertions;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.puzzle.languine.ui.activity.MainActivity;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,7 +25,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 public class MainClassTest {
 
     @Rule
-    public final ActivityRule<LessonSelectActivity> main = new ActivityRule<>(LessonSelectActivity.class);
+    public final ActivityRule<MainActivity> main = new ActivityRule<>(MainActivity.class);
 
     @Test
     public void LockScreen() {
@@ -34,17 +36,17 @@ public class MainClassTest {
         onView(withId(R.id.login_form)).check(ViewAssertions.matches(isDisplayed()));
         onView(withId(R.id.email_login_form)).check(ViewAssertions.matches(isDisplayed()));
         //test for fail
-        onView(withId(R.id.email)).check(ViewAssertions.matches(isDisplayed()));
-        onView(withId(R.id.email)).perform(typeText("cake"), closeSoftKeyboard());
+        //onView(withId(R.id.email)).check(ViewAssertions.matches(isDisplayed()));
+        //onView(withId(R.id.email)).perform(typeText("cake"), closeSoftKeyboard());
         onView(withId(R.id.password)).check(ViewAssertions.matches(isDisplayed()));
         onView(withId(R.id.password)).perform(typeText("bak"), closeSoftKeyboard());
-        onView(withId(R.id.sign_in)).check(ViewAssertions.matches(isDisplayed()));
-        onView(withId(R.id.sign_in)).perform(click());
+        //onView(withId(R.id.sign_in)).check(ViewAssertions.matches(isDisplayed()));
+        //onView(withId(R.id.sign_in)).perform(click());
         onView(withId(R.id.card_list)).check(ViewAssertions.doesNotExist());
         //test for pass
-        onView(withId(R.id.email)).perform(clearText(),typeText("cake@baker"), closeSoftKeyboard());
+        //onView(withId(R.id.email)).perform(clearText(),typeText("cake@baker"), closeSoftKeyboard());
         onView(withId(R.id.password)).perform(clearText(),typeText("bakes"), closeSoftKeyboard());
-        onView(withId(R.id.sign_in)).perform(click());
+        //onView(withId(R.id.sign_in)).perform(click());
         onView(withId(R.id.card_list)).check(ViewAssertions.matches(isDisplayed()));
     }
 

@@ -19,4 +19,5 @@ public class IntentConts
     public static final String REVIEW = "review";
     public static final String AUDIO_ID = "audio_id";
     public static final String VIDEO_LINK = "video_link";
+    public static final String RESOURCE_NUM = "recource_number";
 }

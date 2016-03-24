@@ -40,14 +40,14 @@ public class ModuleSelectFragment extends MaterialFragment implements ModuleAdap
     public void onItemClick(View view, int position) {
         Intent intent=null;
         switch (view.getId()){
-            case R.id.button_intro_video:
+            case R.id.intro_button:
                 System.out.println("Intro");
                 intent = new Intent(getContext(), VideoActivity.class);
                 break;
-            case R.id.button_revision_videos:
+            case R.id.revision_button:
                 intent = new Intent(getContext(), RevisionVideosActivity.class);
                 break;
-            case R.id.button_exercises:
+            case R.id.exercises_button:
                 intent = new Intent(getContext(), ExerciseMenuActivity.class);
                 break;
             default: // if card clicked

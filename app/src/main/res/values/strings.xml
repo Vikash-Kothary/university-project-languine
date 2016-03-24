@@ -634,4 +634,10 @@
     <string name="title_calendario">El Calendario</string>
     <string name="title_festividades">Festividades</string>
     <string name="title_resources">Resources</string>
+    <string name="title_activity_numeros2">Numeros2</string>
+    <string name="title_activity_numeros3">Numeros3</string>
+    <string name="title_activity_numeros4">Numeros4</string>
+    <string name="title_activity_numeros5">Numeros5</string>
+    <string name="title_activity_numeros6">Numeros6</string>
+    <string name="title_activity_numeros7">Numeros7</string>
 </resources>

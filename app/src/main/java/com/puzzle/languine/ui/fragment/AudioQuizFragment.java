@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 
@@ -28,7 +29,7 @@ public class AudioQuizFragment extends MaterialFragment {
 
     public MediaPlayer player;
     public SeekBar seekBar;
-    private Button playSoundButton;
+    private ImageButton playSoundButton;
     private ArrayList<CheckBox> checkBoxes;
 
     public static AudioQuizFragment newInstance(int audioID, int questionCounter) {
@@ -54,12 +55,12 @@ public class AudioQuizFragment extends MaterialFragment {
 
     private void createAudioQuiz() {
         seekBar = (SeekBar) getActivity().findViewById(R.id.seekBar);
-        playSoundButton = (Button) getActivity().findViewById(R.id.play_button);
-
+        playSoundButton = (ImageButton) getActivity().findViewById(R.id.play_button);
         playSoundButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!player.isPlaying()) {
+                if (!player.isPlaying())
+                {
                     player.start();
                 }
             }

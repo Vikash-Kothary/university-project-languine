@@ -3,11 +3,13 @@ package com.puzzle.languine.ui.adapter;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
+import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -32,7 +34,7 @@ public class ModuleAdapter extends RecyclerView.Adapter<ModuleAdapter.ModuleView
     public ModuleAdapter.ModuleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.module_select_card_view, parent, false);
+                .inflate(R.layout.card_view_lesson, parent, false);
         // set the view's size, margins, paddings and layout parameters
 
         ModuleViewHolder vh = new ModuleViewHolder(v);
@@ -85,12 +87,6 @@ public class ModuleAdapter extends RecyclerView.Adapter<ModuleAdapter.ModuleView
 
             holder.textView_moduleTitle.setText(moduleData.get(position).getModuleName());
             holder.textView_moduleDescription.setText(String.format("%d%%", moduleData.get(position).getProgress()));
-            holder.button_resume.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onButtonClick(v, position);
-                }
-            });
             holder.button_introVideo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -131,20 +127,19 @@ public class ModuleAdapter extends RecyclerView.Adapter<ModuleAdapter.ModuleView
         public ImageView imageView_picture;
         public TextView textView_moduleTitle;
         public TextView textView_moduleDescription;
-        public Button button_resume;
-        public Button button_introVideo;
-        public Button button_revisionVideos;
-        public Button button_exercises;
+        public ImageButton button_resume;
+        public ImageButton button_introVideo;
+        public ImageButton button_revisionVideos;
+        public ImageButton button_exercises;
 
         public ModuleViewHolder(View itemView) {
             super(itemView);
-            imageView_picture = (ImageView) itemView.findViewById(R.id.image_view_module_picture);
-            textView_moduleTitle = (TextView) itemView.findViewById(R.id.text_view_module_title);
-            textView_moduleDescription = (TextView) itemView.findViewById(R.id.text_view_module_description);
-            button_resume = (Button) itemView.findViewById(R.id.button_resume);
-            button_introVideo = (Button) itemView.findViewById(R.id.button_intro_video);
-            button_revisionVideos = (Button) itemView.findViewById(R.id.button_revision_videos);
-            button_exercises = (Button) itemView.findViewById(R.id.button_exercises);
+            imageView_picture = (ImageView) itemView.findViewById(R.id.thumbnail);
+            textView_moduleTitle = (TextView) itemView.findViewById(R.id.module_title);
+            textView_moduleDescription = (TextView) itemView.findViewById(R.id.module_description);
+            button_introVideo = (ImageButton) itemView.findViewById(R.id.intro_button);
+            button_revisionVideos = (ImageButton) itemView.findViewById(R.id.revision_button);
+            button_exercises = (ImageButton) itemView.findViewById(R.id.exercises_button);
         }
     }
 

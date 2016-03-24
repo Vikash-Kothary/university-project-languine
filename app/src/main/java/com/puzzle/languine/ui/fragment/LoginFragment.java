@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
@@ -40,15 +41,15 @@ public class LoginFragment extends MaterialFragment implements View.OnClickListe
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.login_fragment, container, false);
+        rootView = inflater.inflate(R.layout.activity_login, container, false);
 
         ((MaterialActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
-        editText_username = (EditText) findViewById(R.id.edit_text_username);
-        editText_password = (EditText) findViewById(R.id.edit_text_password);
-        Button button_login = (Button) findViewById(R.id.button_sign_in);
-        Button button_register = (Button) findViewById(R.id.button_register);
-        Button button_continue = (Button) findViewById(R.id.button_continue);
+        editText_username = (EditText) findViewById(R.id.username);
+        editText_password = (EditText) findViewById(R.id.password);
+        ImageButton button_login = (ImageButton) findViewById(R.id.button_sign_in);
+        ImageButton button_register = (ImageButton) findViewById(R.id.button_register);
+        ImageButton button_continue = (ImageButton) findViewById(R.id.button_continue);
 
         button_login.setOnClickListener(this);
         button_register.setOnClickListener(this);

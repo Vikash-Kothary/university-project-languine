@@ -222,6 +222,20 @@
         </activity>
 
         <activity
+            android:name="com.puzzle.languine.Numeros2"
+            android:label="@string/title_activity_numeros2"
+            android:parentActivityName=".ui.activity.ResourcesActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".numeros3"
+            android:label="@string/title_activity_numeros3"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Numeros4" />
+        <activity android:name=".numeros5" />
+        <activity android:name=".numeros6" />
+        <activity android:name=".numeros7"></activity>
+
+        <activity
             android:name=".ReviewActivity"
             android:label="@string/title_activity_review"
             android:parentActivityName=".ExerciseMenuActivity"

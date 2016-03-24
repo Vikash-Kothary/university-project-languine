@@ -25,7 +25,7 @@
                 android:layout_alignParentLeft="true">
 
                 <TextView
-                    android:id="@+id/season_title"
+                    android:id="@+id/module_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:maxLines="1"
@@ -39,7 +39,7 @@
                     android:id="@+id/module_description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/season_title"
+                    android:layout_below="@+id/date"
                     android:maxLines="3"
                     android:padding="8dp"
                     android:text="World"
@@ -57,22 +57,36 @@
                 android:src="@mipmap/ic_launcher"
                 android:layout_alignParentRight="true"
                 android:padding="@dimen/activity_horizontal_margin"
-                android:paddingRight="5dp" />
+                android:paddingRight="5dp"
+                android:layout_alignParentBottom="true" />
 
         </RelativeLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/button_resume"
+        <ImageButton
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:src="@drawable/resume"
+            android:background="#00ffffff"
+            android:scaleType="fitXY"
             android:visibility="gone"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="57dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3"
             >
+
+            <ImageButton
+                    android:layout_width="124sp"
+                android:layout_weight="1"
+                    android:layout_height="31dp"
+                    android:src="@drawable/intro"
+                    android:scaleType="fitXY"
+                    android:background="#00ffffff"
+                android:layout_gravity="bottom"
+                android:paddingRight="5dp"
+                android:id="@+id/intro_button" />
 
             <ImageButton
                 android:layout_width="124sp"
@@ -82,7 +96,8 @@
                 android:background="#00ffffff"
                 android:scaleType="fitXY"
                 android:layout_gravity="bottom|right"
-                android:paddingLeft="5dp" />
+                android:paddingLeft="5dp"
+                android:id="@+id/revision_button" />
 
             <ImageButton
                     android:layout_width="124sp"
@@ -93,17 +108,9 @@
                     android:background="#00ffffff"
                 android:layout_gravity="center_horizontal|bottom"
                 android:paddingLeft="5dp"
-                android:paddingRight="5dp" />
+                android:paddingRight="5dp"
+                android:id="@+id/exercises_button" />
 
-            <ImageButton
-                    android:layout_width="124sp"
-                android:layout_weight="1"
-                    android:layout_height="31dp"
-                    android:src="@drawable/intro"
-                    android:scaleType="fitXY"
-                    android:background="#00ffffff"
-                android:layout_gravity="bottom"
-                android:paddingRight="5dp" />
         </LinearLayout>
 
     </LinearLayout>
