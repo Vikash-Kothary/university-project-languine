@@ -24,6 +24,8 @@ public class LaHora extends MaterialActivity
         setupToolbar();
 
         setupRecyclerView();
+
+        addFragment(new com.puzzle.languine.RecordingToolFragment());
     }
 
     private void setupRecyclerView()

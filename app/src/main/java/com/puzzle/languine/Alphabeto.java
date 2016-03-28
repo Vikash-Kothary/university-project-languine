@@ -61,5 +61,6 @@ public class Alphabeto extends MaterialActivity
                 }
             });
         }
+        addFragment(new com.puzzle.languine.RecordingToolFragment());
     }
 }

@@ -34,6 +34,8 @@ public class Estaciones extends MaterialActivity
         setupToolbar();
 
         setupRecyclerView();
+
+        addFragment(new com.puzzle.languine.RecordingToolFragment());
     }
 
     private void setupRecyclerView()

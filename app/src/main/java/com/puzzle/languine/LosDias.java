@@ -33,7 +33,7 @@ public class LosDias extends MaterialActivity {
                 }
             });
         }
-
+        addFragment(new com.puzzle.languine.RecordingToolFragment());
     }
 
 }
