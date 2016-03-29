@@ -27,11 +27,36 @@ public class RevisionVideosActivity extends MaterialActivity implements Material
         if (caching == null) {
             caching = new Caching();
         }
-        topics = new ArrayList<>();
-        for (String s : caching.getRevisionVideos(module)) {
-            topics.add((new File(s)).getName());
+
+        ArrayList<String> videoNamesList = new ArrayList<>();
+        ArrayList<Integer> videoNamesImages = new ArrayList<>();
+
+        String videoNames = getResources().getString(R.string.video_names);
+        String[] videoNamesPerUnit = videoNames.split(": ");
+        String[] revisionNames = null;
+
+        for(int i = 0; i < videoNamesPerUnit.length; ++i)
+        {
+            if(videoNamesPerUnit[i].startsWith(module))
+            {
+                revisionNames = videoNamesPerUnit[i].split(", ");
+            }
         }
-        MenuAdapter adapter = new MenuAdapter(topics);
+
+        ArrayList<String> videoCardNames = new ArrayList<>();
+
+        for(int i = 2; i < revisionNames.length; ++i)
+        {
+            String[] exerciseDetails = revisionNames[i].split(";");
+            videoCardNames.add(exerciseDetails[0]);
+            videoNamesImages.add(getResources().getIdentifier(exerciseDetails[1],"drawable",getPackageName()));
+        }
+
+        topics = new ArrayList<>();
+        for (int i = 0; i < caching.getRevisionVideos(module).size(); ++i) {
+            topics.add(videoCardNames.get(i));
+        }
+        MenuAdapter adapter = new MenuAdapter(topics, videoNamesImages);
         new MaterialRecyclerView(this, adapter);
 
 //        RecyclerView cardList = (RecyclerView) findViewById(R.id.card_list);

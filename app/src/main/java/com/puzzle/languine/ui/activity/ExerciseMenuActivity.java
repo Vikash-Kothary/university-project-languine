@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class ExerciseMenuActivity extends MaterialActivity implements MaterialRecyclerView.OnItemClickListener
 {
     private ArrayList<String> exerciseList;
+    private ArrayList<Integer> imagesList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -30,6 +31,7 @@ public class ExerciseMenuActivity extends MaterialActivity implements MaterialRe
         setupToolbar();
 
         exerciseList = new ArrayList<>();
+        imagesList = new ArrayList<>();
         String moduleName = getIntent().getStringExtra(IntentConts.MODULE_NAME);
 
         String exerciseNames = getResources().getString(R.string.lesson_names);
@@ -46,10 +48,12 @@ public class ExerciseMenuActivity extends MaterialActivity implements MaterialRe
 
         for(int i = 3; i < quizNames.length; ++i)
         {
-            exerciseList.add(quizNames[i].split(";")[0]);
+            String[] exerciseDetails = quizNames[i].split(";");
+            exerciseList.add(exerciseDetails[0]);
+            imagesList.add(getResources().getIdentifier(exerciseDetails[1],"drawable",getPackageName()));
         }
 
-        MenuAdapter adapter = new MenuAdapter(exerciseList);
+        MenuAdapter adapter = new MenuAdapter(exerciseList, imagesList);
         new MaterialRecyclerView(this, adapter);
     }
 
