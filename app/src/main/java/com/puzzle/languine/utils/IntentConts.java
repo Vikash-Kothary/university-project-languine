@@ -22,4 +22,6 @@ public class IntentConts
     public static final String RESOURCE_NUM = "recource_number";
     public static final String QUIZ_TITLE = "Quiz-title";
     public static final String LESSON_NUMBER = "lesson";
+    public static final String QUIZ_SCORE = "score";
+    public static final String MAX_SCORE = "max";
 }

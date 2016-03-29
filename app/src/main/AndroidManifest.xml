@@ -52,7 +52,7 @@
                 android:value="com.puzzle.languine.ui.activity.MainActivity" />
         </activity>
         <activity
-            android:name=".ui.activity.ExerciseActivityOld"
+            android:name=".ui.activity.ExerciseActivity"
             android:label="@string/title_activity_exercise"
             android:parentActivityName=".ui.activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

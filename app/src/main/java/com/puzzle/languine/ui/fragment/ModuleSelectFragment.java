@@ -2,6 +2,7 @@ package com.puzzle.languine.ui.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +40,8 @@ public class ModuleSelectFragment extends MaterialFragment implements ModuleAdap
     @Override
     public void onItemClick(View view, int position) {
         Intent intent=null;
-        switch (view.getId()){
+        switch (view.getId())
+        {
             case R.id.intro_button:
                 System.out.println("Intro");
                 intent = new Intent(getContext(), VideoActivity.class);
@@ -56,6 +58,9 @@ public class ModuleSelectFragment extends MaterialFragment implements ModuleAdap
         }
         if(intent!=null){
             intent.putExtra(IntentConts.MODULE_NAME, moduleData.getModule(position).getModuleName());
+            int lessonNumber = 9-position;
+            intent.putExtra(IntentConts.LESSON_NUMBER, ""+lessonNumber);
+            Log.e("NULL","FIRST PASS: " + intent.getStringExtra(IntentConts.LESSON_NUMBER));
             startActivity(intent);
         }
     }

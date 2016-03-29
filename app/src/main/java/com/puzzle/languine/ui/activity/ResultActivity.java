@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.puzzle.languine.R;
 import com.puzzle.languine.ui.MaterialActivity;
+import com.puzzle.languine.ui.fragment.ResultExerciseFragment;
 import com.puzzle.languine.utils.IntentConts;
 
 public class ResultActivity extends MaterialActivity {
@@ -17,7 +18,7 @@ public class ResultActivity extends MaterialActivity {
 
         setupToolbar();
 
-        setContentView(R.layout.fragment_result_exercise);
+        addFragment(new ResultExerciseFragment());
 //        computeScores();
     }
 
@@ -26,21 +27,4 @@ public class ResultActivity extends MaterialActivity {
         i.putExtra(IntentConts.REVIEW, getIntent().getStringExtra(IntentConts.REVIEW));
         startActivity(i);
     }
-
-//    private void computeScores() {
-//        TextView scoreText = (TextView) findViewById(R.id.score_tv);
-//        TextView passingScoreText = (TextView) findViewById(R.id.passing_tv);
-//        TextView resultText = (TextView) findViewById(R.id.result_text);
-//
-//        int score = Integer.parseInt(getIntent().getStringExtra(ExerciseActivity.SCORE));
-//        int totalPossibleScore = Integer.parseInt(getIntent().getStringExtra(ExerciseActivity.TOTAL_POSS_SCORE));
-//        double passingScore = totalPossibleScore * 0.8;
-//
-//        scoreText.setText("Your Score: " + score);
-//        passingScoreText.setText("Passing Score: " + passingScore);
-//
-//        if (score >= passingScore) {
-//            resultText.setText("You passed!");
-//        }
-//    }
 }

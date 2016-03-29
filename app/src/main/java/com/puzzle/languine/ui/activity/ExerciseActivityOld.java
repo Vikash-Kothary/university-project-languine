@@ -27,7 +27,7 @@ import com.puzzle.languine.utils.IntentConts;
 import java.util.ArrayList;
 
 public class ExerciseActivityOld extends MaterialActivity
-        implements DialogInterface.OnClickListener, TextQuestionFragment.ExerciseData {
+        implements DialogInterface.OnClickListener {
     private String lessonNumber, exerciseName, quizType, selectedAnswer;
     private Exercise unitExercise;
     private Question currentQuestion;
@@ -124,8 +124,10 @@ public class ExerciseActivityOld extends MaterialActivity
             dialog.show();
         }
 
-        if (!resultMessage[0].equals("Please select an answer.")) {
-            if (unitExercise.getSelectedAnswers().size() <= questionCounter) {
+        if (!resultMessage[0].equals("Please select an answer."))
+        {
+            if (unitExercise.getSelectedAnswers().size() <= questionCounter)
+            {
                 unitExercise.addPairOfAnswers(currentQuestion.getCorrectAnswers().get(0), selectedAnswer);
             }
             removeSelections();
@@ -149,7 +151,7 @@ public class ExerciseActivityOld extends MaterialActivity
         switch (quizType) {
             case "single":
                 //setContentView(R.layout.fragment_text_question);
-                addFragment(TextQuestionFragment.newInstance(questionCounter));
+                //addFragment(TextQuestionFragment.newInstance(questionCounter));
                 questionCounter = 0;
                 //populateFragment("single");
                 this.quizType = "single";
@@ -157,14 +159,14 @@ public class ExerciseActivityOld extends MaterialActivity
             case "multiple":
                 //getSupportFragmentManager().beginTransaction().add(R.id.fragment, AudioQuizFragment.newInstance(R.raw.background)).commit();
                 //setContentView(R.layout.fragment_audio_quiz);
-                addFragment(AudioQuizFragment.newInstance(0, questionCounter));
+                //addFragment(AudioQuizFragment.newInstance(0, questionCounter));
                 questionCounter = 0;
                 //populateFragment("multiple");
                 this.quizType = "multiple";
                 break;
             case "pictures":
                 //setContentView(R.layout.fragment_picture_question);
-                addFragment(PictureQuestionFragment.newInstance(questionCounter));
+                //addFragment(PictureQuestionFragment.newInstance(questionCounter));
                 questionCounter = 0;
                 //populateFragment("pictures");
                 this.quizType = "pictures";
@@ -318,20 +320,5 @@ public class ExerciseActivityOld extends MaterialActivity
     @Override
     public void onClick(DialogInterface dialog, int which) {
         super.onBackPressed();
-    }
-
-    @Override
-    public Question getQuestion() {
-        return unitExercise.getQuestion(questionCounter);
-    }
-
-    @Override
-    public Exercise getExercise() {
-        return unitExercise;
-    }
-
-    @Override
-    public Question getCurrentQuestion() {
-        return currentQuestion;
     }
 }

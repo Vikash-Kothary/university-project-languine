@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -30,6 +31,7 @@ import com.puzzle.languine.datamodel.Question;
 import com.puzzle.languine.ui.MaterialActivity;
 import com.puzzle.languine.ui.fragment.AudioQuizFragment;
 import com.puzzle.languine.ui.fragment.PictureQuestionFragment;
+import com.puzzle.languine.ui.fragment.QuizIntroFragment;
 import com.puzzle.languine.ui.fragment.TextQuestionFragment;
 import com.puzzle.languine.utils.IntentConts;
 
@@ -37,29 +39,33 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-public class ExerciseActivity extends MaterialActivity implements DialogInterface.OnClickListener {
-    private String lessonNumber, exerciseName, quizType, selectedAnswer;
-    private Exercise unitExercise;
-    private Question currentQuestion;
-    private int questionCounter;
+public class ExerciseActivity extends MaterialActivity implements DialogInterface.OnClickListener
+{
+    private String lessonNumber, exerciseName, quizType, selectedAnswer, moduleName;
+    public static Exercise unitExercise = null;
+    public static Question currentQuestion;
+    public static int questionCounter;
+    public static boolean answered = false, isRightAnswer = false;
     private ImageView selectedImage;
     private ImageView[] images = new ImageView[6];
     private ArrayList<CheckBox> checkBoxes;
     private RadioGroup possibleAnswers;
-    private Button nextButton;
+    private ImageButton nextButton;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-
-        exerciseName = getIntent().getStringExtra(IntentConts.QUIZ_TITLE);
-        lessonNumber = (getIntent().getStringExtra(IntentConts.LESSON_NUMBER));
-        unitExercise = Data.getExercise(lessonNumber, exerciseName, this.getApplicationContext());
 
         setContentView(R.layout.activity_exercise);
         setupToolbar();
 
-        chooseFragment();
+        exerciseName = getIntent().getStringExtra(IntentConts.EXERCISE_NAME);
+        moduleName = getIntent().getStringExtra(IntentConts.MODULE_NAME);
+        lessonNumber = getIntent().getStringExtra(IntentConts.LESSON_NUMBER);
+        quizType = getIntent().getStringExtra(IntentConts.QUIZ_TYPE);
+
+        addFragment(new QuizIntroFragment());
         questionCounter = 0;
     }
 
@@ -68,13 +74,10 @@ public class ExerciseActivity extends MaterialActivity implements DialogInterfac
      * into the fragment. Can be used every time
      * the user goes to the next question.
      */
-    private void populateFragment(final String quizType) {
-        Button previousButton = (Button) findViewById(R.id.previous_question);
+    /*private void populateFragment(final String quizType) {
         if (questionCounter < unitExercise.getQuestionsNumber()) {
             previousButton.setVisibility(View.VISIBLE);
-            nextButton = (Button) findViewById(R.id.next_question);
-            if (nextButton.getText().equals("NEXT")) ;
-            nextButton.setText("NEXT");
+            nextButton = (ImageButton) findViewById(R.id.next_question);
 
             switch (quizType) {
                 case "single":
@@ -91,36 +94,40 @@ public class ExerciseActivity extends MaterialActivity implements DialogInterfac
                     break;
             }
         }
+    }*/
+
+    public void nextQuestionButtonClicked(View view)
+    {
+        ImageButton previousButton = (ImageButton) findViewById(R.id.previous_question);
+        nextButton = (ImageButton) findViewById(R.id.next_question);
+
+        unitExercise = Data.getExercise(lessonNumber,exerciseName,this);
+        currentQuestion = unitExercise.getQuestion(questionCounter);
+
         if (questionCounter == unitExercise.getQuestionsNumber() - 1) {
-            nextButton = (Button) findViewById(R.id.next_question);
-            nextButton.setText("FINISH");
+            nextButton = (ImageButton) findViewById(R.id.next_question);
+            nextButton.setImageResource(R.drawable.finish);
         }
         if (questionCounter == 0) {
             previousButton.setVisibility(View.INVISIBLE);
+            chooseFragment();
         }
-    }
+        else
+        {
+            if (quizType.equals("single")) {
+                possibleAnswers = (RadioGroup) findViewById(R.id.possible_answers);
 
-    public void nextQuestionButtonClicked(View view) {
-        nextButton = (Button) findViewById(R.id.next_question);
 
-        currentQuestion = unitExercise.getQuestion(questionCounter);
-
-        if (quizType.equals("single")) {
-            possibleAnswers = (RadioGroup) findViewById(R.id.possible_answers);
-
-            if (possibleAnswers.getCheckedRadioButtonId() > -1) {
-                getTextQuizSelection();
-            }
-        } else if (quizType.equals("pictures")) {
-            if (selectedImage != null) {
-                getPicturesQuizSelection();
-            }
-        } else if (quizType.equals("multiple")) {
-            if (answerIsSelected()) {
-                getAudioQuizSelection();
+            } else if (quizType.equals("pictures")) {
+                if (selectedImage != null) {
+                    getPicturesQuizSelection();
+                }
+            } else if (quizType.equals("multiple")) {
+                if (answerIsSelected()) {
+                    getAudioQuizSelection();
+                }
             }
         }
-
         String resultMessage = "";
         if (unitExercise.getSelectedAnswers().size() <= questionCounter) {
             resultMessage = writeToast();
@@ -128,8 +135,10 @@ public class ExerciseActivity extends MaterialActivity implements DialogInterfac
             toast.show();
         }
 
-        if (!resultMessage.equals("Please select an answer.")) {
-            if (unitExercise.getSelectedAnswers().size() <= questionCounter) {
+        if (!resultMessage.equals("Please select an answer."))
+        {
+            if (unitExercise.getSelectedAnswers().size() <= questionCounter)
+            {
                 unitExercise.addPairOfAnswers(currentQuestion.getCorrectAnswers().get(0), selectedAnswer);
             }
             removeSelections();
@@ -144,40 +153,29 @@ public class ExerciseActivity extends MaterialActivity implements DialogInterfac
         }
         --questionCounter;
         currentQuestion = unitExercise.getQuestion(questionCounter);
-        populateFragment(quizType);
+        chooseFragment();
     }
 
-    private void chooseFragment() {
-        String quizType = getIntent().getStringExtra(IntentConts.QUIZ_TYPE);
+    private void chooseFragment()
+    {
+        quizType = getIntent().getStringExtra(IntentConts.QUIZ_TYPE);
 
-        switch (quizType) {
+        switch (quizType)
+        {
             case "single":
-                //setContentView(R.layout.fragment_text_question);
-                addFragment(new TextQuestionFragment());
-                questionCounter = 0;
-                populateFragment("single");
+                changeFragment(new TextQuestionFragment());
                 this.quizType = "single";
                 break;
             case "multiple":
-                //getSupportFragmentManager().beginTransaction().add(R.id.fragment, AudioQuizFragment.newInstance(R.raw.background)).commit();
-                //setContentView(R.layout.fragment_audio_quiz);
-                addFragment(new AudioQuizFragment());
-                questionCounter = 0;
-                populateFragment("multiple");
+                changeFragment(new AudioQuizFragment());
                 this.quizType = "multiple";
                 break;
             case "pictures":
-                //setContentView(R.layout.fragment_picture_question);
-                addFragment(new PictureQuestionFragment());
-                questionCounter = 0;
-                populateFragment("pictures");
+                changeFragment(new PictureQuestionFragment());
                 this.quizType = "pictures";
                 break;
             case "audio":
-                //setContentView(R.layout.fragment_audio_quiz);
-                addFragment(new AudioQuizFragment());
-                questionCounter = 0;
-                populateFragment("audio");
+                changeFragment(new AudioQuizFragment());
                 this.quizType = "audio";
                 break;
             default:
@@ -311,14 +309,6 @@ public class ExerciseActivity extends MaterialActivity implements DialogInterfac
         }
     }
 
-    private void getTextQuizSelection() {
-        int id = possibleAnswers.getCheckedRadioButtonId();
-        View radioButton = possibleAnswers.findViewById(id);
-        int radioId = possibleAnswers.indexOfChild(radioButton);
-        RadioButton selectedButton = (RadioButton) possibleAnswers.getChildAt(radioId);
-        selectedAnswer = (String) selectedButton.getText();
-    }
-
     private void getPicturesQuizSelection() {
         for (int i = 0; i < images.length; ++i) {
             if (selectedImage.equals(images[i])) {
@@ -339,11 +329,10 @@ public class ExerciseActivity extends MaterialActivity implements DialogInterfac
     private String writeToast() {
         String resultMessage = "";
 
-        if ((quizType.equals("single") && possibleAnswers.getCheckedRadioButtonId() == -1)
-                || (quizType.equals("pictures") && selectedImage == null)
-                || (quizType.equals("multiple") && answerIsSelected())) {
+        if (!answered)
+        {
             resultMessage = "Please select an answer.";
-        } else if (currentQuestion.checkAnswer(selectedAnswer)) {
+        } else if (isRightAnswer) {
             resultMessage = "This is the right answer!";
         } else {
             resultMessage = "This is the wrong answer.";
@@ -371,15 +360,16 @@ public class ExerciseActivity extends MaterialActivity implements DialogInterfac
     }
 
     private void setUpButtonListener() {
-        if (nextButton.getText().equals("NEXT")) {
-            if (!quizType.equals("pictures")) {
-
+        if (questionCounter < unitExercise.getQuestionsNumber() - 1)
+        {
+            if (!quizType.equals("pictures"))
+            {
                 LinearLayout possibleAnswersContainer = (LinearLayout) findViewById(R.id.possible_answers);
                 possibleAnswersContainer.removeAllViews();
             }
             ++questionCounter;
             currentQuestion = unitExercise.getQuestion(questionCounter);
-            populateFragment(quizType);
+            chooseFragment();
         } else {
             Intent intent = new Intent(getBaseContext(), ResultActivity.class);
             startActivity(intent);
@@ -403,6 +393,28 @@ public class ExerciseActivity extends MaterialActivity implements DialogInterfac
         // 3. Get the AlertDialog from create()
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    private String[] getResultStrings() {
+        String resultMessage = "";
+        String resultTitle = "";
+
+        if ((quizType.equals("single") && possibleAnswers.getCheckedRadioButtonId() == -1)
+                || (quizType.equals("pictures") && selectedImage == null)
+                || (quizType.equals("multiple") && answerIsSelected())) {
+            resultMessage = "Please select an answer.";
+        } else if (currentQuestion.checkAnswer(selectedAnswer)) {
+            resultMessage = "That's right! You selected the correct response.";
+            resultTitle = "Correct";
+            unitExercise.setScore(unitExercise.getScore() + 10);
+        } else {
+            resultMessage = "You did not select the correct response.";
+            resultTitle = "Incorrect";
+        }
+
+        String[] resultStrings = {resultMessage, resultTitle};
+
+        return resultStrings;
     }
 
     @Override
