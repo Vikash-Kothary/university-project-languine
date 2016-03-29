@@ -3,11 +3,13 @@ package com.puzzle.languine.ui;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import com.puzzle.languine.R;
 
@@ -48,8 +50,12 @@ public class MaterialFragment extends Fragment {
         return getActivity().getApplicationContext();
     }
 
-    protected View findViewById(int id) {
-        return rootView.findViewById(id);
+    public View findViewById(int id) {
+        View view = rootView.findViewById(id);
+        if(view instanceof TextView){
+            ((TextView) view).setTextColor(Color.WHITE);
+        }
+        return view;
     }
 
     protected void finish() {

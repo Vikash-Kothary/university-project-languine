@@ -17,6 +17,8 @@ public class CreditsActivity extends MaterialActivity implements View.OnClickLis
         setupToolbar();
         setupFab(this);
 
+        findViewById(R.id.textView);
+
     }
 
     @Override

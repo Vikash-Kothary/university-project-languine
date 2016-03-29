@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.puzzle.languine.R;
 
@@ -32,6 +33,14 @@ public class MaterialActivity extends AppCompatActivity {
             return prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         }
         return prefs;
+    }
+
+    public View findViewById(int id) {
+        View view = super.findViewById(id);
+        if(view instanceof TextView){
+            ((TextView) view).setTextColor(Color.WHITE);
+        }
+        return view;
     }
 
     protected void setupToolbar() {
