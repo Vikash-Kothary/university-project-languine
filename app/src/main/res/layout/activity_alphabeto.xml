@@ -18,7 +18,7 @@
             android:layout_weight="1"
             android:layout_height="80dp"
             android:src="@drawable/a"
-            android:id="@+id/a"
+            android:id="@+id/a1"
             android:background="#00ffffff"
             android:scaleType="fitXY"
             android:layout_gravity="bottom|right"

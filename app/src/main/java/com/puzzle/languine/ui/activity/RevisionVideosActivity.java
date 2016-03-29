@@ -53,8 +53,11 @@ public class RevisionVideosActivity extends MaterialActivity implements Material
         }
 
         topics = new ArrayList<>();
-        for (int i = 0; i < caching.getRevisionVideos(module).size(); ++i) {
-            topics.add(videoCardNames.get(i));
+        for (int i = 0; i < videoCardNames.size(); ++i) {
+            String videoCard = videoCardNames.get(i);
+            if(videoCard!=null){
+                topics.add(videoCard);
+            }
         }
         MenuAdapter adapter = new MenuAdapter(topics, videoNamesImages);
         new MaterialRecyclerView(this, adapter);

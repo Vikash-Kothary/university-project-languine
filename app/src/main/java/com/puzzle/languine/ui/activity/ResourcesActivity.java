@@ -30,7 +30,7 @@ public class ResourcesActivity extends MaterialActivity implements MaterialRecyc
         setupToolbar();
 
         ArrayList<Integer> resourceImages = new ArrayList<Integer>(
-                Arrays.asList(R.drawable.el_alphabeto, R.drawable.los_numeros, R.drawable.los_dias, R.drawable.festivadades, R.drawable.estaciones_y_meses, R.drawable.la_hora)
+                Arrays.asList(R.drawable.el_alphabeto, R.drawable.los_numeros, R.drawable.los_dias, R.drawable.el_calendario, R.drawable.festivadades, R.drawable.estaciones_y_meses, R.drawable.la_hora)
         );
         ArrayList<String> resourceNames = new ArrayList<>(
                 Arrays.asList("El Alphabeto", "Los Numeros", "Los Dias", "El Calendario", "Festivadades", "Estaciones y Meses", "La hora")

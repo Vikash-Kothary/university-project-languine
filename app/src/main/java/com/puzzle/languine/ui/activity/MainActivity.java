@@ -29,7 +29,6 @@ public class MainActivity extends MaterialActivity
 
         setupToolbar();
         setupNavigationalDrawer(null);
-
     }
 
 

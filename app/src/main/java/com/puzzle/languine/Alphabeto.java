@@ -1,6 +1,7 @@
 package com.puzzle.languine;
 
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,12 +13,11 @@ import com.puzzle.languine.R;
 import com.puzzle.languine.ui.MaterialActivity;
 import com.puzzle.languine.utils.IntentConts;
 
-public class Alphabeto extends MaterialActivity
-{
+public class Alphabeto extends MaterialActivity {
 
     public static boolean spanish = true;
 
-    private int[] alpha_id = {R.id.a, R.id.b, R.id.c, R.id.ch, R.id.d, R.id.e, R.id.f, R.id.g, R.id.h, R.id.i, R.id.j, R.id.k, R.id.ll,
+    private int[] alpha_id = {R.id.a1, R.id.b, R.id.c, R.id.ch, R.id.d, R.id.e, R.id.f, R.id.g, R.id.h, R.id.i, R.id.j, R.id.k, R.id.ll,
             R.id.m, R.id.n, R.id.ene, R.id.o, R.id.p, R.id.q, R.id.r, R.id.s, R.id.t, R.id.u, R.id.v, R.id.w, R.id.x, R.id.y, R.id.z};
 
     private int[] spa_audio = {R.raw.as, R.raw.bs, R.raw.cs, R.raw.chs, R.raw.ds, R.raw.es, R.raw.fs, R.raw.gs, R.raw.hs,
@@ -28,8 +28,7 @@ public class Alphabeto extends MaterialActivity
             R.raw.i, R.raw.j, R.raw.k, R.raw.ll, R.raw.m, R.raw.n, R.raw.n, R.raw.o, R.raw.p, R.raw.q, R.raw.r, R.raw.s,
             R.raw.t, R.raw.u, R.raw.v, R.raw.w, R.raw.x, R.raw.y, R.raw.z};
 
-    RelativeLayout layout1;
-    SoundPool sp;
+    MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,15 +48,14 @@ public class Alphabeto extends MaterialActivity
             imageButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    sp = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
 
                     if (Alphabeto.spanish) {
-                        int spid = sp.load(Alphabeto.this, spa_audio[num], 1);
-                        sp.play(spid, 1, 1, 1, 0, 1);
+                        mediaPlayer = MediaPlayer.create(Alphabeto.this, spa_audio[num]);
                     } else {
-                        int spid = sp.load(Alphabeto.this, mex_audio[num], 1);
-                        sp.play(spid, 1, 1, 1, 0, 1);
+
+                        mediaPlayer = MediaPlayer.create(Alphabeto.this, mex_audio[num]);
                     }
+                    mediaPlayer.start();
                 }
             });
         }

@@ -34,17 +34,6 @@
                     android:textSize="22dp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/text_view_module_description"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/text_view_module_titlei"
-                    android:maxLines="3"
-                    android:padding="8dp"
-                    android:text="@string/text_view_module_description"
-                    android:textColor="#666"
-                    android:textSize="14dp" />
-
             </LinearLayout>
 
             <ImageView
