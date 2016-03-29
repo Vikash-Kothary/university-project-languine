@@ -12,7 +12,7 @@
         android:layout_width="wrap_content" android:layout_height="match_parent"
         android:layout_gravity="start" android:fitsSystemWindows="true"
         android:background="@color/background_material_light"
-        app:headerLayout="@layout/nav_header" app:menu="@menu/main_menu" >
+        app:headerLayout="@layout/nav_header_lesson_select" app:menu="@menu/main_menu" >
         <android.support.design.widget.NavigationView
             android:id="@+id/nav_view_footer"
             android:layout_width="match_parent"

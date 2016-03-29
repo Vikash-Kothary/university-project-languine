@@ -9,6 +9,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.parse.ParseAnonymousUtils;
@@ -23,15 +24,12 @@ public class MainActivity extends MaterialActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        askToLogin();
         setContentView(R.layout.main_activity);
+        askToLogin();
 
         setupToolbar();
         setupNavigationalDrawer(null);
 
-        //TODO: display name and email on nav drawer
-        TextView name = (TextView) findViewById(R.id.name);
-        TextView email = (TextView) findViewById(R.id.email);
     }
 
 
@@ -41,6 +39,19 @@ public class MainActivity extends MaterialActivity
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent); // send to login screen
             }
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (!ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
+            View headerLayout = ((NavigationView)findViewById(R.id.nav_view)).getHeaderView(0);
+
+            TextView name = (TextView) headerLayout.findViewById(R.id.name);
+            name.setText(ParseUser.getCurrentUser().get("name").toString());
+            TextView email = (TextView) headerLayout.findViewById(R.id.email);
+            email.setText(ParseUser.getCurrentUser().getUsername());
         }
     }
 

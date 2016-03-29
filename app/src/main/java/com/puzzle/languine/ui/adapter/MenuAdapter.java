@@ -18,11 +18,17 @@ import java.util.ArrayList;
  * Created by Vikash Kothary on 15-Mar-16.
  */
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder> {
+    private ArrayList<Integer> menuImages;
     private ArrayList<String> menuData;
 
 
     public MenuAdapter(ArrayList<String> moduleData) {
         this.menuData = moduleData;
+    }
+
+    public MenuAdapter(ArrayList<String> moduleData, ArrayList<Integer> moduleImages) {
+        this.menuData = moduleData;
+        this.menuImages = moduleImages;
     }
 
     @Override
@@ -38,6 +44,9 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
 
     @Override
     public void onBindViewHolder(MenuViewHolder holder, final int position) {
+        if(menuImages!=null){
+            holder.imageView_modulePictures.setImageResource(menuImages.get(position));
+        }
         holder.textView_moduleTitle.setText(menuData.get(position));
     }
 
@@ -54,6 +63,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
     public static class MenuViewHolder extends RecyclerView.ViewHolder {
+        public ImageView imageView_modulePictures;
         // each data item is just a string in this case
         public TextView textView_moduleTitle;
 
@@ -62,6 +72,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
 
         public MenuViewHolder(View itemView) {
             super(itemView);
+            imageView_modulePictures = (ImageView) itemView.findViewById(R.id.image_view_module_picture);
             textView_moduleTitle = (TextView) itemView.findViewById(R.id.text_view_module_title);
 
         }
